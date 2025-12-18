@@ -77,7 +77,7 @@ Join the 1% here: [Link]
     {
       id: "welcome",
       title: "Welcome Sequence (Tripwire £4.99)",
-      description: "Immediate value delivery + Upsell to full Academy membership.",
+      description: "Immediate value delivery + Upsell to full Academy membership + Retention to Month 2.",
       emails: [
         {
           day: "Day 0",
@@ -112,6 +112,84 @@ Because you're already a customer, I'm giving you a 24h pass to upgrade at a spe
 Don't let this slip.
 
 [Upgrade Link]
+
+- Applecore HQ`
+        },
+        {
+          day: "Day 14 (The Dip)",
+          subject: "Why most quit today (Don't be them)",
+          body: `[Name],
+
+Statistically, today is the day most new traders give up.
+
+The excitement has worn off. The reality of the work sets in.
+This is "The Dip".
+
+Amateurs quit in The Dip. Professionals push through it.
+
+I want you to look at your P&L. If it's not where you want it to be, it's not because the market is rigged. It's because you haven't mastered the process yet.
+
+I've just uploaded a new case study in the portal: "How Alex recovered from a 20% drawdown".
+
+Go watch it. Get your head back in the game.
+
+[Link to Case Study]
+
+- Applecore HQ`
+        },
+        {
+          day: "Day 21 (Habit)",
+          subject: "21 Days later...",
+          body: `They say it takes 21 days to build a habit.
+
+If you've been following the protocol, you should feel different today.
+Less anxious. More calculated.
+
+You're no longer reacting. You're anticipating.
+
+I want to challenge you: Post your best trade of the week in the community Discord.
+Let the tribe see your progress.
+
+[Link to Discord]
+
+Keep stacking wins.
+
+- Applecore HQ`
+        },
+        {
+          day: "Day 28 (Pre-Renewal)",
+          subject: "Your roadmap for next month",
+          body: `[Name],
+
+You're approaching the end of your first month.
+Most people overestimate what they can do in a month, and underestimate what they can do in a year.
+
+Next month, we're unlocking "Level 2: Advanced Order Flow".
+This is where we go deep into liquidity pools and stop hunts.
+
+It's not for beginners. But you're not a beginner anymore.
+
+Your seat is reserved. Don't lose your momentum now.
+
+See you on the other side.
+
+- Applecore HQ`
+        },
+        {
+          day: "Day 35 (Post-Renewal)",
+          subject: "Level 2 Unlocked: Welcome back",
+          body: `Boom. You made it to Month 2.
+
+90% of traders wash out before this point. You're still standing.
+
+As promised, I've unlocked the Advanced Order Flow module in your dashboard.
+This is the heavy artillery.
+
+Treat it with respect.
+
+Let's get to work.
+
+[Link to Module]
 
 - Applecore HQ`
         }
