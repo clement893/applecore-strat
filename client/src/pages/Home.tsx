@@ -691,42 +691,134 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* New Ad: Mindset Revolution */}
-              <div className="space-y-4">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
-                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
-                  
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                    <div className="space-y-2">
-                      <div className="text-xs font-mono text-secondary uppercase">Psychology First</div>
-                      <h3 className="text-3xl font-bold text-white leading-tight">
-                        Stop Acting Like An Amateur.
-                        <br />
-                        <span className="text-gray-500">Start Acting Like A Millionaire.</span>
-                      </h3>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <div className="flex gap-2">
-                        <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                          <div className="text-xs text-gray-400">Focus</div>
-                          <div className="text-lg font-bold text-white">100%</div>
-                        </div>
-                        <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                          <div className="text-xs text-gray-400">Emotion</div>
-                          <div className="text-lg font-bold text-white">0%</div>
-                        </div>
-                      </div>
-                      <p className="text-xs text-gray-400">
-                        Master the mindset that separates the pros from the gamblers.
-                      </p>
-                    </div>
+              {/* New Ad: Mindset Revolution (A/B Variants) */}
+              <div className="col-span-full space-y-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl font-bold tracking-tight">Mindset Revolution (A/B Testing)</h3>
+                  <div className="flex gap-2">
+                    <button className="rounded-md border border-border bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary hover:bg-secondary/20">
+                      Download All Variants
+                    </button>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Social / Vertical</span>
-                  <span className="text-xs text-muted-foreground">1080x1350px</span>
+                
+                <div className="grid gap-8 md:grid-cols-3">
+                  {/* Variant A: Amateur vs Millionaire */}
+                  <div className="space-y-4">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5 group">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                      
+                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                        <div className="space-y-2">
+                          <div className="text-xs font-mono text-secondary uppercase">Variant A</div>
+                          <h3 className="text-3xl font-bold text-white leading-tight">
+                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Acting Like An Amateur.</span>
+                            <br />
+                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Acting Like A Millionaire.</span>
+                          </h3>
+                        </div>
+                        
+                        <div className="space-y-4">
+                          <div className="flex gap-2">
+                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                              <div className="text-xs text-gray-400">Focus</div>
+                              <div className="text-lg font-bold text-white">100%</div>
+                            </div>
+                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                              <div className="text-xs text-gray-400">Emotion</div>
+                              <div className="text-lg font-bold text-white">0%</div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-gray-400">
+                            Master the mindset that separates the pros from the gamblers.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium">Variant A</span>
+                      <button className="text-xs text-primary hover:underline">Download .PNG</button>
+                    </div>
+                  </div>
+
+                  {/* Variant B: Gambler vs Pro */}
+                  <div className="space-y-4">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5 group">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                      
+                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                        <div className="space-y-2">
+                          <div className="text-xs font-mono text-secondary uppercase">Variant B</div>
+                          <h3 className="text-3xl font-bold text-white leading-tight">
+                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Trading Like A Gambler.</span>
+                            <br />
+                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Trading Like A Pro.</span>
+                          </h3>
+                        </div>
+                        
+                        <div className="space-y-4">
+                          <div className="flex gap-2">
+                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                              <div className="text-xs text-gray-400">Risk</div>
+                              <div className="text-lg font-bold text-white">Managed</div>
+                            </div>
+                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                              <div className="text-xs text-gray-400">Edge</div>
+                              <div className="text-lg font-bold text-white">Defined</div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-gray-400">
+                            Stop guessing. Start executing with precision.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium">Variant B</span>
+                      <button className="text-xs text-primary hover:underline">Download .PNG</button>
+                    </div>
+                  </div>
+
+                  {/* Variant C: Guessing vs Knowing */}
+                  <div className="space-y-4">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5 group">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                      
+                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                        <div className="space-y-2">
+                          <div className="text-xs font-mono text-secondary uppercase">Variant C</div>
+                          <h3 className="text-3xl font-bold text-white leading-tight">
+                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Guessing The Market.</span>
+                            <br />
+                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Knowing The Moves.</span>
+                          </h3>
+                        </div>
+                        
+                        <div className="space-y-4">
+                          <div className="flex gap-2">
+                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                              <div className="text-xs text-gray-400">Bias</div>
+                              <div className="text-lg font-bold text-white">Zero</div>
+                            </div>
+                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                              <div className="text-xs text-gray-400">Clarity</div>
+                              <div className="text-lg font-bold text-white">100%</div>
+                            </div>
+                          </div>
+                          <p className="text-xs text-gray-400">
+                            See what others miss. Trade what actually happens.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-medium">Variant C</span>
+                      <button className="text-xs text-primary hover:underline">Download .PNG</button>
+                    </div>
+                  </div>
                 </div>
               </div>
 
