@@ -683,7 +683,7 @@ export default function Home() {
                         No paid promoters. No fake screenshots. No rented cars. Just real traders and raw data.
                       </p>
                       <div className="pt-4 border-t border-white/10">
-                        <span className="text-primary font-mono text-sm">JOIN THE REVOLUTION &rarr;</span>
+                        <span className="text-primary font-mono text-sm flex items-center justify-center gap-2">JOIN THE REVOLUTION <ArrowRight className="h-4 w-4" /></span>
                       </div>
                     </div>
                   </div>
