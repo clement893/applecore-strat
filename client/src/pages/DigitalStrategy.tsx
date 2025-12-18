@@ -176,7 +176,7 @@ export default function DigitalStrategy() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <span className="px-2 py-1 rounded bg-secondary/20 text-secondary text-xs font-mono uppercase tracking-wider border border-secondary/30">
+            <span className="px-2 py-1 rounded bg-secondary/20 text-accent text-xs font-mono uppercase tracking-wider border border-accent/30">
               Market Analysis
             </span>
           </div>
@@ -253,8 +253,8 @@ export default function DigitalStrategy() {
               </div>
               
               {/* Competitors */}
-              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-secondary/20 rounded-full blur-xl print:hidden"></div>
-              <div className="absolute top-1/4 left-1/4 text-secondary font-bold text-sm">The Gurus</div>
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 btext-accent rounded-full blur-xl print:hidden"></div>
+              <div className="absolute top-1/4 left-1/4 text-accent font-bold text-sm">The Gurus</div>
               
               {/* Applecore Position */}
               <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl print:hidden"></div>
@@ -281,7 +281,7 @@ export default function DigitalStrategy() {
             <div className="p-8 rounded-2xl bg-card border border-white/5">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-white">The "Burned" Seeker</h3>
-                <span className="px-3 py-1 rounded-full bg-secondary/10 text-xs font-mono text-secondary">PRIMARY</span>
+                <span className="px-3 py-1 rounded-full bgtext-accent text-xs font-monotext-secondary">PRIMARY</span>
               </div>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                 Male, 25-35. Has lost money on "signals" and "bots". Feels betrayed by the industry. Intelligent but frustrated. Looking for a "real" profession, not a lottery ticket.
@@ -451,7 +451,7 @@ export default function DigitalStrategy() {
                     Upsell to full membership. "Join the 1%".
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded">Recurring Rev</span>
+                    <span className="text-xs bg-secondary/20 text-accent px-2 py-1 rounded">Recurring Rev</span>
                   </div>
                 </div>
               </div>
@@ -489,7 +489,7 @@ export default function DigitalStrategy() {
             <div className="p-8 rounded-2xl bg-card border border-white/10 relative group hover:border-secondary/30 transition-colors transform md:-translate-y-4 shadow-2xl shadow-black">
               <div className="absolute -top-4 left-6 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">CORE OFFER</div>
               <h3 className="text-2xl font-bold text-white mb-2">Applecore Academy</h3>
-              <div className="text-4xl font-bold text-secondary mb-4">£49<span className="text-lg text-gray-500 font-normal">/mo</span></div>
+              <div className="text-4xl font-bold text-accent mb-4">£49<span className="text-lg text-gray-500 font-normal">/mo</span></div>
               <p className="text-sm text-gray-400 mb-4">
                 The recurring revenue engine. Community, tools, and ongoing education.
               </p>
@@ -602,7 +602,7 @@ export default function DigitalStrategy() {
               <p className="text-sm text-gray-400 mb-4">
                 Lifestyle, but not "Lambo". Discipline, gym, charts, routine. Aspirational but grounded.
               </p>
-              <div className="text-xs font-mono text-secondary bg-secondary/10 px-2 py-1 rounded w-fit">Brand Image</div>
+              <div className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded w-fit">Brand Image</div>
             </div>
           </div>
         </div>
@@ -661,7 +661,7 @@ export default function DigitalStrategy() {
             <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-secondary/50 transition-colors">
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-mono text-secondary uppercase tracking-wider">Activation</span>
+                  <span className="text-xs font-mono text-accent uppercase tracking-wider">Activation</span>
                   <MailIcon className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Welcome Sequence</h3>
@@ -699,7 +699,7 @@ export default function DigitalStrategy() {
             <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-secondary/50 transition-colors">
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-mono text-secondary uppercase tracking-wider">Retention</span>
+                  <span className="text-xs font-mono text-accent uppercase tracking-wider">Retention</span>
                   <MailIcon className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Win-Back Sequence</h3>
