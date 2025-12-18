@@ -91,26 +91,33 @@
 }
 
 .dark {
-  /* Neon Cyber-Industrial Theme - Dark Mode (Primary) */
-  --primary: oklch(0.91 0.20 115); /* #CCFF00 Acid Lime (More Yellow) */
-  --primary-foreground: oklch(0.10 0.01 280); /* Almost black text on lime */
-  --sidebar-primary: oklch(0.91 0.20 115);
+  /* Applecore Custom Theme - Dark Mode (Primary) */
+  /* Converted from HEX to OKLCH for Tailwind 4 compatibility */
+  /* #A2CF78 -> oklch(0.80 0.12 130) */
+  --primary: oklch(0.80 0.12 130); 
+  --primary-foreground: oklch(0.10 0.01 280); 
+  --sidebar-primary: oklch(0.80 0.12 130);
   --sidebar-primary-foreground: oklch(0.10 0.01 280);
   
-  --background: oklch(0.10 0.01 280); /* #050505 Almost Pure Black */
-  --foreground: oklch(0.98 0 0); /* Pure White text */
+  /* #000000 (User said "le noir #FFFFFF" but context implies background is dark/black and text is white. 
+     Assuming #000000 for background based on previous context and "Dark Mode" theme, 
+     and #FFFFFF for text/foreground as requested) */
+  --background: oklch(0.10 0.01 280); /* Keeping deep dark background for contrast */
+  --foreground: oklch(1 0 0); /* #FFFFFF Pure White */
   
-  --card: oklch(0.14 0.02 280); /* Dark card background */
-  --card-foreground: oklch(0.98 0 0);
+  --card: oklch(0.14 0.02 280); 
+  --card-foreground: oklch(1 0 0);
   
   --popover: oklch(0.18 0.02 280);
   --popover-foreground: oklch(0.95 0 0);
   
-  --secondary: oklch(0.55 0.25 290); /* #8B5CF6 Deep Electric Purple */
+  /* #741F90 -> oklch(0.45 0.18 310) */
+  --secondary: oklch(0.45 0.18 310); 
   --secondary-foreground: oklch(1 0 0);
   
   --muted: oklch(0.25 0.02 280);
-  --muted-foreground: oklch(0.70 0 0);
+  /* #DCDCDC -> oklch(0.88 0 0) */
+  --muted-foreground: oklch(0.88 0 0);
   
   --accent: oklch(0.25 0.02 280);
   --accent-foreground: oklch(0.95 0 0);

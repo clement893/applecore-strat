@@ -184,12 +184,12 @@ export default function Home() {
                     <span className="text-xs font-mono text-muted-foreground">Primary</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#9EFF00</code>
+                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#A2CF78</code>
                     <Button
                       variant="ghost"
                       size="icon"
                       className="h-6 w-6"
-                      onClick={() => copyToClipboard("#9EFF00", "c1")}
+                      onClick={() => copyToClipboard("#A2CF78", "c1")}
                     >
                       {copied === "c1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                     </Button>
@@ -207,12 +207,12 @@ export default function Home() {
                     <span className="text-xs font-mono text-muted-foreground">Secondary</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#D946EF</code>
+                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#741F90</code>
                     <Button
                       variant="ghost"
                       size="icon"
                       className="h-6 w-6"
-                      onClick={() => copyToClipboard("#D946EF", "c2")}
+                      onClick={() => copyToClipboard("#741F90", "c2")}
                     >
                       {copied === "c2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                     </Button>
@@ -253,12 +253,12 @@ export default function Home() {
                     <span className="text-xs font-mono text-muted-foreground">Text</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#E0E0E0</code>
+                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#DCDCDC</code>
                     <Button
                       variant="ghost"
                       size="icon"
                       className="h-6 w-6"
-                      onClick={() => copyToClipboard("#E0E0E0", "c4")}
+                      onClick={() => copyToClipboard("#DCDCDC", "c4")}
                     >
                       {copied === "c4" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
                     </Button>
