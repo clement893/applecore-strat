@@ -21,8 +21,10 @@ export default function DigitalStrategy() {
     { id: "automation", label: "Automation" },
     { id: "retention", label: "Retention" },
     { id: "tech-stack", label: "Tech Stack" },
-    { id: "risk", label: "Risk Mitigation" },
-    { id: "budget", label: "Budget" }
+            { id: "risk", label: "Risk Mitigation" },
+    { id: "budget", label: "Budget" },
+    { id: "checklist", label: "Launch Checklist" },
+    { id: "kpi", label: "KPI Dashboard" }
   ];
 
   useEffect(() => {
@@ -397,8 +399,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 4. FUNNEL (EXECUTION) */}
-      <section id="funnel" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 11. BUDGET (CHIFFRES) */}
+      <section id="budget" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
             <div>
@@ -937,3 +939,177 @@ function MailIcon(props: any) {
     </svg>
   );
 }
+
+      {/* 12. LAUNCH CHECKLIST (EXECUTION) */}
+      <section id="checklist" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+        <div className="container">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold mb-4">Launch Checklist</h2>
+            <p className="text-gray-400">Mission Critical items before pressing "GO".</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card border border-white/10 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Server className="h-5 w-5 text-primary" />
+                Technical
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-primary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-primary rounded-sm"></div>
+                  </div>
+                  Stripe Webhooks Tested
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-primary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-primary rounded-sm"></div>
+                  </div>
+                  Email DKIM/SPF Verified
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-primary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-primary rounded-sm"></div>
+                  </div>
+                  Pixel Events (Purchase, Lead) Firing
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-primary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-primary rounded-sm"></div>
+                  </div>
+                  Mobile Responsive Check (iOS/Android)
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-card border border-white/10 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Layers className="h-5 w-5 text-secondary" />
+                Content Assets
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-secondary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-secondary rounded-sm"></div>
+                  </div>
+                  5x Ad Creatives (Video + Static)
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-secondary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-secondary rounded-sm"></div>
+                  </div>
+                  VSL Script Recorded & Edited
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-secondary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-secondary rounded-sm"></div>
+                  </div>
+                  Welcome Email Sequence Loaded
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-secondary/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-secondary rounded-sm"></div>
+                  </div>
+                  Social Proof Screenshots Collected
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-card border border-white/10 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Shield className="h-5 w-5 text-accent" />
+                Legal & Compliance
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-accent/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-accent rounded-sm"></div>
+                  </div>
+                  Terms of Service & Privacy Policy
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-accent/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-accent rounded-sm"></div>
+                  </div>
+                  "Not Financial Advice" Disclaimer
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-accent/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-accent rounded-sm"></div>
+                  </div>
+                  Refund Policy Clearly Visible
+                </li>
+                <li className="flex items-center gap-3 text-sm text-gray-300">
+                  <div className="w-4 h-4 rounded border border-accent/50 flex items-center justify-center">
+                    <div className="w-2 h-2 bg-accent rounded-sm"></div>
+                  </div>
+                  GDPR/Cookie Consent Banner
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. KPI DASHBOARD (TRACKING) */}
+      <section id="kpi" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+        <div className="container">
+          <div className="mb-16">
+            <h2 className="text-4xl font-bold mb-4">KPI Dashboard</h2>
+            <p className="text-gray-400">The numbers that matter. If these are green, we scale.</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-2">Acquisition</div>
+              <div className="text-3xl font-bold text-white mb-1">£1.50</div>
+              <div className="text-sm text-primary">Target CPC</div>
+              <div className="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                <div className="h-full bg-primary w-[70%]"></div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="text-xs font-mono text-gray-500 uppercase tracking-wider">Conversion</div>
+              <div className="text-3xl font-bold text-white mb-1">3.5%</div>
+              <div className="text-sm text-secondary">Landing Page CR</div>
+              <div className="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                <div className="h-full bg-secondary w-[45%]"></div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="text-xs font-mono text-gray-500 uppercase tracking-wider">Revenue</div>
+              <div className="text-3xl font-bold text-white mb-1">£65</div>
+              <div className="text-sm text-accent">Average Order Value</div>
+              <div className="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                <div className="h-full bg-accent w-[60%]"></div>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+              <div className="text-xs font-mono text-gray-500 uppercase tracking-wider">Retention</div>
+              <div className="text-3xl font-bold text-white mb-1">85%</div>
+              <div className="text-sm text-green-400">M1 Retention Rate</div>
+              <div className="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
+                <div className="h-full bg-green-400 w-[85%]"></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 p-8 rounded-xl bg-red-500/10 border border-red-500/20">
+            <div className="flex items-start gap-4">
+              <AlertTriangle className="h-6 w-6 text-red-500 shrink-0 mt-1" />
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">Kill Switch Criteria</h3>
+                <p className="text-gray-400 text-sm mb-4">Pause ads immediately if any of these conditions are met for &gt; 48 hours:</p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-black/40 px-4 py-2 rounded border border-red-500/30 text-sm text-red-300 font-mono">CPC &gt; £3.00</div>
+                  <div className="bg-black/40 px-4 py-2 rounded border border-red-500/30 text-sm text-red-300 font-mono">CTR &lt; 0.5%</div>
+                  <div className="bg-black/40 px-4 py-2 rounded border border-red-500/30 text-sm text-red-300 font-mono">ROAS &lt; 1.2x</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
