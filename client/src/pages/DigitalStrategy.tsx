@@ -269,6 +269,70 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
+      {/* Retention Mechanics */}
+      <section className="py-20 border-b border-white/10 bg-black/50">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
+              <Lock className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Retention Mechanics</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* The First Win Protocol */}
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-purple-500/50 transition-colors group">
+              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-purple-500/20 group-hover:text-purple-500 transition-colors">
+                <Zap className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">1. The "First Win" Protocol</h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                Churn happens when users feel overwhelmed. We engineer a "Quick Win" within the first 7 days to lock in dopamine and trust.
+              </p>
+              <ul className="space-y-3 text-sm text-gray-500">
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xs font-bold">D1</div>
+                  <span className="text-gray-300">"Setup Your Charts" (Actionable, easy task)</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xs font-bold">D3</div>
+                  <span className="text-gray-300">"Identify One Trend" (Skill validation)</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xs font-bold">D7</div>
+                  <span className="text-gray-300">"Paper Trade Win" (Proof of concept)</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Tribal Lock-in */}
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary/50 transition-colors group">
+              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+                <Users className="h-6 w-6" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">2. Tribal Lock-in</h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                We make leaving painful by embedding the user in a social hierarchy. Leaving Applecore means losing your status and your "tribe".
+              </p>
+              <ul className="space-y-3 text-sm text-gray-500">
+                <li className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  <span className="text-gray-300"><strong>Rank System:</strong> Users progress from "Initiate" to "Operator" based on discipline, not P&L.</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  <span className="text-gray-300"><strong>Accountability Pods:</strong> Small groups of 5 that check in daily. You don't want to let your pod down.</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                  <span className="text-gray-300"><strong>Exclusive Access:</strong> Higher ranks unlock direct access to mentors.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Target Audiences (Personas) */}
       <section className="py-20 border-b border-white/10 bg-black/50">
         <div className="container">
