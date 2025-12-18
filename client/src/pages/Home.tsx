@@ -87,6 +87,7 @@ export default function Home() {
               <TabsTrigger value="typography" className="gap-2 py-2 px-4">Typography</TabsTrigger>
               <TabsTrigger value="dataviz" className="gap-2 py-2 px-4">Data Viz</TabsTrigger>
               <TabsTrigger value="components" className="gap-2 py-2 px-4">Components</TabsTrigger>
+              <TabsTrigger value="ads" className="gap-2 py-2 px-4">Ad Templates</TabsTrigger>
             </TabsList>
           </div>
 
@@ -498,6 +499,127 @@ export default function Home() {
           </TabsContent>
 
           {/* Components Section */}
+          <TabsContent value="ads" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Ad Templates</h2>
+              <p className="max-w-[600px] text-lg text-muted-foreground">
+                Ready-to-use marketing assets optimized for conversion.
+              </p>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-3">
+              {/* Instagram Story Template */}
+              <div className="space-y-4">
+                <div className="relative aspect-[9/16] overflow-hidden rounded-xl border border-border bg-black">
+                  {/* Background */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-secondary)_0%,_transparent_70%)] opacity-20"></div>
+                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_transparent_0%,_#000_100%)]"></div>
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 flex flex-col justify-between p-8">
+                    <div className="flex justify-center">
+                      <img src="/logo.png" alt="Applecore" className="h-8 opacity-80" />
+                    </div>
+                    
+                    <div className="space-y-6 text-center">
+                      <div className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1 text-sm font-medium text-primary backdrop-blur-sm">
+                        Limited Offer
+                      </div>
+                      <h3 className="text-4xl font-black leading-none tracking-tighter text-white">
+                        £4.90
+                        <span className="block text-lg font-medium text-muted-foreground">First Month</span>
+                      </h3>
+                      <p className="text-sm text-gray-300">
+                        Access professional indicators, live sessions, and the full video library.
+                      </p>
+                      <div className="w-full rounded-lg bg-primary py-3 text-center font-bold text-black">
+                        Start Trial
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Instagram Story</span>
+                  <span className="text-xs text-muted-foreground">1080x1920px</span>
+                </div>
+              </div>
+
+              {/* LinkedIn Post Template */}
+              <div className="space-y-4">
+                <div className="relative aspect-square overflow-hidden rounded-xl border border-border bg-card">
+                  <div className="absolute inset-0 flex flex-col p-8">
+                    <div className="mb-auto">
+                      <img src="/logo.png" alt="Applecore" className="h-6" />
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="text-4xl font-bold leading-tight tracking-tight text-white">
+                        Don't follow trends.
+                        <br />
+                        <span className="text-secondary">Predict them.</span>
+                      </h3>
+                      <div className="h-32 w-full rounded-lg border border-border/50 bg-black/50 p-4 backdrop-blur-sm">
+                        {/* Abstract Chart */}
+                        <div className="flex h-full items-end gap-1">
+                          {[40, 65, 45, 80, 55, 90, 70, 95, 85, 100].map((h, i) => (
+                            <div 
+                              key={i} 
+                              className="flex-1 rounded-t-sm bg-secondary/80 transition-all hover:bg-secondary"
+                              style={{ height: `${h}%`, opacity: 0.5 + (i * 0.05) }}
+                            ></div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">LinkedIn / Square</span>
+                  <span className="text-xs text-muted-foreground">1080x1080px</span>
+                </div>
+              </div>
+
+              {/* Web Banner Template */}
+              <div className="space-y-4">
+                <div className="relative flex aspect-video flex-col justify-center overflow-hidden rounded-xl border border-border bg-black p-8">
+                  <div className="absolute right-0 top-0 h-full w-1/2 bg-[linear-gradient(to_left,_var(--color-primary)_0%,_transparent_100%)] opacity-10"></div>
+                  
+                  <div className="relative z-10 max-w-[60%] space-y-4">
+                    <div className="flex items-center gap-2 text-sm font-medium text-primary">
+                      <span className="flex h-2 w-2 rounded-full bg-primary"></span>
+                      Now Live
+                    </div>
+                    <h3 className="text-3xl font-bold tracking-tight text-white">
+                      One Membership.
+                      <br />
+                      Everything Included.
+                    </h3>
+                    <ul className="space-y-2 text-sm text-gray-400">
+                      <li className="flex items-center gap-2">
+                        <svg className="h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        Custom Indicators
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <svg className="h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        Video Library
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <svg className="h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        Private Community
+                      </li>
+                    </ul>
+                    <button className="mt-4 rounded-md bg-white px-6 py-2 text-sm font-bold text-black transition-colors hover:bg-gray-200">
+                      Join Now
+                    </button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Web Banner</span>
+                  <span className="text-xs text-muted-foreground">1920x1080px</span>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
           <TabsContent value="components" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tight">UI Components</h2>
