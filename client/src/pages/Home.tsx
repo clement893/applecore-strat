@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, Check, Copy, Download, FileText, Layout, Palette, Type } from "lucide-react";
+import { ArrowRight, Check, Copy, Download, FileText, Layout, Palette, Type, TrendingUp, TrendingDown, BarChart2 } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -108,10 +108,419 @@ export default function Home() {
               <TabsTrigger value="colors" className="gap-2 py-2 px-4">Colors</TabsTrigger>
               <TabsTrigger value="typography" className="gap-2 py-2 px-4">Typography</TabsTrigger>
               <TabsTrigger value="dataviz" className="gap-2 py-2 px-4">Data Viz</TabsTrigger>
+              <TabsTrigger value="candlesticks" className="gap-2 py-2 px-4">Candlesticks</TabsTrigger>
               <TabsTrigger value="components" className="gap-2 py-2 px-4">Components</TabsTrigger>
               <TabsTrigger value="social" className="gap-2 py-2 px-4">Social Media Kit</TabsTrigger>
             </TabsList>
           </div>
+
+          {/* Logo Section */}
+          <TabsContent value="logo" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Logo Construction</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Our logo is built on geometric precision. The primary mark should always be used with sufficient clear space.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Primary Mark</CardTitle>
+                  <CardDescription>Use on dark backgrounds (Preferred)</CardDescription>
+                </CardHeader>
+                <CardContent className="flex items-center justify-center p-12 bg-black rounded-lg border border-border">
+                  <img src="/logo.png" alt="Applecore Logo" className="w-64 h-auto" />
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Clear Space</CardTitle>
+                  <CardDescription>Minimum padding required around the logo</CardDescription>
+                </CardHeader>
+                <CardContent className="flex items-center justify-center p-12 bg-muted/50 rounded-lg border border-border border-dashed">
+                  <div className="relative p-8 border border-primary/20 bg-background/50">
+                    <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-primary"></div>
+                    <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-primary"></div>
+                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-primary"></div>
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-primary"></div>
+                    <img src="/logo.png" alt="Applecore Logo" className="w-48 h-auto opacity-80" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          {/* Colors Section */}
+          <TabsContent value="colors" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Color Palette</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Our colors are designed for high contrast and digital-first applications.
+              </p>
+            </div>
+            <div className="grid gap-8">
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">Primary Colors</h3>
+                <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+                  {[
+                    { name: "Pale Lime", hex: "#E0FF98", class: "bg-[#E0FF98] text-black" },
+                    { name: "Deep Purple", hex: "#510F66", class: "bg-[#510F66] text-white" },
+                    { name: "Black", hex: "#000000", class: "bg-black text-white border border-white/10" },
+                    { name: "Off White", hex: "#F4EFEC", class: "bg-[#F4EFEC] text-black" },
+                  ].map((color) => (
+                    <div key={color.name} className="group relative overflow-hidden rounded-xl border border-border">
+                      <div className={`h-32 ${color.class} flex items-center justify-center`}>
+                        <span className="font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                          Aa
+                        </span>
+                      </div>
+                      <div className="p-4 bg-card">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="font-semibold">{color.name}</p>
+                            <p className="text-sm text-muted-foreground">{color.hex}</p>
+                          </div>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                            onClick={() => copyToClipboard(color.hex, color.hex)}
+                          >
+                            {copied === color.hex ? (
+                              <Check className="h-4 w-4" />
+                            ) : (
+                              <Copy className="h-4 w-4" />
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">Secondary Colors</h3>
+                <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+                  {[
+                    { name: "Ice Blue", hex: "#D2F3F6", class: "bg-[#D2F3F6] text-black" },
+                    { name: "Lavender", hex: "#DED9FF", class: "bg-[#DED9FF] text-black" },
+                    { name: "Peach", hex: "#FFDDC4", class: "bg-[#FFDDC4] text-black" },
+                    { name: "Cream", hex: "#F8FFDC", class: "bg-[#F8FFDC] text-black" },
+                  ].map((color) => (
+                    <div key={color.name} className="group relative overflow-hidden rounded-xl border border-border">
+                      <div className={`h-32 ${color.class} flex items-center justify-center`}>
+                        <span className="font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                          Aa
+                        </span>
+                      </div>
+                      <div className="p-4 bg-card">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="font-semibold">{color.name}</p>
+                            <p className="text-sm text-muted-foreground">{color.hex}</p>
+                          </div>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                            onClick={() => copyToClipboard(color.hex, color.hex)}
+                          >
+                            {copied === color.hex ? (
+                              <Check className="h-4 w-4" />
+                            ) : (
+                              <Copy className="h-4 w-4" />
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* Typography Section */}
+          <TabsContent value="typography" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Typography</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                We use Switzer for its clean, modern geometry. It works perfectly for both display and body text.
+              </p>
+            </div>
+            <div className="grid gap-8 lg:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Headings</CardTitle>
+                  <CardDescription>Switzer Bold / Semibold</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">H1 - Display</p>
+                    <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+                      Market Clarity
+                    </h1>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">H2 - Section</p>
+                    <h2 className="text-3xl font-semibold tracking-tight">
+                      The Future of Trading
+                    </h2>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">H3 - Subsection</p>
+                    <h3 className="text-2xl font-semibold tracking-tight">
+                      Data Analysis
+                    </h3>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Body & UI</CardTitle>
+                  <CardDescription>Switzer Regular / Medium</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">Body Large</p>
+                    <p className="text-lg leading-7">
+                      Trading is not about predicting the future. It's about managing risk and understanding probability in the present moment.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">Body Regular</p>
+                    <p className="leading-7">
+                      Our platform provides the tools you need to make informed decisions. We strip away the noise and focus on the signal.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-muted-foreground">UI Label</p>
+                    <div className="flex gap-4">
+                      <Button>Primary Action</Button>
+                      <Button variant="secondary">Secondary</Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          {/* Data Viz Section */}
+          <TabsContent value="dataviz" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Data Visualization</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Charts should be clean, minimal, and focused on the data. Use our primary colors for accents.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              <Card className="col-span-2">
+                <CardHeader>
+                  <CardTitle>Chart Styling</CardTitle>
+                  <CardDescription>Example of a trading chart using our palette</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-[21/9] w-full bg-black rounded-lg border border-border p-6 relative overflow-hidden">
+                    {/* Grid lines */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]" />
+                    
+                    {/* Chart Line */}
+                    <svg className="w-full h-full relative z-10" viewBox="0 0 1000 400" preserveAspectRatio="none">
+                      <path
+                        d="M0,300 C100,280 200,350 300,200 C400,50 500,150 600,100 C700,50 800,120 1000,80"
+                        fill="none"
+                        stroke="#E0FF98"
+                        strokeWidth="3"
+                        className="drop-shadow-[0_0_10px_rgba(224,255,152,0.5)]"
+                      />
+                      <path
+                        d="M0,300 C100,280 200,350 300,200 C400,50 500,150 600,100 C700,50 800,120 1000,80 L1000,400 L0,400 Z"
+                        fill="url(#gradient)"
+                        opacity="0.2"
+                      />
+                      <defs>
+                        <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="#E0FF98" />
+                          <stop offset="100%" stopColor="transparent" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+
+                    {/* Data Points */}
+                    <div className="absolute top-[25%] left-[60%] w-3 h-3 bg-[#E0FF98] rounded-full shadow-[0_0_15px_#E0FF98]" />
+                    <div className="absolute top-[20%] left-[60%] px-3 py-1 bg-[#1a1a1a] border border-[#E0FF98]/30 rounded text-xs text-[#E0FF98] font-mono">
+                      $42,590.00
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          {/* Candlestick Patterns Section */}
+          <TabsContent value="candlesticks" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Candlestick Patterns</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                We reject the traditional Red/Green dichotomy. Our financial data uses a specialized "Cyber-Industrial" palette to reduce emotional trading and enhance clarity.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Bullish Candle Definition */}
+              <Card className="bg-black border-border overflow-hidden">
+                <CardHeader className="border-b border-white/10 bg-white/5">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-white flex items-center gap-2">
+                      <TrendingUp className="text-[#E0FF98]" /> Bullish Candle
+                    </CardTitle>
+                    <span className="px-2 py-1 rounded text-xs font-mono bg-[#E0FF98]/20 text-[#E0FF98] border border-[#E0FF98]/30">
+                      #E0FF98
+                    </span>
+                  </div>
+                  <CardDescription className="text-gray-400">
+                    Represents upward price movement. Filled or hollow body with Pale Lime stroke.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="p-12 flex items-center justify-center relative">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:20px_20px]" />
+                  
+                  {/* Bullish Candle Visual */}
+                  <div className="relative flex flex-col items-center group">
+                    <div className="w-[2px] h-12 bg-[#E0FF98]/50"></div>
+                    <div className="w-8 h-24 bg-[#E0FF98]/10 border-2 border-[#E0FF98] shadow-[0_0_15px_rgba(224,255,152,0.3)] group-hover:shadow-[0_0_25px_rgba(224,255,152,0.5)] transition-shadow"></div>
+                    <div className="w-[2px] h-12 bg-[#E0FF98]/50"></div>
+                    
+                    {/* Labels */}
+                    <div className="absolute -right-24 top-0 text-xs text-gray-500 font-mono">High</div>
+                    <div className="absolute -right-24 top-12 text-xs text-gray-500 font-mono">Close</div>
+                    <div className="absolute -right-24 bottom-12 text-xs text-gray-500 font-mono">Open</div>
+                    <div className="absolute -right-24 bottom-0 text-xs text-gray-500 font-mono">Low</div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Bearish Candle Definition */}
+              <Card className="bg-black border-border overflow-hidden">
+                <CardHeader className="border-b border-white/10 bg-white/5">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-white flex items-center gap-2">
+                      <TrendingDown className="text-[#510F66]" /> Bearish Candle
+                    </CardTitle>
+                    <span className="px-2 py-1 rounded text-xs font-mono bg-[#510F66]/20 text-[#DED9FF] border border-[#510F66]/50">
+                      #510F66
+                    </span>
+                  </div>
+                  <CardDescription className="text-gray-400">
+                    Represents downward price movement. Solid Deep Purple body with Lavender stroke.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="p-12 flex items-center justify-center relative">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:20px_20px]" />
+                  
+                  {/* Bearish Candle Visual */}
+                  <div className="relative flex flex-col items-center group">
+                    <div className="w-[2px] h-12 bg-[#DED9FF]/50"></div>
+                    <div className="w-8 h-24 bg-[#510F66] border-2 border-[#DED9FF] shadow-[0_0_15px_rgba(81,15,102,0.5)] group-hover:shadow-[0_0_25px_rgba(81,15,102,0.8)] transition-shadow"></div>
+                    <div className="w-[2px] h-12 bg-[#DED9FF]/50"></div>
+
+                    {/* Labels */}
+                    <div className="absolute -left-24 top-0 text-xs text-gray-500 font-mono text-right w-20">High</div>
+                    <div className="absolute -left-24 top-12 text-xs text-gray-500 font-mono text-right w-20">Open</div>
+                    <div className="absolute -left-24 bottom-12 text-xs text-gray-500 font-mono text-right w-20">Close</div>
+                    <div className="absolute -left-24 bottom-0 text-xs text-gray-500 font-mono text-right w-20">Low</div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Chart Example */}
+              <Card className="col-span-2 bg-black border-border">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BarChart2 className="w-5 h-5 text-white" /> Live Chart Application
+                  </CardTitle>
+                  <CardDescription>
+                    How these patterns interact in a live trading environment. Note the lack of "alarmist" red colors.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="aspect-[21/9] w-full bg-[#050505] rounded-lg border border-white/10 relative overflow-hidden p-8 flex items-end justify-around gap-2">
+                    {/* Grid */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:30px_30px]" />
+                    
+                    {/* Random Candles Generation for Demo */}
+                    {[
+                      { h: 16, type: 'bull' }, { h: 24, type: 'bull' }, { h: 12, type: 'bear' }, 
+                      { h: 32, type: 'bull' }, { h: 40, type: 'bull' }, { h: 20, type: 'bear' },
+                      { h: 16, type: 'bear' }, { h: 28, type: 'bull' }, { h: 48, type: 'bull' },
+                      { h: 36, type: 'bear' }, { h: 24, type: 'bear' }, { h: 12, type: 'bull' },
+                      { h: 32, type: 'bull' }, { h: 56, type: 'bull' }, { h: 40, type: 'bear' }
+                    ].map((candle, i) => (
+                      <div key={i} className="flex flex-col items-center justify-end h-full w-full relative group">
+                        {/* Wick */}
+                        <div className={`w-[1px] absolute ${candle.type === 'bull' ? 'bg-[#E0FF98]/50' : 'bg-[#DED9FF]/50'}`} 
+                             style={{ height: `${candle.h * 4 + 20}px`, bottom: '10px' }}></div>
+                        {/* Body */}
+                        <div 
+                          className={`w-full max-w-[20px] rounded-sm border ${
+                            candle.type === 'bull' 
+                              ? 'bg-[#E0FF98]/10 border-[#E0FF98] shadow-[0_0_10px_rgba(224,255,152,0.1)]' 
+                              : 'bg-[#510F66] border-[#DED9FF]'
+                          }`}
+                          style={{ height: `${candle.h * 3}px`, marginBottom: `${candle.type === 'bull' ? 20 + Math.random()*20 : 20 + Math.random()*40}px` }}
+                        ></div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
+          {/* Components Section */}
+          <TabsContent value="components" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">UI Components</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Our components are built on shadcn/ui but customized to fit our brand aesthetic.
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Buttons</CardTitle>
+                  <CardDescription>Primary, Secondary, and Outline variants</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex flex-wrap gap-4">
+                    <Button>Primary Button</Button>
+                    <Button variant="secondary">Secondary Button</Button>
+                    <Button variant="outline">Outline Button</Button>
+                    <Button variant="ghost">Ghost Button</Button>
+                    <Button variant="link">Link Button</Button>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Cards</CardTitle>
+                  <CardDescription>Container style for content</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Card className="bg-muted/50">
+                    <CardHeader>
+                      <CardTitle>Card Title</CardTitle>
+                      <CardDescription>Card Description</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      This is a card component used to group related content.
+                    </CardContent>
+                  </Card>
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
 
           {/* Social Media Kit Section */}
           <TabsContent value="social" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -176,21 +585,24 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* LinkedIn Carousel */}
+              {/* LinkedIn Carousel Slide */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-blue-500"></span> LinkedIn Carousel
                 </h3>
-                <div className="aspect-square bg-white rounded-xl border border-gray-200 relative overflow-hidden group">
-                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                    <img src="/logo.png" className="h-6 w-auto filter invert" />
-                    <div>
-                      <h4 className="text-4xl font-bold text-black mb-4 tracking-tighter">The 3 Pillars<br/>of Institutional<br/>Edge.</h4>
-                      <p className="text-gray-600 font-medium">A breakdown for serious traders.</p>
+                <div className="aspect-square bg-[#F4EFEC] rounded-xl border border-black/10 relative overflow-hidden group text-black">
+                  <div className="absolute inset-0 flex flex-col p-8">
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="w-8 h-8 bg-black rounded-full"></div>
+                      <span className="text-4xl font-serif opacity-20">01</span>
                     </div>
-                    <div className="flex justify-between items-end">
-                      <span className="text-sm font-mono text-gray-400">01 / 05</span>
-                      <ArrowRight className="h-6 w-6 text-black" />
+                    <h4 className="text-3xl font-bold mb-4 leading-tight">The Psychology of the "Dip"</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Most traders panic when they see red. Smart money sees a discount. Here is how to tell the difference...
+                    </p>
+                    <div className="mt-auto flex justify-between items-center border-t border-black/10 pt-4">
+                      <span className="text-xs font-bold">APPLECORE</span>
+                      <ArrowRight className="h-4 w-4" />
                     </div>
                   </div>
                   {/* Hover Overlay */}
@@ -202,1017 +614,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
-            <div className="p-8 rounded-2xl bg-muted/30 border border-border">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <h3 className="text-xl font-bold">Content Pillars</h3>
-                  <p className="text-muted-foreground">The 3 themes that drive our social strategy.</p>
-                </div>
-                <Button>Download Full Strategy PDF</Button>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="p-4 bg-background rounded-lg border border-border">
-                  <div className="text-xs font-mono text-primary mb-2">PILLAR 01</div>
-                  <div className="font-bold mb-1">Pain Agitation</div>
-                  <p className="text-sm text-muted-foreground">"Stop losing money like an amateur."</p>
-                </div>
-                <div className="p-4 bg-background rounded-lg border border-border">
-                  <div className="text-xs font-mono text-primary mb-2">PILLAR 02</div>
-                  <div className="font-bold mb-1">Authority by Math</div>
-                  <p className="text-sm text-muted-foreground">"Here is the data, not the hype."</p>
-                </div>
-                <div className="p-4 bg-background rounded-lg border border-border">
-                  <div className="text-xs font-mono text-primary mb-2">PILLAR 03</div>
-                  <div className="font-bold mb-1">Lifestyle of Freedom</div>
-                  <p className="text-sm text-muted-foreground">"Discipline buys you time."</p>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Logo Section */}
-          <TabsContent value="logo" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">The Logo</h2>
-              <p className="text-muted-foreground max-w-2xl">
-                Our logo is the cornerstone of our brand. It represents growth, precision, and the core of our technology.
-                Always use the provided assets and maintain clear space.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              <Card className="overflow-hidden border-border/50 bg-background/50 backdrop-blur">
-                <CardHeader>
-                  <CardTitle>Primary Logo</CardTitle>
-                  <CardDescription>Used on dark backgrounds (Default)</CardDescription>
-                </CardHeader>
-                <CardContent className="flex aspect-video items-center justify-center bg-[#121212] p-8">
-                  <img src="/logo.png" alt="Applecore Logo" className="w-3/4 h-auto" />
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-border/50 bg-background/50 backdrop-blur">
-                <CardHeader>
-                  <CardTitle>Monochrome</CardTitle>
-                  <CardDescription>Used for single-color applications</CardDescription>
-                </CardHeader>
-                <CardContent className="flex aspect-video items-center justify-center bg-white p-8">
-                  <img src="/logo.png" alt="Applecore Logo" className="w-3/4 h-auto brightness-0" />
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold">Construction & Clear Space</h3>
-              <div className="grid gap-8 md:grid-cols-3">
-                <div className="col-span-2 rounded-xl border border-border bg-muted/20 p-8 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:20px_20px]" />
-                  <div className="relative flex items-center justify-center h-full min-h-[300px]">
-                    <div className="relative">
-                      {/* Clear space indicators */}
-                      <div className="absolute -inset-8 border border-dashed border-primary/50 bg-primary/5" />
-                      <div className="relative z-10 w-64">
-                        <img src="/logo.png" alt="Applecore Logo" className="w-full h-auto" />
-                      </div>
-                      {/* Measurement lines */}
-                      <div className="absolute -right-8 top-0 bottom-0 w-px bg-primary/50" />
-                      <div className="absolute -left-8 top-0 bottom-0 w-px bg-primary/50" />
-                      <div className="absolute left-0 right-0 -top-8 h-px bg-primary/50" />
-                      <div className="absolute left-0 right-0 -bottom-8 h-px bg-primary/50" />
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="p-4 rounded-lg border border-destructive/50 bg-destructive/10">
-                    <h4 className="font-bold text-destructive mb-2">Don't</h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                      <li>Stretch or distort</li>
-                      <li>Change colors</li>
-                      <li>Add drop shadows</li>
-                      <li>Rotate</li>
-                    </ul>
-                  </div>
-                  <div className="p-4 rounded-lg border border-primary/50 bg-primary/10">
-                    <h4 className="font-bold text-primary mb-2">Do</h4>
-                    <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                      <li>Maintain clear space</li>
-                      <li>Use high-contrast backgrounds</li>
-                      <li>Scale proportionally</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Colors Section */}
-          <TabsContent value="colors" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">Color Palette</h2>
-              <p className="text-muted-foreground max-w-2xl">
-                Our colors are electric, high-contrast, and designed for dark mode first. 
-                The primary Lime Green represents energy and profit, while the Magenta adds depth and modernity.
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              {/* Primary Colors */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Primary Colors</h3>
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#510F66] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Deep Purple</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Primary</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#510F66</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#510F66", "p1")}>
-                          {copied === "p1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#E0FF98] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Pale Lime</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Primary</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#E0FF98</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#E0FF98", "p2")}>
-                          {copied === "p2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Neutral Colors */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Neutral Colors</h3>
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#FFFFFF] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">White</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#FFFFFF</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#FFFFFF", "n1")}>
-                          {copied === "n1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#F4EFEC] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Off White</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#F4EFEC</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#F4EFEC", "n2")}>
-                          {copied === "n2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#000000] shadow-lg ring-1 ring-inset ring-white/20 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Black</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#000000</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#000000", "n3")}>
-                          {copied === "n3" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#1E1E1E] shadow-lg ring-1 ring-inset ring-white/20 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Dark Grey</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#1E1E1E</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#1E1E1E", "n4")}>
-                          {copied === "n4" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Secondary Colors */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Secondary Colors</h3>
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#D2F3F6] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Ice Blue</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#D2F3F6</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#D2F3F6", "s1")}>
-                          {copied === "s1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#DED9FF] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Lavender</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#DED9FF</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#DED9FF", "s2")}>
-                          {copied === "s2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#FFDDC4] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Peach</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#FFDDC4</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#FFDDC4", "s3")}>
-                          {copied === "s3" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group space-y-3">
-                    <div className="aspect-[4/3] rounded-xl bg-[#F8FFDC] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                    <div className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold">Cream</h3>
-                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#F8FFDC</code>
-                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#F8FFDC", "s4")}>
-                          {copied === "s4" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-border bg-card p-8">
-              <h3 className="mb-6 text-xl font-semibold">Gradients</h3>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="h-24 rounded-lg bg-gradient-to-r from-primary to-secondary" />
-                <div className="h-24 rounded-lg bg-gradient-to-br from-secondary/20 via-background to-primary/20" />
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Typography Section */}
-          <TabsContent value="typography" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">Typography</h2>
-              <p className="text-muted-foreground max-w-2xl">
-                We use <span className="text-foreground font-semibold">Switzer</span> as our primary typeface. 
-                It's a neo-grotesque sans-serif that balances technical precision with human warmth.
-              </p>
-            </div>
-
-            <div className="grid gap-12 lg:grid-cols-2">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <span className="text-sm text-muted-foreground">Type Scale</span>
-                  <div className="space-y-6">
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[256px] leading-none font-bold">H1</span>
-                      <span className="font-mono text-sm text-muted-foreground">256px</span>
-                    </div>
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[88px] leading-none font-bold">H2</span>
-                      <span className="font-mono text-sm text-muted-foreground">88px</span>
-                    </div>
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[56px] leading-none font-bold">H3</span>
-                      <span className="font-mono text-sm text-muted-foreground">56px</span>
-                    </div>
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[40px] leading-none font-bold">H4</span>
-                      <span className="font-mono text-sm text-muted-foreground">40px</span>
-                    </div>
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[24px] leading-none font-bold">H5</span>
-                      <span className="font-mono text-sm text-muted-foreground">24px</span>
-                    </div>
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[18px] leading-none">Body 1</span>
-                      <span className="font-mono text-sm text-muted-foreground">18px</span>
-                    </div>
-                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
-                      <span className="text-[16px] leading-none">Body 2 / Label</span>
-                      <span className="font-mono text-sm text-muted-foreground">16px</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-6 rounded-xl border border-border bg-card p-8">
-                <div className="space-y-2">
-                  <h1 className="text-4xl font-black tracking-tighter lg:text-5xl">
-                    Trader Test!
-                  </h1>
-                  <p className="text-xl text-muted-foreground">
-                    Explore / Learn / Manage
-                  </p>
-                </div>
-                <Separator />
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-bold text-primary">Resources</h3>
-                  <p className="leading-relaxed text-muted-foreground">
-                    Lorem ipsum dolor sit amet consectetur. Convallis accumsan. 
-                    Our typography system ensures that content is always legible, 
-                    hierarchical, and impactful.
-                  </p>
-                  <Button variant="link" className="p-0 h-auto font-semibold text-white hover:text-primary">
-                    Explore <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          {/* Data Visualization Section */}
-          <TabsContent value="dataviz" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">Data Visualization</h2>
-              <p className="text-muted-foreground max-w-2xl">
-                Trading is about data. Our visualization style is precise, minimal, and high-contrast.
-                We use thin lines, glowing accents, and stylized candlestick patterns.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2">
-              <Card className="overflow-hidden border-border/50 bg-[#0A0A0A]">
-                <CardHeader>
-                  <CardTitle>Market Trends</CardTitle>
-                  <CardDescription>Line charts with gradient fills</CardDescription>
-                </CardHeader>
-                <CardContent className="p-8">
-                  <div className="relative h-48 w-full">
-                    {/* Stylized Chart */}
-                    <svg viewBox="0 0 100 40" className="h-full w-full overflow-visible">
-                      <defs>
-                        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="var(--secondary)" stopOpacity="0.5" />
-                          <stop offset="100%" stopColor="var(--secondary)" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <path
-                        d="M0 35 C 10 35, 15 25, 25 28 C 35 31, 40 15, 50 20 C 60 25, 65 10, 75 15 C 85 20, 90 5, 100 2"
-                        fill="url(#chartGradient)"
-                        stroke="var(--secondary)"
-                        strokeWidth="0.5"
-                      />
-                      {/* Data Points */}
-                      <circle cx="50" cy="20" r="1" fill="var(--primary)" className="animate-pulse" />
-                      <circle cx="75" cy="15" r="1" fill="white" />
-                      <circle cx="100" cy="2" r="1.5" fill="var(--primary)" />
-                    </svg>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden border-border/50 bg-[#0A0A0A]">
-                <CardHeader>
-                  <CardTitle>Candlestick Patterns</CardTitle>
-                  <CardDescription>Stylized financial data representation</CardDescription>
-                </CardHeader>
-                <CardContent className="p-8 flex items-end justify-between gap-2 h-64">
-                  {/* Stylized Candlesticks */}
-                  {[40, 60, 45, 70, 55, 80, 65, 90, 75, 100].map((h, i) => (
-                    <div key={i} className="relative w-full flex flex-col items-center justify-end group">
-                      <div 
-                        className={`w-1.5 rounded-sm transition-all duration-500 group-hover:w-2 ${i % 2 === 0 ? 'bg-primary shadow-[0_0_10px_rgba(204,255,0,0.3)]' : 'bg-secondary shadow-[0_0_10px_rgba(139,92,246,0.3)]'}`}
-                        style={{ height: `${h}%` }}
-                      />
-                      <div className="absolute bottom-0 w-[1px] h-full bg-white/10 -z-10" />
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* Components Section */}
-          <TabsContent value="ads" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">Ad Templates</h2>
-              <p className="max-w-[600px] text-lg text-muted-foreground">
-                Ready-to-use marketing assets optimized for conversion.
-              </p>
-            </div>
-
-            <div className="grid gap-8 lg:grid-cols-3">
-              {/* Instagram Story Template */}
-              <div className="space-y-4">
-                <div className="relative aspect-[9/16] overflow-hidden rounded-xl border border-border bg-black">
-                  {/* Background */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-secondary)_0%,_transparent_70%)] opacity-20"></div>
-                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,_transparent_0%,_#000_100%)]"></div>
-                  
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-between p-8">
-                    <div className="flex justify-center">
-                      <img src="/logo.png" alt="Applecore" className="h-8 opacity-80" />
-                    </div>
-                    
-                    <div className="space-y-6 text-center">
-                      <div className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-1 text-sm font-medium text-primary backdrop-blur-sm">
-                        Limited Offer
-                      </div>
-                      <h3 className="text-4xl font-black leading-none tracking-tighter text-white">
-                        £4.90
-                        <span className="block text-lg font-medium text-muted-foreground">First Month</span>
-                      </h3>
-                      <p className="text-sm text-gray-300">
-                        Access professional indicators, live sessions, and the full video library.
-                      </p>
-                      <div className="w-full rounded-lg bg-primary py-3 text-center font-bold text-black">
-                        Start Trial
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Instagram Story</span>
-                  <span className="text-xs text-muted-foreground">1080x1920px</span>
-                </div>
-              </div>
-
-              {/* LinkedIn Post Template */}
-              <div className="space-y-4">
-                <div className="relative aspect-square overflow-hidden rounded-xl border border-border bg-card">
-                  <div className="absolute inset-0 flex flex-col p-8">
-                    <div className="mb-auto">
-                      <img src="/logo.png" alt="Applecore" className="h-6" />
-                    </div>
-                    <div className="space-y-4">
-                      <h3 className="text-4xl font-bold leading-tight tracking-tight text-white">
-                        Don't follow trends.
-                        <br />
-                        <span className="text-secondary">Predict them.</span>
-                      </h3>
-                      <div className="h-32 w-full rounded-lg border border-border/50 bg-black/50 p-4 backdrop-blur-sm">
-                        {/* Abstract Chart */}
-                        <div className="flex h-full items-end gap-1">
-                          {[40, 65, 45, 80, 55, 90, 70, 95, 85, 100].map((h, i) => (
-                            <div 
-                              key={i} 
-                              className="flex-1 rounded-t-sm bg-secondary/80 transition-all hover:bg-secondary"
-                              style={{ height: `${h}%`, opacity: 0.5 + (i * 0.05) }}
-                            ></div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">LinkedIn / Square</span>
-                  <span className="text-xs text-muted-foreground">1080x1080px</span>
-                </div>
-              </div>
-
-              {/* Web Banner Template */}
-              <div className="space-y-4">
-                <div className="relative flex aspect-video flex-col justify-center overflow-hidden rounded-xl border border-border bg-black p-8">
-                  <div className="absolute right-0 top-0 h-full w-1/2 bg-[linear-gradient(to_left,_var(--color-primary)_0%,_transparent_100%)] opacity-10"></div>
-                  
-                  <div className="relative z-10 max-w-[60%] space-y-4">
-                    <div className="flex items-center gap-2 text-sm font-medium text-primary">
-                      <span className="flex h-2 w-2 rounded-full bg-primary"></span>
-                      Now Live
-                    </div>
-                    <h3 className="text-3xl font-bold tracking-tight text-white">
-                      One Membership.
-                      <br />
-                      Everything Included.
-                    </h3>
-                    <ul className="space-y-2 text-sm text-gray-400">
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                        Custom Indicators
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                        Video Library
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <svg className="h-4 w-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                        Private Community
-                      </li>
-                    </ul>
-                    <button className="mt-4 rounded-md bg-white px-6 py-2 text-sm font-bold text-black transition-colors hover:bg-gray-200">
-                      Join Now
-                    </button>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Web Banner</span>
-                  <span className="text-xs text-muted-foreground">1920x1080px</span>
-                </div>
-              </div>
-
-              {/* Signature Visual: Trade with Extreme Prejudice */}
-              <div className="col-span-full space-y-4 pt-8">
-                <h3 className="text-2xl font-bold tracking-tight">Signature Visual</h3>
-                <div className="relative aspect-[21/9] overflow-hidden rounded-xl border border-border bg-black">
-                  {/* Glitch/Noise Background */}
-                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black"></div>
-                  
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                    <div className="relative">
-                      <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white mix-blend-difference" style={{ textShadow: '4px 4px 0px var(--color-primary)' }}>
-                        TRADE WITH
-                        <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-pulse">EXTREME PREJUDICE</span>
-                      </h2>
-                      {/* Glitch Effect Layers */}
-                      <h2 className="absolute inset-0 text-6xl md:text-8xl font-black tracking-tighter text-secondary opacity-30 blur-sm translate-x-1 translate-y-1" aria-hidden="true">
-                        TRADE WITH
-                        <br />
-                        EXTREME PREJUDICE
-                      </h2>
-                    </div>
-                    <p className="mt-6 max-w-2xl text-lg text-gray-400 font-mono uppercase tracking-widest">
-                      Zero Bias • Zero Dogma • Raw Data
-                    </p>
-                  </div>
-                  
-                  {/* Decorative Elements */}
-                  <div className="absolute bottom-8 left-8 flex gap-4">
-                    <div className="h-1 w-12 bg-primary"></div>
-                    <div className="h-1 w-4 bg-secondary"></div>
-                  </div>
-                  <div className="absolute top-8 right-8 font-mono text-xs text-primary/50">
-                    SYS.OVERRIDE_INIT
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Brand Signature / Hero</span>
-                  <span className="text-xs text-muted-foreground">Ultrawide 21:9</span>
-                </div>
-              </div>
-
-              {/* New Ad: The Applecore Way */}
-              <div className="space-y-4">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-[#0A0A0A]">
-                  <div className="absolute inset-0 p-8 flex flex-col">
-                    <div className="flex-1 flex items-center justify-center">
-                      <div className="relative w-full aspect-square border border-primary/20 rounded-full flex items-center justify-center">
-                        <div className="absolute inset-0 border border-dashed border-primary/10 rounded-full animate-[spin_10s_linear_infinite]"></div>
-                        <div className="text-center space-y-2">
-                          <div className="text-4xl font-bold text-white">Zero</div>
-                          <div className="text-sm text-muted-foreground uppercase tracking-widest">Hype</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="space-y-4 text-center">
-                      <h3 className="text-2xl font-bold text-white">The Applecore Way</h3>
-                      <p className="text-sm text-gray-400">
-                        No paid promoters. No fake screenshots. No rented cars. Just real traders and raw data.
-                      </p>
-                      <div className="pt-4 border-t border-white/10">
-                        <span className="text-primary font-mono text-sm flex items-center justify-center gap-2">JOIN THE REVOLUTION <ArrowRight className="h-4 w-4" /></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Social / Vertical</span>
-                  <span className="text-xs text-muted-foreground">1080x1350px</span>
-                </div>
-              </div>
-
-              {/* In-Context Previews */}
-              <div className="col-span-full space-y-8 pt-8 border-t border-border">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold tracking-tight">In-Context Previews</h3>
-                  <span className="text-sm text-muted-foreground">Real-world application mockups</span>
-                </div>
-
-                <div className="grid gap-8 md:grid-cols-3">
-                  {/* Instagram Story Mockup */}
-                  <div className="relative mx-auto w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-gray-800 overflow-hidden shadow-2xl">
-                    {/* Status Bar */}
-                    <div className="absolute top-0 inset-x-0 h-8 px-6 flex items-center justify-between z-20">
-                      <span className="text-[10px] font-medium text-white">9:41</span>
-                      <div className="flex gap-1">
-                        <div className="w-3 h-3 rounded-full bg-white/20"></div>
-                        <div className="w-3 h-3 rounded-full bg-white/20"></div>
-                      </div>
-                    </div>
-                    
-                    {/* Story Progress */}
-                    <div className="absolute top-3 inset-x-2 flex gap-1 z-20">
-                      <div className="h-0.5 flex-1 bg-white/30 rounded-full overflow-hidden">
-                        <div className="h-full w-1/3 bg-white"></div>
-                      </div>
-                      <div className="h-0.5 flex-1 bg-white/30 rounded-full"></div>
-                    </div>
-
-                    {/* User Info */}
-                    <div className="absolute top-6 left-4 flex items-center gap-2 z-20">
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                        <img src="/images/logo.png" alt="Applecore" className="w-5 h-5 object-contain brightness-0 invert" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-white">applecore_trading</div>
-                        <div className="text-[10px] text-white/70">Sponsored</div>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="absolute inset-0 bg-secondary/5">
-                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[80px] rounded-full"></div>
-                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
-                      
-                      <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center">
-                        <h3 className="text-2xl font-bold text-white leading-tight mb-6">
-                          <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Acting Like An Amateur.</span>
-                          <br />
-                          <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Acting Like A Millionaire.</span>
-                        </h3>
-                        <button className="bg-primary text-black font-bold py-3 px-8 rounded-full text-sm hover:bg-primary/90 transition-colors">
-                          Start Free Trial
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Swipe Up */}
-                    <div className="absolute bottom-8 inset-x-0 flex flex-col items-center gap-1 z-20">
-                      <div className="w-4 h-4 border-t-2 border-r-2 border-white rotate-[135deg]"></div>
-                      <span className="text-xs font-bold text-white">Swipe Up</span>
-                    </div>
-                  </div>
-
-                  {/* LinkedIn Post Mockup */}
-                  <div className="col-span-2 bg-card rounded-xl border border-border overflow-hidden">
-                    {/* Header */}
-                    <div className="p-4 flex gap-3">
-                      <div className="w-12 h-12 rounded bg-primary flex items-center justify-center">
-                        <img src="/images/logo.png" alt="Applecore" className="w-8 h-8 object-contain brightness-0 invert" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-sm">Applecore Trading</div>
-                        <div className="text-xs text-muted-foreground">15,420 followers</div>
-                        <div className="text-xs text-muted-foreground flex items-center gap-1">Promoted <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground"></span> <span className="text-[10px]">🌐</span></div>
-                      </div>
-                    </div>
-
-                    {/* Text */}
-                    <div className="px-4 pb-3 text-sm space-y-2">
-                      <p>Most traders are just guessing. They follow trends that are already dead.</p>
-                      <p>At Applecore, we don't follow trends. We predict them.</p>
-                      <p className="text-primary">#Trading #FinTech #MarketAnalysis</p>
-                    </div>
-
-                    {/* Image Content */}
-                    <div className="relative aspect-video bg-black overflow-hidden">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/20 via-black to-black"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center space-y-4">
-                          <h2 className="text-3xl font-bold text-white tracking-tighter">
-                            THE <span className="text-primary">APPLECORE</span> WAY
-                          </h2>
-                          <div className="flex gap-8 justify-center text-xs font-mono text-gray-400">
-                            <span>ZERO HYPE</span>
-                            <span>•</span>
-                            <span>PURE DATA</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Action Bar */}
-                    <div className="bg-secondary/5 p-3 flex items-center justify-between border-t border-border">
-                      <div className="text-xs">
-                        <span className="font-bold">Applecore Trading Academy</span>
-                        <span className="mx-1">•</span>
-                        <span className="text-muted-foreground">applecore.com</span>
-                      </div>
-                      <button className="px-4 py-1 rounded-full border border-primary text-primary text-xs font-bold hover:bg-primary/10">
-                        Learn More
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* New Ad: Mindset Revolution (A/B Variants) */}
-              <div className="col-span-full space-y-6">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold tracking-tight">Mindset Revolution (A/B Testing)</h3>
-                  <div className="flex gap-2">
-                    <button className="rounded-md border border-border bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary hover:bg-secondary/20">
-                      Download All Variants
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="grid gap-8 md:grid-cols-3">
-                  {/* Variant A: Amateur vs Millionaire */}
-                  <div className="space-y-4">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5 group">
-                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
-                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
-                      
-                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                        <div className="space-y-2">
-                          <div className="text-xs font-mono text-secondary uppercase">Variant A</div>
-                          <h3 className="text-3xl font-bold text-white leading-tight">
-                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Acting Like An Amateur.</span>
-                            <br />
-                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Acting Like A Millionaire.</span>
-                          </h3>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <div className="flex gap-2">
-                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                              <div className="text-xs text-gray-400">Focus</div>
-                              <div className="text-lg font-bold text-white">100%</div>
-                            </div>
-                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                              <div className="text-xs text-gray-400">Emotion</div>
-                              <div className="text-lg font-bold text-white">0%</div>
-                            </div>
-                          </div>
-                          <p className="text-xs text-gray-400">
-                            Master the mindset that separates the pros from the gamblers.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">Variant A</span>
-                      <button className="text-xs text-primary hover:underline">Download .PNG</button>
-                    </div>
-                  </div>
-
-                  {/* Variant B: Gambler vs Pro */}
-                  <div className="space-y-4">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5 group">
-                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
-                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
-                      
-                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                        <div className="space-y-2">
-                          <div className="text-xs font-mono text-secondary uppercase">Variant B</div>
-                          <h3 className="text-3xl font-bold text-white leading-tight">
-                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Trading Like A Gambler.</span>
-                            <br />
-                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Trading Like A Pro.</span>
-                          </h3>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <div className="flex gap-2">
-                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                              <div className="text-xs text-gray-400">Risk</div>
-                              <div className="text-lg font-bold text-white">Managed</div>
-                            </div>
-                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                              <div className="text-xs text-gray-400">Edge</div>
-                              <div className="text-lg font-bold text-white">Defined</div>
-                            </div>
-                          </div>
-                          <p className="text-xs text-gray-400">
-                            Stop guessing. Start executing with precision.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">Variant B</span>
-                      <button className="text-xs text-primary hover:underline">Download .PNG</button>
-                    </div>
-                  </div>
-
-                  {/* Variant C: Guessing vs Knowing */}
-                  <div className="space-y-4">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5 group">
-                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
-                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
-                      
-                      <div className="absolute inset-0 p-8 flex flex-col justify-between">
-                        <div className="space-y-2">
-                          <div className="text-xs font-mono text-secondary uppercase">Variant C</div>
-                          <h3 className="text-3xl font-bold text-white leading-tight">
-                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Guessing The Market.</span>
-                            <br />
-                            <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Knowing The Moves.</span>
-                          </h3>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <div className="flex gap-2">
-                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                              <div className="text-xs text-gray-400">Bias</div>
-                              <div className="text-lg font-bold text-white">Zero</div>
-                            </div>
-                            <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
-                              <div className="text-xs text-gray-400">Clarity</div>
-                              <div className="text-lg font-bold text-white">100%</div>
-                            </div>
-                          </div>
-                          <p className="text-xs text-gray-400">
-                            See what others miss. Trade what actually happens.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-medium">Variant C</span>
-                      <button className="text-xs text-primary hover:underline">Download .PNG</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* New Ad: Education */}
-              <div className="space-y-4">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-black">
-                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-[gradient_15s_ease_infinite]"></div>
-                  
-                  <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center space-y-6">
-                    <div className="h-16 w-16 bg-white text-black rounded-full flex items-center justify-center font-bold text-2xl">
-                      &lt;5
-                    </div>
-                    <h3 className="text-3xl font-bold text-white">
-                      Less than £5
-                      <br />
-                      <span className="text-primary">to change your life.</span>
-                    </h3>
-                    <p className="text-sm text-gray-400 max-w-[200px]">
-                      Ridiculously low barrier to entry. On purpose.
-                    </p>
-                    <button className="bg-primary text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors">
-                      Start Your Journey
-                    </button>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-medium">Social / Vertical</span>
-                  <span className="text-xs text-muted-foreground">1080x1350px</span>
-                </div>
-              </div>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="components" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight">UI Components</h2>
-              <p className="text-muted-foreground max-w-2xl">
-                Our components are built to be modular, responsive, and interactive. 
-                They feature subtle gradients, sharp borders, and clear hover states.
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* Card Component */}
-              <div className="col-span-full lg:col-span-2 space-y-4">
-                <h3 className="text-lg font-semibold">Feature Cards</h3>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Card className="group relative overflow-hidden border-border/50 bg-gradient-to-br from-secondary/10 to-background transition-all hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <CardHeader>
-                      <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 text-secondary">
-                        <FileText className="h-5 w-5" />
-                      </div>
-                      <CardTitle className="text-xl text-primary">Resources</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="mb-4 text-sm text-muted-foreground">
-                        Lorem ipsum dolor sit amet consectetur. Convallis accumsan.
-                      </p>
-                      <Button variant="ghost" className="group/btn p-0 hover:bg-transparent hover:text-primary">
-                        Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="group relative overflow-hidden border-border/50 bg-gradient-to-br from-secondary/10 to-background transition-all hover:border-secondary/50 hover:shadow-lg hover:shadow-secondary/10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <CardHeader>
-                      <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/20 text-secondary">
-                        <Layout className="h-5 w-5" />
-                      </div>
-                      <CardTitle className="text-xl text-primary">Groups</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="mb-4 text-sm text-muted-foreground">
-                        Lorem ipsum dolor sit amet consectetur. Convallis accumsan.
-                      </p>
-                      <Button variant="ghost" className="group/btn p-0 hover:bg-transparent hover:text-primary">
-                        Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-
-              {/* Buttons */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Buttons</h3>
-                <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6">
-                  <Button className="rounded-full font-bold">Get Started</Button>
-                  <Button variant="secondary" className="rounded-full">Learn More</Button>
-                  <Button variant="outline" className="rounded-full">View Demo</Button>
-                  <Button variant="ghost" className="justify-start p-0 hover:bg-transparent hover:text-primary">
-                    Read Story <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-
-              {/* Pricing Card (New) */}
-              <div className="col-span-full lg:col-span-1 space-y-4">
-                <h3 className="text-lg font-semibold">Pricing Card</h3>
-                <Card className="relative overflow-hidden border-border/50 bg-gradient-to-b from-[#1A1A1A] to-background">
-                  <div className="absolute top-0 right-0 p-4">
-                    <div className="h-16 w-16 rounded-full bg-secondary/20 blur-xl" />
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Pro</CardTitle>
-                    <CardDescription>Get 2 months free</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li className="flex items-center gap-2">
-                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        Advanced Analytics
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        Exclusive Community
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
-                        Priority Support
-                      </li>
-                    </ul>
-                    <Button className="w-full rounded-full font-bold">Subscribe Now</Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
           </TabsContent>
         </Tabs>
       </main>
-
-      <footer className="border-t border-border/40 bg-muted/20 py-12">
-        <div className="container px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Applecore. All rights reserved.</p>
-          <p className="mt-2">Designed with precision for the future of trading.</p>
-        </div>
-      </footer>
     </div>
   );
 }
