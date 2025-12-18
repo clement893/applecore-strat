@@ -204,6 +204,83 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
+      {/* Competitive Matrix (Blue Ocean) */}
+      <section className="py-20 border-b border-white/10">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
+              <Crosshair className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Competitive Landscape</h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-4">The Blue Ocean Strategy</h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                The market is polarized between "Dream Sellers" (High Hype, Low Substance) and "Academic Tools" (High Substance, Low Engagement). Applecore occupies the unique space of <strong>"High Engagement + High Substance"</strong>.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-xs font-bold mt-1">X</div>
+                  <div>
+                    <strong className="text-white block">The "Lambo Gurus"</strong>
+                    <span className="text-sm text-gray-500">Sell lifestyle, churn customers in 3 months. Zero retention.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-gray-500/20 text-gray-500 flex items-center justify-center text-xs font-bold mt-1">X</div>
+                  <div>
+                    <strong className="text-white block">The "Chart Tools"</strong>
+                    <span className="text-sm text-gray-500">Sell software, no community, steep learning curve. High abandonment.</span>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center text-xs font-bold mt-1">✓</div>
+                  <div>
+                    <strong className="text-white block">Applecore Position</strong>
+                    <span className="text-sm text-gray-500">Sells identity transformation. High retention, high LTV, viral loyalty.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Visual Matrix */}
+            <div className="relative aspect-square bg-black/50 rounded-2xl border border-white/10 p-8">
+              {/* Axis Labels */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs font-mono text-gray-500 uppercase">High Emotion / Hype</div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs font-mono text-gray-500 uppercase">Low Emotion / Dry</div>
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 text-xs font-mono text-gray-500 uppercase">Low Substance</div>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-xs font-mono text-gray-500 uppercase">High Substance</div>
+
+              {/* Grid Lines */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full h-px bg-white/10"></div>
+                <div className="h-full w-px bg-white/10 absolute"></div>
+              </div>
+
+              {/* Competitors */}
+              <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 text-center">
+                <div className="w-3 h-3 bg-red-500 rounded-full mx-auto mb-2 animate-pulse"></div>
+                <span className="text-xs text-red-500 font-bold">Gurus</span>
+              </div>
+              <div className="absolute bottom-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 text-center">
+                <div className="w-3 h-3 bg-gray-500 rounded-full mx-auto mb-2"></div>
+                <span className="text-xs text-gray-500 font-bold">SaaS Tools</span>
+              </div>
+
+              {/* Applecore */}
+              <div className="absolute top-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 text-center">
+                <div className="w-6 h-6 bg-primary rounded-full mx-auto mb-2 shadow-[0_0_20px_rgba(34,197,94,0.5)] flex items-center justify-center">
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
+                </div>
+                <span className="text-sm text-primary font-bold bg-black/80 px-2 py-1 rounded border border-primary/20">APPLECORE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Acquisition Funnel */}
       <section className="py-20">
         <div className="container">
@@ -288,6 +365,89 @@ export default function DigitalStrategy() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 90-Day Attack Plan */}
+      <section className="py-20 border-b border-white/10 bg-black/50">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-red-500/10 flex items-center justify-center text-red-500">
+              <Zap className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">90-Day Attack Plan</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="relative p-8 border-l-2 border-white/10 hover:border-primary transition-colors">
+              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-black border-2 border-white/20"></div>
+              <div className="text-xs font-mono text-gray-500 mb-2">MONTH 1</div>
+              <h3 className="text-xl font-bold text-white mb-4">Infiltration</h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li>• Launch "Stop Acting Like An Amateur" video campaign (TikTok/Reels)</li>
+                <li>• Seed "Horror Stories" content in Reddit/Discord communities</li>
+                <li>• Release free "Psychology Audit" tool to capture leads</li>
+              </ul>
+            </div>
+            <div className="relative p-8 border-l-2 border-white/10 hover:border-primary transition-colors">
+              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-black border-2 border-white/20"></div>
+              <div className="text-xs font-mono text-gray-500 mb-2">MONTH 2</div>
+              <h3 className="text-xl font-bold text-white mb-4">Indoctrination</h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li>• Retarget video viewers with "Deep Dive" educational content</li>
+                <li>• Host weekly "Live Trading Psychology" sessions (No charts, just mindset)</li>
+                <li>• Open applications for "Alpha Cohort" (Scarcity play)</li>
+              </ul>
+            </div>
+            <div className="relative p-8 border-l-2 border-white/10 hover:border-primary transition-colors">
+              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-black border-2 border-white/20"></div>
+              <div className="text-xs font-mono text-gray-500 mb-2">MONTH 3</div>
+              <h3 className="text-xl font-bold text-white mb-4">Monetization</h3>
+              <ul className="space-y-3 text-sm text-gray-400">
+                <li>• Close "Alpha Cohort" and launch paid membership</li>
+                <li>• Activate affiliate program for successful students only ("The 1%")</li>
+                <li>• Scale ad spend on winning creative variants</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unit Economics */}
+      <section className="py-20">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-green-500/10 flex items-center justify-center text-green-500">
+              <BarChart3 className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Projected Unit Economics</h2>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="p-6 rounded-xl bg-card border border-white/10">
+              <div className="text-sm text-gray-500 mb-1">Target CAC</div>
+              <div className="text-3xl font-bold text-white">$45.00</div>
+              <div className="text-xs text-green-500 mt-2">Based on organic reach</div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-white/10">
+              <div className="text-sm text-gray-500 mb-1">Average Order Value</div>
+              <div className="text-3xl font-bold text-white">$297.00</div>
+              <div className="text-xs text-gray-400 mt-2">Initial Course Access</div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-white/10">
+              <div className="text-sm text-gray-500 mb-1">Lifetime Value (LTV)</div>
+              <div className="text-3xl font-bold text-white">$850.00</div>
+              <div className="text-xs text-gray-400 mt-2">Includes Upsells/Sub</div>
+            </div>
+            <div className="p-6 rounded-xl bg-primary/10 border border-primary/20">
+              <div className="text-sm text-primary mb-1">LTV:CAC Ratio</div>
+              <div className="text-3xl font-bold text-white">18.8x</div>
+              <div className="text-xs text-primary mt-2">Highly Profitable</div>
+            </div>
+          </div>
+          <p className="mt-6 text-sm text-gray-500 italic text-center">
+            *Projections based on industry benchmarks for high-ticket educational products with strong community retention.
+          </p>
         </div>
       </section>
 
