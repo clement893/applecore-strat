@@ -1,16 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowLeft, Mail, Copy, Check } from "lucide-react";
+import { ArrowLeft, Mail, Copy, Check, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 export default function EmailStrategy() {
   const [location] = useLocation();
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [expandedEmails, setExpandedEmails] = useState<Record<string, boolean>>({});
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const toggleEmail = (id: string) => {
+    setExpandedEmails(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   const sequences = [
@@ -301,39 +310,66 @@ See you inside?
                 </div>
               </div>
 
-              <div className="space-y-8">
-                {seq.emails.map((email, idx) => (
-                  <div key={idx} className="bg-card border border-white/5 rounded-xl overflow-hidden">
-                    <div className="bg-white/5 px-6 py-3 flex items-center justify-between border-b border-white/5">
-                      <span className="font-mono text-sm text-primary font-bold">{email.day}</span>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-gray-400 hover:text-white h-8"
-                        onClick={() => copyToClipboard(email.subject + "\n\n" + email.body, `${seq.id}-${idx}`)}
+              <div className="space-y-4">
+                {seq.emails.map((email, idx) => {
+                  const emailId = `${seq.id}-${idx}`;
+                  const isExpanded = expandedEmails[emailId];
+
+                  return (
+                    <div key={idx} className="bg-card border border-white/5 rounded-xl overflow-hidden transition-all duration-200 hover:border-white/10">
+                      <div 
+                        className="bg-white/5 px-6 py-4 flex items-center justify-between cursor-pointer select-none"
+                        onClick={() => toggleEmail(emailId)}
                       >
-                        {copiedId === `${seq.id}-${idx}` ? (
-                          <Check className="h-4 w-4 mr-2 text-green-500" />
-                        ) : (
-                          <Copy className="h-4 w-4 mr-2" />
-                        )}
-                        Copy Script
-                      </Button>
-                    </div>
-                    <div className="p-6 space-y-4">
-                      <div>
-                        <span className="text-xs uppercase tracking-wider text-gray-500 font-bold">Subject Line</span>
-                        <p className="text-white font-medium mt-1">{email.subject}</p>
+                        <div className="flex items-center gap-4">
+                          <span className="font-mono text-sm text-primary font-bold w-24">{email.day}</span>
+                          <span className="text-white font-medium">{email.subject}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="text-gray-400 hover:text-white h-8"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              copyToClipboard(email.subject + "\n\n" + email.body, emailId);
+                            }}
+                          >
+                            {copiedId === emailId ? (
+                              <Check className="h-4 w-4 mr-2 text-green-500" />
+                            ) : (
+                              <Copy className="h-4 w-4 mr-2" />
+                            )}
+                            Copy
+                          </Button>
+                          {isExpanded ? (
+                            <ChevronUp className="h-5 w-5 text-gray-400" />
+                          ) : (
+                            <ChevronDown className="h-5 w-5 text-gray-400" />
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <span className="text-xs uppercase tracking-wider text-gray-500 font-bold">Email Body</span>
-                        <div className="mt-2 text-gray-300 whitespace-pre-line font-mono text-sm leading-relaxed bg-black/20 p-4 rounded border border-white/5">
-                          {email.body}
+                      
+                      <div className={cn(
+                        "grid transition-all duration-200 ease-in-out",
+                        isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      )}>
+                        <div className="overflow-hidden">
+                          <div className="p-6 border-t border-white/5 bg-black/20">
+                            <div className="space-y-4">
+                              <div>
+                                <span className="text-xs uppercase tracking-wider text-gray-500 font-bold">Email Body</span>
+                                <div className="mt-2 text-gray-300 whitespace-pre-line font-mono text-sm leading-relaxed bg-black/20 p-4 rounded border border-white/5">
+                                  {email.body}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           ))}
