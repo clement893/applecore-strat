@@ -282,8 +282,8 @@ export default function Home() {
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tight">Typography</h2>
               <p className="text-muted-foreground max-w-2xl">
-                We use Inter for its clean, modern aesthetic and excellent readability. 
-                Headings are bold and tight, while body text is open and legible.
+                We use <span className="text-foreground font-semibold">Switzer</span> as our primary typeface. 
+                It's a neo-grotesque sans-serif that balances technical precision with human warmth.
               </p>
             </div>
 
@@ -291,14 +291,14 @@ export default function Home() {
               <div className="space-y-8">
                 <div className="space-y-2">
                   <span className="text-sm text-muted-foreground">Display / Headings</span>
-                  <div className="text-6xl font-black tracking-tighter">Inter Black</div>
-                  <div className="text-4xl font-bold tracking-tight">Inter Bold</div>
+                  <div className="text-6xl font-black tracking-tighter">Switzer Black</div>
+                  <div className="text-4xl font-bold tracking-tight">Switzer Bold</div>
                 </div>
                 <div className="space-y-2">
                   <span className="text-sm text-muted-foreground">Body / UI</span>
-                  <div className="text-2xl font-medium">Inter Medium</div>
-                  <div className="text-xl font-normal">Inter Regular</div>
-                  <div className="text-lg font-light">Inter Light</div>
+                  <div className="text-2xl font-medium">Switzer Medium</div>
+                  <div className="text-xl font-normal">Switzer Regular</div>
+                  <div className="text-lg font-light">Switzer Light</div>
                 </div>
                 <div className="space-y-2">
                   <span className="text-sm text-muted-foreground">Monospace / Data</span>
