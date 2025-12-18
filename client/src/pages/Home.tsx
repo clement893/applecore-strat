@@ -617,6 +617,146 @@ export default function Home() {
                   <span className="text-xs text-muted-foreground">1920x1080px</span>
                 </div>
               </div>
+
+              {/* Signature Visual: Trade with Extreme Prejudice */}
+              <div className="col-span-full space-y-4 pt-8">
+                <h3 className="text-2xl font-bold tracking-tight">Signature Visual</h3>
+                <div className="relative aspect-[21/9] overflow-hidden rounded-xl border border-border bg-black">
+                  {/* Glitch/Noise Background */}
+                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black"></div>
+                  
+                  {/* Content */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                    <div className="relative">
+                      <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white mix-blend-difference" style={{ textShadow: '4px 4px 0px var(--color-primary)' }}>
+                        TRADE WITH
+                        <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-pulse">EXTREME PREJUDICE</span>
+                      </h2>
+                      {/* Glitch Effect Layers */}
+                      <h2 className="absolute inset-0 text-6xl md:text-8xl font-black tracking-tighter text-secondary opacity-30 blur-sm translate-x-1 translate-y-1" aria-hidden="true">
+                        TRADE WITH
+                        <br />
+                        EXTREME PREJUDICE
+                      </h2>
+                    </div>
+                    <p className="mt-6 max-w-2xl text-lg text-gray-400 font-mono uppercase tracking-widest">
+                      Zero Bias • Zero Dogma • Raw Data
+                    </p>
+                  </div>
+                  
+                  {/* Decorative Elements */}
+                  <div className="absolute bottom-8 left-8 flex gap-4">
+                    <div className="h-1 w-12 bg-primary"></div>
+                    <div className="h-1 w-4 bg-secondary"></div>
+                  </div>
+                  <div className="absolute top-8 right-8 font-mono text-xs text-primary/50">
+                    SYS.OVERRIDE_INIT
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Brand Signature / Hero</span>
+                  <span className="text-xs text-muted-foreground">Ultrawide 21:9</span>
+                </div>
+              </div>
+
+              {/* New Ad: The Applecore Way */}
+              <div className="space-y-4">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-[#0A0A0A]">
+                  <div className="absolute inset-0 p-8 flex flex-col">
+                    <div className="flex-1 flex items-center justify-center">
+                      <div className="relative w-full aspect-square border border-primary/20 rounded-full flex items-center justify-center">
+                        <div className="absolute inset-0 border border-dashed border-primary/10 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                        <div className="text-center space-y-2">
+                          <div className="text-4xl font-bold text-white">Zero</div>
+                          <div className="text-sm text-muted-foreground uppercase tracking-widest">Hype</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="space-y-4 text-center">
+                      <h3 className="text-2xl font-bold text-white">The Applecore Way</h3>
+                      <p className="text-sm text-gray-400">
+                        No paid promoters. No fake screenshots. No rented cars. Just real traders and raw data.
+                      </p>
+                      <div className="pt-4 border-t border-white/10">
+                        <span className="text-primary font-mono text-sm">JOIN THE REVOLUTION &rarr;</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Social / Vertical</span>
+                  <span className="text-xs text-muted-foreground">1080x1350px</span>
+                </div>
+              </div>
+
+              {/* New Ad: Mindset Revolution */}
+              <div className="space-y-4">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-secondary/5">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                  
+                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                    <div className="space-y-2">
+                      <div className="text-xs font-mono text-secondary uppercase">Psychology First</div>
+                      <h3 className="text-3xl font-bold text-white leading-tight">
+                        Stop Acting Like A Dick.
+                        <br />
+                        <span className="text-gray-500">Start Acting Like A Millionaire.</span>
+                      </h3>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex gap-2">
+                        <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                          <div className="text-xs text-gray-400">Focus</div>
+                          <div className="text-lg font-bold text-white">100%</div>
+                        </div>
+                        <div className="flex-1 bg-black/50 backdrop-blur p-3 rounded border border-white/10">
+                          <div className="text-xs text-gray-400">Emotion</div>
+                          <div className="text-lg font-bold text-white">0%</div>
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-400">
+                        Master the mindset that separates the pros from the gamblers.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Social / Vertical</span>
+                  <span className="text-xs text-muted-foreground">1080x1350px</span>
+                </div>
+              </div>
+
+              {/* New Ad: Education */}
+              <div className="space-y-4">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-border bg-black">
+                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-[gradient_15s_ease_infinite]"></div>
+                  
+                  <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center space-y-6">
+                    <div className="h-16 w-16 bg-white text-black rounded-full flex items-center justify-center font-bold text-2xl">
+                      &lt;5
+                    </div>
+                    <h3 className="text-3xl font-bold text-white">
+                      Less than £5
+                      <br />
+                      <span className="text-primary">to change your life.</span>
+                    </h3>
+                    <p className="text-sm text-gray-400 max-w-[200px]">
+                      Ridiculously low barrier to entry. On purpose.
+                    </p>
+                    <button className="bg-primary text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors">
+                      Start Your Journey
+                    </button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Social / Vertical</span>
+                  <span className="text-xs text-muted-foreground">1080x1350px</span>
+                </div>
+              </div>
             </div>
           </TabsContent>
 
