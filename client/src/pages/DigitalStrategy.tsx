@@ -394,6 +394,7 @@ export default function DigitalStrategy() {
               <div className="text-xs font-mono text-gray-500 mb-2">MONTH 2</div>
               <h3 className="text-xl font-bold text-white mb-4">Indoctrination</h3>
               <ul className="space-y-3 text-sm text-gray-400">
+                <li>• <strong>Email Sequence:</strong> "The 7-Day Mindset Reset" (Automated Nurturing)</li>
                 <li>• Retarget video viewers with "Deep Dive" educational content</li>
                 <li>• Host weekly "Live Trading Psychology" sessions (No charts, just mindset)</li>
                 <li>• Open applications for "Alpha Cohort" (Scarcity play)</li>

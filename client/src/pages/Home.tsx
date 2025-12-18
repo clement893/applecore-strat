@@ -109,9 +109,127 @@ export default function Home() {
               <TabsTrigger value="typography" className="gap-2 py-2 px-4">Typography</TabsTrigger>
               <TabsTrigger value="dataviz" className="gap-2 py-2 px-4">Data Viz</TabsTrigger>
               <TabsTrigger value="components" className="gap-2 py-2 px-4">Components</TabsTrigger>
-              <TabsTrigger value="ads" className="gap-2 py-2 px-4">Ad Templates</TabsTrigger>
+              <TabsTrigger value="social" className="gap-2 py-2 px-4">Social Media Kit</TabsTrigger>
             </TabsList>
           </div>
+
+          {/* Social Media Kit Section */}
+          <TabsContent value="social" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Social Media Kit</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Ready-to-use templates for Instagram, TikTok, and LinkedIn. Designed to stop the scroll and drive engagement.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Instagram Story */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-pink-500"></span> Instagram Story
+                </h3>
+                <div className="aspect-[9/16] bg-black rounded-xl border border-white/10 relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-[url('/images/chart-bg.png')] opacity-20 bg-cover bg-center"></div>
+                  <div className="absolute inset-0 flex flex-col justify-between p-6">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-mono text-primary border border-primary/50 px-2 py-1 rounded">NEW SIGNAL</span>
+                      <img src="/logo.png" className="h-4 w-auto brightness-0 invert" />
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-3xl font-bold text-white leading-none">STOP<br/>GUESSING.</h4>
+                      <p className="text-sm text-gray-300">The market leaves clues. Are you reading them?</p>
+                      <div className="bg-white text-black text-center py-3 rounded-full font-bold text-sm mt-4">
+                        Swipe Up to Learn
+                      </div>
+                    </div>
+                  </div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button variant="outline" className="gap-2">
+                      <Download className="h-4 w-4" /> Download Template
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* TikTok/Reel Cover */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-cyan-500"></span> TikTok / Reel Cover
+                </h3>
+                <div className="aspect-[9/16] bg-[#121212] rounded-xl border border-white/10 relative overflow-hidden group">
+                  <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/20 to-transparent"></div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                    <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mb-4 uppercase tracking-wider">Controversial Truth</div>
+                    <h4 className="text-2xl font-bold text-white mb-2">WHY YOUR<br/>INDICATORS<br/>ARE LYING</h4>
+                    <div className="w-12 h-1 bg-primary rounded-full mt-4"></div>
+                  </div>
+                  <div className="absolute bottom-6 left-0 w-full text-center">
+                    <p className="text-xs text-gray-500">@applecore_trading</p>
+                  </div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button variant="outline" className="gap-2">
+                      <Download className="h-4 w-4" /> Download Template
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* LinkedIn Carousel */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-blue-500"></span> LinkedIn Carousel
+                </h3>
+                <div className="aspect-square bg-white rounded-xl border border-gray-200 relative overflow-hidden group">
+                  <div className="absolute inset-0 p-8 flex flex-col justify-between">
+                    <img src="/logo.png" className="h-6 w-auto filter invert" />
+                    <div>
+                      <h4 className="text-4xl font-bold text-black mb-4 tracking-tighter">The 3 Pillars<br/>of Institutional<br/>Edge.</h4>
+                      <p className="text-gray-600 font-medium">A breakdown for serious traders.</p>
+                    </div>
+                    <div className="flex justify-between items-end">
+                      <span className="text-sm font-mono text-gray-400">01 / 05</span>
+                      <ArrowRight className="h-6 w-6 text-black" />
+                    </div>
+                  </div>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Button variant="outline" className="gap-2 text-white border-white hover:bg-white hover:text-black">
+                      <Download className="h-4 w-4" /> Download Template
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-muted/30 border border-border">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-xl font-bold">Content Pillars</h3>
+                  <p className="text-muted-foreground">The 3 themes that drive our social strategy.</p>
+                </div>
+                <Button>Download Full Strategy PDF</Button>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="p-4 bg-background rounded-lg border border-border">
+                  <div className="text-xs font-mono text-primary mb-2">PILLAR 01</div>
+                  <div className="font-bold mb-1">Pain Agitation</div>
+                  <p className="text-sm text-muted-foreground">"Stop losing money like an amateur."</p>
+                </div>
+                <div className="p-4 bg-background rounded-lg border border-border">
+                  <div className="text-xs font-mono text-primary mb-2">PILLAR 02</div>
+                  <div className="font-bold mb-1">Authority by Math</div>
+                  <p className="text-sm text-muted-foreground">"Here is the data, not the hype."</p>
+                </div>
+                <div className="p-4 bg-background rounded-lg border border-border">
+                  <div className="text-xs font-mono text-primary mb-2">PILLAR 03</div>
+                  <div className="font-bold mb-1">Lifestyle of Freedom</div>
+                  <p className="text-sm text-muted-foreground">"Discipline buys you time."</p>
+                </div>
+              </div>
+            </div>
+          </TabsContent>
 
           {/* Logo Section */}
           <TabsContent value="logo" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
