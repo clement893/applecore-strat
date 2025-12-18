@@ -414,14 +414,85 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
+      {/* Investment & Allocation */}
+      <section className="py-20 border-b border-white/10 bg-black/30">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-500">
+              <TrendingUp className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Investment & Allocation</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Agency Fees */}
+            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-white">Agency Management Fees</h3>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-xs font-mono text-gray-400">FIXED COST</span>
+              </div>
+              <div className="text-4xl font-bold text-white mb-2">£4,880</div>
+              <p className="text-sm text-gray-400 mb-6">Total for Strategy, Setup & 3-Month Management</p>
+              
+              <div className="space-y-4">
+                <div className="flex justify-between text-sm border-b border-white/5 pb-2">
+                  <span className="text-gray-400">Strategy & Setup</span>
+                  <span className="text-white">Included</span>
+                </div>
+                <div className="flex justify-between text-sm border-b border-white/5 pb-2">
+                  <span className="text-gray-400">Campaign Management (Month 1)</span>
+                  <span className="text-white">Included</span>
+                </div>
+                <div className="flex justify-between text-sm border-b border-white/5 pb-2">
+                  <span className="text-gray-400">Campaign Management (Month 2)</span>
+                  <span className="text-white">Included</span>
+                </div>
+                <div className="flex justify-between text-sm border-b border-white/5 pb-2">
+                  <span className="text-gray-400">Campaign Management (Month 3)</span>
+                  <span className="text-white">Included</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Ad Spend */}
+            <div className="p-8 rounded-2xl bg-blue-500/5 border border-blue-500/20">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-blue-400">Recommended Ad Spend</h3>
+                <span className="px-3 py-1 rounded-full bg-blue-500/10 text-xs font-mono text-blue-400">VARIABLE COST</span>
+              </div>
+              <div className="text-4xl font-bold text-white mb-2">£3k - £5k <span className="text-lg font-normal text-gray-500">/ month</span></div>
+              <p className="text-sm text-gray-400 mb-6">Paid directly to ad platforms (Meta/Google)</p>
+              
+              <div className="space-y-4">
+                <div className="flex justify-between text-sm border-b border-blue-500/10 pb-2">
+                  <span className="text-gray-400">Testing Phase (Month 1)</span>
+                  <span className="text-white">£3,000</span>
+                </div>
+                <div className="flex justify-between text-sm border-b border-blue-500/10 pb-2">
+                  <span className="text-gray-400">Optimization (Month 2)</span>
+                  <span className="text-white">£4,000</span>
+                </div>
+                <div className="flex justify-between text-sm border-b border-blue-500/10 pb-2">
+                  <span className="text-gray-400">Scaling (Month 3)</span>
+                  <span className="text-white">£5,000+</span>
+                </div>
+              </div>
+              <div className="mt-6 p-3 bg-blue-500/10 rounded border border-blue-500/20 text-xs text-blue-300">
+                <strong>Note:</strong> Ad budget is flexible and will be adjusted based on ROAS (Return on Ad Spend) performance.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Unit Economics */}
-      <section className="py-20">
+      <section className="py-20 border-b border-white/10">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-green-500/10 flex items-center justify-center text-green-500">
               <BarChart3 className="h-5 w-5" />
             </div>
-            <h2 className="text-3xl font-bold text-white">Projected Unit Economics</h2>
+            <h2 className="text-3xl font-bold text-white">Unit Economics (Projections)</h2>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
