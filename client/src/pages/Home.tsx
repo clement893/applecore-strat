@@ -174,96 +174,182 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {/* Primary Color */}
-              <div className="group space-y-3">
-                <div className="aspect-[4/3] rounded-xl bg-primary shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold">Neon Lime</h3>
-                    <span className="text-xs font-mono text-muted-foreground">Primary</span>
+            <div className="space-y-8">
+              {/* Primary Colors */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Primary Colors</h3>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#510F66] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Deep Purple</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Primary</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#510F66</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#510F66", "p1")}>
+                          {copied === "p1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#A2CF78</code>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6"
-                      onClick={() => copyToClipboard("#A2CF78", "c1")}
-                    >
-                      {copied === "c1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                    </Button>
+
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#E0FF98] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Pale Lime</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Primary</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#E0FF98</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#E0FF98", "p2")}>
+                          {copied === "p2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-xs text-muted-foreground">Used for: CTAs, Success states, Highlights</p>
                 </div>
               </div>
 
-              {/* Secondary Color */}
-              <div className="group space-y-3">
-                <div className="aspect-[4/3] rounded-xl bg-secondary shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold">Electric Purple</h3>
-                    <span className="text-xs font-mono text-muted-foreground">Secondary</span>
+              {/* Neutral Colors */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Neutral Colors</h3>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#FFFFFF] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">White</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#FFFFFF</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#FFFFFF", "n1")}>
+                          {copied === "n1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#741F90</code>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6"
-                      onClick={() => copyToClipboard("#741F90", "c2")}
-                    >
-                      {copied === "c2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                    </Button>
+
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#F4EFEC] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Off White</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#F4EFEC</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#F4EFEC", "n2")}>
+                          {copied === "n2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-xs text-muted-foreground">Used for: Gradients, Accents, Depth</p>
+
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#000000] shadow-lg ring-1 ring-inset ring-white/20 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Black</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#000000</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#000000", "n3")}>
+                          {copied === "n3" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#1E1E1E] shadow-lg ring-1 ring-inset ring-white/20 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Dark Grey</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Neutral</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#1E1E1E</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#1E1E1E", "n4")}>
+                          {copied === "n4" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Background Color */}
-              <div className="group space-y-3">
-                <div className="aspect-[4/3] rounded-xl bg-[#121212] shadow-lg ring-1 ring-inset ring-white/20 transition-transform group-hover:scale-105" />
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold">Deep Void</h3>
-                    <span className="text-xs font-mono text-muted-foreground">Background</span>
+              {/* Secondary Colors */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold">Secondary Colors</h3>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#D2F3F6] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Ice Blue</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#D2F3F6</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#D2F3F6", "s1")}>
+                          {copied === "s1" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#121212</code>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6"
-                      onClick={() => copyToClipboard("#121212", "c3")}
-                    >
-                      {copied === "c3" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                    </Button>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Used for: Main backgrounds, Surfaces</p>
-                </div>
-              </div>
 
-              {/* Text Color */}
-              <div className="group space-y-3">
-                <div className="aspect-[4/3] rounded-xl bg-[#E0E0E0] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold">Mist White</h3>
-                    <span className="text-xs font-mono text-muted-foreground">Text</span>
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#DED9FF] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Lavender</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#DED9FF</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#DED9FF", "s2")}>
+                          {copied === "s2" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#DCDCDC</code>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6"
-                      onClick={() => copyToClipboard("#DCDCDC", "c4")}
-                    >
-                      {copied === "c4" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
-                    </Button>
+
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#FFDDC4] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Peach</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#FFDDC4</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#FFDDC4", "s3")}>
+                          {copied === "s3" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-xs text-muted-foreground">Used for: Body text, Headings</p>
+
+                  <div className="group space-y-3">
+                    <div className="aspect-[4/3] rounded-xl bg-[#F8FFDC] shadow-lg ring-1 ring-inset ring-white/10 transition-transform group-hover:scale-105" />
+                    <div className="space-y-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold">Cream</h3>
+                        <span className="text-xs font-mono text-muted-foreground">Secondary</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <code className="rounded bg-muted px-2 py-0.5 font-mono text-xs">#F8FFDC</code>
+                        <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => copyToClipboard("#F8FFDC", "s4")}>
+                          {copied === "s4" ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -289,20 +375,38 @@ export default function Home() {
 
             <div className="grid gap-12 lg:grid-cols-2">
               <div className="space-y-8">
-                <div className="space-y-2">
-                  <span className="text-sm text-muted-foreground">Display / Headings</span>
-                  <div className="text-6xl font-black tracking-tighter">Switzer Black</div>
-                  <div className="text-4xl font-bold tracking-tight">Switzer Bold</div>
-                </div>
-                <div className="space-y-2">
-                  <span className="text-sm text-muted-foreground">Body / UI</span>
-                  <div className="text-2xl font-medium">Switzer Medium</div>
-                  <div className="text-xl font-normal">Switzer Regular</div>
-                  <div className="text-lg font-light">Switzer Light</div>
-                </div>
-                <div className="space-y-2">
-                  <span className="text-sm text-muted-foreground">Monospace / Data</span>
-                  <div className="font-mono text-xl">JetBrains Mono</div>
+                <div className="space-y-4">
+                  <span className="text-sm text-muted-foreground">Type Scale</span>
+                  <div className="space-y-6">
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[256px] leading-none font-bold">H1</span>
+                      <span className="font-mono text-sm text-muted-foreground">256px</span>
+                    </div>
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[88px] leading-none font-bold">H2</span>
+                      <span className="font-mono text-sm text-muted-foreground">88px</span>
+                    </div>
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[56px] leading-none font-bold">H3</span>
+                      <span className="font-mono text-sm text-muted-foreground">56px</span>
+                    </div>
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[40px] leading-none font-bold">H4</span>
+                      <span className="font-mono text-sm text-muted-foreground">40px</span>
+                    </div>
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[24px] leading-none font-bold">H5</span>
+                      <span className="font-mono text-sm text-muted-foreground">24px</span>
+                    </div>
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[18px] leading-none">Body 1</span>
+                      <span className="font-mono text-sm text-muted-foreground">18px</span>
+                    </div>
+                    <div className="flex items-baseline justify-between border-b border-border/50 pb-2">
+                      <span className="text-[16px] leading-none">Body 2 / Label</span>
+                      <span className="font-mono text-sm text-muted-foreground">16px</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
