@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2 } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 
 export default function DigitalStrategy() {
@@ -388,7 +388,65 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 6. 90-DAY PLAN (EXECUTION) */}
+      {/* 6. ASCENSION MODEL (NEW) */}
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+              <Layers className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">The Ascension Model</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 items-end">
+            {/* Low Ticket */}
+            <div className="p-6 rounded-2xl bg-card border border-white/5 relative group hover:border-primary/30 transition-colors">
+              <div className="absolute -top-4 left-6 bg-primary text-black text-xs font-bold px-3 py-1 rounded-full">ENTRY POINT</div>
+              <h3 className="text-xl font-bold text-white mb-2">The Mindset Reset</h3>
+              <div className="text-3xl font-bold text-primary mb-4">£4.99</div>
+              <p className="text-sm text-gray-400 mb-4">
+                The "No-Brainer" offer. Filters out freebie seekers. Delivers immediate value and establishes authority.
+              </p>
+              <ul className="space-y-2 text-xs text-gray-500">
+                <li className="flex items-center gap-2">✓ 7-Day Video Course</li>
+                <li className="flex items-center gap-2">✓ Trading Psychology Audit</li>
+              </ul>
+            </div>
+
+            {/* Core Offer */}
+            <div className="p-8 rounded-2xl bg-card border border-white/10 relative group hover:border-secondary/30 transition-colors transform md:-translate-y-4 shadow-2xl shadow-black">
+              <div className="absolute -top-4 left-6 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">CORE OFFER</div>
+              <h3 className="text-2xl font-bold text-white mb-2">Applecore Academy</h3>
+              <div className="text-4xl font-bold text-secondary mb-4">£49<span className="text-lg text-gray-500 font-normal">/mo</span></div>
+              <p className="text-sm text-gray-400 mb-4">
+                The recurring revenue engine. Community, tools, and ongoing education.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li className="flex items-center gap-2">✓ Full Video Library</li>
+                <li className="flex items-center gap-2">✓ Discord Community Access</li>
+                <li className="flex items-center gap-2">✓ Weekly Live Calls</li>
+              </ul>
+            </div>
+
+            {/* High Ticket */}
+            <div className="p-6 rounded-2xl bg-gradient-to-b from-secondary/10 to-black border border-secondary/20 relative group hover:border-secondary/50 transition-colors">
+              <div className="absolute -top-4 left-6 bg-white text-black text-xs font-bold px-3 py-1 rounded-full">HIGH TICKET</div>
+              <h3 className="text-xl font-bold text-white mb-2">Inner Circle</h3>
+              <div className="text-3xl font-bold text-white mb-4">£2,500+</div>
+              <p className="text-sm text-gray-400 mb-4">
+                For the top 5% of students who want direct mentorship and career acceleration.
+              </p>
+              <ul className="space-y-2 text-xs text-gray-500">
+                <li className="flex items-center gap-2">✓ 1-on-1 Mentorship</li>
+                <li className="flex items-center gap-2">✓ Prop Firm Funding Prep</li>
+                <li className="flex items-center gap-2">✓ In-Person Masterminds</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. 90-DAY PLAN (EXECUTION) */}
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -434,7 +492,43 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 7. EMAIL AUTOMATION HUB (MECANIQUE) */}
+      {/* 8. ORGANIC CONTENT ECOSYSTEM (NEW) */}
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-accent/10 flex items-center justify-center text-accent">
+              <Smartphone className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Organic Content Ecosystem</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-card border border-white/5">
+              <h3 className="text-lg font-bold text-white mb-4">The Analyst (YouTube)</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                Long-form, deep-dive content. Logic, data, and backtesting. Builds massive authority.
+              </p>
+              <div className="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded w-fit">Search Traffic</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-card border border-white/5">
+              <h3 className="text-lg font-bold text-white mb-4">The Contrarian (X/Twitter)</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                Short, punchy, polarizing text. Attacks industry myths. "Why RSI is for losers".
+              </p>
+              <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded w-fit">Viral Reach</div>
+            </div>
+            <div className="p-6 rounded-2xl bg-card border border-white/5">
+              <h3 className="text-lg font-bold text-white mb-4">The Monk (IG/TikTok)</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                Lifestyle, but not "Lambo". Discipline, gym, charts, routine. Aspirational but grounded.
+              </p>
+              <div className="text-xs font-mono text-secondary bg-secondary/10 px-2 py-1 rounded w-fit">Brand Image</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. EMAIL AUTOMATION HUB (MECANIQUE) */}
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -571,7 +665,7 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 8. RETENTION MECHANICS (MECANIQUE) */}
+      {/* 10. RETENTION MECHANICS (MECANIQUE) */}
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -635,7 +729,84 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 9. INVESTMENT & ALLOCATION (CHIFFRES) */}
+      {/* 11. TECH STACK (NEW) */}
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+              <Server className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">The Engine Room (Tech Stack)</h2>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="p-6 rounded-xl bg-card border border-white/10 text-center">
+              <div className="text-sm text-gray-500 mb-2">Community & Course</div>
+              <div className="text-xl font-bold text-white mb-1">Skool / Discord</div>
+              <div className="text-xs text-primary">Engagement</div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-white/10 text-center">
+              <div className="text-sm text-gray-500 mb-2">Email & Automation</div>
+              <div className="text-xl font-bold text-white mb-1">GoHighLevel</div>
+              <div className="text-xs text-primary">CRM & Funnels</div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-white/10 text-center">
+              <div className="text-sm text-gray-500 mb-2">Payments</div>
+              <div className="text-xl font-bold text-white mb-1">Stripe</div>
+              <div className="text-xs text-primary">Processing</div>
+            </div>
+            <div className="p-6 rounded-xl bg-card border border-white/10 text-center">
+              <div className="text-sm text-gray-500 mb-2">Charting</div>
+              <div className="text-xl font-bold text-white mb-1">TradingView</div>
+              <div className="text-xs text-primary">Product</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 12. RISK MITIGATION (NEW) */}
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-destructive/10 flex items-center justify-center text-destructive">
+              <AlertTriangle className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Risk Mitigation (Anti-Fragility)</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-card border border-white/5">
+              <h3 className="text-lg font-bold text-white mb-2">Ad Account Bans</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                Trading is a "High Risk" category. Meta bans are inevitable.
+              </p>
+              <div className="text-xs text-white bg-white/10 p-3 rounded">
+                <strong>Solution:</strong> Use Agency Ad Accounts (tier 2/3) to insulate main business assets.
+              </div>
+            </div>
+            <div className="p-6 rounded-2xl bg-card border border-white/5">
+              <h3 className="text-lg font-bold text-white mb-2">Platform Dependency</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                If YouTube/IG algorithm changes, traffic dies.
+              </p>
+              <div className="text-xs text-white bg-white/10 p-3 rounded">
+                <strong>Solution:</strong> Aggressive email collection. We own the list. The list is the business.
+              </div>
+            </div>
+            <div className="p-6 rounded-2xl bg-card border border-white/5">
+              <h3 className="text-lg font-bold text-white mb-2">Copycat Competitors</h3>
+              <p className="text-sm text-gray-400 mb-4">
+                Others will steal the ads and the funnel.
+              </p>
+              <div className="text-xs text-white bg-white/10 p-3 rounded">
+                <strong>Solution:</strong> Brand & Community (Tribal Lock-in). They can copy the ads, but not the culture.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 13. INVESTMENT & ALLOCATION (CHIFFRES) */}
       <section className="py-32 border-b border-white/10 bg-black/30 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -706,7 +877,7 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 10. UNIT ECONOMICS (CHIFFRES) */}
+      {/* 14. UNIT ECONOMICS (CHIFFRES) */}
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
