@@ -691,6 +691,121 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* In-Context Previews */}
+              <div className="col-span-full space-y-8 pt-8 border-t border-border">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-2xl font-bold tracking-tight">In-Context Previews</h3>
+                  <span className="text-sm text-muted-foreground">Real-world application mockups</span>
+                </div>
+
+                <div className="grid gap-8 md:grid-cols-3">
+                  {/* Instagram Story Mockup */}
+                  <div className="relative mx-auto w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-gray-800 overflow-hidden shadow-2xl">
+                    {/* Status Bar */}
+                    <div className="absolute top-0 inset-x-0 h-8 px-6 flex items-center justify-between z-20">
+                      <span className="text-[10px] font-medium text-white">9:41</span>
+                      <div className="flex gap-1">
+                        <div className="w-3 h-3 rounded-full bg-white/20"></div>
+                        <div className="w-3 h-3 rounded-full bg-white/20"></div>
+                      </div>
+                    </div>
+                    
+                    {/* Story Progress */}
+                    <div className="absolute top-3 inset-x-2 flex gap-1 z-20">
+                      <div className="h-0.5 flex-1 bg-white/30 rounded-full overflow-hidden">
+                        <div className="h-full w-1/3 bg-white"></div>
+                      </div>
+                      <div className="h-0.5 flex-1 bg-white/30 rounded-full"></div>
+                    </div>
+
+                    {/* User Info */}
+                    <div className="absolute top-6 left-4 flex items-center gap-2 z-20">
+                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                        <img src="/images/logo.png" alt="Applecore" className="w-5 h-5 object-contain brightness-0 invert" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-white">applecore_trading</div>
+                        <div className="text-[10px] text-white/70">Sponsored</div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="absolute inset-0 bg-secondary/5">
+                      <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[80px] rounded-full"></div>
+                      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+                      
+                      <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center">
+                        <h3 className="text-2xl font-bold text-white leading-tight mb-6">
+                          <span className="inline-block animate-[pulse_4s_ease-in-out_infinite] text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Acting Like An Amateur.</span>
+                          <br />
+                          <span className="inline-block animate-[pulse_4s_ease-in-out_infinite_2s] text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">Start Acting Like A Millionaire.</span>
+                        </h3>
+                        <button className="bg-primary text-black font-bold py-3 px-8 rounded-full text-sm hover:bg-primary/90 transition-colors">
+                          Start Free Trial
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Swipe Up */}
+                    <div className="absolute bottom-8 inset-x-0 flex flex-col items-center gap-1 z-20">
+                      <div className="w-4 h-4 border-t-2 border-r-2 border-white rotate-[135deg]"></div>
+                      <span className="text-xs font-bold text-white">Swipe Up</span>
+                    </div>
+                  </div>
+
+                  {/* LinkedIn Post Mockup */}
+                  <div className="col-span-2 bg-card rounded-xl border border-border overflow-hidden">
+                    {/* Header */}
+                    <div className="p-4 flex gap-3">
+                      <div className="w-12 h-12 rounded bg-primary flex items-center justify-center">
+                        <img src="/images/logo.png" alt="Applecore" className="w-8 h-8 object-contain brightness-0 invert" />
+                      </div>
+                      <div>
+                        <div className="font-bold text-sm">Applecore Trading</div>
+                        <div className="text-xs text-muted-foreground">15,420 followers</div>
+                        <div className="text-xs text-muted-foreground flex items-center gap-1">Promoted <span className="w-0.5 h-0.5 rounded-full bg-muted-foreground"></span> <span className="text-[10px]">🌐</span></div>
+                      </div>
+                    </div>
+
+                    {/* Text */}
+                    <div className="px-4 pb-3 text-sm space-y-2">
+                      <p>Most traders are just guessing. They follow trends that are already dead.</p>
+                      <p>At Applecore, we don't follow trends. We predict them.</p>
+                      <p className="text-primary">#Trading #FinTech #MarketAnalysis</p>
+                    </div>
+
+                    {/* Image Content */}
+                    <div className="relative aspect-video bg-black overflow-hidden">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/20 via-black to-black"></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center space-y-4">
+                          <h2 className="text-3xl font-bold text-white tracking-tighter">
+                            THE <span className="text-primary">APPLECORE</span> WAY
+                          </h2>
+                          <div className="flex gap-8 justify-center text-xs font-mono text-gray-400">
+                            <span>ZERO HYPE</span>
+                            <span>•</span>
+                            <span>PURE DATA</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Action Bar */}
+                    <div className="bg-secondary/5 p-3 flex items-center justify-between border-t border-border">
+                      <div className="text-xs">
+                        <span className="font-bold">Applecore Trading Academy</span>
+                        <span className="mx-1">•</span>
+                        <span className="text-muted-foreground">applecore.com</span>
+                      </div>
+                      <button className="px-4 py-1 rounded-full border border-primary text-primary text-xs font-bold hover:bg-primary/10">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* New Ad: Mindset Revolution (A/B Variants) */}
               <div className="col-span-full space-y-6">
                 <div className="flex items-center justify-between">
