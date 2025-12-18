@@ -701,7 +701,7 @@ export default function Home() {
                     <div className="space-y-2">
                       <div className="text-xs font-mono text-secondary uppercase">Psychology First</div>
                       <h3 className="text-3xl font-bold text-white leading-tight">
-                        Stop Acting Like A Dick.
+                        Stop Acting Like An Amateur.
                         <br />
                         <span className="text-gray-500">Start Acting Like A Millionaire.</span>
                       </h3>
