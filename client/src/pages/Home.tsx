@@ -41,9 +41,12 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                Brand Guidelines v1.0
+              <div className="flex items-center gap-4 mb-6">
+                <img src="/logo.png" alt="Applecore" className="h-8 w-auto brightness-0 invert" />
+                <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+                  <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+                  Brand Guidelines v1.0
+                </div>
               </div>
               <div className="max-w-[400px]">
                 <img src="/logo.png" alt="Applecore Logo" className="w-full h-auto" />

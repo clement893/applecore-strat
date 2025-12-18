@@ -209,7 +209,7 @@ export default function DigitalStrategy() {
           <div className="flex items-center gap-8">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer group">
-                <img src="/images/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert transition-transform group-hover:scale-105" />
+                <img src="/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert transition-transform group-hover:scale-105" />
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-1">

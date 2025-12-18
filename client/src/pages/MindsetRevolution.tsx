@@ -11,7 +11,7 @@ export default function MindsetRevolution() {
           <div className="flex items-center gap-8">
             <Link href="/">
               <div className="flex items-center gap-2 cursor-pointer group">
-                <img src="/images/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert transition-transform group-hover:scale-105" />
+                <img src="/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert transition-transform group-hover:scale-105" />
               </div>
             </Link>
             <div className="hidden md:flex items-center gap-1">
@@ -196,68 +196,80 @@ export default function MindsetRevolution() {
           </div>
 
           {/* Asset 2: Social Proof / Reality Check */}
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-white">02. The Reality Check (Social)</h3>
-                <span className="text-xs text-muted-foreground border border-white/10 px-2 py-1 rounded">Format: Instagram Story</span>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Instagram Story */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-bold text-white">02. Instagram Story</h3>
+                <span className="text-xs text-muted-foreground border border-white/10 px-2 py-1 rounded">Format: 9:16</span>
               </div>
-              <div className="relative mx-auto w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-gray-800 overflow-hidden shadow-2xl">
-                {/* Story Content */}
-                <div className="absolute inset-0 bg-secondary/5 p-6 flex flex-col justify-center items-center text-center">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 blur-[80px] rounded-full"></div>
-                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
-                  
-                  <h3 className="text-2xl font-bold text-white leading-tight mb-6 relative z-10">
-                    <span className="inline-block text-gray-500 line-through decoration-secondary/50 decoration-2">Stop Acting Like An Amateur.</span>
-                    <br />
-                    <span className="inline-block text-white mt-2">Start Acting Like A Millionaire.</span>
-                  </h3>
-                  <Button className="bg-primary text-black font-bold rounded-full relative z-10">
-                    Start The Shift
-                  </Button>
+              <div className="aspect-[9/16] bg-black rounded-xl border border-white/10 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-[url('/images/chart-bg.png')] opacity-20 bg-cover bg-center"></div>
+                <div className="absolute inset-0 flex flex-col justify-between p-6">
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono text-primary border border-primary/50 px-2 py-1 rounded">NEW SIGNAL</span>
+                    <img src="/logo.png" className="h-4 w-auto brightness-0 invert" />
+                  </div>
+                  <div className="space-y-4">
+                    <h4 className="text-3xl font-bold text-white leading-none">STOP<br/>GUESSING.</h4>
+                    <p className="text-sm text-gray-300">The market leaves clues. Are you reading them?</p>
+                    <div className="bg-white text-black text-center py-3 rounded-full font-bold text-sm mt-4">
+                      Swipe Up to Learn
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-muted-foreground italic">
-                Why it works: Directly challenges the user's ego. The strikethrough visualizes the "correction" of behavior.
+              <p className="text-sm text-muted-foreground italic">
+                Why it works: High contrast, direct command ("Stop Guessing"), and clear CTA.
               </p>
             </div>
 
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-white">03. The Value Prop (Feed)</h3>
-                <span className="text-xs text-muted-foreground border border-white/10 px-2 py-1 rounded">Format: LinkedIn / Twitter</span>
+            {/* TikTok/Reel Cover */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-bold text-white">03. TikTok / Reel</h3>
+                <span className="text-xs text-muted-foreground border border-white/10 px-2 py-1 rounded">Format: 9:16</span>
               </div>
-              <div className="bg-card rounded-xl border border-border overflow-hidden">
-                <div className="p-4 flex gap-3 border-b border-white/5">
-                  <div className="w-10 h-10 rounded bg-primary flex items-center justify-center">
-                    <img src="/images/logo.png" alt="Logo" className="w-6 h-6 brightness-0 invert" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-sm text-white">Applecore Trading</div>
-                    <div className="text-xs text-muted-foreground">Sponsored</div>
-                  </div>
+              <div className="aspect-[9/16] bg-[#121212] rounded-xl border border-white/10 relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-primary/20 to-transparent"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                  <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mb-4 uppercase tracking-wider">Controversial Truth</div>
+                  <h4 className="text-2xl font-bold text-white mb-2">WHY YOUR<br/>INDICATORS<br/>ARE LYING</h4>
+                  <div className="w-12 h-1 bg-primary rounded-full mt-4"></div>
                 </div>
-                <div className="aspect-video bg-black relative flex items-center justify-center p-8">
-                  <div className="text-center space-y-4">
-                    <div className="inline-flex items-center gap-4 text-sm font-mono text-primary border border-primary/20 px-4 py-2 rounded-full bg-primary/5">
-                      <span>ZERO HYPE</span>
-                      <span className="w-1 h-1 bg-primary rounded-full"></span>
-                      <span>PURE DATA</span>
-                    </div>
-                    <h2 className="text-3xl font-bold text-white">
-                      Trading is 10% Strategy.
-                      <br />
-                      <span className="text-gray-500">90% Psychology.</span>
-                    </h2>
-                  </div>
-                </div>
-                <div className="p-4 bg-white/5">
-                  <p className="text-sm text-gray-300">Most courses teach you the 10%. We master the 90%.</p>
+                <div className="absolute bottom-6 left-0 w-full text-center">
+                  <p className="text-xs text-gray-500">@applecore_trading</p>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-muted-foreground italic">
-                Why it works: Uses statistics (heuristic) to validate the user's struggle ("I know strategy but I still lose").
+              <p className="text-sm text-muted-foreground italic">
+                Why it works: "Controversial Truth" hook creates curiosity gap.
+              </p>
+            </div>
+
+            {/* LinkedIn Carousel Slide */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xl font-bold text-white">04. LinkedIn Carousel</h3>
+                <span className="text-xs text-muted-foreground border border-white/10 px-2 py-1 rounded">Format: 1:1</span>
+              </div>
+              <div className="aspect-square bg-[#F4EFEC] rounded-xl border border-black/10 relative overflow-hidden group text-black">
+                <div className="absolute inset-0 flex flex-col p-8">
+                  <div className="flex justify-between items-start mb-8">
+                    <div className="w-8 h-8 bg-black rounded-full"></div>
+                    <span className="text-4xl font-serif opacity-20">01</span>
+                  </div>
+                  <h4 className="text-3xl font-bold mb-4 leading-tight">The Psychology of the "Dip"</h4>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Most traders panic when they see red. Smart money sees a discount. Here is how to tell the difference...
+                  </p>
+                  <div className="mt-auto flex justify-between items-center border-t border-black/10 pt-4">
+                    <span className="text-xs font-bold">APPLECORE</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground italic">
+                Why it works: Educational value upfront establishes authority.
               </p>
             </div>
           </div>
