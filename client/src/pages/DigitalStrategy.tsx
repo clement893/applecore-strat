@@ -118,6 +118,157 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
+      {/* The User Journey (Funnel) */}
+      <section className="py-20 border-b border-white/10 bg-black/50">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+              <TrendingUp className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">The User Journey</h2>
+          </div>
+
+          <div className="relative">
+            {/* Connecting Line */}
+            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 -translate-y-1/2 hidden md:block"></div>
+
+            <div className="grid md:grid-cols-4 gap-8 relative z-10">
+              {/* Step 1: Discovery */}
+              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-black border-2 border-primary flex items-center justify-center text-primary font-bold text-xl mb-4 group-hover:scale-110 transition-transform">1</div>
+                <h3 className="text-lg font-bold text-white mb-2">Discovery</h3>
+                <div className="text-xs font-mono text-primary mb-3">SOCIAL ADS (META/TIKTOK)</div>
+                <p className="text-sm text-gray-400">
+                  User sees "Pattern Interrupt" ad. No charts, just hard truth about why they are failing.
+                </p>
+              </div>
+
+              {/* Step 2: Consideration */}
+              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-secondary/50 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-black border-2 border-secondary flex items-center justify-center text-secondary font-bold text-xl mb-4 group-hover:scale-110 transition-transform">2</div>
+                <h3 className="text-lg font-bold text-white mb-2">Consideration</h3>
+                <div className="text-xs font-mono text-secondary mb-3">VSL (VIDEO SALES LETTER)</div>
+                <p className="text-sm text-gray-400">
+                  User watches 5-min video explaining the "Institutional Edge". Value first, pitch second.
+                </p>
+              </div>
+
+              {/* Step 3: Tripwire */}
+              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-white/50 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-black border-2 border-white flex items-center justify-center text-white font-bold text-xl mb-4 group-hover:scale-110 transition-transform">3</div>
+                <h3 className="text-lg font-bold text-white mb-2">Micro-Commitment</h3>
+                <div className="text-xs font-mono text-white mb-3">£4.99 TRIPWIRE OFFER</div>
+                <p className="text-sm text-gray-400">
+                  User buys "The Mindset Reset" mini-course. Low friction, high perceived value.
+                </p>
+              </div>
+
+              {/* Step 4: Conversion */}
+              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-colors group">
+                <div className="w-12 h-12 rounded-full bg-black border-2 border-primary flex items-center justify-center text-primary font-bold text-xl mb-4 group-hover:scale-110 transition-transform">4</div>
+                <h3 className="text-lg font-bold text-white mb-2">Core Offer</h3>
+                <div className="text-xs font-mono text-primary mb-3">ACADEMY SUBSCRIPTION</div>
+                <p className="text-sm text-gray-400">
+                  Upsell to full membership immediately after purchase or via email sequence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Welcome Sequence (Tripwire to Sub) */}
+      <section className="py-20 border-b border-white/10">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+              <Zap className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">The £4.99 to Subscriber Pipeline</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white">Why the £4.99 Tripwire?</h3>
+              <p className="text-gray-400 leading-relaxed">
+                It's easier to get a second payment from a customer than a first payment from a stranger. The £4.99 product qualifies the lead: they have a credit card and are willing to pay for a solution.
+              </p>
+              <div className="p-6 rounded-xl bg-secondary/5 border border-secondary/20">
+                <h4 className="font-bold text-secondary mb-4">The Automated Upsell Sequence</h4>
+                <ul className="space-y-4">
+                  <li className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D0</div>
+                    <div>
+                      <div className="font-bold text-white">Immediate OTO (One-Time Offer)</div>
+                      <div className="text-sm text-gray-400">"Upgrade to Full Academy for 50% off first month" shown on Thank You page.</div>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D1</div>
+                    <div>
+                      <div className="font-bold text-white">Value Bomb Email</div>
+                      <div className="text-sm text-gray-400">Delivering the £4.99 product + bonus unannounced resource.</div>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D3</div>
+                    <div>
+                      <div className="font-bold text-white">The "Missing Piece" Email</div>
+                      <div className="text-sm text-gray-400">"You have the mindset (Tripwire), now you need the tools (Academy)."</div>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D7</div>
+                    <div>
+                      <div className="font-bold text-white">Scarcity Close</div>
+                      <div className="text-sm text-gray-400">"Your new member discount expires in 24h."</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Visual Representation of the Pipeline */}
+            <div className="relative aspect-square rounded-2xl bg-black border border-white/10 p-8 flex flex-col justify-center">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(116,31,144,0.15),transparent_70%)]"></div>
+              
+              <div className="relative z-10 space-y-4">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-32 h-32 rounded-full border-4 border-white/10 flex flex-col items-center justify-center text-center p-2 bg-black">
+                    <div className="text-2xl font-bold text-white">1,000</div>
+                    <div className="text-xs text-gray-500">Leads</div>
+                  </div>
+                </div>
+                
+                <div className="flex justify-center">
+                  <ArrowRight className="h-8 w-8 text-gray-600 rotate-90" />
+                </div>
+
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-28 h-28 rounded-full border-4 border-white flex flex-col items-center justify-center text-center p-2 bg-black shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                    <div className="text-xl font-bold text-white">100</div>
+                    <div className="text-xs text-gray-400">Buyers (£4.99)</div>
+                    <div className="text-[10px] text-green-400 font-mono mt-1">10% Conv.</div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center">
+                  <ArrowRight className="h-8 w-8 text-secondary rotate-90" />
+                </div>
+
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-24 h-24 rounded-full border-4 border-secondary flex flex-col items-center justify-center text-center p-2 bg-black shadow-[0_0_30px_rgba(116,31,144,0.4)]">
+                    <div className="text-lg font-bold text-secondary">30</div>
+                    <div className="text-xs text-gray-400">Subscribers</div>
+                    <div className="text-[10px] text-green-400 font-mono mt-1">30% Upsell</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Target Audiences (Personas) */}
       <section className="py-20 border-b border-white/10 bg-black/50">
         <div className="container">
