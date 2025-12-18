@@ -66,7 +66,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 280);
   
-  --secondary: oklch(0.65 0.28 310); /* #D946EF Magenta */
+  --secondary: oklch(0.55 0.25 290); /* #8B5CF6 Deep Electric Purple */
   --secondary-foreground: oklch(1 0 0);
   
   --muted: oklch(0.95 0 0);
@@ -92,21 +92,21 @@
 
 .dark {
   /* Neon Cyber-Industrial Theme - Dark Mode (Primary) */
-  --primary: oklch(0.88 0.25 125); /* #9EFF00 Lime Green */
-  --primary-foreground: oklch(0.15 0.02 280); /* Dark text on lime */
-  --sidebar-primary: oklch(0.88 0.25 125);
-  --sidebar-primary-foreground: oklch(0.15 0.02 280);
+  --primary: oklch(0.91 0.20 115); /* #CCFF00 Acid Lime (More Yellow) */
+  --primary-foreground: oklch(0.10 0.01 280); /* Almost black text on lime */
+  --sidebar-primary: oklch(0.91 0.20 115);
+  --sidebar-primary-foreground: oklch(0.10 0.01 280);
   
-  --background: oklch(0.15 0.02 280); /* #121212 Deep Dark Grey/Black */
-  --foreground: oklch(0.95 0 0); /* White text */
+  --background: oklch(0.10 0.01 280); /* #050505 Almost Pure Black */
+  --foreground: oklch(0.98 0 0); /* Pure White text */
   
-  --card: oklch(0.20 0.02 280); /* Slightly lighter dark for cards */
-  --card-foreground: oklch(0.95 0 0);
+  --card: oklch(0.14 0.02 280); /* Dark card background */
+  --card-foreground: oklch(0.98 0 0);
   
   --popover: oklch(0.18 0.02 280);
   --popover-foreground: oklch(0.95 0 0);
   
-  --secondary: oklch(0.65 0.28 310); /* #D946EF Magenta */
+  --secondary: oklch(0.55 0.25 290); /* #8B5CF6 Deep Electric Purple */
   --secondary-foreground: oklch(1 0 0);
   
   --muted: oklch(0.25 0.02 280);

@@ -85,6 +85,7 @@ export default function Home() {
               <TabsTrigger value="logo" className="gap-2 py-2 px-4">Logo</TabsTrigger>
               <TabsTrigger value="colors" className="gap-2 py-2 px-4">Colors</TabsTrigger>
               <TabsTrigger value="typography" className="gap-2 py-2 px-4">Typography</TabsTrigger>
+              <TabsTrigger value="dataviz" className="gap-2 py-2 px-4">Data Viz</TabsTrigger>
               <TabsTrigger value="components" className="gap-2 py-2 px-4">Components</TabsTrigger>
             </TabsList>
           </div>
@@ -330,6 +331,68 @@ export default function Home() {
             </div>
           </TabsContent>
 
+          {/* Data Visualization Section */}
+          <TabsContent value="dataviz" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight">Data Visualization</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Trading is about data. Our visualization style is precise, minimal, and high-contrast.
+                We use thin lines, glowing accents, and stylized candlestick patterns.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              <Card className="overflow-hidden border-border/50 bg-[#0A0A0A]">
+                <CardHeader>
+                  <CardTitle>Market Trends</CardTitle>
+                  <CardDescription>Line charts with gradient fills</CardDescription>
+                </CardHeader>
+                <CardContent className="p-8">
+                  <div className="relative h-48 w-full">
+                    {/* Stylized Chart */}
+                    <svg viewBox="0 0 100 40" className="h-full w-full overflow-visible">
+                      <defs>
+                        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stopColor="var(--secondary)" stopOpacity="0.5" />
+                          <stop offset="100%" stopColor="var(--secondary)" stopOpacity="0" />
+                        </linearGradient>
+                      </defs>
+                      <path
+                        d="M0 35 C 10 35, 15 25, 25 28 C 35 31, 40 15, 50 20 C 60 25, 65 10, 75 15 C 85 20, 90 5, 100 2"
+                        fill="url(#chartGradient)"
+                        stroke="var(--secondary)"
+                        strokeWidth="0.5"
+                      />
+                      {/* Data Points */}
+                      <circle cx="50" cy="20" r="1" fill="var(--primary)" className="animate-pulse" />
+                      <circle cx="75" cy="15" r="1" fill="white" />
+                      <circle cx="100" cy="2" r="1.5" fill="var(--primary)" />
+                    </svg>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden border-border/50 bg-[#0A0A0A]">
+                <CardHeader>
+                  <CardTitle>Candlestick Patterns</CardTitle>
+                  <CardDescription>Stylized financial data representation</CardDescription>
+                </CardHeader>
+                <CardContent className="p-8 flex items-end justify-between gap-2 h-64">
+                  {/* Stylized Candlesticks */}
+                  {[40, 60, 45, 70, 55, 80, 65, 90, 75, 100].map((h, i) => (
+                    <div key={i} className="relative w-full flex flex-col items-center justify-end group">
+                      <div 
+                        className={`w-1.5 rounded-sm transition-all duration-500 group-hover:w-2 ${i % 2 === 0 ? 'bg-primary shadow-[0_0_10px_rgba(204,255,0,0.3)]' : 'bg-secondary shadow-[0_0_10px_rgba(139,92,246,0.3)]'}`}
+                        style={{ height: `${h}%` }}
+                      />
+                      <div className="absolute bottom-0 w-[1px] h-full bg-white/10 -z-10" />
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
+            </div>
+          </TabsContent>
+
           {/* Components Section */}
           <TabsContent value="components" className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="space-y-4">
@@ -387,12 +450,44 @@ export default function Home() {
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold">Buttons</h3>
                 <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6">
-                  <Button>Primary Action</Button>
-                  <Button variant="secondary">Secondary Action</Button>
-                  <Button variant="outline">Outline Action</Button>
-                  <Button variant="ghost">Ghost Action</Button>
-                  <Button variant="destructive">Destructive</Button>
+                  <Button className="rounded-full font-bold">Get Started</Button>
+                  <Button variant="secondary" className="rounded-full">Learn More</Button>
+                  <Button variant="outline" className="rounded-full">View Demo</Button>
+                  <Button variant="ghost" className="justify-start p-0 hover:bg-transparent hover:text-primary">
+                    Read Story <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
+              </div>
+
+              {/* Pricing Card (New) */}
+              <div className="col-span-full lg:col-span-1 space-y-4">
+                <h3 className="text-lg font-semibold">Pricing Card</h3>
+                <Card className="relative overflow-hidden border-border/50 bg-gradient-to-b from-[#1A1A1A] to-background">
+                  <div className="absolute top-0 right-0 p-4">
+                    <div className="h-16 w-16 rounded-full bg-secondary/20 blur-xl" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">Pro</CardTitle>
+                    <CardDescription>Get 2 months free</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      <li className="flex items-center gap-2">
+                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        Advanced Analytics
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        Exclusive Community
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+                        Priority Support
+                      </li>
+                    </ul>
+                    <Button className="w-full rounded-full font-bold">Subscribe Now</Button>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </TabsContent>
