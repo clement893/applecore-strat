@@ -22,6 +22,25 @@ export default function Home() {
         <div className="container px-4 py-16 md:py-24 lg:py-32">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-6">
+              {/* Strategic Navigation */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                <Link href="/">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/20 cursor-pointer">
+                    1. Brand Guide
+                  </span>
+                </Link>
+                <Link href="/mindset-revolution">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-muted-foreground hover:text-white border border-white/10 cursor-pointer transition-colors">
+                    2. Ad Concept
+                  </span>
+                </Link>
+                <Link href="/digital-strategy">
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-muted-foreground hover:text-white border border-white/10 cursor-pointer transition-colors">
+                    3. Digital Strategy
+                  </span>
+                </Link>
+              </div>
+
               <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                 <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                 Brand Guidelines v1.0

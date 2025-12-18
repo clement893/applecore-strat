@@ -8,12 +8,30 @@ export default function MindsetRevolution() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
-          <Link href="/">
-            <div className="flex items-center gap-2 cursor-pointer group text-muted-foreground hover:text-white transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-              <span className="text-sm font-medium">Back to Brand Book</span>
+          <div className="flex items-center gap-8">
+            <Link href="/">
+              <div className="flex items-center gap-2 cursor-pointer group">
+                <img src="/images/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert transition-transform group-hover:scale-105" />
+              </div>
+            </Link>
+            <div className="hidden md:flex items-center gap-1">
+              <Link href="/">
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-white transition-colors cursor-pointer">
+                  1. Brand Guide
+                </span>
+              </Link>
+              <Link href="/mindset-revolution">
+                <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/20 text-primary border border-primary/20 transition-colors cursor-pointer">
+                  2. Ad Concept
+                </span>
+              </Link>
+              <Link href="/digital-strategy">
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-white transition-colors cursor-pointer">
+                  3. Digital Strategy
+                </span>
+              </Link>
             </div>
-          </Link>
+          </div>
           <div className="flex items-center gap-2">
             <span className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-mono uppercase tracking-wider border border-primary/20">
               Internal Strategy Doc
