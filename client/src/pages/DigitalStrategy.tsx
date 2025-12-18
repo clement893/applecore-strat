@@ -99,7 +99,7 @@ export default function DigitalStrategy() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* 1. HERO (CONTEXTE) */}
       <section className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden snap-start min-h-screen flex items-center">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -translate-y-1/2"></div>
         
@@ -116,7 +116,130 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* Strategic Pillars */}
+      {/* 2. COMPETITIVE MATRIX (CONTEXTE) */}
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
+              <Crosshair className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">The Blue Ocean</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white">Escaping the "Red Ocean"</h3>
+              <p className="text-gray-400 leading-relaxed">
+                The current market is saturated with "Get Rich Quick" offers. This is a Red Ocean: high competition, low trust, high churn.
+              </p>
+              <p className="text-gray-400 leading-relaxed">
+                We are creating a Blue Ocean by targeting the "Disillusioned Seeker" - the trader who has already failed with the gurus and is looking for the truth.
+              </p>
+              <div className="flex gap-4 mt-4">
+                <div className="px-4 py-2 rounded bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                  <span className="block font-bold mb-1">Competitors</span>
+                  "Easy Money, Fast Cars, Signals"
+                </div>
+                <div className="px-4 py-2 rounded bg-primary/10 border border-primary/20 text-primary text-sm">
+                  <span className="block font-bold mb-1">Applecore</span>
+                  "Hard Work, Discipline, Skills"
+                </div>
+              </div>
+            </div>
+            
+            <div className="relative aspect-square bg-black/50 rounded-2xl border border-white/10 p-8 flex items-center justify-center">
+              {/* Matrix Visualization */}
+              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
+                <div className="border-r border-b border-white/10 p-4 flex flex-col justify-between">
+                  <span className="text-xs text-gray-600 uppercase">High Hype</span>
+                  <span className="text-xs text-gray-600 uppercase">Low Skill</span>
+                </div>
+                <div className="border-b border-white/10 p-4 flex flex-col justify-between items-end">
+                  <span className="text-xs text-gray-600 uppercase">High Hype</span>
+                  <span className="text-xs text-gray-600 uppercase">High Skill</span>
+                </div>
+                <div className="border-r border-white/10 p-4 flex flex-col justify-between">
+                  <span className="text-xs text-gray-600 uppercase">Low Hype</span>
+                  <span className="text-xs text-gray-600 uppercase">Low Skill</span>
+                </div>
+                <div className="p-4 flex flex-col justify-between items-end">
+                  <span className="text-xs text-gray-600 uppercase">Low Hype</span>
+                  <span className="text-xs text-gray-600 uppercase">High Skill</span>
+                </div>
+              </div>
+              
+              {/* Competitors */}
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-red-500/20 rounded-full blur-xl"></div>
+              <div className="absolute top-1/4 left-1/4 text-red-500 font-bold text-sm">The Gurus</div>
+              
+              {/* Applecore Position */}
+              <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
+              <div className="absolute bottom-1/4 right-1/4 text-primary font-bold text-lg flex items-center gap-2">
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                Applecore
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. PERSONAS (CONTEXTE) */}
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
+              <Users className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Target Personas</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="p-8 rounded-2xl bg-card border border-white/5">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-white">The "Burned" Seeker</h3>
+                <span className="px-3 py-1 rounded-full bg-red-500/10 text-xs font-mono text-red-400">PRIMARY</span>
+              </div>
+              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                Male, 25-35. Has lost money on "signals" and "bots". Feels betrayed by the industry. Intelligent but frustrated. Looking for a "real" profession, not a lottery ticket.
+              </p>
+              <div className="space-y-3">
+                <div className="bg-black/50 p-4 rounded-xl">
+                  <div className="text-xs text-gray-500 mb-2">Pain Point</div>
+                  <div className="font-bold text-white">"I know trading works, but I can't make it work."</div>
+                </div>
+                <div className="bg-black/50 p-4 rounded-xl">
+                  <div className="text-xs text-gray-500 mb-2">Conversion Trigger</div>
+                  <div className="font-bold text-white">Radical Honesty</div>
+                  <div className="text-sm text-gray-400">Admitting it's hard validates his struggle.</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-card border border-white/5">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-white">The Systemizer</h3>
+                <span className="px-3 py-1 rounded-full bg-blue-500/10 text-xs font-mono text-blue-400">SECONDARY</span>
+              </div>
+              <p className="text-gray-400 mb-6 text-sm leading-relaxed">
+                Male, 30-45. Engineer, Developer, or Analytical background. Hates ambiguity. Wants clear rules, data, and logic. Rejects "gut feel" trading.
+              </p>
+              <div className="space-y-3">
+                <div className="bg-black/50 p-4 rounded-xl">
+                  <div className="text-xs text-gray-500 mb-2">Pain Point</div>
+                  <div className="font-bold text-white">"The market seems random and chaotic."</div>
+                </div>
+                <div className="bg-black/50 p-4 rounded-xl">
+                  <div className="text-xs text-gray-500 mb-2">Conversion Trigger</div>
+                  <div className="font-bold text-white">System & Process</div>
+                  <div className="text-sm text-gray-400">Detailed curriculum, tools</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. STRATEGIC PILLARS (CONTEXTE) */}
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -175,7 +298,7 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* The User Journey (Funnel) */}
+      {/* 5. USER JOURNEY (EXECUTION) */}
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -187,530 +310,64 @@ export default function DigitalStrategy() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 -translate-y-1/2 hidden md:block"></div>
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 hidden md:block"></div>
 
-            <div className="grid md:grid-cols-4 gap-8 relative z-10">
+            <div className="grid md:grid-cols-4 gap-6 relative z-10">
               {/* Step 1: Discovery */}
-              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-colors group">
-                <div className="w-12 h-12 rounded-full bg-black border-2 border-primary flex items-center justify-center text-primary font-bold text-xl mb-4 group-hover:scale-110 transition-transform">1</div>
-                <h3 className="text-lg font-bold text-white mb-2">Discovery</h3>
-                <div className="text-xs font-mono text-primary mb-3">SOCIAL ADS (META/TIKTOK)</div>
-                <p className="text-sm text-gray-400">
-                  User sees "Pattern Interrupt" ad. No charts, just hard truth about why they are failing.
-                </p>
+              <div className="group">
+                <div className="bg-black border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center font-bold mb-4 group-hover:bg-primary group-hover:text-black transition-colors">1</div>
+                  <h3 className="text-lg font-bold text-white mb-2">Discovery</h3>
+                  <p className="text-sm text-gray-400 mb-4">
+                    Ads targeting "Pain Points" (Gambling, Losses, Confusion).
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-white/5 px-2 py-1 rounded text-gray-500">Meta Ads</span>
+                    <span className="text-xs bg-white/5 px-2 py-1 rounded text-gray-500">TikTok</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Step 2: Consideration */}
-              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-secondary/50 transition-colors group">
-                <div className="w-12 h-12 rounded-full bg-black border-2 border-secondary flex items-center justify-center text-secondary font-bold text-xl mb-4 group-hover:scale-110 transition-transform">2</div>
-                <h3 className="text-lg font-bold text-white mb-2">Consideration</h3>
-                <div className="text-xs font-mono text-secondary mb-3">VSL (VIDEO SALES LETTER)</div>
-                <p className="text-sm text-gray-400">
-                  User watches 5-min video explaining the "Institutional Edge". Value first, pitch second.
-                </p>
+              {/* Step 2: The Tripwire */}
+              <div className="group">
+                <div className="bg-black border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-all duration-300 h-full relative overflow-hidden">
+                  <div className="absolute top-0 right-0 bg-primary text-black text-[10px] font-bold px-2 py-1">£4.99</div>
+                  <div className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center font-bold mb-4 group-hover:bg-primary group-hover:text-black transition-colors">2</div>
+                  <h3 className="text-lg font-bold text-white mb-2">The Filter</h3>
+                  <p className="text-sm text-gray-400 mb-4">
+                    Low-ticket offer to qualify buyers. "The Mindset Reset".
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Micro-Commitment</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Step 3: Tripwire */}
-              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-white/50 transition-colors group">
-                <div className="w-12 h-12 rounded-full bg-black border-2 border-white flex items-center justify-center text-white font-bold text-xl mb-4 group-hover:scale-110 transition-transform">3</div>
-                <h3 className="text-lg font-bold text-white mb-2">Micro-Commitment</h3>
-                <div className="text-xs font-mono text-white mb-3">£4.99 TRIPWIRE OFFER</div>
-                <p className="text-sm text-gray-400">
-                  User buys "The Mindset Reset" mini-course. Low friction, high perceived value.
-                </p>
+              {/* Step 3: Indoctrination */}
+              <div className="group">
+                <div className="bg-black border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center font-bold mb-4 group-hover:bg-primary group-hover:text-black transition-colors">3</div>
+                  <h3 className="text-lg font-bold text-white mb-2">Indoctrination</h3>
+                  <p className="text-sm text-gray-400 mb-4">
+                    7-Day Email Sequence delivering massive value + "The Institutional Edge".
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-white/5 px-2 py-1 rounded text-gray-500">Email</span>
+                    <span className="text-xs bg-white/5 px-2 py-1 rounded text-gray-500">Video</span>
+                  </div>
+                </div>
               </div>
 
               {/* Step 4: Conversion */}
-              <div className="bg-card border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-colors group">
-                <div className="w-12 h-12 rounded-full bg-black border-2 border-primary flex items-center justify-center text-primary font-bold text-xl mb-4 group-hover:scale-110 transition-transform">4</div>
-                <h3 className="text-lg font-bold text-white mb-2">Core Offer</h3>
-                <div className="text-xs font-mono text-primary mb-3">ACADEMY SUBSCRIPTION</div>
-                <p className="text-sm text-gray-400">
-                  Upsell to full membership immediately after purchase or via email sequence.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Welcome Sequence (Tripwire to Sub) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
-              <Zap className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl font-bold text-white">The £4.99 to Subscriber Pipeline</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-white">Why the £4.99 Tripwire?</h3>
-              <p className="text-gray-400 leading-relaxed">
-                It's easier to get a second payment from a customer than a first payment from a stranger. The £4.99 product qualifies the lead: they have a credit card and are willing to pay for a solution.
-              </p>
-              <div className="p-6 rounded-xl bg-secondary/5 border border-secondary/20">
-                <h4 className="font-bold text-secondary mb-4">The Automated Upsell Sequence</h4>
-                <ul className="space-y-4">
-                  <li className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D0</div>
-                    <div>
-                      <div className="font-bold text-white">Immediate OTO (One-Time Offer)</div>
-                      <div className="text-sm text-gray-400">"Upgrade to Full Academy for 50% off first month" shown on Thank You page.</div>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D1</div>
-                    <div>
-                      <div className="font-bold text-white">Value Bomb Email</div>
-                      <div className="text-sm text-gray-400">Delivering the £4.99 product + bonus unannounced resource.</div>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D3</div>
-                    <div>
-                      <div className="font-bold text-white">The "Missing Piece" Email</div>
-                      <div className="text-sm text-gray-400">"You have the mindset (Tripwire), now you need the tools (Academy)."</div>
-                    </div>
-                  </li>
-                  <li className="flex gap-4">
-                    <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-xs shrink-0">D7</div>
-                    <div>
-                      <div className="font-bold text-white">Scarcity Close</div>
-                      <div className="text-sm text-gray-400">"Your new member discount expires in 24h."</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Visual Representation of the Pipeline */}
-            <div className="relative aspect-square rounded-2xl bg-black border border-white/10 p-8 flex flex-col justify-center">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(116,31,144,0.15),transparent_70%)]"></div>
-              
-              <div className="relative z-10 space-y-4">
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-32 h-32 rounded-full border-4 border-white/10 flex flex-col items-center justify-center text-center p-2 bg-black">
-                    <div className="text-2xl font-bold text-white">1,000</div>
-                    <div className="text-xs text-gray-500">Leads</div>
-                  </div>
-                </div>
-                
-                <div className="flex justify-center">
-                  <ArrowRight className="h-8 w-8 text-gray-600 rotate-90" />
-                </div>
-
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-28 h-28 rounded-full border-4 border-white flex flex-col items-center justify-center text-center p-2 bg-black shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                    <div className="text-xl font-bold text-white">100</div>
-                    <div className="text-xs text-gray-400">Buyers (£4.99)</div>
-                    <div className="text-[10px] text-green-400 font-mono mt-1">10% Conv.</div>
-                  </div>
-                </div>
-
-                <div className="flex justify-center">
-                  <ArrowRight className="h-8 w-8 text-secondary rotate-90" />
-                </div>
-
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-24 h-24 rounded-full border-4 border-secondary flex flex-col items-center justify-center text-center p-2 bg-black shadow-[0_0_30px_rgba(116,31,144,0.4)]">
-                    <div className="text-lg font-bold text-secondary">30</div>
-                    <div className="text-xs text-gray-400">Subscribers</div>
-                    <div className="text-[10px] text-green-400 font-mono mt-1">30% Upsell</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Email Automation Hub */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
-              <Zap className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl font-bold text-white">Email Automation Hub</h2>
-          </div>
-
-          <div className="flex justify-end mb-8">
-            <Link href="/email-strategy">
-              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/10 gap-2">
-                <Eye className="h-4 w-4" /> View Full Playbook
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Sequence 1: Nurturing */}
-            <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-blue-500/50 transition-colors group">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-white">1. Nurturing</h3>
-                <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-500 text-xs font-mono">COLD LEADS</span>
-              </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Automated sequence to warm up leads who downloaded a free resource but haven't bought yet.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-500 mb-6">
-                <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 1:</span> The "Hard Truth" about trading</li>
-                <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 3:</span> Why indicators fail (Case Study)</li>
-                <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 5:</span> The Institutional Edge revealed</li>
-              </ul>
-              <Button variant="outline" className="w-full gap-2 border-blue-500/20 text-blue-500 hover:bg-blue-500/10 hover:text-blue-500" onClick={() => setSelectedEmail('nurturing')}>
-                <Eye className="h-4 w-4" /> View Template
-              </Button>
-            </div>
-
-            {/* Sequence 2: Welcome (Tripwire) */}
-            <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-colors group">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-white">2. Welcome</h3>
-                <span className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-mono">BUYERS (£4.99)</span>
-              </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Upsell sequence for customers who bought the £4.99 mini-course. Goal: Upgrade to Academy.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-500 mb-6">
-                <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 0:</span> Access + "Hidden Bonus"</li>
-                <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 2:</span> "You're missing 90% of the puzzle"</li>
-                <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 7:</span> Exclusive invite to the Tribe</li>
-              </ul>
-              <Button variant="outline" className="w-full gap-2 border-primary/20 text-primary hover:bg-primary/10 hover:text-primary" onClick={() => setSelectedEmail('welcome')}>
-                <Eye className="h-4 w-4" /> View Template
-              </Button>
-            </div>
-
-            {/* Sequence 3: Win-Back */}
-            <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-purple-500/50 transition-colors group">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-white">3. Win-Back</h3>
-                <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-500 text-xs font-mono">CHURNED</span>
-              </div>
-              <p className="text-sm text-gray-400 mb-4">
-                Re-activation campaign for users who cancelled. We appeal to their ego and fear of missing out.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-500 mb-6">
-                <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 1:</span> "Did we fail you?" (Feedback loop)</li>
-                <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 4:</span> "What you missed" (New features)</li>
-                <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 8:</span> "One last ride" (Discount offer)</li>
-              </ul>
-              <Button variant="outline" className="w-full gap-2 border-purple-500/20 text-purple-500 hover:bg-purple-500/10 hover:text-purple-500" onClick={() => setSelectedEmail('winback')}>
-                <Eye className="h-4 w-4" /> View Template
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Retention Mechanics */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
-              <Lock className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl font-bold text-white">Retention Mechanics</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* The First Win Protocol */}
-            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-purple-500/50 transition-colors group">
-              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-purple-500/20 group-hover:text-purple-500 transition-colors">
-                <Zap className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">1. The "First Win" Protocol</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Churn happens when users feel overwhelmed. We engineer a "Quick Win" within the first 7 days to lock in dopamine and trust.
-              </p>
-              <ul className="space-y-3 text-sm text-gray-500">
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xs font-bold">D1</div>
-                  <span className="text-gray-300">"Setup Your Charts" (Actionable, easy task)</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xs font-bold">D3</div>
-                  <span className="text-gray-300">"Identify One Trend" (Skill validation)</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 text-xs font-bold">D7</div>
-                  <span className="text-gray-300">"Paper Trade Win" (Proof of concept)</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Tribal Lock-in */}
-            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary/50 transition-colors group">
-              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-primary/20 group-hover:text-primary transition-colors">
-                <Users className="h-6 w-6" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">2. Tribal Lock-in</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                We make leaving painful by embedding the user in a social hierarchy. Leaving Applecore means losing your status and your "tribe".
-              </p>
-              <ul className="space-y-3 text-sm text-gray-500">
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                  <span className="text-gray-300"><strong>Rank System:</strong> Users progress from "Initiate" to "Operator" based on discipline, not P&L.</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                  <span className="text-gray-300"><strong>Accountability Pods:</strong> Small groups of 5 that check in daily. You don't want to let your pod down.</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                  <span className="text-gray-300"><strong>Exclusive Access:</strong> Higher ranks unlock direct access to mentors.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Target Audiences (Personas) */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
-              <Users className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl font-bold text-white">Target Audiences</h2>
-          </div>
-
-          <div className="space-y-8">
-            {/* Persona 1 */}
-            <div className="grid md:grid-cols-12 gap-8 p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="md:col-span-4 border-r border-white/10 pr-8">
-                <div className="text-xs font-mono text-red-500 mb-2">PRIMARY TARGET</div>
-                <h3 className="text-2xl font-bold text-white mb-2">The Burned Churner</h3>
-                <p className="text-lg text-gray-400 italic mb-6">"I've tried everything and nothing works."</p>
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Pain Point</div>
-                    <div className="text-sm text-white">Lost money on signals, bots, and "magic strategies". Feels stupid and frustrated.</div>
-                  </div>
-                  <div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Hook</div>
-                    <div className="text-sm text-white">"It's not your fault. You were given the wrong tools."</div>
-                  </div>
-                </div>
-              </div>
-              <div className="md:col-span-8 grid sm:grid-cols-3 gap-6">
-                <div className="bg-black/50 p-4 rounded-xl">
-                  <div className="text-xs text-gray-500 mb-2">Demographics</div>
-                  <div className="font-bold text-white">Male, 25-40</div>
-                  <div className="text-sm text-gray-400">Employed, disposable income</div>
-                </div>
-                <div className="bg-black/50 p-4 rounded-xl">
-                  <div className="text-xs text-gray-500 mb-2">Psychographics</div>
-                  <div className="font-bold text-white">Skeptical but Desperate</div>
-                  <div className="text-sm text-gray-400">Needs validation, hates gurus</div>
-                </div>
-                <div className="bg-black/50 p-4 rounded-xl">
-                  <div className="text-xs text-gray-500 mb-2">Conversion Trigger</div>
-                  <div className="font-bold text-white">Logic & Transparency</div>
-                  <div className="text-sm text-gray-400">Show the data, hide the hype</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Persona 2 */}
-            <div className="grid md:grid-cols-12 gap-8 p-8 rounded-2xl bg-white/5 border border-white/10">
-              <div className="md:col-span-4 border-r border-white/10 pr-8">
-                <div className="text-xs font-mono text-blue-500 mb-2">SECONDARY TARGET</div>
-                <h3 className="text-2xl font-bold text-white mb-2">The System Hopper</h3>
-                <p className="text-lg text-gray-400 italic mb-6">"I need to optimize my edge."</p>
-                <div className="space-y-4">
-                  <div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Pain Point</div>
-                    <div className="text-sm text-white">Inconsistent results. Knows the basics but lacks a structured framework.</div>
-                  </div>
-                  <div>
-                    <div className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Hook</div>
-                    <div className="text-sm text-white">"Stop guessing. Start engineering your trade."</div>
-                  </div>
-                </div>
-              </div>
-              <div className="md:col-span-8 grid sm:grid-cols-3 gap-6">
-                <div className="bg-black/50 p-4 rounded-xl">
-                  <div className="text-xs text-gray-500 mb-2">Demographics</div>
-                  <div className="font-bold text-white">Male, 28-45</div>
-                  <div className="text-sm text-gray-400">Tech/Engineering background</div>
-                </div>
-                <div className="bg-black/50 p-4 rounded-xl">
-                  <div className="text-xs text-gray-500 mb-2">Psychographics</div>
-                  <div className="font-bold text-white">Analytical & Methodical</div>
-                  <div className="text-sm text-gray-400">Loves data, hates emotion</div>
-                </div>
-                <div className="bg-black/50 p-4 rounded-xl">
-                  <div className="text-xs text-gray-500 mb-2">Conversion Trigger</div>
-                  <div className="font-bold text-white">System & Process</div>
-                  <div className="text-sm text-gray-400">Detailed curriculum, tools</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Competitive Matrix (Blue Ocean) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
-              <Crosshair className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl font-bold text-white">Competitive Landscape</h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-4">The Blue Ocean Strategy</h3>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                The market is polarized between "Dream Sellers" (High Hype, Low Substance) and "Academic Tools" (High Substance, Low Engagement). Applecore occupies the unique space of <strong>"High Engagement + High Substance"</strong>.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-red-500/20 text-red-500 flex items-center justify-center text-xs font-bold mt-1">X</div>
-                  <div>
-                    <strong className="text-white block">The "Lambo Gurus"</strong>
-                    <span className="text-sm text-gray-500">Sell lifestyle, churn customers in 3 months. Zero retention.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-gray-500/20 text-gray-500 flex items-center justify-center text-xs font-bold mt-1">X</div>
-                  <div>
-                    <strong className="text-white block">The "Chart Tools"</strong>
-                    <span className="text-sm text-gray-500">Sell software, no community, steep learning curve. High abandonment.</span>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center text-xs font-bold mt-1">✓</div>
-                  <div>
-                    <strong className="text-white block">Applecore Position</strong>
-                    <span className="text-sm text-gray-500">Sells identity transformation. High retention, high LTV, viral loyalty.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            
-            {/* Visual Matrix */}
-            <div className="relative aspect-square bg-black/50 rounded-2xl border border-white/10 p-8">
-              {/* Axis Labels */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs font-mono text-gray-500 uppercase">High Emotion / Hype</div>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs font-mono text-gray-500 uppercase">Low Emotion / Dry</div>
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 -rotate-90 text-xs font-mono text-gray-500 uppercase">Low Substance</div>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 text-xs font-mono text-gray-500 uppercase">High Substance</div>
-
-              {/* Grid Lines */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-px bg-white/10"></div>
-                <div className="h-full w-px bg-white/10 absolute"></div>
-              </div>
-
-              {/* Competitors */}
-              <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 text-center">
-                <div className="w-3 h-3 bg-red-500 rounded-full mx-auto mb-2 animate-pulse"></div>
-                <span className="text-xs text-red-500 font-bold">Gurus</span>
-              </div>
-              <div className="absolute bottom-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 text-center">
-                <div className="w-3 h-3 bg-gray-500 rounded-full mx-auto mb-2"></div>
-                <span className="text-xs text-gray-500 font-bold">SaaS Tools</span>
-              </div>
-
-              {/* Applecore */}
-              <div className="absolute top-1/4 right-1/4 -translate-x-1/2 -translate-y-1/2 text-center">
-                <div className="w-6 h-6 bg-primary rounded-full mx-auto mb-2 shadow-[0_0_20px_rgba(34,197,94,0.5)] flex items-center justify-center">
-                  <div className="w-2 h-2 bg-black rounded-full"></div>
-                </div>
-                <span className="text-sm text-primary font-bold bg-black/80 px-2 py-1 rounded border border-primary/20">APPLECORE</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Acquisition Funnel */}
-      <section className="py-20">
-        <div className="container">
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-green-500/10 flex items-center justify-center text-green-500">
-              <TrendingUp className="h-5 w-5" />
-            </div>
-            <h2 className="text-3xl font-bold text-white">The "Anti-Funnel"</h2>
-          </div>
-
-          <div className="relative">
-            {/* Connecting Line */}
-            <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-green-500 hidden md:block"></div>
-
-            <div className="space-y-12">
-              {/* TOFU */}
-              <div className="relative md:pl-24">
-                <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-black border-4 border-blue-500 items-center justify-center z-10">
-                  <span className="font-bold text-blue-500">TOFU</span>
-                </div>
-                <div className="bg-card border border-white/10 p-8 rounded-2xl">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-white">Awareness: The Pattern Interrupt</h3>
-                    <span className="text-xs font-mono bg-blue-500/20 text-blue-500 px-2 py-1 rounded">Social Media (Shorts/Reels)</span>
-                  </div>
-                  <p className="text-gray-400 mb-4">
-                    Content that mocks the "Guru Lifestyle". Showing the boring, painful reality of trading.
-                    <br />
-                    <strong>Key Asset:</strong> "Stop Acting Like An Amateur" video ads.
+              <div className="group">
+                <div className="bg-black border border-white/10 p-6 rounded-xl hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center font-bold mb-4 group-hover:bg-primary group-hover:text-black transition-colors">4</div>
+                  <h3 className="text-lg font-bold text-white mb-2">The Academy</h3>
+                  <p className="text-sm text-gray-400 mb-4">
+                    Upsell to full membership. "Join the 1%".
                   </p>
-                  <div className="flex gap-2">
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">TikTok</span>
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">IG Reels</span>
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">YouTube Shorts</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* MOFU */}
-              <div className="relative md:pl-24">
-                <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-black border-4 border-purple-500 items-center justify-center z-10">
-                  <span className="font-bold text-purple-500">MOFU</span>
-                </div>
-                <div className="bg-card border border-white/10 p-8 rounded-2xl">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-white">Consideration: The Value Bomb</h3>
-                    <span className="text-xs font-mono bg-purple-500/20 text-purple-500 px-2 py-1 rounded">Long Form Content</span>
-                  </div>
-                  <p className="text-gray-400 mb-4">
-                    Deep-dive breakdowns of market mechanics. Proving expertise without asking for a sale.
-                    <br />
-                    <strong>Key Asset:</strong> "Why your Stop Loss is always hunted" (Educational Video).
-                  </p>
-                  <div className="flex gap-2">
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">YouTube</span>
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">Newsletter</span>
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">Free Discord</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* BOFU */}
-              <div className="relative md:pl-24">
-                <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-black border-4 border-green-500 items-center justify-center z-10">
-                  <span className="font-bold text-green-500">BOFU</span>
-                </div>
-                <div className="bg-card border border-white/10 p-8 rounded-2xl">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-xl font-bold text-white">Conversion: The Application</h3>
-                    <span className="text-xs font-mono bg-green-500/20 text-green-500 px-2 py-1 rounded">Direct Offer</span>
-                  </div>
-                  <p className="text-gray-400 mb-4">
-                    High-ticket framing. "Apply to join". Scarcity based on cohort size, not fake timers.
-                    <br />
-                    <strong>Key Asset:</strong> The Academy Landing Page (Mindset Revolution).
-                  </p>
-                  <div className="flex gap-2">
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">Retargeting Ads</span>
-                    <span className="text-xs border border-white/10 px-2 py-1 rounded text-gray-500">Email Sequence</span>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Recurring Rev</span>
                   </div>
                 </div>
               </div>
@@ -719,7 +376,7 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 90-Day Attack Plan */}
+      {/* 6. 90-DAY PLAN (EXECUTION) */}
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -765,7 +422,208 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* Investment & Allocation */}
+      {/* 7. EMAIL AUTOMATION HUB (MECANIQUE) */}
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
+              <Zap className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Email Automation Hub</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Nurturing */}
+            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/10 bg-white/5">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-mono text-primary uppercase tracking-wider">Acquisition</span>
+                  <MailIcon className="h-4 w-4 text-gray-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Nurturing Sequence</h3>
+                <p className="text-sm text-gray-400 mt-2">Cold Leads → Warm Prospects</p>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="text-sm text-gray-300">
+                  <strong className="text-white">Goal:</strong> Shift beliefs. Move from "Gambler" to "Student".
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Day 1: Stop Gambling
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Day 3: Why Indicators Lie
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Day 5: The Institutional Edge
+                  </div>
+                </div>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white"
+                  onClick={() => setSelectedEmail('nurturing')}
+                >
+                  <Eye className="mr-2 h-4 w-4" /> View Template
+                </Button>
+              </div>
+            </div>
+
+            {/* Welcome */}
+            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-secondary/50 transition-colors">
+              <div className="p-6 border-b border-white/10 bg-white/5">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-mono text-secondary uppercase tracking-wider">Activation</span>
+                  <MailIcon className="h-4 w-4 text-gray-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Welcome Sequence</h3>
+                <p className="text-sm text-gray-400 mt-2">Tripwire (£4.99) → Full Member</p>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="text-sm text-gray-300">
+                  <strong className="text-white">Goal:</strong> Upsell to Academy + Retention M2.
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Day 0: Access Granted
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Day 2: The Missing Piece (Upsell)
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Day 14-35: Retention Arc
+                  </div>
+                </div>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white"
+                  onClick={() => setSelectedEmail('welcome')}
+                >
+                  <Eye className="mr-2 h-4 w-4" /> View Template
+                </Button>
+              </div>
+            </div>
+
+            {/* Win-Back */}
+            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-red-500/50 transition-colors">
+              <div className="p-6 border-b border-white/10 bg-white/5">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-mono text-red-500 uppercase tracking-wider">Retention</span>
+                  <MailIcon className="h-4 w-4 text-gray-500" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Win-Back Sequence</h3>
+                <p className="text-sm text-gray-400 mt-2">Churned → Reactivated</p>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="text-sm text-gray-300">
+                  <strong className="text-white">Goal:</strong> Reactivate cancelled members.
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    Week 1: Did we fail?
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    Week 4: New Module Alert
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    Week 8: Last Chance
+                  </div>
+                </div>
+                <Button 
+                  variant="outline" 
+                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white"
+                  onClick={() => setSelectedEmail('winback')}
+                >
+                  <Eye className="mr-2 h-4 w-4" /> View Template
+                </Button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link href="/email-strategy">
+              <Button className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-6 text-lg h-auto">
+                <span className="mr-2">📂</span> Open Full Email Playbook
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. RETENTION MECHANICS (MECANIQUE) */}
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
+              <Lock className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Retention Mechanics</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* First Win Protocol */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="text-4xl font-bold text-white/20">01</div>
+                <h3 className="text-2xl font-bold text-white">First Win Protocol</h3>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                Churn happens when users feel "stuck". We engineer a quick win within the first 7 days to lock in dopamine.
+              </p>
+              <div className="bg-card border border-white/10 p-6 rounded-xl">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+                    <Zap className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-white">The "Setup Hunter" Badge</div>
+                    <div className="text-xs text-gray-500">Gamification Reward</div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-400">
+                  Users unlock this badge by posting their first correct chart markup in Discord. It's not about profit; it's about <span className="text-white font-bold">process validation</span>.
+                </p>
+              </div>
+            </div>
+
+            {/* Tribal Lock-in */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="text-4xl font-bold text-white/20">02</div>
+                <h3 className="text-2xl font-bold text-white">Tribal Lock-in</h3>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                People leave products; they don't leave tribes. We create social cost to leaving.
+              </p>
+              <div className="bg-card border border-white/10 p-6 rounded-xl">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
+                    <Users className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-white">Accountability Pods</div>
+                    <div className="text-xs text-gray-500">Social Structure</div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-400">
+                  Members are assigned to small "Pods" of 5 traders. If one leaves, the Pod feels it. This creates <span className="text-white font-bold">positive peer pressure</span> to stay and improve.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. INVESTMENT & ALLOCATION (CHIFFRES) */}
       <section className="py-32 border-b border-white/10 bg-black/30 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -836,7 +694,7 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* Unit Economics */}
+      {/* 10. UNIT ECONOMICS (CHIFFRES) */}
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -875,7 +733,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-white/10 bg-black">
+      <footer className="py-12 border-t border-white/10 bg-black snap-start">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <img src="/images/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert" />
@@ -891,4 +749,24 @@ export default function DigitalStrategy() {
     </div>
     </>
   );
+}
+
+function MailIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="16" x="2" y="4" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  )
 }
