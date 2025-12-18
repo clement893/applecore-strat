@@ -246,6 +246,173 @@ export default function MindsetRevolution() {
         </div>
       </section>
 
+      {/* A/B Testing Strategy */}
+      <section className="py-20 border-b border-white/10">
+        <div className="container">
+          <div className="mb-16 max-w-3xl">
+            <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <Users className="h-6 w-6" />
+            </div>
+            <h2 className="text-3xl font-bold mb-4 text-white">A/B Testing Strategy</h2>
+            <p className="text-muted-foreground text-lg">
+              We will test 6 distinct messaging angles to identify which psychological trigger resonates most with our audience. Each variant targets a specific pain point or aspiration.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Variant A */}
+            <div className="bg-card border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/5 bg-black/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono text-primary border border-primary/20 px-2 py-1 rounded">Variant A</span>
+                  <span className="text-xs text-muted-foreground">Identity Shift</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Amateur vs Millionaire</h3>
+                <div className="flex gap-4 text-xs font-mono text-gray-500 mb-4">
+                  <div>Focus: <span className="text-white">100%</span></div>
+                  <div>Emotion: <span className="text-white">0%</span></div>
+                </div>
+                <p className="text-sm text-gray-400 italic">"Master the mindset that separates the pros from the gamblers."</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-black to-gray-900 flex flex-col justify-center items-center text-center min-h-[200px]">
+                <div className="space-y-2">
+                  <div className="text-gray-500 line-through decoration-red-500/50">Stop Acting Like An Amateur.</div>
+                  <div className="text-white font-bold text-lg">Start Acting Like A Millionaire.</div>
+                </div>
+                <Button variant="outline" size="sm" className="mt-6 gap-2 border-white/10 hover:bg-white/5">
+                  Download .PNG <Layout className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Variant B */}
+            <div className="bg-card border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/5 bg-black/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono text-primary border border-primary/20 px-2 py-1 rounded">Variant B</span>
+                  <span className="text-xs text-muted-foreground">Professionalism</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Gambler vs Pro</h3>
+                <div className="flex gap-4 text-xs font-mono text-gray-500 mb-4">
+                  <div>Risk: <span className="text-white">Managed</span></div>
+                  <div>Edge: <span className="text-white">Defined</span></div>
+                </div>
+                <p className="text-sm text-gray-400 italic">"Stop guessing. Start executing with precision."</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-black to-gray-900 flex flex-col justify-center items-center text-center min-h-[200px]">
+                <div className="space-y-2">
+                  <div className="text-gray-500 line-through decoration-red-500/50">Stop Trading Like A Gambler.</div>
+                  <div className="text-white font-bold text-lg">Start Trading Like A Pro.</div>
+                </div>
+                <Button variant="outline" size="sm" className="mt-6 gap-2 border-white/10 hover:bg-white/5">
+                  Download .PNG <Layout className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Variant C */}
+            <div className="bg-card border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/5 bg-black/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono text-primary border border-primary/20 px-2 py-1 rounded">Variant C</span>
+                  <span className="text-xs text-muted-foreground">Certainty</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Guessing vs Knowing</h3>
+                <div className="flex gap-4 text-xs font-mono text-gray-500 mb-4">
+                  <div>Bias: <span className="text-white">Zero</span></div>
+                  <div>Clarity: <span className="text-white">100%</span></div>
+                </div>
+                <p className="text-sm text-gray-400 italic">"See what others miss. Trade what actually happens."</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-black to-gray-900 flex flex-col justify-center items-center text-center min-h-[200px]">
+                <div className="space-y-2">
+                  <div className="text-gray-500 line-through decoration-red-500/50">Stop Guessing The Market.</div>
+                  <div className="text-white font-bold text-lg">Start Knowing The Moves.</div>
+                </div>
+                <Button variant="outline" size="sm" className="mt-6 gap-2 border-white/10 hover:bg-white/5">
+                  Download .PNG <Layout className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Variant D */}
+            <div className="bg-card border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/5 bg-black/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono text-primary border border-primary/20 px-2 py-1 rounded">Variant D</span>
+                  <span className="text-xs text-muted-foreground">Predator/Prey</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Liquidity vs Hunter</h3>
+                <div className="flex gap-4 text-xs font-mono text-gray-500 mb-4">
+                  <div>Role: <span className="text-white">Hunter</span></div>
+                  <div>Prey: <span className="text-white">Retail</span></div>
+                </div>
+                <p className="text-sm text-gray-400 italic">"You are either the liquidity or the one taking it."</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-black to-gray-900 flex flex-col justify-center items-center text-center min-h-[200px]">
+                <div className="space-y-2">
+                  <div className="text-gray-500 line-through decoration-red-500/50">Stop Being The Liquidity.</div>
+                  <div className="text-white font-bold text-lg">Start Being The Hunter.</div>
+                </div>
+                <Button variant="outline" size="sm" className="mt-6 gap-2 border-white/10 hover:bg-white/5">
+                  Download .PNG <Layout className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Variant E */}
+            <div className="bg-card border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/5 bg-black/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono text-primary border border-primary/20 px-2 py-1 rounded">Variant E</span>
+                  <span className="text-xs text-muted-foreground">FOMO vs Patience</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Chasing vs Catching</h3>
+                <div className="flex gap-4 text-xs font-mono text-gray-500 mb-4">
+                  <div>FOMO: <span className="text-white">None</span></div>
+                  <div>Patience: <span className="text-white">Infinite</span></div>
+                </div>
+                <p className="text-sm text-gray-400 italic">"The market comes to you. You don't run after it."</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-black to-gray-900 flex flex-col justify-center items-center text-center min-h-[200px]">
+                <div className="space-y-2">
+                  <div className="text-gray-500 line-through decoration-red-500/50">Stop Chasing Green Candles.</div>
+                  <div className="text-white font-bold text-lg">Start Catching The Reversals.</div>
+                </div>
+                <Button variant="outline" size="sm" className="mt-6 gap-2 border-white/10 hover:bg-white/5">
+                  Download .PNG <Layout className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+
+            {/* Variant F */}
+            <div className="bg-card border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+              <div className="p-6 border-b border-white/5 bg-black/50">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-xs font-mono text-primary border border-primary/20 px-2 py-1 rounded">Variant F</span>
+                  <span className="text-xs text-muted-foreground">Confusion vs Logic</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Chaos vs Structure</h3>
+                <div className="flex gap-4 text-xs font-mono text-gray-500 mb-4">
+                  <div>Noise: <span className="text-white">Filtered</span></div>
+                  <div>Logic: <span className="text-white">Absolute</span></div>
+                </div>
+                <p className="text-sm text-gray-400 italic">"Find the order in the chaos. Trade the structure."</p>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-black to-gray-900 flex flex-col justify-center items-center text-center min-h-[200px]">
+                <div className="space-y-2">
+                  <div className="text-gray-500 line-through decoration-red-500/50">Stop Trading The Chaos.</div>
+                  <div className="text-white font-bold text-lg">Start Trading The Structure.</div>
+                </div>
+                <Button variant="outline" size="sm" className="mt-6 gap-2 border-white/10 hover:bg-white/5">
+                  Download .PNG <Layout className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Strategy Note */}
       <footer className="py-12 border-t border-white/10 bg-black">
         <div className="container">
