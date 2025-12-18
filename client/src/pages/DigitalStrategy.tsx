@@ -336,6 +336,14 @@ export default function DigitalStrategy() {
             <h2 className="text-3xl font-bold text-white">Email Automation Hub</h2>
           </div>
 
+          <div className="flex justify-end mb-8">
+            <Link href="/email-strategy">
+              <Button className="bg-white/10 hover:bg-white/20 text-white border border-white/10 gap-2">
+                <Eye className="h-4 w-4" /> View Full Playbook
+              </Button>
+            </Link>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {/* Sequence 1: Nurturing */}
             <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-blue-500/50 transition-colors group">
