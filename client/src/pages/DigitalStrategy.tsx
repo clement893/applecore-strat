@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2 } from "lucide-react";
 import { useState } from "react";
 
 export default function DigitalStrategy() {
   const [location] = useLocation();
   const [selectedEmail, setSelectedEmail] = useState<string | null>(null);
+  const [immersiveMode, setImmersiveMode] = useState(false);
 
   const emailTemplates = {
     nurturing: {
@@ -27,14 +28,25 @@ export default function DigitalStrategy() {
 
   return (
     <>
+      {/* Immersive Mode Toggle */}
+      <div className="fixed bottom-6 right-6 z-[100]">
+        <Button 
+          onClick={() => setImmersiveMode(!immersiveMode)}
+          className="rounded-full w-12 h-12 p-0 bg-primary text-black hover:bg-primary/90 shadow-lg shadow-primary/20"
+          title={immersiveMode ? "Exit Immersive Mode" : "Enter Immersive Mode"}
+        >
+          {immersiveMode ? <Minimize2 className="h-5 w-5" /> : <Maximize2 className="h-5 w-5" />}
+        </Button>
+      </div>
+
       {selectedEmail && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={() => setSelectedEmail(null)}>
           <div className="bg-card border border-white/10 w-full max-w-lg rounded-xl overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="bg-white/5 p-4 flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <div className="w-3 h-3 rounded-full bg-primary"></div>
+                <div className="w-3 h-3 rounded-full bg-secondary"></div>
+                <div className="w-3 h-3 rounded-full bg-accent"></div>
               </div>
               <button onClick={() => setSelectedEmail(null)} className="text-gray-400 hover:text-white">
                 <X className="h-5 w-5" />
@@ -64,8 +76,8 @@ export default function DigitalStrategy() {
         </div>
       )}
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll">
-      {/* Global Navigation */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
+      {/* Global Navigation - Hidden in Immersive Mode */}
+      <nav className={`fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md transition-transform duration-500 ${immersiveMode ? '-translate-y-full' : 'translate-y-0'}`}>
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/">
@@ -92,7 +104,7 @@ export default function DigitalStrategy() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-500 text-xs font-mono uppercase tracking-wider border border-blue-500/20">
+            <span className="px-2 py-1 rounded bg-secondary/20 text-secondary text-xs font-mono uppercase tracking-wider border border-secondary/30">
               Market Analysis
             </span>
           </div>
@@ -101,11 +113,11 @@ export default function DigitalStrategy() {
 
       {/* 1. HERO (CONTEXTE) */}
       <section className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden snap-start min-h-screen flex items-center">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -translate-y-1/2"></div>
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -translate-y-1/2"></div>
         
         <div className="container relative z-10">
           <div className="max-w-4xl">
-            <h4 className="text-blue-500 font-mono mb-4 tracking-widest uppercase text-sm">Go-To-Market Strategy</h4>
+            <h4 className="text-primary font-mono mb-4 tracking-widest uppercase text-sm">Go-To-Market Strategy</h4>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white">
               The Anti-Guru Blueprint
             </h1>
@@ -120,7 +132,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
+            <div className="w-10 h-10 rounded bg-accent/10 flex items-center justify-center text-accent">
               <Crosshair className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">The Blue Ocean</h2>
@@ -136,7 +148,7 @@ export default function DigitalStrategy() {
                 We are creating a Blue Ocean by targeting the "Disillusioned Seeker" - the trader who has already failed with the gurus and is looking for the truth.
               </p>
               <div className="flex gap-4 mt-4">
-                <div className="px-4 py-2 rounded bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                <div className="px-4 py-2 rounded bg-destructive/10 border border-destructive/20 text-destructive text-sm">
                   <span className="block font-bold mb-1">Competitors</span>
                   "Easy Money, Fast Cars, Signals"
                 </div>
@@ -169,8 +181,8 @@ export default function DigitalStrategy() {
               </div>
               
               {/* Competitors */}
-              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-red-500/20 rounded-full blur-xl"></div>
-              <div className="absolute top-1/4 left-1/4 text-red-500 font-bold text-sm">The Gurus</div>
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-destructive/20 rounded-full blur-xl"></div>
+              <div className="absolute top-1/4 left-1/4 text-destructive font-bold text-sm">The Gurus</div>
               
               {/* Applecore Position */}
               <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
@@ -187,7 +199,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
+            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
               <Users className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Target Personas</h2>
@@ -197,7 +209,7 @@ export default function DigitalStrategy() {
             <div className="p-8 rounded-2xl bg-card border border-white/5">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-white">The "Burned" Seeker</h3>
-                <span className="px-3 py-1 rounded-full bg-red-500/10 text-xs font-mono text-red-400">PRIMARY</span>
+                <span className="px-3 py-1 rounded-full bg-destructive/10 text-xs font-mono text-destructive">PRIMARY</span>
               </div>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                 Male, 25-35. Has lost money on "signals" and "bots". Feels betrayed by the industry. Intelligent but frustrated. Looking for a "real" profession, not a lottery ticket.
@@ -218,7 +230,7 @@ export default function DigitalStrategy() {
             <div className="p-8 rounded-2xl bg-card border border-white/5">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-white">The Systemizer</h3>
-                <span className="px-3 py-1 rounded-full bg-blue-500/10 text-xs font-mono text-blue-400">SECONDARY</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-xs font-mono text-accent">SECONDARY</span>
               </div>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                 Male, 30-45. Engineer, Developer, or Analytical background. Hates ambiguity. Wants clear rules, data, and logic. Rejects "gut feel" trading.
@@ -243,15 +255,15 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
+            <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
               <Target className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Strategic Axes</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-blue-500/50 transition-colors group">
-              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-blue-500/20 group-hover:text-blue-500 transition-colors">
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary/50 transition-colors group">
+              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-primary/20 group-hover:text-primary transition-colors">
                 <Shield className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">1. Radical Truth</h3>
@@ -259,14 +271,14 @@ export default function DigitalStrategy() {
                 The market is flooded with "easy money" promises. We pivot to "hard truth". We validate the user's pain by admitting trading is hard.
               </p>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>No Lambos, just charts</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Focus on risk, not reward</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-blue-500 rounded-full"></span>Transparency on losses</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span>No Lambos, just charts</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span>Focus on risk, not reward</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span>Transparency on losses</li>
               </ul>
             </div>
 
-            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary/50 transition-colors group">
-              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-secondary/50 transition-colors group">
+              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-secondary/20 group-hover:text-secondary transition-colors">
                 <Brain className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">2. Institutional Edge</h3>
@@ -274,14 +286,14 @@ export default function DigitalStrategy() {
                 We position retail trading methods (RSI, MACD) as "toys". We sell "weapons". The allure is accessing the tools the 1% use.
               </p>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span>Order Flow vs Indicators</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span>Market Structure vs Patterns</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-primary rounded-full"></span>Data vs Intuition</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Order Flow vs Indicators</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Market Structure vs Patterns</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Data vs Intuition</li>
               </ul>
             </div>
 
-            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-purple-500/50 transition-colors group">
-              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-purple-500/20 group-hover:text-purple-500 transition-colors">
+            <div className="p-8 rounded-2xl bg-card border border-white/5 hover:border-accent/50 transition-colors group">
+              <div className="mb-6 p-3 bg-white/5 w-fit rounded-lg group-hover:bg-accent/20 group-hover:text-accent transition-colors">
                 <Lock className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">3. The 1% Tribe</h3>
@@ -289,9 +301,9 @@ export default function DigitalStrategy() {
                 We don't build a customer base; we build a cult of excellence. Membership is framed as an achievement, not a purchase.
               </p>
               <ul className="space-y-2 text-sm text-gray-500">
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-purple-500 rounded-full"></span>Elitist language</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-purple-500 rounded-full"></span>"Not for everyone" framing</li>
-                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-purple-500 rounded-full"></span>Community as a filter</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full"></span>Elitist language</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full"></span>"Not for everyone" framing</li>
+                <li className="flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full"></span>Community as a filter</li>
               </ul>
             </div>
           </div>
@@ -367,7 +379,7 @@ export default function DigitalStrategy() {
                     Upsell to full membership. "Join the 1%".
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-xs bg-purple-500/20 text-purple-400 px-2 py-1 rounded">Recurring Rev</span>
+                    <span className="text-xs bg-secondary/20 text-secondary px-2 py-1 rounded">Recurring Rev</span>
                   </div>
                 </div>
               </div>
@@ -380,7 +392,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-red-500/10 flex items-center justify-center text-red-500">
+            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
               <Zap className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">90-Day Attack Plan</h2>
@@ -426,7 +438,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
+            <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
               <Zap className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Email Automation Hub</h2>
@@ -510,10 +522,10 @@ export default function DigitalStrategy() {
             </div>
 
             {/* Win-Back */}
-            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-red-500/50 transition-colors">
+            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-destructive/50 transition-colors">
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-mono text-red-500 uppercase tracking-wider">Retention</span>
+                  <span className="text-xs font-mono text-destructive uppercase tracking-wider">Retention</span>
                   <MailIcon className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Win-Back Sequence</h3>
@@ -525,15 +537,15 @@ export default function DigitalStrategy() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-destructive"></span>
                     Week 1: Did we fail?
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-destructive"></span>
                     Week 4: New Module Alert
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-destructive"></span>
                     Week 8: Last Chance
                   </div>
                 </div>
@@ -563,7 +575,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
+            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
               <Lock className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Retention Mechanics</h2>
@@ -581,7 +593,7 @@ export default function DigitalStrategy() {
               </p>
               <div className="bg-card border border-white/10 p-6 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                     <Zap className="h-6 w-6" />
                   </div>
                   <div>
@@ -606,7 +618,7 @@ export default function DigitalStrategy() {
               </p>
               <div className="bg-card border border-white/10 p-6 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500">
+                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
                     <Users className="h-6 w-6" />
                   </div>
                   <div>
@@ -627,7 +639,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 bg-black/30 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-500">
+            <div className="w-10 h-10 rounded bg-accent/10 flex items-center justify-center text-accent">
               <TrendingUp className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Investment & Allocation</h2>
@@ -664,29 +676,29 @@ export default function DigitalStrategy() {
             </div>
 
             {/* Ad Spend */}
-            <div className="p-8 rounded-2xl bg-blue-500/5 border border-blue-500/20">
+            <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-bold text-blue-400">Recommended Ad Spend</h3>
-                <span className="px-3 py-1 rounded-full bg-blue-500/10 text-xs font-mono text-blue-400">VARIABLE COST</span>
+                <h3 className="text-xl font-bold text-primary">Recommended Ad Spend</h3>
+                <span className="px-3 py-1 rounded-full bg-primary/10 text-xs font-mono text-primary">VARIABLE COST</span>
               </div>
               <div className="text-4xl font-bold text-white mb-2">£3k - £5k <span className="text-lg font-normal text-gray-500">/ month</span></div>
               <p className="text-sm text-gray-400 mb-6">Paid directly to ad platforms (Meta/Google)</p>
               
               <div className="space-y-4">
-                <div className="flex justify-between text-sm border-b border-blue-500/10 pb-2">
+                <div className="flex justify-between text-sm border-b border-primary/10 pb-2">
                   <span className="text-gray-400">Testing Phase (Month 1)</span>
                   <span className="text-white">£3,000</span>
                 </div>
-                <div className="flex justify-between text-sm border-b border-blue-500/10 pb-2">
+                <div className="flex justify-between text-sm border-b border-primary/10 pb-2">
                   <span className="text-gray-400">Optimization (Month 2)</span>
                   <span className="text-white">£4,000</span>
                 </div>
-                <div className="flex justify-between text-sm border-b border-blue-500/10 pb-2">
+                <div className="flex justify-between text-sm border-b border-primary/10 pb-2">
                   <span className="text-gray-400">Scaling (Month 3)</span>
                   <span className="text-white">£5,000+</span>
                 </div>
               </div>
-              <div className="mt-6 p-3 bg-blue-500/10 rounded border border-blue-500/20 text-xs text-blue-300">
+              <div className="mt-6 p-3 bg-primary/10 rounded border border-primary/20 text-xs text-primary">
                 <strong>Note:</strong> Ad budget is flexible and will be adjusted based on ROAS (Return on Ad Spend) performance.
               </div>
             </div>
@@ -698,7 +710,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-green-500/10 flex items-center justify-center text-green-500">
+            <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
               <BarChart3 className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Unit Economics (Projections)</h2>
@@ -708,7 +720,7 @@ export default function DigitalStrategy() {
             <div className="p-6 rounded-xl bg-card border border-white/10">
               <div className="text-sm text-gray-500 mb-1">Target CAC</div>
               <div className="text-3xl font-bold text-white">$45.00</div>
-              <div className="text-xs text-green-500 mt-2">Based on organic reach</div>
+              <div className="text-xs text-primary mt-2">Based on organic reach</div>
             </div>
             <div className="p-6 rounded-xl bg-card border border-white/10">
               <div className="text-sm text-gray-500 mb-1">Average Order Value</div>
