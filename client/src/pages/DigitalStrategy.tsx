@@ -1,11 +1,68 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X } from "lucide-react";
+import { useState } from "react";
 
 export default function DigitalStrategy() {
   const [location] = useLocation();
+  const [selectedEmail, setSelectedEmail] = useState<string | null>(null);
+
+  const emailTemplates = {
+    nurturing: {
+      subject: "Stop Trading Like a Gambler (Read This)",
+      body: "Most traders fail because they treat the market like a casino. They chase green candles and panic sell red ones.\n\nHere is the hard truth: The market doesn't care about your feelings. It only respects execution.\n\nIn the next 5 days, I'm going to show you how the 1% actually trade. No indicators. No noise. Just price.\n\nAre you ready to stop gambling?",
+      cta: "Start The Shift"
+    },
+    welcome: {
+      subject: "You're In. Now What?",
+      body: "Welcome to the inner circle. You've taken the first step with the Mindset Reset.\n\nBut let's be honest: Mindset is only 10% of the game. The other 90% is having an Edge.\n\nRight now, you're trading with a dull knife. You need a scalpel.\n\nI've unlocked a hidden bonus video in your dashboard: 'The Institutional Order Flow'. Watch it before it expires.",
+      cta: "Watch Bonus Video"
+    },
+    winback: {
+      subject: "Did We Fail You?",
+      body: "I noticed you cancelled your subscription. I'm not here to beg you to come back.\n\nI just want to know: Did we fail to deliver on our promise?\n\nSince you left, we've added the new 'Liquidity Hunter' module. It's exactly what you were looking for.\n\nIf you're ready to give it another shot, here is a one-time link to rejoin at your old rate.",
+      cta: "Reclaim My Seat"
+    }
+  };
 
   return (
+    <>
+      {selectedEmail && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={() => setSelectedEmail(null)}>
+          <div className="bg-card border border-white/10 w-full max-w-lg rounded-xl overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="bg-white/5 p-4 flex items-center justify-between border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <button onClick={() => setSelectedEmail(null)} className="text-gray-400 hover:text-white">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="p-8 space-y-6">
+              <div className="space-y-2 border-b border-white/10 pb-6">
+                <div className="flex items-center gap-4 text-sm">
+                  <span className="text-gray-500 w-16">From:</span>
+                  <span className="text-white font-medium">Applecore &lt;hq@applecore.com&gt;</span>
+                </div>
+                <div className="flex items-center gap-4 text-sm">
+                  <span className="text-gray-500 w-16">Subject:</span>
+                  <span className="text-white font-medium">{emailTemplates[selectedEmail as keyof typeof emailTemplates].subject}</span>
+                </div>
+              </div>
+              <div className="text-gray-300 whitespace-pre-line leading-relaxed font-mono text-sm">
+                {emailTemplates[selectedEmail as keyof typeof emailTemplates].body}
+              </div>
+              <div className="pt-4">
+                <Button className="w-full bg-primary text-black hover:bg-primary/90 font-bold">
+                  {emailTemplates[selectedEmail as keyof typeof emailTemplates].cta}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black">
       {/* Global Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
@@ -289,11 +346,14 @@ export default function DigitalStrategy() {
               <p className="text-sm text-gray-400 mb-4">
                 Automated sequence to warm up leads who downloaded a free resource but haven't bought yet.
               </p>
-              <ul className="space-y-2 text-sm text-gray-500">
+              <ul className="space-y-2 text-sm text-gray-500 mb-6">
                 <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 1:</span> The "Hard Truth" about trading</li>
                 <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 3:</span> Why indicators fail (Case Study)</li>
                 <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 5:</span> The Institutional Edge revealed</li>
               </ul>
+              <Button variant="outline" className="w-full gap-2 border-blue-500/20 text-blue-500 hover:bg-blue-500/10 hover:text-blue-500" onClick={() => setSelectedEmail('nurturing')}>
+                <Eye className="h-4 w-4" /> View Template
+              </Button>
             </div>
 
             {/* Sequence 2: Welcome (Tripwire) */}
@@ -305,11 +365,14 @@ export default function DigitalStrategy() {
               <p className="text-sm text-gray-400 mb-4">
                 Upsell sequence for customers who bought the £4.99 mini-course. Goal: Upgrade to Academy.
               </p>
-              <ul className="space-y-2 text-sm text-gray-500">
+              <ul className="space-y-2 text-sm text-gray-500 mb-6">
                 <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 0:</span> Access + "Hidden Bonus"</li>
                 <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 2:</span> "You're missing 90% of the puzzle"</li>
                 <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 7:</span> Exclusive invite to the Tribe</li>
               </ul>
+              <Button variant="outline" className="w-full gap-2 border-primary/20 text-primary hover:bg-primary/10 hover:text-primary" onClick={() => setSelectedEmail('welcome')}>
+                <Eye className="h-4 w-4" /> View Template
+              </Button>
             </div>
 
             {/* Sequence 3: Win-Back */}
@@ -321,11 +384,14 @@ export default function DigitalStrategy() {
               <p className="text-sm text-gray-400 mb-4">
                 Re-activation campaign for users who cancelled. We appeal to their ego and fear of missing out.
               </p>
-              <ul className="space-y-2 text-sm text-gray-500">
+              <ul className="space-y-2 text-sm text-gray-500 mb-6">
                 <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 1:</span> "Did we fail you?" (Feedback loop)</li>
                 <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 4:</span> "What you missed" (New features)</li>
                 <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 8:</span> "One last ride" (Discount offer)</li>
               </ul>
+              <Button variant="outline" className="w-full gap-2 border-purple-500/20 text-purple-500 hover:bg-purple-500/10 hover:text-purple-500" onClick={() => setSelectedEmail('winback')}>
+                <Eye className="h-4 w-4" /> View Template
+              </Button>
             </div>
           </div>
         </div>
@@ -815,5 +881,6 @@ export default function DigitalStrategy() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
