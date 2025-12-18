@@ -25,9 +25,9 @@ export default function Home() {
                 <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
                 Brand Guidelines v1.0
               </div>
-              <h1 className="text-4xl font-black tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
-                APPLE<span className="text-primary">CORE</span>
-              </h1>
+              <div className="max-w-[400px]">
+                <img src="/logo.png" alt="Applecore Logo" className="w-full h-auto" />
+              </div>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 The definitive guide to our visual language. Precision, energy, and clarity for the next generation of trading tools.
               </p>
@@ -106,9 +106,7 @@ export default function Home() {
                   <CardDescription>Used on dark backgrounds (Default)</CardDescription>
                 </CardHeader>
                 <CardContent className="flex aspect-video items-center justify-center bg-[#121212] p-8">
-                  <div className="text-4xl font-black tracking-tighter text-white">
-                    APPLE<span className="text-primary">CORE</span>
-                  </div>
+                  <img src="/logo.png" alt="Applecore Logo" className="w-3/4 h-auto" />
                 </CardContent>
               </Card>
               <Card className="overflow-hidden border-border/50 bg-background/50 backdrop-blur">
@@ -117,9 +115,7 @@ export default function Home() {
                   <CardDescription>Used for single-color applications</CardDescription>
                 </CardHeader>
                 <CardContent className="flex aspect-video items-center justify-center bg-white p-8">
-                  <div className="text-4xl font-black tracking-tighter text-black">
-                    APPLECORE
-                  </div>
+                  <img src="/logo.png" alt="Applecore Logo" className="w-3/4 h-auto brightness-0" />
                 </CardContent>
               </Card>
             </div>
@@ -133,8 +129,8 @@ export default function Home() {
                     <div className="relative">
                       {/* Clear space indicators */}
                       <div className="absolute -inset-8 border border-dashed border-primary/50 bg-primary/5" />
-                      <div className="text-5xl font-black tracking-tighter text-foreground relative z-10">
-                        APPLE<span className="text-primary">CORE</span>
+                      <div className="relative z-10 w-64">
+                        <img src="/logo.png" alt="Applecore Logo" className="w-full h-auto" />
                       </div>
                       {/* Measurement lines */}
                       <div className="absolute -right-8 top-0 bottom-0 w-px bg-primary/50" />
