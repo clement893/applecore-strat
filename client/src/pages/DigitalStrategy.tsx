@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function DigitalStrategy() {
@@ -9,6 +9,10 @@ export default function DigitalStrategy() {
   const [immersiveMode, setImmersiveMode] = useState(false);
   const [expandedMonth, setExpandedMonth] = useState<number | null>(null);
   const [activeSection, setActiveSection] = useState(0);
+  const [simBudget, setSimBudget] = useState(5000);
+  const [simCPC, setSimCPC] = useState(1.50);
+  const [simCR, setSimCR] = useState(3.5);
+  const [simAOV, setSimAOV] = useState(65);
 
   const sections = [
     { id: "hero", label: "Overview" },
@@ -1093,6 +1097,109 @@ function MailIcon(props: any) {
               <div className="text-sm text-green-400">M1 Retention Rate</div>
               <div className="mt-4 h-1 w-full bg-white/10 rounded-full overflow-hidden">
                 <div className="h-full bg-green-400 w-[85%]"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* ROAS Simulator */}
+          <div className="mt-12 p-8 rounded-xl bg-white/5 border border-white/10">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                <Calculator className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white">ROAS Simulator</h3>
+                <p className="text-sm text-gray-400">Project your profitability based on key metrics.</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="space-y-6">
+                <div>
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-300">Monthly Ad Budget</span>
+                    <span className="text-white font-mono">£{simBudget.toLocaleString()}</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="1000" 
+                    max="50000" 
+                    step="1000" 
+                    value={simBudget} 
+                    onChange={(e) => setSimBudget(parseInt(e.target.value))}
+                    className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-300">Cost Per Click (CPC)</span>
+                    <span className="text-white font-mono">£{simCPC.toFixed(2)}</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="0.50" 
+                    max="5.00" 
+                    step="0.10" 
+                    value={simCPC} 
+                    onChange={(e) => setSimCPC(parseFloat(e.target.value))}
+                    className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-300">Conversion Rate (CR)</span>
+                    <span className="text-white font-mono">{simCR}%</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="0.5" 
+                    max="10.0" 
+                    step="0.1" 
+                    value={simCR} 
+                    onChange={(e) => setSimCR(parseFloat(e.target.value))}
+                    className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-sm mb-2">
+                    <span className="text-gray-300">Average Order Value (AOV)</span>
+                    <span className="text-white font-mono">£{simAOV}</span>
+                  </div>
+                  <input 
+                    type="range" 
+                    min="20" 
+                    max="200" 
+                    step="5" 
+                    value={simAOV} 
+                    onChange={(e) => setSimAOV(parseInt(e.target.value))}
+                    className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
+                  />
+                </div>
+              </div>
+
+              <div className="bg-black/40 rounded-xl p-6 border border-white/5 flex flex-col justify-center space-y-6">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-400 text-sm">Estimated Traffic</span>
+                  <span className="text-white font-mono font-bold">{Math.round(simBudget / simCPC).toLocaleString()} clicks</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-400 text-sm">Estimated Sales</span>
+                  <span className="text-white font-mono font-bold">{Math.round((simBudget / simCPC) * (simCR / 100))} orders</span>
+                </div>
+                <div className="h-px bg-white/10"></div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-400 text-sm">Projected Revenue</span>
+                  <span className="text-white font-mono font-bold text-xl">£{Math.round((simBudget / simCPC) * (simCR / 100) * simAOV).toLocaleString()}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-400 text-sm">ROAS</span>
+                  <span className={`font-mono font-bold text-2xl ${((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 2 ? 'text-green-400' : ((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 1 ? 'text-yellow-400' : 'text-red-500'}`}>
+                    {(((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget).toFixed(2)}x
+                  </span>
+                </div>
               </div>
             </div>
           </div>
