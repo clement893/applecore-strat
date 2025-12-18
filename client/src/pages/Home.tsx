@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -32,11 +33,13 @@ export default function Home() {
                 The definitive guide to our visual language. Precision, energy, and clarity for the next generation of trading tools.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" className="gap-2 font-bold">
-                  Download Assets <Download className="h-4 w-4" />
-                </Button>
+                <Link href="/mindset-revolution">
+                  <Button size="lg" className="gap-2 font-bold bg-secondary text-secondary-foreground hover:bg-secondary/90">
+                    Explore Mindset Revolution <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
                 <Button size="lg" variant="outline" className="gap-2">
-                  View Components <ArrowRight className="h-4 w-4" />
+                  Download Assets <Download className="h-4 w-4" />
                 </Button>
               </div>
             </div>
