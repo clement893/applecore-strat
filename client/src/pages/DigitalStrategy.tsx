@@ -63,7 +63,7 @@ export default function DigitalStrategy() {
           </div>
         </div>
       )}
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll">
       {/* Global Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
@@ -100,7 +100,7 @@ export default function DigitalStrategy() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden">
+      <section className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden snap-start min-h-screen flex items-center">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] -translate-y-1/2"></div>
         
         <div className="container relative z-10">
@@ -117,7 +117,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Strategic Pillars */}
-      <section className="py-32 border-b border-white/10">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
@@ -176,7 +176,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* The User Journey (Funnel) */}
-      <section className="py-32 border-b border-white/10 bg-black/50">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
@@ -235,7 +235,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* The Welcome Sequence (Tripwire to Sub) */}
-      <section className="py-32 border-b border-white/10">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
@@ -327,7 +327,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Email Automation Hub */}
-      <section className="py-32 border-b border-white/10">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
@@ -406,7 +406,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Retention Mechanics */}
-      <section className="py-32 border-b border-white/10 bg-black/50">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
@@ -470,7 +470,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Target Audiences (Personas) */}
-      <section className="py-32 border-b border-white/10 bg-black/50">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-purple-500/10 flex items-center justify-center text-purple-500">
@@ -556,7 +556,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Competitive Matrix (Blue Ocean) */}
-      <section className="py-32 border-b border-white/10">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-orange-500/10 flex items-center justify-center text-orange-500">
@@ -720,7 +720,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 90-Day Attack Plan */}
-      <section className="py-32 border-b border-white/10 bg-black/50">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-red-500/10 flex items-center justify-center text-red-500">
@@ -766,7 +766,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Investment & Allocation */}
-      <section className="py-32 border-b border-white/10 bg-black/30">
+      <section className="py-32 border-b border-white/10 bg-black/30 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-yellow-500/10 flex items-center justify-center text-yellow-500">
@@ -837,7 +837,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Unit Economics */}
-      <section className="py-32 border-b border-white/10">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-green-500/10 flex items-center justify-center text-green-500">
