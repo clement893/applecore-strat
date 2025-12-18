@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, Check, Copy, Download, FileText, Layout, Palette, Type, TrendingUp, TrendingDown, BarChart2 } from "lucide-react";
+import { ArrowRight, Check, Copy, Download, FileText, Layout, Palette, Type, TrendingUp, TrendingDown, BarChart2, Zap } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -63,6 +63,31 @@ export default function Home() {
                 <Button size="lg" variant="outline" className="gap-2">
                   Download Assets <Download className="h-4 w-4" />
                 </Button>
+              </div>
+
+              {/* Quick Start Hub */}
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <p className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-4">Quick Navigation</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <Link href="/digital-strategy">
+                    <div className="group p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-all">
+                      <div className="flex items-center gap-2 mb-1">
+                        <TrendingUp className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-bold text-white">Strategy</span>
+                      </div>
+                      <p className="text-xs text-gray-400 group-hover:text-gray-300">Funnel, KPIs & Roadmap</p>
+                    </div>
+                  </Link>
+                  <Link href="/mindset-revolution">
+                    <div className="group p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-all">
+                      <div className="flex items-center gap-2 mb-1">
+                        <Zap className="h-4 w-4 text-secondary" />
+                        <span className="text-sm font-bold text-white">Ad Concept</span>
+                      </div>
+                      <p className="text-xs text-gray-400 group-hover:text-gray-300">Visuals & Messaging</p>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-muted/50 shadow-2xl">

@@ -1117,7 +1117,15 @@ function MailIcon(props: any) {
               <div className="space-y-6">
                 <div>
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-300">Monthly Ad Budget</span>
+                    <span className="text-gray-300 flex items-center gap-1">
+                      Monthly Ad Budget
+                      <div className="group relative">
+                        <div className="cursor-help text-gray-500 hover:text-gray-300">?</div>
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-white/10 rounded text-xs text-gray-300 w-48 hidden group-hover:block z-10">
+                          Total amount you are willing to spend on ads per month.
+                        </div>
+                      </div>
+                    </span>
                     <span className="text-white font-mono">£{simBudget.toLocaleString()}</span>
                   </div>
                   <input 
@@ -1133,7 +1141,15 @@ function MailIcon(props: any) {
 
                 <div>
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-300">Cost Per Click (CPC)</span>
+                    <span className="text-gray-300 flex items-center gap-1">
+                      Cost Per Click (CPC)
+                      <div className="group relative">
+                        <div className="cursor-help text-gray-500 hover:text-gray-300">?</div>
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-white/10 rounded text-xs text-gray-300 w-48 hidden group-hover:block z-10">
+                          Average cost you pay for each click on your ad.
+                        </div>
+                      </div>
+                    </span>
                     <span className="text-white font-mono">£{simCPC.toFixed(2)}</span>
                   </div>
                   <input 
@@ -1149,7 +1165,15 @@ function MailIcon(props: any) {
 
                 <div>
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-300">Conversion Rate (CR)</span>
+                    <span className="text-gray-300 flex items-center gap-1">
+                      Conversion Rate (CR)
+                      <div className="group relative">
+                        <div className="cursor-help text-gray-500 hover:text-gray-300">?</div>
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-white/10 rounded text-xs text-gray-300 w-48 hidden group-hover:block z-10">
+                          Percentage of visitors who make a purchase.
+                        </div>
+                      </div>
+                    </span>
                     <span className="text-white font-mono">{simCR}%</span>
                   </div>
                   <input 
@@ -1165,7 +1189,15 @@ function MailIcon(props: any) {
 
                 <div>
                   <div className="flex justify-between text-sm mb-2">
-                    <span className="text-gray-300">Average Order Value (AOV)</span>
+                    <span className="text-gray-300 flex items-center gap-1">
+                      Average Order Value (AOV)
+                      <div className="group relative">
+                        <div className="cursor-help text-gray-500 hover:text-gray-300">?</div>
+                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black border border-white/10 rounded text-xs text-gray-300 w-48 hidden group-hover:block z-10">
+                          Average amount spent by a customer per transaction.
+                        </div>
+                      </div>
+                    </span>
                     <span className="text-white font-mono">£{simAOV}</span>
                   </div>
                   <input 
@@ -1195,7 +1227,15 @@ function MailIcon(props: any) {
                   <span className="text-white font-mono font-bold text-xl">£{Math.round((simBudget / simCPC) * (simCR / 100) * simAOV).toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-400 text-sm">ROAS</span>
+                  <span className="text-gray-400 text-sm flex items-center gap-1">
+                    ROAS
+                    <div className="group relative">
+                      <div className="cursor-help text-gray-500 hover:text-gray-300">?</div>
+                      <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-black border border-white/10 rounded text-xs text-gray-300 w-48 hidden group-hover:block z-10">
+                        Return On Ad Spend. Revenue divided by Ad Spend.
+                      </div>
+                    </div>
+                  </span>
                   <span className={`font-mono font-bold text-2xl ${((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 2 ? 'text-green-400' : ((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 1 ? 'text-yellow-400' : 'text-red-500'}`}>
                     {(((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget).toFixed(2)}x
                   </span>
