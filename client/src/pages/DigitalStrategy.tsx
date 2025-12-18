@@ -26,19 +26,39 @@ export default function DigitalStrategy() {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      const sectionElements = sections.map(s => document.getElementById(s.id));
-      
-      sectionElements.forEach((el, index) => {
-        if (el && el.offsetTop <= scrollPosition && (el.offsetTop + el.offsetHeight) > scrollPosition) {
-          setActiveSection(index);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sections.findIndex((s) => s.id === entry.target.id);
+            if (index !== -1) {
+              setActiveSection(index);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-50% 0px -50% 0px", // Trigger when section is in the middle of the viewport
+        threshold: 0
+      }
+    );
+
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section.id);
+        if (element) {
+          observer.unobserve(element);
         }
       });
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
