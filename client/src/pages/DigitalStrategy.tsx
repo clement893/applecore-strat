@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download } from "lucide-react";
 import { useState } from "react";
 
 export default function DigitalStrategy() {
@@ -63,10 +63,45 @@ export default function DigitalStrategy() {
     }
   ];
 
+  const handlePrint = () => {
+    // Expand all months for printing
+    setExpandedMonth(null); // Reset first
+    setTimeout(() => {
+      window.print();
+    }, 100);
+  };
+
   return (
     <>
-      {/* Immersive Mode Toggle */}
-      <div className="fixed bottom-6 right-6 z-[100]">
+      <style>{`
+        @media print {
+          @page { margin: 0; size: auto; }
+          body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background-color: #000 !important; color: white !important; }
+          .no-print { display: none !important; }
+          .snap-y { scroll-snap-type: none !important; height: auto !important; overflow: visible !important; }
+          .snap-start { scroll-snap-align: none !important; min-height: auto !important; height: auto !important; page-break-inside: avoid; padding-top: 2rem !important; padding-bottom: 2rem !important; border-bottom: 1px solid #333 !important; }
+          nav { display: none !important; }
+          /* Force dark mode colors for print */
+          .bg-background { background-color: #000 !important; }
+          .text-foreground { color: #fff !important; }
+          .text-muted-foreground { color: #aaa !important; }
+          .border-white\\/10 { border-color: #333 !important; }
+          .bg-card { background-color: #111 !important; border: 1px solid #333 !important; }
+          /* Ensure roadmap is expanded */
+          .roadmap-details { display: block !important; }
+        }
+      `}</style>
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-4 no-print">
+        <Button 
+          onClick={handlePrint}
+          className="rounded-full w-12 h-12 p-0 bg-white/10 text-white hover:bg-white/20 border border-white/20 shadow-lg backdrop-blur-sm"
+          title="Download PDF Strategy"
+        >
+          <Download className="h-5 w-5" />
+        </Button>
+        
         <Button 
           onClick={() => setImmersiveMode(!immersiveMode)}
           className="rounded-full w-12 h-12 p-0 bg-primary text-black hover:bg-primary/90 shadow-lg shadow-primary/20"
@@ -77,7 +112,7 @@ export default function DigitalStrategy() {
       </div>
 
       {selectedEmail && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4" onClick={() => setSelectedEmail(null)}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 no-print" onClick={() => setSelectedEmail(null)}>
           <div className="bg-card border border-white/10 w-full max-w-lg rounded-xl overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="bg-white/5 p-4 flex items-center justify-between border-b border-white/10">
               <div className="flex items-center gap-3">
@@ -112,9 +147,9 @@ export default function DigitalStrategy() {
           </div>
         </div>
       )}
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll print:h-auto print:overflow-visible">
       {/* Global Navigation - Hidden in Immersive Mode */}
-      <nav className={`fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md transition-transform duration-500 ${immersiveMode ? '-translate-y-full' : 'translate-y-0'}`}>
+      <nav className={`fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md transition-transform duration-500 ${immersiveMode ? '-translate-y-full' : 'translate-y-0'} no-print`}>
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/">
@@ -149,13 +184,13 @@ export default function DigitalStrategy() {
       </nav>
 
       {/* 1. HERO (CONTEXTE) */}
-      <section className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden snap-start min-h-screen flex items-center">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -translate-y-1/2"></div>
+      <section className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -translate-y-1/2 print:hidden"></div>
         
         <div className="container relative z-10">
           <div className="max-w-4xl">
             <h4 className="text-primary font-mono mb-4 tracking-widest uppercase text-sm">Go-To-Market Strategy</h4>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white print:text-black">
               The Anti-Guru Blueprint
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
@@ -166,7 +201,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 2. COMPETITIVE MATRIX (CONTEXTE) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-accent/10 flex items-center justify-center text-accent">
@@ -196,7 +231,7 @@ export default function DigitalStrategy() {
               </div>
             </div>
             
-            <div className="relative aspect-square bg-black/50 rounded-2xl border border-white/10 p-8 flex items-center justify-center">
+            <div className="relative aspect-square bg-black/50 rounded-2xl border border-white/10 p-8 flex items-center justify-center print:border-black">
               {/* Matrix Visualization */}
               <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
                 <div className="border-r border-b border-white/10 p-4 flex flex-col justify-between">
@@ -218,13 +253,13 @@ export default function DigitalStrategy() {
               </div>
               
               {/* Competitors */}
-              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-secondary/20 rounded-full blur-xl"></div>
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-secondary/20 rounded-full blur-xl print:hidden"></div>
               <div className="absolute top-1/4 left-1/4 text-secondary font-bold text-sm">The Gurus</div>
               
               {/* Applecore Position */}
-              <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl print:hidden"></div>
               <div className="absolute bottom-1/4 right-1/4 text-primary font-bold text-lg flex items-center gap-2">
-                <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                <div className="w-3 h-3 bg-primary rounded-full animate-pulse print:animate-none"></div>
                 Applecore
               </div>
             </div>
@@ -233,7 +268,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 3. PERSONAS (CONTEXTE) */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
@@ -252,11 +287,11 @@ export default function DigitalStrategy() {
                 Male, 25-35. Has lost money on "signals" and "bots". Feels betrayed by the industry. Intelligent but frustrated. Looking for a "real" profession, not a lottery ticket.
               </p>
               <div className="space-y-3">
-                <div className="bg-black/50 p-4 rounded-xl">
+                <div className="bg-black/50 p-4 rounded-xl print:bg-transparent print:border print:border-gray-800">
                   <div className="text-xs text-gray-500 mb-2">Pain Point</div>
                   <div className="font-bold text-white">"I know trading works, but I can't make it work."</div>
                 </div>
-                <div className="bg-black/50 p-4 rounded-xl">
+                <div className="bg-black/50 p-4 rounded-xl print:bg-transparent print:border print:border-gray-800">
                   <div className="text-xs text-gray-500 mb-2">Conversion Trigger</div>
                   <div className="font-bold text-white">Radical Honesty</div>
                   <div className="text-sm text-gray-400">Admitting it's hard validates his struggle.</div>
@@ -273,11 +308,11 @@ export default function DigitalStrategy() {
                 Male, 30-45. Engineer, Developer, or Analytical background. Hates ambiguity. Wants clear rules, data, and logic. Rejects "gut feel" trading.
               </p>
               <div className="space-y-3">
-                <div className="bg-black/50 p-4 rounded-xl">
+                <div className="bg-black/50 p-4 rounded-xl print:bg-transparent print:border print:border-gray-800">
                   <div className="text-xs text-gray-500 mb-2">Pain Point</div>
                   <div className="font-bold text-white">"The market seems random and chaotic."</div>
                 </div>
-                <div className="bg-black/50 p-4 rounded-xl">
+                <div className="bg-black/50 p-4 rounded-xl print:bg-transparent print:border print:border-gray-800">
                   <div className="text-xs text-gray-500 mb-2">Conversion Trigger</div>
                   <div className="font-bold text-white">System & Process</div>
                   <div className="text-sm text-gray-400">Detailed curriculum, tools</div>
@@ -289,7 +324,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 4. STRATEGIC PILLARS (CONTEXTE) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
@@ -348,7 +383,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 5. USER JOURNEY (EXECUTION) */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
@@ -359,7 +394,7 @@ export default function DigitalStrategy() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 hidden md:block"></div>
+            <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent -translate-y-1/2 hidden md:block print:hidden"></div>
 
             <div className="grid md:grid-cols-4 gap-6 relative z-10">
               {/* Step 1: Discovery */}
@@ -426,7 +461,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 6. ASCENSION MODEL (NEW) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
@@ -484,7 +519,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 7. 90-DAY PLAN (INTERACTIVE) */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
@@ -497,14 +532,14 @@ export default function DigitalStrategy() {
             {roadmap.map((month) => (
               <div 
                 key={month.month} 
-                className={`border rounded-2xl transition-all duration-300 overflow-hidden ${expandedMonth === month.month ? 'bg-white/5 border-primary/50' : 'bg-black border-white/10 hover:border-white/30'}`}
+                className={`border rounded-2xl transition-all duration-300 overflow-hidden ${expandedMonth === month.month ? 'bg-white/5 border-primary/50' : 'bg-black border-white/10 hover:border-white/30'} print:border-gray-800 print:bg-transparent`}
               >
                 <div 
-                  className="p-6 flex items-center justify-between cursor-pointer"
+                  className="p-6 flex items-center justify-between cursor-pointer print:cursor-default"
                   onClick={() => setExpandedMonth(expandedMonth === month.month ? null : month.month)}
                 >
                   <div className="flex items-center gap-6">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-colors ${expandedMonth === month.month ? 'bg-primary text-black' : 'bg-white/10 text-white'}`}>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-colors ${expandedMonth === month.month ? 'bg-primary text-black' : 'bg-white/10 text-white'} print:bg-gray-200 print:text-black`}>
                       {month.month}
                     </div>
                     <div>
@@ -514,22 +549,23 @@ export default function DigitalStrategy() {
                   </div>
                   <div className="flex items-center gap-4">
                     <span className="hidden md:block text-sm text-gray-400">{month.goal}</span>
-                    {expandedMonth === month.month ? <ChevronUp className="h-5 w-5 text-primary" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
+                    <div className="print:hidden">
+                      {expandedMonth === month.month ? <ChevronUp className="h-5 w-5 text-primary" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
+                    </div>
                   </div>
                 </div>
                 
-                {expandedMonth === month.month && (
-                  <div className="px-6 pb-6 pt-0 border-t border-white/5">
-                    <div className="grid md:grid-cols-2 gap-4 mt-6">
-                      {month.weeks.map((week, idx) => (
-                        <div key={idx} className="flex gap-4 p-4 rounded-xl bg-black/50 border border-white/5">
-                          <div className="text-xs font-mono text-primary pt-1 whitespace-nowrap">Week {week.week}</div>
-                          <div className="text-sm text-gray-300">{week.task}</div>
-                        </div>
-                      ))}
-                    </div>
+                {/* Always show details in print mode via CSS class roadmap-details */}
+                <div className={`px-6 pb-6 pt-0 border-t border-white/5 ${expandedMonth === month.month ? 'block' : 'hidden'} roadmap-details`}>
+                  <div className="grid md:grid-cols-2 gap-4 mt-6">
+                    {month.weeks.map((week, idx) => (
+                      <div key={idx} className="flex gap-4 p-4 rounded-xl bg-black/50 border border-white/5 print:border-gray-800">
+                        <div className="text-xs font-mono text-primary pt-1 whitespace-nowrap">Week {week.week}</div>
+                        <div className="text-sm text-gray-300">{week.task}</div>
+                      </div>
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
@@ -537,7 +573,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 8. ORGANIC CONTENT ECOSYSTEM (NEW) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-accent/10 flex items-center justify-center text-accent">
@@ -573,7 +609,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 9. EMAIL AUTOMATION HUB (MECANIQUE) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
@@ -613,7 +649,7 @@ export default function DigitalStrategy() {
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white"
+                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white print:hidden"
                   onClick={() => setSelectedEmail('nurturing')}
                 >
                   <Eye className="mr-2 h-4 w-4" /> View Template
@@ -651,7 +687,7 @@ export default function DigitalStrategy() {
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white"
+                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white print:hidden"
                   onClick={() => setSelectedEmail('welcome')}
                 >
                   <Eye className="mr-2 h-4 w-4" /> View Template
@@ -689,7 +725,7 @@ export default function DigitalStrategy() {
                 </div>
                 <Button 
                   variant="outline" 
-                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white"
+                  className="w-full mt-4 border-white/10 hover:bg-white/5 hover:text-white print:hidden"
                   onClick={() => setSelectedEmail('winback')}
                 >
                   <Eye className="mr-2 h-4 w-4" /> View Template
@@ -698,7 +734,7 @@ export default function DigitalStrategy() {
             </div>
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="mt-12 text-center print:hidden">
             <Link href="/email-strategy">
               <Button className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-8 py-6 text-lg h-auto">
                 <span className="mr-2">📂</span> Open Full Email Playbook
@@ -710,7 +746,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 10. RETENTION MECHANICS (MECANIQUE) */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
@@ -774,7 +810,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 11. TECH STACK (NEW) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
@@ -809,7 +845,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 12. RISK MITIGATION (NEW) */}
-      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
@@ -851,7 +887,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 13. INVESTMENT & ALLOCATION (CHIFFRES) */}
-      <section className="py-32 border-b border-white/10 bg-black/30 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 bg-black/30 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-accent/10 flex items-center justify-center text-accent">
@@ -922,7 +958,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 14. UNIT ECONOMICS (CHIFFRES) */}
-      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center">
+      <section className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12 print:break-inside-avoid">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
@@ -960,7 +996,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-white/10 bg-black snap-start">
+      <footer className="py-12 border-t border-white/10 bg-black snap-start print:hidden">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <img src="/images/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert" />
