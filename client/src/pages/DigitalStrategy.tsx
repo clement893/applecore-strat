@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
 export default function DigitalStrategy() {
   const [location] = useLocation();
   const [selectedEmail, setSelectedEmail] = useState<string | null>(null);
   const [immersiveMode, setImmersiveMode] = useState(false);
+  const [expandedMonth, setExpandedMonth] = useState<number | null>(null);
 
   const emailTemplates = {
     nurturing: {
@@ -25,6 +26,42 @@ export default function DigitalStrategy() {
       cta: "Reclaim My Seat"
     }
   };
+
+  const roadmap = [
+    {
+      month: 1,
+      title: "Infiltration",
+      goal: "Establish Authority & Seed the Market",
+      weeks: [
+        { week: 1, task: "Launch 'Stop Acting Like An Amateur' video campaign (TikTok/Reels)" },
+        { week: 2, task: "Seed 'Horror Stories' content in Reddit/Discord communities" },
+        { week: 3, task: "Release free 'Psychology Audit' tool to capture leads" },
+        { week: 4, task: "First 'Live Trading Psychology' session (No charts, just mindset)" }
+      ]
+    },
+    {
+      month: 2,
+      title: "Indoctrination",
+      goal: "Deepen Trust & Filter for Quality",
+      weeks: [
+        { week: 5, task: "Activate 'The 7-Day Mindset Reset' Email Sequence" },
+        { week: 6, task: "Retarget video viewers with 'Deep Dive' educational content" },
+        { week: 7, task: "Open applications for 'Alpha Cohort' (Scarcity play)" },
+        { week: 8, task: "Launch 'The Institutional Edge' webinar series" }
+      ]
+    },
+    {
+      month: 3,
+      title: "Monetization",
+      goal: "Scale Revenue & Lock-in Retention",
+      weeks: [
+        { week: 9, task: "Close 'Alpha Cohort' and launch paid membership" },
+        { week: 10, task: "Activate affiliate program for successful students only" },
+        { week: 11, task: "Scale ad spend on winning creative variants" },
+        { week: 12, task: "Introduce 'Inner Circle' High-Ticket upsell" }
+      ]
+    }
+  ];
 
   return (
     <>
@@ -148,7 +185,7 @@ export default function DigitalStrategy() {
                 We are creating a Blue Ocean by targeting the "Disillusioned Seeker" - the trader who has already failed with the gurus and is looking for the truth.
               </p>
               <div className="flex gap-4 mt-4">
-                <div className="px-4 py-2 rounded bg-destructive/10 border border-destructive/20 text-destructive text-sm">
+                <div className="px-4 py-2 rounded bg-secondary/10 border border-secondary/20 text-secondary text-sm">
                   <span className="block font-bold mb-1">Competitors</span>
                   "Easy Money, Fast Cars, Signals"
                 </div>
@@ -181,8 +218,8 @@ export default function DigitalStrategy() {
               </div>
               
               {/* Competitors */}
-              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-destructive/20 rounded-full blur-xl"></div>
-              <div className="absolute top-1/4 left-1/4 text-destructive font-bold text-sm">The Gurus</div>
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-secondary/20 rounded-full blur-xl"></div>
+              <div className="absolute top-1/4 left-1/4 text-secondary font-bold text-sm">The Gurus</div>
               
               {/* Applecore Position */}
               <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
@@ -209,7 +246,7 @@ export default function DigitalStrategy() {
             <div className="p-8 rounded-2xl bg-card border border-white/5">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-white">The "Burned" Seeker</h3>
-                <span className="px-3 py-1 rounded-full bg-destructive/10 text-xs font-mono text-destructive">PRIMARY</span>
+                <span className="px-3 py-1 rounded-full bg-secondary/10 text-xs font-mono text-secondary">PRIMARY</span>
               </div>
               <p className="text-gray-400 mb-6 text-sm leading-relaxed">
                 Male, 25-35. Has lost money on "signals" and "bots". Feels betrayed by the industry. Intelligent but frustrated. Looking for a "real" profession, not a lottery ticket.
@@ -446,7 +483,7 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 7. 90-DAY PLAN (EXECUTION) */}
+      {/* 7. 90-DAY PLAN (INTERACTIVE) */}
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
@@ -456,38 +493,45 @@ export default function DigitalStrategy() {
             <h2 className="text-3xl font-bold text-white">90-Day Attack Plan</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative p-8 border-l-2 border-white/10 hover:border-primary transition-colors">
-              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-black border-2 border-white/20"></div>
-              <div className="text-xs font-mono text-gray-500 mb-2">MONTH 1</div>
-              <h3 className="text-xl font-bold text-white mb-4">Infiltration</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li>• Launch "Stop Acting Like An Amateur" video campaign (TikTok/Reels)</li>
-                <li>• Seed "Horror Stories" content in Reddit/Discord communities</li>
-                <li>• Release free "Psychology Audit" tool to capture leads</li>
-              </ul>
-            </div>
-            <div className="relative p-8 border-l-2 border-white/10 hover:border-primary transition-colors">
-              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-black border-2 border-white/20"></div>
-              <div className="text-xs font-mono text-gray-500 mb-2">MONTH 2</div>
-              <h3 className="text-xl font-bold text-white mb-4">Indoctrination</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li>• <strong>Email Sequence:</strong> "The 7-Day Mindset Reset" (Automated Nurturing)</li>
-                <li>• Retarget video viewers with "Deep Dive" educational content</li>
-                <li>• Host weekly "Live Trading Psychology" sessions (No charts, just mindset)</li>
-                <li>• Open applications for "Alpha Cohort" (Scarcity play)</li>
-              </ul>
-            </div>
-            <div className="relative p-8 border-l-2 border-white/10 hover:border-primary transition-colors">
-              <div className="absolute -left-[9px] top-8 w-4 h-4 rounded-full bg-black border-2 border-white/20"></div>
-              <div className="text-xs font-mono text-gray-500 mb-2">MONTH 3</div>
-              <h3 className="text-xl font-bold text-white mb-4">Monetization</h3>
-              <ul className="space-y-3 text-sm text-gray-400">
-                <li>• Close "Alpha Cohort" and launch paid membership</li>
-                <li>• Activate affiliate program for successful students only ("The 1%")</li>
-                <li>• Scale ad spend on winning creative variants</li>
-              </ul>
-            </div>
+          <div className="space-y-4">
+            {roadmap.map((month) => (
+              <div 
+                key={month.month} 
+                className={`border rounded-2xl transition-all duration-300 overflow-hidden ${expandedMonth === month.month ? 'bg-white/5 border-primary/50' : 'bg-black border-white/10 hover:border-white/30'}`}
+              >
+                <div 
+                  className="p-6 flex items-center justify-between cursor-pointer"
+                  onClick={() => setExpandedMonth(expandedMonth === month.month ? null : month.month)}
+                >
+                  <div className="flex items-center gap-6">
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-colors ${expandedMonth === month.month ? 'bg-primary text-black' : 'bg-white/10 text-white'}`}>
+                      {month.month}
+                    </div>
+                    <div>
+                      <div className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-1">Month {month.month}</div>
+                      <h3 className="text-xl font-bold text-white">{month.title}</h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className="hidden md:block text-sm text-gray-400">{month.goal}</span>
+                    {expandedMonth === month.month ? <ChevronUp className="h-5 w-5 text-primary" /> : <ChevronDown className="h-5 w-5 text-gray-500" />}
+                  </div>
+                </div>
+                
+                {expandedMonth === month.month && (
+                  <div className="px-6 pb-6 pt-0 border-t border-white/5">
+                    <div className="grid md:grid-cols-2 gap-4 mt-6">
+                      {month.weeks.map((week, idx) => (
+                        <div key={idx} className="flex gap-4 p-4 rounded-xl bg-black/50 border border-white/5">
+                          <div className="text-xs font-mono text-primary pt-1 whitespace-nowrap">Week {week.week}</div>
+                          <div className="text-sm text-gray-300">{week.task}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -616,10 +660,10 @@ export default function DigitalStrategy() {
             </div>
 
             {/* Win-Back */}
-            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-destructive/50 transition-colors">
+            <div className="bg-card border border-white/10 rounded-2xl overflow-hidden group hover:border-secondary/50 transition-colors">
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-mono text-destructive uppercase tracking-wider">Retention</span>
+                  <span className="text-xs font-mono text-secondary uppercase tracking-wider">Retention</span>
                   <MailIcon className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Win-Back Sequence</h3>
@@ -631,15 +675,15 @@ export default function DigitalStrategy() {
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-destructive"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                     Week 1: Did we fail?
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-destructive"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                     Week 4: New Module Alert
                   </div>
                   <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-1.5 h-1.5 rounded-full bg-destructive"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                     Week 8: Last Chance
                   </div>
                 </div>
@@ -768,7 +812,7 @@ export default function DigitalStrategy() {
       <section className="py-32 border-b border-white/10 bg-black/50 snap-start min-h-screen flex items-center">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-10 h-10 rounded bg-destructive/10 flex items-center justify-center text-destructive">
+            <div className="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
               <AlertTriangle className="h-5 w-5" />
             </div>
             <h2 className="text-3xl font-bold text-white">Risk Mitigation (Anti-Fragility)</h2>
