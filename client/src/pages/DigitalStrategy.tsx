@@ -269,6 +269,68 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
+      {/* Email Automation Hub */}
+      <section className="py-20 border-b border-white/10">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="w-10 h-10 rounded bg-blue-500/10 flex items-center justify-center text-blue-500">
+              <Zap className="h-5 w-5" />
+            </div>
+            <h2 className="text-3xl font-bold text-white">Email Automation Hub</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Sequence 1: Nurturing */}
+            <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-blue-500/50 transition-colors group">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">1. Nurturing</h3>
+                <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-500 text-xs font-mono">COLD LEADS</span>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">
+                Automated sequence to warm up leads who downloaded a free resource but haven't bought yet.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 1:</span> The "Hard Truth" about trading</li>
+                <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 3:</span> Why indicators fail (Case Study)</li>
+                <li className="flex items-center gap-2"><span className="text-blue-500 font-mono">Day 5:</span> The Institutional Edge revealed</li>
+              </ul>
+            </div>
+
+            {/* Sequence 2: Welcome (Tripwire) */}
+            <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-colors group">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">2. Welcome</h3>
+                <span className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-mono">BUYERS (£4.99)</span>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">
+                Upsell sequence for customers who bought the £4.99 mini-course. Goal: Upgrade to Academy.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 0:</span> Access + "Hidden Bonus"</li>
+                <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 2:</span> "You're missing 90% of the puzzle"</li>
+                <li className="flex items-center gap-2"><span className="text-primary font-mono">Day 7:</span> Exclusive invite to the Tribe</li>
+              </ul>
+            </div>
+
+            {/* Sequence 3: Win-Back */}
+            <div className="p-6 rounded-xl bg-card border border-white/5 hover:border-purple-500/50 transition-colors group">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">3. Win-Back</h3>
+                <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-500 text-xs font-mono">CHURNED</span>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">
+                Re-activation campaign for users who cancelled. We appeal to their ego and fear of missing out.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-500">
+                <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 1:</span> "Did we fail you?" (Feedback loop)</li>
+                <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 4:</span> "What you missed" (New features)</li>
+                <li className="flex items-center gap-2"><span className="text-purple-500 font-mono">Week 8:</span> "One last ride" (Discount offer)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Retention Mechanics */}
       <section className="py-20 border-b border-white/10 bg-black/50">
         <div className="container">
