@@ -60,99 +60,104 @@
 }
 
 :root {
-  /* Default to Dark Mode Palette as per Brand Guide */
+  /* Neon Cyber-Industrial Theme - Light Mode (Inverted for consistency, but primary is Dark) */
+  --primary: oklch(0.88 0.25 125); /* #9EFF00 Lime Green */
+  --primary-foreground: oklch(0.15 0.02 280); /* Dark text on lime */
+  --sidebar-primary: oklch(0.88 0.25 125);
+  --sidebar-primary-foreground: oklch(0.15 0.02 280);
   
-  /* Primary: Pale Lime #E0FF98 */
-  --primary: oklch(0.95 0.15 125); 
-  --primary-foreground: oklch(0.10 0.05 280); /* Dark text on lime */
+  --chart-1: oklch(0.88 0.25 125); /* Lime */
+  --chart-2: oklch(0.65 0.28 310); /* Magenta */
+  --chart-3: oklch(0.70 0.15 280); /* Purple */
+  --chart-4: oklch(0.85 0.10 200); /* Cyan */
+  --chart-5: oklch(0.90 0.05 100); /* Yellow */
+
+  --radius: 0.5rem; /* Sharper corners for industrial feel */
   
-  /* Secondary: Deep Purple #510F66 */
-  --secondary: oklch(0.35 0.20 300); 
-  --secondary-foreground: oklch(1 0 0); /* White text on purple */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.15 0.02 280);
   
-  /* Background: Black #000000 */
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0); /* White #FFFFFF */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.02 280);
   
-  /* Card: Dark Grey #1E1E1E */
-  --card: oklch(0.20 0 0);
-  --card-foreground: oklch(1 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.02 280);
   
-  /* Popover: Dark Grey #1E1E1E */
-  --popover: oklch(0.20 0 0);
-  --popover-foreground: oklch(1 0 0);
+  --secondary: oklch(0.55 0.25 290); /* #8B5CF6 Deep Electric Purple */
+  --secondary-foreground: oklch(1 0 0);
   
-  /* Muted: Off White #F4EFEC (used for subdued text/bg) */
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.70 0 0); /* Light Grey */
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.50 0 0);
   
-  /* Accent: Ice Blue #D2F3F6 */
-  --accent: oklch(0.90 0.05 200);
-  --accent-foreground: oklch(0.10 0.05 280);
+  --accent: oklch(0.95 0 0);
+  --accent-foreground: oklch(0.15 0.02 280);
   
-  /* Destructive: Red (Standard) */
   --destructive: oklch(0.6 0.25 25);
   --destructive-foreground: oklch(1 0 0);
   
-  /* Border: Dark Grey #1E1E1E */
-  --border: oklch(0.25 0 0);
-  --input: oklch(0.25 0 0);
-  --ring: oklch(0.95 0.15 125); /* Pale Lime Ring */
+  --border: oklch(0.90 0 0);
+  --input: oklch(0.90 0 0);
+  --ring: oklch(0.88 0.25 125); /* Lime ring */
   
-  --radius: 0.5rem;
-
-  /* Charts - Brand Palette */
-  --chart-1: oklch(0.95 0.15 125); /* Pale Lime */
-  --chart-2: oklch(0.35 0.20 300); /* Deep Purple */
-  --chart-3: oklch(0.90 0.05 200); /* Ice Blue */
-  --chart-4: oklch(0.85 0.10 280); /* Lavender */
-  --chart-5: oklch(0.85 0.10 50);  /* Peach */
-  
-  /* Sidebar */
-  --sidebar: oklch(0.10 0 0);
-  --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.95 0.15 125);
-  --sidebar-primary-foreground: oklch(0.10 0.05 280);
-  --sidebar-accent: oklch(0.20 0 0);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.25 0 0);
-  --sidebar-ring: oklch(0.95 0.15 125);
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.15 0.02 280);
+  --sidebar-accent: oklch(0.95 0 0);
+  --sidebar-accent-foreground: oklch(0.15 0.02 280);
+  --sidebar-border: oklch(0.90 0 0);
+  --sidebar-ring: oklch(0.88 0.25 125);
 }
 
 .dark {
-  /* Same as root since we are forcing dark mode aesthetic */
-  --primary: oklch(0.95 0.15 125); 
-  --primary-foreground: oklch(0.10 0.05 280);
-  --secondary: oklch(0.35 0.20 300); 
-  --secondary-foreground: oklch(1 0 0);
-  --background: oklch(0 0 0);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.20 0 0);
+  /* Applecore Custom Theme - Dark Mode (Primary) */
+  /* Converted from HEX to OKLCH for Tailwind 4 compatibility */
+  /* #A2CF78 -> oklch(0.80 0.12 130) */
+  --primary: oklch(0.80 0.12 130); 
+  --primary-foreground: oklch(0.10 0.01 280); 
+  --sidebar-primary: oklch(0.80 0.12 130);
+  --sidebar-primary-foreground: oklch(0.10 0.01 280);
+  
+  /* #000000 (User said "le noir #FFFFFF" but context implies background is dark/black and text is white. 
+     Assuming #000000 for background based on previous context and "Dark Mode" theme, 
+     and #FFFFFF for text/foreground as requested) */
+  --background: oklch(0.10 0.01 280); /* Keeping deep dark background for contrast */
+  --foreground: oklch(1 0 0); /* #FFFFFF Pure White */
+  
+  --card: oklch(0.14 0.02 280); 
   --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.20 0 0);
-  --popover-foreground: oklch(1 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.70 0 0);
-  --accent: oklch(0.90 0.05 200);
-  --accent-foreground: oklch(0.10 0.05 280);
+  
+  --popover: oklch(0.18 0.02 280);
+  --popover-foreground: oklch(0.95 0 0);
+  
+  /* #741F90 -> oklch(0.45 0.18 310) */
+  --secondary: oklch(0.45 0.18 310); 
+  --secondary-foreground: oklch(1 0 0);
+  
+  --muted: oklch(0.25 0.02 280);
+  /* #DCDCDC -> oklch(0.88 0 0) */
+  --muted-foreground: oklch(0.88 0 0);
+  
+  --accent: oklch(0.25 0.02 280);
+  --accent-foreground: oklch(0.95 0 0);
+  
   --destructive: oklch(0.6 0.25 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.25 0 0);
-  --input: oklch(0.25 0 0);
-  --ring: oklch(0.95 0.15 125);
-  --chart-1: oklch(0.95 0.15 125);
-  --chart-2: oklch(0.35 0.20 300);
-  --chart-3: oklch(0.90 0.05 200);
-  --chart-4: oklch(0.85 0.10 280);
-  --chart-5: oklch(0.85 0.10 50);
-  --sidebar: oklch(0.10 0 0);
-  --sidebar-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.95 0.15 125);
-  --sidebar-primary-foreground: oklch(0.10 0.05 280);
-  --sidebar-accent: oklch(0.20 0 0);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.25 0 0);
-  --sidebar-ring: oklch(0.95 0.15 125);
+  
+  --border: oklch(0.30 0.02 280); /* Subtle borders */
+  --input: oklch(0.30 0.02 280);
+  --ring: oklch(0.88 0.25 125); /* Lime ring */
+  
+  --chart-1: oklch(0.88 0.25 125); /* Lime */
+  --chart-2: oklch(0.65 0.28 310); /* Magenta */
+  --chart-3: oklch(0.70 0.15 280); /* Purple */
+  --chart-4: oklch(0.85 0.10 200); /* Cyan */
+  --chart-5: oklch(0.90 0.05 100); /* Yellow */
+  
+  --sidebar: oklch(0.12 0.02 280); /* Darker sidebar */
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(0.20 0.02 280);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.30 0.02 280);
+  --sidebar-ring: oklch(0.88 0.25 125);
 }
 
 @layer base {
@@ -176,11 +181,24 @@
 }
 
 @layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
+    padding-left: 1rem; /* 16px - mobile padding */
     padding-right: 1rem;
   }
 
@@ -191,16 +209,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
+      padding-left: 1.5rem; /* 24px - tablet padding */
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
+      padding-left: 2rem; /* 32px - desktop padding */
       padding-right: 2rem;
-      max-width: 1280px;
+      max-width: 1280px; /* Standard content width */
     }
   }
 }
