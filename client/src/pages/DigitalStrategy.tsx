@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu, ListChecks } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function DigitalStrategy() {
@@ -41,6 +41,11 @@ export default function DigitalStrategy() {
     { id: "personas", label: "Personas" },
     { id: "funnel", label: "User Journey" },
     { id: "automation", label: "Automation" },
+    { id: "organic", label: "Organic Content" },
+    { id: "retention", label: "Retention" },
+    { id: "tech-stack", label: "Tech Stack" },
+    { id: "risk", label: "Risk Mitigation" },
+    { id: "checklist", label: "Launch Checklist" },
     { id: "kpi", label: "KPI Dashboard" }
   ];
 
@@ -895,7 +900,229 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 8. KPI Dashboard Simulator */}
+        {/* 8. Organic Content Pillars */}
+        <section id="organic" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Smartphone className="text-primary w-8 h-8" /> Organic Content Pillars
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                We don't just rely on ads. We build a media machine.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
+                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 mb-6">
+                  <Video className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">The Analyst (YouTube)</h3>
+                <p className="text-zinc-400 mb-4">Deep dive market breakdowns. 20-minute videos showing "How I predicted this move". Builds extreme authority.</p>
+                <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider border border-zinc-800 px-2 py-1 rounded">Search Traffic</span>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
+                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">The Contrarian (X/Twitter)</h3>
+                <p className="text-zinc-400 mb-4">Short, punchy threads attacking common trading myths. "Why RSI is a scam". "Stop using Support/Resistance".</p>
+                <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider border border-zinc-800 px-2 py-1 rounded">Viral Reach</span>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
+                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500 mb-6">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">The Monk (IG/TikTok)</h3>
+                <p className="text-zinc-400 mb-4">Lifestyle, but not "Lambo". Discipline, gym, charts, routine. Aspirational but grounded.</p>
+                <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider border border-zinc-800 px-2 py-1 rounded">Brand Image</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 9. Retention Mechanics */}
+        <section id="retention" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Lock className="text-white w-8 h-8" /> Retention Mechanics
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                How we keep them paying month after month.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
+                <h3 className="text-xl font-bold text-white mb-6">The "First Win" Protocol</h3>
+                <p className="text-zinc-400 mb-6">Churn happens when users feel overwhelmed. We engineer a "Quick Win" within the first 48 hours.</p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">1</div>
+                    <span className="text-zinc-300">User Joins</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">2</div>
+                    <span className="text-zinc-300">Watches "Mindset Reset" (15 mins)</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">3</div>
+                    <span className="text-zinc-300">Feels "Relief" (Dopamine Hit)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
+                <h3 className="text-xl font-bold text-white mb-6">Tribal Lock-In</h3>
+                <p className="text-zinc-400 mb-6">People come for the content, but they stay for the community. We build a "Cult of Discipline".</p>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-white font-bold mb-2">Shared Enemy</h4>
+                    <p className="text-zinc-500 text-sm">Us vs. The "Gamblers". Us vs. The "Institutions".</p>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-2">Status Games</h4>
+                    <p className="text-zinc-500 text-sm">Badges for "30 Days Disciplined". Leaderboards for consistency, not P&L.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 10. Tech Stack */}
+        <section id="tech-stack" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Server className="text-primary w-8 h-8" /> The Engine Room
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Lean, scalable infrastructure. No bloat.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Community</div>
+                <div className="text-xl font-bold text-white">Skool / Discord</div>
+                <div className="text-sm text-zinc-600 mt-2">Hosting & Delivery</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Payments</div>
+                <div className="text-xl font-bold text-white">Stripe</div>
+                <div className="text-sm text-zinc-600 mt-2">Billing & Subs</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Email / CRM</div>
+                <div className="text-xl font-bold text-white">GoHighLevel</div>
+                <div className="text-sm text-zinc-600 mt-2">Automation</div>
+              </div>
+              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Analytics</div>
+                <div className="text-xl font-bold text-white">Hyros</div>
+                <div className="text-sm text-zinc-600 mt-2">Attribution</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 11. Risk Mitigation */}
+        <section id="risk" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Shield className="text-white w-8 h-8" /> Risk Mitigation
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Anti-fragility protocols. What happens if things break?
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-red-500/20">
+                <div className="flex items-center gap-4 mb-6">
+                  <AlertTriangle className="text-red-500 w-6 h-6" />
+                  <h3 className="text-xl font-bold text-white">Risk: Ad Account Ban</h3>
+                </div>
+                <p className="text-zinc-400 mb-4">Meta hates "Make Money Online" offers.</p>
+                <div className="p-4 rounded-xl bg-black/50 border border-white/5">
+                  <h4 className="text-primary font-bold text-sm uppercase mb-2">Solution: Compliance First</h4>
+                  <p className="text-zinc-500 text-sm">We never promise returns. We sell "Education" and "Discipline". We use a "Bridge Page" (VSL) to insulate the ad account.</p>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-yellow-500/20">
+                <div className="flex items-center gap-4 mb-6">
+                  <AlertTriangle className="text-yellow-500 w-6 h-6" />
+                  <h3 className="text-xl font-bold text-white">Risk: Copycat Competitors</h3>
+                </div>
+                <p className="text-zinc-400 mb-4">Someone steals the course and sells it for $5.</p>
+                <div className="p-4 rounded-xl bg-black/50 border border-white/5">
+                  <h4 className="text-primary font-bold text-sm uppercase mb-2">Solution: Community Moat</h4>
+                  <p className="text-zinc-500 text-sm">They can steal the videos, but they can't steal the live calls, the Discord vibes, and the leaderboards. The value is in the network.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 12. Launch Checklist */}
+        <section id="checklist" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <ListChecks className="text-primary w-8 h-8" /> Launch Checklist
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Mission Critical items before pressing "GO".
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="space-y-4">
+                <h3 className="text-white font-bold border-b border-white/10 pb-2">Technical</h3>
+                <ul className="space-y-3">
+                  {["Stripe Webhooks Tested", "Email DKIM/SPF Verified", "Pixel Events (Purchase, Lead) Firing", "Mobile Responsive Check"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-zinc-400">
+                      <div className="w-4 h-4 rounded border border-zinc-600 flex items-center justify-center"></div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-white font-bold border-b border-white/10 pb-2">Content Assets</h3>
+                <ul className="space-y-3">
+                  {["5x Ad Creatives (Video + Static)", "VSL Script Recorded & Edited", "Welcome Email Sequence Loaded", "Social Proof Screenshots Collected"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-zinc-400">
+                      <div className="w-4 h-4 rounded border border-zinc-600 flex items-center justify-center"></div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-white font-bold border-b border-white/10 pb-2">Legal & Compliance</h3>
+                <ul className="space-y-3">
+                  {["Terms of Service & Privacy Policy", "'Not Financial Advice' Disclaimer", "Refund Policy Clearly Visible", "GDPR/Cookie Consent Banner"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-zinc-400">
+                      <div className="w-4 h-4 rounded border border-zinc-600 flex items-center justify-center"></div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 13. KPI Dashboard Simulator */}
         <section id="kpi" className="py-32 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
