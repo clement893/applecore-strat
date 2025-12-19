@@ -1239,6 +1239,298 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
+      {/* 13. MEDIA BUYING PLAN */}
+      <section id="media-buying" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+              <TrendingUp className="h-8 w-8 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight uppercase italic">
+                Media Buying <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Plan</span>
+              </h2>
+              <p className="text-xl text-gray-400 mt-2 max-w-2xl">
+                Strategic allocation of the £3k-£5k monthly budget for maximum impact.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Budget Allocation */}
+            <div className="bg-card border border-white/10 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <Calculator className="h-6 w-6 text-primary" />
+                Budget Allocation
+              </h3>
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-white font-bold">Meta (Instagram/Facebook)</span>
+                    <span className="text-primary font-mono">60% (£1,800 - £3,000)</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-primary w-[60%]"></div>
+                  </div>
+                  <p className="text-xs text-gray-500">Primary acquisition channel. Focus on Reels and Stories.</p>
+                </div>
+                
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-white font-bold">TikTok Ads</span>
+                    <span className="text-secondary font-mono">25% (£750 - £1,250)</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-secondary w-[25%]"></div>
+                  </div>
+                  <p className="text-xs text-gray-500">Viral awareness and younger demographic targeting.</p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-white font-bold">YouTube Shorts / Google</span>
+                    <span className="text-accent font-mono">15% (£450 - £750)</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-accent w-[15%]"></div>
+                  </div>
+                  <p className="text-xs text-gray-500">Retargeting and high-intent search traffic.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Campaign Structure */}
+            <div className="bg-card border border-white/10 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                <Layers className="h-6 w-6 text-secondary" />
+                Campaign Structure
+              </h3>
+              <div className="space-y-4">
+                <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-primary font-bold text-sm uppercase tracking-wider">Level 1: Cold Traffic</span>
+                    <span className="text-xs font-mono text-gray-400">70% of Budget</span>
+                  </div>
+                  <p className="text-sm text-gray-300">Broad targeting + Interest stacks (Trading, Forex, Crypto). Goal: Drive cheap clicks to Lead Magnet.</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-secondary font-bold text-sm uppercase tracking-wider">Level 2: Retargeting</span>
+                    <span className="text-xs font-mono text-gray-400">20% of Budget</span>
+                  </div>
+                  <p className="text-sm text-gray-300">Targeting page visitors (30 days) who didn't convert. Offer: Tripwire (£4.99) discount or social proof.</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg border border-white/10">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-accent font-bold text-sm uppercase tracking-wider">Level 3: Loyalty</span>
+                    <span className="text-xs font-mono text-gray-400">10% of Budget</span>
+                  </div>
+                  <p className="text-sm text-gray-300">Upsell to existing customers (High Ticket). Exclusive webinars and "Inner Circle" content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 14. CREATIVE ASSETS INVENTORY */}
+      <section id="creative-assets" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="p-3 rounded-lg bg-secondary/10 border border-secondary/20">
+              <Eye className="h-8 w-8 text-secondary" />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight uppercase italic">
+                Creative <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">Assets</span>
+              </h2>
+              <p className="text-xl text-gray-400 mt-2 max-w-2xl">
+                Visual inventory and psychological angles for the initial campaign launch.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Asset 1: Story (HTML/CSS) */}
+            <div className="group relative">
+              <div className="aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 bg-black relative flex flex-col">
+                {/* Visual Content */}
+                <div className="flex-1 relative bg-black p-6 flex flex-col justify-between overflow-hidden">
+                  {/* Background Grid */}
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
+                  
+                  {/* Top Text */}
+                  <div className="relative z-10">
+                    <h3 className="text-4xl font-black text-white leading-none tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                      STOP<br/>GUESSING.
+                    </h3>
+                  </div>
+
+                  {/* Center Graphic */}
+                  <div className="relative z-10 flex-1 flex items-center justify-center">
+                    <div className="w-full h-64 bg-black/50 border border-primary/30 rounded-xl relative overflow-hidden backdrop-blur-sm">
+                      {/* Chart Line */}
+                      <svg className="absolute inset-0 w-full h-full p-4" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M0,80 L20,75 L30,85 L40,60 L50,65 L60,40 L70,45 L80,20 L100,10" fill="none" stroke="#E0FF98" strokeWidth="2" className="drop-shadow-[0_0_8px_rgba(224,255,152,0.8)]" />
+                        <circle cx="80" cy="20" r="3" fill="#E0FF98" className="animate-pulse" />
+                      </svg>
+                      {/* Profit Badge */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black font-bold px-3 py-1 rounded text-sm shadow-[0_0_15px_rgba(224,255,152,0.6)]">
+                        +450%
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Text */}
+                  <div className="relative z-10 text-right">
+                    <h3 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-white leading-none tracking-tighter uppercase italic">
+                      START<br/>PRINTING.
+                    </h3>
+                    <div className="mt-4 flex justify-end">
+                      <div className="bg-white text-black text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest">
+                        Swipe Up
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Overlay Info */}
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center z-20 backdrop-blur-sm">
+                  <div>
+                    <div className="bg-primary/20 border border-primary/30 text-primary text-xs font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                      STORY FORMAT
+                    </div>
+                    <h4 className="text-white font-bold text-lg">The "Pattern Interrupt"</h4>
+                    <p className="text-gray-400 text-sm mt-2">Stops the scroll with high-contrast neon visuals. Direct command: "Stop Guessing".</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Asset 2: Feed (HTML/CSS) */}
+            <div className="group relative">
+              <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black relative flex flex-col">
+                {/* Visual Content */}
+                <div className="flex-1 relative bg-black flex">
+                  {/* Left Side: Them */}
+                  <div className="w-1/2 bg-[#1a0505] relative border-r border-white/10 p-4 flex flex-col items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 opacity-20">
+                      <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#ff4444" strokeWidth="1" />
+                        <path d="M0,30 Q25,80 50,30 T100,30" fill="none" stroke="#ff4444" strokeWidth="1" opacity="0.5" />
+                        <path d="M0,70 Q25,10 50,70 T100,70" fill="none" stroke="#ff4444" strokeWidth="1" opacity="0.5" />
+                      </svg>
+                    </div>
+                    <h4 className="text-red-500 font-mono text-sm mb-2 uppercase tracking-widest">Them</h4>
+                    <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">GAMBLING</h3>
+                    <X className="h-8 w-8 text-red-500 mt-4 opacity-50" />
+                  </div>
+
+                  {/* Right Side: Us */}
+                  <div className="w-1/2 bg-[#051a05] relative p-4 flex flex-col items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#E0FF98_1px,transparent_1px),linear-gradient(to_bottom,#E0FF98_1px,transparent_1px)] bg-[size:10px_10px] opacity-10"></div>
+                    <h4 className="text-primary font-mono text-sm mb-2 uppercase tracking-widest">Us</h4>
+                    <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">PRECISION</h3>
+                    <Target className="h-8 w-8 text-primary mt-4 drop-shadow-[0_0_10px_rgba(224,255,152,0.8)]" />
+                  </div>
+
+                  {/* Center VS */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black border border-white/20 rounded-full w-10 h-10 flex items-center justify-center z-10">
+                    <span className="text-xs font-bold text-white">VS</span>
+                  </div>
+                </div>
+
+                {/* Overlay Info */}
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center z-20 backdrop-blur-sm">
+                  <div>
+                    <div className="bg-secondary/20 border border-secondary/30 text-secondary text-xs font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                      FEED POST
+                    </div>
+                    <h4 className="text-white font-bold text-lg">The "Us vs Them"</h4>
+                    <p className="text-gray-400 text-sm mt-2">Classic comparison. Chaos (Gambling) vs Order (Precision). Positions Applecore as the professional choice.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Asset 3: YouTube (HTML/CSS) */}
+            <div className="group relative">
+              <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black relative flex flex-col">
+                {/* Visual Content */}
+                <div className="flex-1 relative bg-black p-6 flex items-center justify-between overflow-hidden">
+                  {/* Background Glow */}
+                  <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+                  
+                  {/* Left: Chart Graphic */}
+                  <div className="w-1/2 h-full flex items-center justify-center relative z-10">
+                    <div className="w-full aspect-video bg-black/50 border border-white/10 rounded-lg p-2 relative backdrop-blur-sm">
+                      <div className="absolute top-2 right-2 flex gap-1">
+                        <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                        <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                      </div>
+                      <div className="mt-4 h-20 flex items-end gap-1">
+                        {[40, 60, 45, 70, 55, 80, 65, 90].map((h, i) => (
+                          <div key={i} className="flex-1 bg-primary/50 hover:bg-primary transition-colors" style={{ height: `${h}%` }}></div>
+                        ))}
+                      </div>
+                      {/* Buy Signal */}
+                      <div className="absolute bottom-4 right-4 bg-primary text-black text-[10px] font-bold px-2 py-1 rounded animate-pulse shadow-[0_0_10px_rgba(224,255,152,0.8)]">
+                        BUY SIGNAL
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right: Text */}
+                  <div className="w-1/2 pl-6 relative z-10 text-right">
+                    <h3 className="text-5xl font-black text-white leading-[0.9] tracking-tighter uppercase italic">
+                      90%<br/>
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">WIN RATE?</span>
+                    </h3>
+                    <div className="mt-2 inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                      Live Proof
+                    </div>
+                  </div>
+                </div>
+
+                {/* Overlay Info */}
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center z-20 backdrop-blur-sm">
+                  <div>
+                    <div className="bg-accent/20 border border-accent/30 text-accent text-xs font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                      THUMBNAIL
+                    </div>
+                    <h4 className="text-white font-bold text-lg">The "Bold Claim"</h4>
+                    <p className="text-gray-400 text-sm mt-2">High CTR design. Focus on the result (90% Win Rate) and the "Buy Signal" mechanism.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 p-8 rounded-xl bg-white/5 border border-white/10">
+            <h3 className="text-xl font-bold text-white mb-4">Production Checklist</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                <span>Export all static assets in 1080x1080 and 1080x1920</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                <span>Create 3 variations of hook text for video ads</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                <span>Set up UTM tracking parameters for each creative</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                <span>Ensure all text overlays are within "Safe Zones"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
     </>
   );
