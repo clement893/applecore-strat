@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function DigitalStrategy() {
@@ -242,6 +242,45 @@ export default function DigitalStrategy() {
           .roadmap-details { display: block !important; opacity: 1 !important; position: relative !important; transform: none !important; margin-bottom: 2rem !important; }
         }
       `}</style>
+
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 z-[100] w-full border-b border-white/5 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/60 no-print">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-8">
+            <Link href="/">
+              <div className="flex items-center gap-2 cursor-pointer font-bold text-xl tracking-tighter">
+                <span className="text-primary">Applecore</span>
+                <span className="text-zinc-500 font-normal text-sm hidden sm:inline-block">| Brand Book</span>
+              </div>
+            </Link>
+            <div className="hidden md:flex items-center gap-1">
+              <Link href="/">
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/5 cursor-pointer transition-colors">
+                  1. Brand Guide
+                </span>
+              </Link>
+              <Link href="/mindset-revolution">
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:text-white hover:bg-white/5 cursor-pointer transition-colors">
+                  2. Ad Concept
+                </span>
+              </Link>
+              <Link href="/digital-strategy">
+                <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 cursor-pointer transition-colors">
+                  3. Digital Strategy
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" className="md:hidden text-white">
+              <Menu className="h-5 w-5" />
+            </Button>
+            <Button size="sm" className="hidden md:flex gap-2 bg-white text-black hover:bg-zinc-200">
+              Download Assets <Download className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </nav>
 
       {/* Side Navigation Dots */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4 no-print hidden lg:flex">
