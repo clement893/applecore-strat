@@ -9,11 +9,10 @@ export default function DigitalStrategy() {
   const [immersiveMode, setImmersiveMode] = useState(false);
   const [activeMonthTab, setActiveMonthTab] = useState(1);
   const [activeSection, setActiveSection] = useState(0);
-  const [simBudget, setSimBudget] = useState(5000);
-  const [simCPC, setSimCPC] = useState(1.50);
-  const [simCR, setSimCR] = useState(3.5);
-  const [simAOV, setSimAOV] = useState(65);
-
+  const [simBudget, setSimBudget] = useState(2000);
+  const [simCPC, setSimCPC] = useState(1.20);
+  const [simCR, setSimCR] = useState(1.5);
+  const [simAOV, setSimAOV] = useState(97);
   // Helper component for Search icon since it was missing in imports
   const Search = ({ className }: { className?: string }) => (
     <svg 
@@ -185,9 +184,9 @@ export default function DigitalStrategy() {
     },
     {
       month: 3,
-      title: "Monetization",
-      goal: "Scale Revenue & Lock-in Retention",
-      description: "Scale the offer and focus on LTV.",
+      title: "Sustainability",
+      goal: "Reach Break-Even & Validate LTV",
+      description: "Ensure the machine pays for itself before aggressive scaling.",
       weeks: [
         { 
           week: 9, 
@@ -198,9 +197,9 @@ export default function DigitalStrategy() {
         },
         { 
           week: 10, 
-          title: "Scale Ad Spend",
-          task: "Scale ad spend on winning creative variants",
-          context: "Triple budget on best performers. Kill losers aggressively.",
+          title: "Optimize Ad Spend",
+          task: "Stabilize ad spend on winning creative variants",
+          context: "Maintain budget on best performers. Cut losers to protect margin.",
           icon: <BarChart3 className="w-4 h-4" />
         },
         { 
@@ -386,9 +385,9 @@ export default function DigitalStrategy() {
                 <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
                   <BarChart3 className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Scale Revenue</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Break Even</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
-                  Achieve £50k MRR by Month 3 through a high-ticket backend offer and recurring membership downsell.
+                  Achieve profitability by Month 3. Focus on self-liquidating offers to cover ad spend immediately.
                 </p>
               </div>
             </div>
@@ -1223,7 +1222,7 @@ export default function DigitalStrategy() {
                   <div className="text-4xl font-bold text-primary mb-1">
                     £{Math.floor((simBudget / simCPC) * (simCR / 100) * simAOV).toLocaleString()}
                   </div>
-                  <div className="text-zinc-600 text-sm">Gross Revenue</div>
+                  <div className="text-zinc-600 text-sm">Gross Revenue (Target: Break Even)</div>
                 </div>
 
                 <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
