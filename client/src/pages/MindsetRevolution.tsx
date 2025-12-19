@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowLeft, Target, Lightbulb, Users, Zap, Layout, MessageSquare } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, Users, Zap, Layout, MessageSquare } from "lucide-react";
 
 export default function MindsetRevolution() {
   return (

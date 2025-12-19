@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function DigitalStrategy() {
@@ -620,7 +620,7 @@ export default function DigitalStrategy() {
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-mono text-accent uppercase tracking-wider">Acquisition</span>
-                  <MailIcon className="h-4 w-4 text-gray-500" />
+                  <Mail className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Nurturing Sequence</h3>
                 <p className="text-sm text-gray-400 mt-2">Lead Magnet → Tripwire</p>
@@ -652,7 +652,7 @@ export default function DigitalStrategy() {
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-mono text-accent uppercase tracking-wider">Activation</span>
-                  <MailIcon className="h-4 w-4 text-gray-500" />
+                  <Mail className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Welcome Sequence</h3>
                 <p className="text-sm text-gray-400 mt-2">Tripwire (£4.99) → Full Member</p>
@@ -684,7 +684,7 @@ export default function DigitalStrategy() {
               <div className="p-6 border-b border-white/10 bg-white/5">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs font-mono text-accent uppercase tracking-wider">Retention</span>
-                  <MailIcon className="h-4 w-4 text-gray-500" />
+                  <Mail className="h-4 w-4 text-gray-500" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Win-Back Sequence</h3>
                 <p className="text-sm text-gray-400 mt-2">Churned → Reactivated</p>
@@ -919,30 +919,8 @@ export default function DigitalStrategy() {
           </div>
         </div>
       </section>
-    </div>
-    </>
-  );
-}
 
-function MailIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="16" x="2" y="4" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
-  );
-}
+
 
       {/* 12. LAUNCH CHECKLIST (EXECUTION) */}
       <section id="checklist" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
@@ -1260,3 +1238,8 @@ function MailIcon(props: any) {
           </div>
         </div>
       </section>
+
+    </div>
+    </>
+  );
+}
