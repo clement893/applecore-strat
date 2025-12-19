@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, Check, Copy, Download, FileText, Layout, Palette, Type } from "lucide-react";
+import { ArrowRight, Check, Copy, Download, FileText, Layout, Palette, Type, Menu } from "lucide-react";
+import { Link } from "wouter";
 import { useState } from "react";
 
 export default function Home() {
@@ -16,6 +17,45 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
+      {/* Navigation Bar */}
+      <nav className="sticky top-0 z-[100] w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-8">
+            <Link href="/">
+              <div className="flex items-center gap-2 cursor-pointer font-bold text-xl tracking-tighter">
+                <span className="text-primary">Applecore</span>
+                <span className="text-muted-foreground font-normal text-sm hidden sm:inline-block">| Brand Book</span>
+              </div>
+            </Link>
+            <div className="hidden md:flex items-center gap-1">
+              <Link href="/">
+                <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 cursor-pointer transition-colors">
+                  1. Brand Guide
+                </span>
+              </Link>
+              <Link href="/mindset-revolution">
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 cursor-pointer transition-colors">
+                  2. Ad Concept
+                </span>
+              </Link>
+              <Link href="/digital-strategy">
+                <span className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 cursor-pointer transition-colors">
+                  3. Digital Strategy
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-5 w-5" />
+            </Button>
+            <Button size="sm" className="hidden md:flex gap-2">
+              Download Assets <Download className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <header className="relative overflow-hidden border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container px-4 py-16 md:py-24 lg:py-32">
