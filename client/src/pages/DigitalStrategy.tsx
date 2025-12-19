@@ -868,9 +868,16 @@ export default function DigitalStrategy() {
               <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
                 <Mail className="text-white w-8 h-8" /> Automation & Email
               </h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">
-                The engine that runs while we sleep. High-value touchpoints delivered automatically.
-              </p>
+              <div className="flex items-center justify-between max-w-2xl">
+                <p className="text-zinc-400 text-lg">
+                  The silent salesman working 24/7. Click to preview scripts.
+                </p>
+                <Link href="/email-strategy">
+                  <Button variant="outline" className="gap-2 border-white/10 hover:bg-white/5">
+                    View Full Email Playbook <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
