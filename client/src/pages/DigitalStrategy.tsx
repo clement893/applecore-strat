@@ -228,7 +228,7 @@ export default function DigitalStrategy() {
           </div>
         </div>
       )}
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll print:h-auto print:overflow-visible scroll-smooth">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-black overflow-x-hidden scroll-smooth">
       {/* Global Navigation - Hidden in Immersive Mode */}
       <nav className={`fixed top-0 w-full z-50 border-b border-white/10 bg-background/80 backdrop-blur-md transition-transform duration-500 ${immersiveMode ? '-translate-y-full' : 'translate-y-0'} no-print`}>
         <div className="container flex h-16 items-center justify-between">
@@ -265,7 +265,7 @@ export default function DigitalStrategy() {
       </nav>
 
       {/* 1. HERO (CONTEXTE) */}
-      <section id="hero" className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      <section id="hero" className="pt-32 pb-20 border-b border-white/10 relative overflow-hidden min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[120px] -translate-y-1/2 print:hidden"></div>
         
         <div className="container relative z-10">
@@ -297,8 +297,59 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 2. BLUE OCEAN (CONTEXTE) */}
-      <section id="blue-ocean" className="py-32 border-b border-white/10 relative snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 2. STRATEGIC OBJECTIVES */}
+      <section id="objectives" className="py-24 border-b border-white/10 min-h-[50vh] flex items-center bg-white/5">
+        <div className="container">
+          <div className="flex items-center gap-4 mb-12">
+            <div className="p-3 rounded-lg bg-primary/10 border border-primary/20">
+              <Target className="h-8 w-8 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight uppercase italic">
+                Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Objectives</span>
+              </h2>
+              <p className="text-xl text-gray-400 mt-2 max-w-2xl">
+                The core mission parameters for the Applecore digital ecosystem.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card border border-white/10 p-8 rounded-2xl hover:border-primary/50 transition-colors group">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <Shield className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Authority Dominance</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Establish Applecore not just as a course, but as the <strong>only institutional-grade standard</strong> in a market flooded with retail noise.
+              </p>
+            </div>
+
+            <div className="bg-card border border-white/10 p-8 rounded-2xl hover:border-secondary/50 transition-colors group">
+              <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
+                <Users className="h-6 w-6 text-secondary" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Tribal Cultivation</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Build a fiercely loyal community ("The Core") that evangelizes the brand, reducing CAC through organic word-of-mouth and social proof.
+              </p>
+            </div>
+
+            <div className="bg-card border border-white/10 p-8 rounded-2xl hover:border-accent/50 transition-colors group">
+              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                <TrendingUp className="h-6 w-6 text-accent" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Revenue Velocity</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Create a high-velocity funnel that converts cold traffic to £497 buyers within 14 days using aggressive retargeting and value-first nurturing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. BLUE OCEAN (CONTEXTE) */}
+      <section id="blue-ocean" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
             <div>
@@ -351,8 +402,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 3. PERSONAS (CONTEXTE) */}
-      <section id="personas" className="py-32 border-b border-white/10 bg-white/5 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+          {/* 4. PERSONAS (CIBLE) */}
+      <section id="personas" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Target Personas</h2>
@@ -403,8 +454,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 11. BUDGET (CHIFFRES) */}
-      <section id="budget" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 5. FUNNEL (MÉCANIQUE) */}
+      <section id="funnel" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
             <div>
@@ -464,8 +515,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 5. ASCENSION MODEL (EXECUTION) */}
-      <section id="ascension" className="py-32 border-b border-white/10 bg-white/5 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 15. LAUNCH CHECKLIST (EXÉCUTION) */}
+      <section id="checklist" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16 text-center">
             <h2 className="text-4xl font-bold mb-4">The Value Ladder</h2>
@@ -517,8 +568,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 6. ROADMAP (EXECUTION) */}
-      <section id="roadmap" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 7. ROADMAP (EXÉCUTION) */}
+      <section id="roadmap" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">90-Day Attack Plan</h2>
@@ -561,8 +612,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 7. ORGANIC CONTENT (EXECUTION) */}
-      <section id="organic" className="py-32 border-b border-white/10 bg-white/5 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+       {/* 8. ORGANIC CONTENT (EXÉCUTION) */}
+      <section id="organic" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Organic Content Pillars</h2>
@@ -606,8 +657,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 8. AUTOMATION HUB (MECANIQUE) */}
-      <section id="automation" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 9. AUTOMATION (MÉCANIQUE) */}
+      <section id="automation" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Email Automation Hub</h2>
@@ -722,8 +773,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 9. RETENTION (MECANIQUE) */}
-      <section id="retention" className="py-32 border-b border-white/10 bg-white/5 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 6. ASCENSION (MÉCANIQUE) */}
+      <section id="ascension" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Retention Mechanics</h2>
@@ -790,8 +841,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 10. TECH STACK (MECANIQUE) */}
-      <section id="tech-stack" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 5. FUNNEL (MÉCANIQUE) */}
+      <section id="funnel" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">The Engine Room</h2>
@@ -823,9 +874,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 11. RISK MITIGATION (MECANIQUE) */}
-      <section id="risk" className="py-32 border-b border-white/10 bg-white/5 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
-        <div className="container">
+      {/* 12. RISK MITIGATION (STRATÉGIE) */}
+      <section id="risk" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12"><div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Risk Mitigation</h2>
             <p className="text-gray-400">Anti-fragility protocols. What happens if things break?</p>
@@ -853,8 +903,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-      {/* 12. BUDGET (CHIFFRES) */}
-      <section id="budget" className="py-32 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      {/* 16. KPI DASHBOARD (CHIFFRES) */}
+      <section id="kpi" className="py-32 relative min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Budget & Unit Economics</h2>
@@ -920,11 +970,8 @@ export default function DigitalStrategy() {
         </div>
       </section>
 
-
-
-      {/* 12. LAUNCH CHECKLIST (EXECUTION) */}
-      <section id="checklist" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
-        <div className="container">
+      {/* 11. TECH STACK (TECHNIQUE) */}
+      <section id="tech-stack" className="py-32 border-b border-white/10 relative min-h-screen flex items-center print:min-h-0 print:py-12">       <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl font-bold mb-4">Launch Checklist</h2>
             <p className="text-gray-400">Mission Critical items before pressing "GO".</p>
@@ -1343,7 +1390,7 @@ export default function DigitalStrategy() {
       </section>
 
       {/* 14. CREATIVE ASSETS INVENTORY */}
-      <section id="creative-assets" className="py-32 border-b border-white/10 snap-start min-h-screen flex items-center print:min-h-0 print:py-12">
+      <section id="creative-assets" className="py-32 border-b border-white/10 min-h-screen flex items-center print:min-h-0 print:py-12">
         <div className="container">
           <div className="flex items-center gap-4 mb-12">
             <div className="p-3 rounded-lg bg-secondary/10 border border-secondary/20">
