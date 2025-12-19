@@ -345,7 +345,6 @@ export default function DigitalStrategy() {
       )}
 
       <div className={`bg-black min-h-screen ${immersiveMode ? 'snap-y snap-mandatory h-screen overflow-y-scroll' : ''}`}>
-        
         {/* 1. Strategic Objectives */}
         <section id="objectives" className="py-32 border-b border-white/5 snap-start bg-zinc-950 flex items-center min-h-screen">
           <div className="container">
