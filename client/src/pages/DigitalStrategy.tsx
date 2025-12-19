@@ -7,7 +7,7 @@ export default function DigitalStrategy() {
   const [location] = useLocation();
   const [selectedEmail, setSelectedEmail] = useState<string | null>(null);
   const [immersiveMode, setImmersiveMode] = useState(false);
-  const [expandedMonth, setExpandedMonth] = useState<number | null>(1); // Default open first month
+  const [activeMonthTab, setActiveMonthTab] = useState(1);
   const [activeSection, setActiveSection] = useState(0);
   const [simBudget, setSimBudget] = useState(5000);
   const [simCPC, setSimCPC] = useState(1.50);
@@ -177,7 +177,8 @@ export default function DigitalStrategy() {
   ];
 
   const handlePrint = () => {
-    setExpandedMonth(null);
+    // For print, we might want to show all months or handle it differently
+    // Currently just printing current view
     setTimeout(() => {
       window.print();
     }, 100);
@@ -198,7 +199,7 @@ export default function DigitalStrategy() {
           .text-muted-foreground { color: #555 !important; }
           .border-white\\/10 { border-color: #ddd !important; }
           .bg-card { background-color: #f9f9f9 !important; border: 1px solid #ddd !important; }
-          .roadmap-details { display: block !important; }
+          .roadmap-details { display: block !important; opacity: 1 !important; position: relative !important; transform: none !important; margin-bottom: 2rem !important; }
         }
       `}</style>
 
@@ -240,65 +241,49 @@ export default function DigitalStrategy() {
       {selectedEmail && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 no-print" onClick={() => setSelectedEmail(null)}>
           <div className="bg-zinc-900 border border-zinc-800 w-full max-w-lg rounded-xl overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
-            <div className="bg-zinc-800/50 p-4 flex items-center justify-between border-b border-zinc-800">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-primary"></div>
-                <div className="w-3 h-3 rounded-full bg-secondary"></div>
-                <div className="w-3 h-3 rounded-full bg-accent"></div>
-              </div>
-              <button onClick={() => setSelectedEmail(null)} className="text-gray-400 hover:text-white">
-                <X className="h-5 w-5" />
+            <div className="p-6 border-b border-zinc-800 flex justify-between items-center">
+              <h3 className="font-bold text-white">Email Preview</h3>
+              <button onClick={() => setSelectedEmail(null)} className="text-zinc-500 hover:text-white">
+                <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="p-8 space-y-6">
-              <div className="space-y-2 border-b border-zinc-800 pb-6">
-                <div className="flex items-center gap-4 text-sm">
-                  <span className="text-gray-500 w-16">From:</span>
-                  <span className="text-white font-medium">Applecore &lt;hq@applecore.com&gt;</span>
-                </div>
-                <div className="flex items-center gap-4 text-sm">
-                  <span className="text-gray-500 w-16">Subject:</span>
-                  <span className="text-white font-medium">{emailTemplates[selectedEmail as keyof typeof emailTemplates].subject}</span>
-                </div>
+            <div className="p-8 bg-white text-black">
+              <div className="mb-6 pb-6 border-b border-gray-100">
+                <p className="text-xs text-gray-500 uppercase font-bold mb-1">Subject Line</p>
+                <p className="text-lg font-medium">{emailTemplates[selectedEmail as keyof typeof emailTemplates].subject}</p>
               </div>
-              <div className="text-gray-300 whitespace-pre-line leading-relaxed font-mono text-sm">
+              <div className="whitespace-pre-wrap font-serif text-lg leading-relaxed text-gray-800 mb-8">
                 {emailTemplates[selectedEmail as keyof typeof emailTemplates].body}
               </div>
-              <div className="pt-4">
-                <Button className="w-full bg-primary text-black hover:bg-primary/90">
+              <div className="text-center">
+                <button className="bg-black text-white px-8 py-3 rounded font-bold text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
                   {emailTemplates[selectedEmail as keyof typeof emailTemplates].cta}
-                </Button>
+                </button>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-primary selection:text-black">
+      <div className={`bg-black min-h-screen text-white selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth ${immersiveMode ? 'cursor-none' : ''}`}>
+        
         {/* Navigation */}
-        <nav className={`fixed top-0 w-full z-50 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md transition-transform duration-500 ${immersiveMode ? '-translate-y-full' : 'translate-y-0'}`}>
-          <div className="container flex h-16 items-center justify-between">
+        <nav className={`fixed top-0 left-0 right-0 z-40 border-b border-white/5 bg-black/50 backdrop-blur-md transition-transform duration-500 no-print ${immersiveMode ? '-translate-y-full' : 'translate-y-0'}`}>
+          <div className="container flex items-center justify-between h-16">
             <div className="flex items-center gap-8">
-              <Link href="/">
-                <div className="flex items-center gap-2 cursor-pointer group">
-                  <img src="/logo.png" alt="Applecore" className="h-6 w-auto brightness-0 invert transition-transform group-hover:scale-105" />
-                </div>
+              <Link href="/" className="text-xl font-bold tracking-tighter flex items-center gap-2">
+                <div className="w-3 h-3 bg-primary rounded-full"></div>
+                Applecore <span className="font-normal text-zinc-500">| Strategy</span>
               </Link>
-              <div className="hidden md:flex items-center gap-1">
+              <div className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
                 <Link href="/">
-                  <span className="px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer">
-                    1. Brand Guide
-                  </span>
+                  <span className="hover:text-white transition-colors cursor-pointer">Brand Guide</span>
                 </Link>
                 <Link href="/mindset-revolution">
-                  <span className="px-4 py-2 rounded-full text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer">
-                    2. Ad Concept
-                  </span>
+                  <span className="hover:text-white transition-colors cursor-pointer">Ad Concept</span>
                 </Link>
                 <Link href="/digital-strategy">
-                  <span className="px-4 py-2 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 transition-colors cursor-pointer">
-                    3. Digital Strategy
-                  </span>
+                  <span className="text-primary cursor-pointer">Digital Strategy</span>
                 </Link>
               </div>
             </div>
@@ -470,187 +455,244 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 90-Day Roadmap (RESTRUCTURED) */}
-        <section id="roadmap" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
+        {/* 90-Day Attack Plan - Interactive Calendar View */}
+        <section id="roadmap" className="snap-start min-h-screen flex items-center py-20 border-b border-zinc-800/50 bg-zinc-950/30">
           <div className="container">
-            <div className="mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Layers className="text-white w-8 h-8" /> 90-Day Attack Plan
-              </h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">
-                Phased execution to minimize risk and maximize learning. Click on a month to see the weekly breakdown.
+            <div className="mb-12 max-w-3xl">
+              <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-6">
+                <Crosshair className="h-6 w-6" />
+              </div>
+              <h2 className="text-3xl font-bold mb-4 text-white">90-Day Attack Plan</h2>
+              <p className="text-zinc-400 text-lg">
+                A phased execution roadmap to go from zero to market dominance.
+                We don't guess. We execute.
               </p>
             </div>
 
-            <div className="space-y-8">
+            {/* Month Tabs */}
+            <div className="flex flex-wrap gap-2 mb-8 p-1 bg-zinc-900/50 rounded-xl border border-zinc-800 w-fit no-print">
               {roadmap.map((phase) => (
-                <div key={phase.month} className={`border rounded-3xl overflow-hidden transition-all duration-500 ${expandedMonth === phase.month ? 'bg-zinc-900 border-primary/20 shadow-2xl shadow-black/50' : 'bg-zinc-900/50 border-white/5 hover:bg-zinc-900'}`}>
-                  <div 
-                    className="p-8 flex items-center justify-between cursor-pointer"
-                    onClick={() => setExpandedMonth(expandedMonth === phase.month ? null : phase.month)}
-                  >
-                    <div className="flex items-center gap-8">
-                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold font-mono border transition-colors ${expandedMonth === phase.month ? 'bg-primary text-black border-primary' : 'bg-zinc-800 text-zinc-500 border-white/5'}`}>
-                        M{phase.month}
-                      </div>
+                <button
+                  key={phase.month}
+                  onClick={() => setActiveMonthTab(phase.month)}
+                  className={`px-6 py-3 rounded-lg text-sm font-bold transition-all duration-300 flex items-center gap-3 ${
+                    activeMonthTab === phase.month
+                      ? 'bg-primary text-black shadow-lg shadow-primary/20'
+                      : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
+                  }`}
+                >
+                  <span className={`font-mono px-2 py-0.5 rounded text-xs ${
+                    activeMonthTab === phase.month ? 'bg-black/20' : 'bg-zinc-800'
+                  }`}>M{phase.month}</span>
+                  {phase.title}
+                </button>
+              ))}
+            </div>
+
+            {/* Calendar Grid View */}
+            <div className="relative min-h-[500px]">
+              {roadmap.map((phase) => (
+                <div 
+                  key={phase.month}
+                  className={`transition-all duration-500 absolute inset-0 ${
+                    activeMonthTab === phase.month 
+                      ? 'opacity-100 translate-y-0 z-10 relative' 
+                      : 'opacity-0 translate-y-8 z-0 absolute pointer-events-none hidden'
+                  } roadmap-details`}
+                >
+                  <div className="bg-zinc-900/30 border border-zinc-800 rounded-2xl p-8 backdrop-blur-sm">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/5 pb-8">
                       <div>
-                        <h3 className={`text-2xl font-bold mb-2 ${expandedMonth === phase.month ? 'text-white' : 'text-zinc-400'}`}>{phase.title}</h3>
-                        <p className="text-zinc-500">{phase.goal}</p>
+                        <h3 className="text-3xl font-bold text-white mb-2">{phase.title}</h3>
+                        <p className="text-primary font-mono uppercase tracking-wider text-sm">{phase.goal}</p>
                       </div>
+                      <p className="text-zinc-400 max-w-md text-sm leading-relaxed border-l-2 border-zinc-800 pl-4">
+                        {phase.description}
+                      </p>
                     </div>
-                    <div className={`p-3 rounded-full border transition-all ${expandedMonth === phase.month ? 'bg-primary/10 text-primary border-primary/20 rotate-180' : 'bg-zinc-800 text-zinc-500 border-white/5'}`}>
-                      <ChevronDown />
-                    </div>
-                  </div>
-                  
-                  {(expandedMonth === phase.month) && (
-                    <div className="p-8 pt-0 border-t border-white/5">
-                      <div className="mt-8 mb-8 p-6 bg-primary/5 rounded-2xl border border-primary/10">
-                        <p className="text-zinc-300 leading-relaxed">
-                          <span className="text-primary font-bold uppercase text-xs tracking-wider block mb-2">Strategy Context</span>
-                          {phase.description}
-                        </p>
-                      </div>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {phase.weeks.map((week) => (
-                          <div key={week.week} className="p-6 rounded-2xl bg-zinc-950 border border-white/5 hover:border-white/10 transition-colors">
-                            <div className="flex items-center justify-between mb-4">
-                              <span className="text-xs font-mono text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/10">Week {week.week}</span>
-                              <div className="text-zinc-500">{week.icon}</div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {phase.weeks.map((week, i) => (
+                        <div key={i} className="group relative bg-black/40 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
+                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(224,255,152,0.8)] animate-pulse"></div>
+                          </div>
+                          
+                          <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-primary group-hover:border-primary/30 transition-colors mb-6">
+                            {week.icon}
+                          </div>
+                          
+                          <div className="mb-4">
+                            <span className="inline-block px-2 py-1 rounded bg-zinc-900 text-zinc-500 text-xs font-mono mb-2 border border-zinc-800">
+                              WEEK {week.week}
+                            </span>
+                            <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+                              {week.title}
+                            </h4>
+                          </div>
+                          
+                          <div className="space-y-3">
+                            <div className="p-3 rounded bg-zinc-900/50 border border-zinc-800/50">
+                              <p className="text-sm font-medium text-zinc-200 mb-1">Action:</p>
+                              <p className="text-sm text-zinc-400">{week.task}</p>
                             </div>
-                            <h4 className="text-lg font-bold text-white mb-2">{week.title}</h4>
-                            <p className="text-sm text-zinc-300 font-medium mb-3">{week.task}</p>
-                            <p className="text-sm text-zinc-500 leading-relaxed border-t border-white/5 pt-3">
+                            <p className="text-xs text-zinc-500 leading-relaxed pl-1 border-l border-zinc-800">
                               {week.context}
                             </p>
                           </div>
-                        ))}
-                      </div>
+                        </div>
+                      ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Blue Ocean Strategy */}
-        <section id="blue-ocean" className="py-32 border-b border-white/5 bg-zinc-950 snap-start">
+        {/* 3. Blue Ocean Strategy */}
+        <section id="blue-ocean" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
-            <div className="grid md:grid-cols-12 gap-16">
-              <div className="md:col-span-4">
-                <div className="sticky top-32">
-                  <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-8">
-                    <Crosshair className="h-7 w-7" />
-                  </div>
-                  <h2 className="text-4xl font-bold mb-6 text-white">Blue Ocean Strategy</h2>
-                  <p className="text-zinc-400 text-lg leading-relaxed">
-                    Escaping the "Red Ocean" of generic indicators and signal groups. We don't compete on price or promises; we compete on <span className="text-white font-bold">Truth</span>.
-                  </p>
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Brain className="text-accent w-8 h-8" /> Blue Ocean Strategy
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Why we win. The market is crowded with "Technical Analysis" noise. We own the "Psychology" lane.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="space-y-8">
+                <div className="p-8 rounded-3xl bg-zinc-900/30 border border-white/5 opacity-50 hover:opacity-100 transition-opacity">
+                  <h3 className="text-xl font-bold text-zinc-500 mb-4 line-through decoration-red-500/50">The Red Ocean (Competitors)</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-4 text-zinc-600">
+                      <X className="w-5 h-5 text-red-900" />
+                      Selling "Magic Indicators" & Signals
+                    </li>
+                    <li className="flex items-center gap-4 text-zinc-600">
+                      <X className="w-5 h-5 text-red-900" />
+                      Promoting "Get Rich Quick" Lifestyle
+                    </li>
+                    <li className="flex items-center gap-4 text-zinc-600">
+                      <X className="w-5 h-5 text-red-900" />
+                      Focus on Technicals (Support/Resistance)
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="p-8 rounded-3xl bg-zinc-900 border border-primary/20 shadow-[0_0_50px_rgba(224,255,152,0.05)]">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    The Blue Ocean (Applecore)
+                  </h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-4 text-zinc-300">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">✓</div>
+                      Selling Identity Shift & Professionalism
+                    </li>
+                    <li className="flex items-center gap-4 text-zinc-300">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">✓</div>
+                      Promoting Discipline & Risk Management
+                    </li>
+                    <li className="flex items-center gap-4 text-zinc-300">
+                      <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-primary text-xs">✓</div>
+                      Focus on Psychology (The Inner Game)
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div className="md:col-span-8">
-                <div className="overflow-hidden rounded-3xl border border-white/5 bg-zinc-900">
-                  <table className="w-full text-left border-collapse">
-                    <thead>
-                      <tr className="border-b border-white/5 bg-zinc-950">
-                        <th className="py-6 px-8 text-zinc-500 font-medium uppercase text-xs tracking-wider">Feature</th>
-                        <th className="py-6 px-8 text-red-400 font-bold uppercase text-xs tracking-wider bg-red-500/5">Competitors (Red Ocean)</th>
-                        <th className="py-6 px-8 text-primary font-bold uppercase text-xs tracking-wider bg-primary/5 border-l border-primary/10">Applecore (Blue Ocean)</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-sm">
-                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                        <td className="py-6 px-8 text-white font-medium">Core Promise</td>
-                        <td className="py-6 px-8 text-zinc-400">"Get Rich Quick"</td>
-                        <td className="py-6 px-8 text-white font-bold border-l border-white/5">"Master Your Mind"</td>
-                      </tr>
-                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                        <td className="py-6 px-8 text-white font-medium">Visual Style</td>
-                        <td className="py-6 px-8 text-zinc-400">Lamborghinis, Cash, Beaches</td>
-                        <td className="py-6 px-8 text-white font-bold border-l border-white/5">Dark, Industrial, Data-Driven</td>
-                      </tr>
-                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                        <td className="py-6 px-8 text-white font-medium">Product Focus</td>
-                        <td className="py-6 px-8 text-zinc-400">Magic Indicators (Black Box)</td>
-                        <td className="py-6 px-8 text-white font-bold border-l border-white/5">Education & Tools (Glass Box)</td>
-                      </tr>
-                      <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                        <td className="py-6 px-8 text-white font-medium">Community</td>
-                        <td className="py-6 px-8 text-zinc-400">Signal Following (Sheep)</td>
-                        <td className="py-6 px-8 text-white font-bold border-l border-white/5">Skill Building (Wolves)</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="py-6 px-8 text-white font-medium">Retention</td>
-                        <td className="py-6 px-8 text-zinc-400">Low (Churn after loss)</td>
-                        <td className="py-6 px-8 text-white font-bold border-l border-white/5">High (Loyalty to process)</td>
-                      </tr>
-                    </tbody>
-                  </table>
+
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-[100px] rounded-full opacity-30"></div>
+                <div className="relative z-10 p-8 border border-white/10 rounded-3xl bg-black/50 backdrop-blur-xl">
+                  <h4 className="text-sm font-mono text-zinc-500 uppercase mb-6">Market Positioning Map</h4>
+                  <div className="aspect-square border-l border-b border-zinc-700 relative">
+                    <div className="absolute bottom-0 left-0 w-full h-px bg-zinc-700"></div>
+                    <div className="absolute bottom-0 left-0 w-px h-full bg-zinc-700"></div>
+                    
+                    {/* Labels */}
+                    <div className="absolute -left-8 top-1/2 -rotate-90 text-xs text-zinc-500 font-mono">Psychological Focus</div>
+                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-zinc-500 font-mono">Price Point</div>
+
+                    {/* Competitors */}
+                    <div className="absolute bottom-10 left-10 w-4 h-4 rounded-full bg-red-500/50 blur-sm" title="Cheap Signals"></div>
+                    <div className="absolute bottom-20 left-20 w-6 h-6 rounded-full bg-red-500/50 blur-sm" title="Course Sellers"></div>
+                    <div className="absolute top-20 left-10 w-4 h-4 rounded-full bg-red-500/50 blur-sm" title="Expensive Mentorships"></div>
+
+                    {/* Us */}
+                    <div className="absolute top-10 right-10 w-8 h-8 rounded-full bg-primary shadow-[0_0_20px_rgba(224,255,152,0.5)] flex items-center justify-center text-black font-bold text-xs z-20">
+                      AC
+                    </div>
+                    <div className="absolute top-10 right-10 text-right mt-10 mr-2">
+                      <div className="text-white font-bold text-sm">Applecore</div>
+                      <div className="text-primary text-xs">Premium & Psych-First</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Personas */}
+        {/* 4. Personas */}
         <section id="personas" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
             <div className="mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">Target Personas</h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">Who we are talking to, and more importantly, who we are ignoring.</p>
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Users className="text-white w-8 h-8" /> Target Personas
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                We don't target everyone. We target the frustrated trader who knows the problem is them.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="p-10 rounded-3xl bg-zinc-900 border border-primary/20 relative overflow-hidden group hover:bg-zinc-800 transition-all duration-500">
-                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Target className="w-32 h-32 text-primary" />
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
+                <div className="flex items-start justify-between mb-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">The "Cycle Breaker"</h3>
+                    <p className="text-zinc-500 font-mono text-sm">Primary Avatar (70%)</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-2xl">🔄</div>
                 </div>
-                <div className="relative z-10">
-                  <span className="inline-block py-2 px-4 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-6 border border-primary/20">Primary Target</span>
-                  <h3 className="text-3xl font-bold text-white mb-4">The "Frustrated Seeker"</h3>
-                  <p className="text-zinc-400 mb-8 leading-relaxed text-lg">Male, 25-35. Has blown at least one trading account. Knows the basics but lacks consistency. Blames "manipulation" but secretly knows it's his discipline.</p>
-                  
-                  <div className="space-y-6">
-                    <div className="bg-black/20 p-6 rounded-2xl">
-                      <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <AlertTriangle className="w-4 h-4 text-primary" /> Pain Points
-                      </h4>
-                      <ul className="text-zinc-400 space-y-2">
-                        <li>• "I make money all week and lose it on Friday."</li>
-                        <li>• "I hesitate and miss the move."</li>
-                        <li>• "I revenge trade to make back losses."</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">The Hook</h4>
-                      <p className="text-lg text-primary font-medium">"It's not the market. It's you. Here is how to fix you."</p>
-                    </div>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <p className="text-zinc-400 leading-relaxed">
+                      Has a strategy but can't stick to it. Blows up accounts after a winning streak. Knows technicals but fails at execution.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">The Hook</h4>
+                    <p className="text-primary leading-relaxed">
+                      "It's not your strategy. It's your mind. Stop looking for a new indicator and start fixing your brain."
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-10 rounded-3xl bg-zinc-950 border border-white/5 relative overflow-hidden opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                <div className="absolute top-0 right-0 p-8 opacity-10">
-                  <X className="w-32 h-32 text-zinc-500" />
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-secondary/20 transition-colors group">
+                <div className="flex items-start justify-between mb-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-1">The "System Seeker"</h3>
+                    <p className="text-zinc-500 font-mono text-sm">Secondary Avatar (30%)</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-2xl">⚙️</div>
                 </div>
-                <div className="relative z-10">
-                  <span className="inline-block py-2 px-4 rounded-full bg-white/5 text-zinc-400 text-xs font-bold uppercase tracking-wider mb-6 border border-white/10">Anti-Persona</span>
-                  <h3 className="text-3xl font-bold text-white mb-4">The "Lottery Player"</h3>
-                  <p className="text-zinc-500 mb-8 leading-relaxed text-lg">Male, 18-24. Wants to turn $100 into $10k in a week. Looking for "signals" so he doesn't have to think. Will churn immediately.</p>
-                  
-                  <div className="space-y-6">
-                    <div className="bg-white/5 p-6 rounded-2xl">
-                      <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Red Flags</h4>
-                      <ul className="text-zinc-500 space-y-2">
-                        <li>• "Is this 100% win rate?"</li>
-                        <li>• "Can I start with $50?"</li>
-                        <li>• "Just tell me what to buy."</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-2">Repel Strategy</h4>
-                      <p className="text-lg text-zinc-300 font-medium">Use difficult terminology and emphasize "Hard Work" to filter them out early.</p>
-                    </div>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <p className="text-zinc-400 leading-relaxed">
+                      Overwhelmed by information. Jumping from strategy to strategy. Needs structure and a clear, step-by-step process.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">The Hook</h4>
+                    <p className="text-secondary leading-relaxed">
+                      "Chaos is the enemy. We provide the framework to turn trading into a boring, profitable business."
+                    </p>
                   </div>
                 </div>
               </div>
@@ -658,111 +700,57 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* User Journey Funnel */}
-        <section id="funnel" className="py-32 border-b border-white/5 bg-zinc-950 snap-start">
+        {/* 5. User Journey Funnel */}
+        <section id="funnel" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6">The User Journey</h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">From stranger to evangelist. A structured path to LTV.</p>
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <TrendingUp className="text-primary w-8 h-8" /> User Journey
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                From stranger to loyalist. The path is designed to filter out the weak and elevate the serious.
+              </p>
             </div>
-            
+
             <div className="relative">
               {/* Connecting Line */}
-              <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block opacity-30"></div>
+              <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent hidden md:block"></div>
 
-              <div className="space-y-16 relative z-10">
-                {/* Stage 1: Awareness */}
-                <div className="flex flex-col md:flex-row gap-10 items-start group">
-                  <div className="w-20 h-20 rounded-full bg-zinc-950 border-4 border-primary flex items-center justify-center shrink-0 z-10 shadow-[0_0_30px_rgba(224,255,152,0.2)] group-hover:scale-110 transition-transform">
-                    <Eye className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="flex-1 p-8 rounded-3xl bg-zinc-900 border border-primary/20 hover:bg-zinc-800 transition-colors">
-                    <div className="flex justify-between items-start mb-6">
-                      <h3 className="text-2xl font-bold text-white">1. Discovery (The Pattern Interrupt)</h3>
-                      <span className="text-xs font-mono text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/10">Ads / Organic</span>
-                    </div>
-                    <p className="text-zinc-400 mb-8 text-lg">User sees a "Mindset Revolution" ad. It attacks their insecurity (gambling mentality) rather than promising riches.</p>
-                    <div className="grid grid-cols-2 gap-6 text-sm">
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">Asset</span>
-                        <span className="text-white font-medium">"Stop Acting Like An Amateur" Video</span>
-                      </div>
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">KPI</span>
-                        <span className="text-white font-medium">CTR &gt; 1.5%</span>
-                      </div>
+              <div className="space-y-12">
+                <div className="relative pl-0 md:pl-24">
+                  <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-zinc-900 border border-primary/50 items-center justify-center text-primary font-bold z-10">1</div>
+                  <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                    <h3 className="text-xl font-bold text-white mb-2">Awareness (Top of Funnel)</h3>
+                    <p className="text-zinc-400 mb-4">Social Media Content & Ads</p>
+                    <div className="flex gap-3 flex-wrap">
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Reels</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">TikToks</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">YouTube Shorts</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Stage 2: Consideration */}
-                <div className="flex flex-col md:flex-row gap-10 items-start group">
-                  <div className="w-20 h-20 rounded-full bg-zinc-950 border-4 border-white flex items-center justify-center shrink-0 z-10 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform">
-                    <Brain className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="flex-1 p-8 rounded-3xl bg-zinc-900 border border-white/20 hover:bg-zinc-800 transition-colors">
-                    <div className="flex justify-between items-start mb-6">
-                      <h3 className="text-2xl font-bold text-white">2. Indoctrination (The Value Hook)</h3>
-                      <span className="text-xs font-mono text-white bg-white/10 px-3 py-1 rounded-full border border-white/10">Landing Page</span>
-                    </div>
-                    <p className="text-zinc-400 mb-8 text-lg">User lands on a VSL (Video Sales Letter) that explains the "Psychological Edge". They opt-in for a free "Trader Personality Test".</p>
-                    <div className="grid grid-cols-2 gap-6 text-sm">
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">Asset</span>
-                        <span className="text-white font-medium">Personality Quiz / Lead Magnet</span>
-                      </div>
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">KPI</span>
-                        <span className="text-white font-medium">Opt-in Rate &gt; 25%</span>
-                      </div>
+                <div className="relative pl-0 md:pl-24">
+                  <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-zinc-900 border border-secondary/50 items-center justify-center text-secondary font-bold z-10">2</div>
+                  <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                    <h3 className="text-xl font-bold text-white mb-2">Consideration (Middle of Funnel)</h3>
+                    <p className="text-zinc-400 mb-4">Lead Magnet & Email Nurture</p>
+                    <div className="flex gap-3 flex-wrap">
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Psychology Audit</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">7-Day Reset</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Webinars</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Stage 3: Conversion */}
-                <div className="flex flex-col md:flex-row gap-10 items-start group">
-                  <div className="w-20 h-20 rounded-full bg-zinc-950 border-4 border-secondary flex items-center justify-center shrink-0 z-10 shadow-[0_0_30px_rgba(167,139,250,0.2)] group-hover:scale-110 transition-transform">
-                    <Zap className="w-8 h-8 text-secondary" />
-                  </div>
-                  <div className="flex-1 p-8 rounded-3xl bg-zinc-900 border border-secondary/20 hover:bg-zinc-800 transition-colors">
-                    <div className="flex justify-between items-start mb-6">
-                      <h3 className="text-2xl font-bold text-white">3. Conversion (The Tripwire)</h3>
-                      <span className="text-xs font-mono text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/10">Checkout</span>
-                    </div>
-                    <p className="text-zinc-400 mb-8 text-lg">Immediately after opt-in, user is offered a low-ticket product (£4.99 "Trading Journal Template") to break the wallet barrier.</p>
-                    <div className="grid grid-cols-2 gap-6 text-sm">
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">Offer</span>
-                        <span className="text-white font-medium">£4.99 No-Brainer</span>
-                      </div>
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">KPI</span>
-                        <span className="text-white font-medium">Purchase Rate &gt; 5%</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Stage 4: Ascension */}
-                <div className="flex flex-col md:flex-row gap-10 items-start group">
-                  <div className="w-20 h-20 rounded-full bg-zinc-950 border-4 border-accent flex items-center justify-center shrink-0 z-10 shadow-[0_0_30px_rgba(244,114,182,0.2)] group-hover:scale-110 transition-transform">
-                    <TrendingUp className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="flex-1 p-8 rounded-3xl bg-zinc-900 border border-accent/20 hover:bg-zinc-800 transition-colors">
-                    <div className="flex justify-between items-start mb-6">
-                      <h3 className="text-2xl font-bold text-white">4. Ascension (The Core Offer)</h3>
-                      <span className="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/10">Upsell</span>
-                    </div>
-                    <p className="text-zinc-400 mb-8 text-lg">Buyers are nurtured via email to join the "Applecore Academy" (Monthly Subscription). Non-buyers get the "7-Day Mindset Reset" sequence.</p>
-                    <div className="grid grid-cols-2 gap-6 text-sm">
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">Product</span>
-                        <span className="text-white font-medium">£49/mo Membership</span>
-                      </div>
-                      <div className="bg-black/20 p-4 rounded-xl">
-                        <span className="block text-zinc-500 text-xs uppercase mb-1">KPI</span>
-                        <span className="text-white font-medium">LTV &gt; £250</span>
-                      </div>
+                <div className="relative pl-0 md:pl-24">
+                  <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-zinc-900 border border-accent/50 items-center justify-center text-accent font-bold z-10">3</div>
+                  <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                    <h3 className="text-xl font-bold text-white mb-2">Conversion (Bottom of Funnel)</h3>
+                    <p className="text-zinc-400 mb-4">Paid Offers</p>
+                    <div className="flex gap-3 flex-wrap">
+                      <span className="px-3 py-1 rounded-full bg-primary/20 text-xs text-primary border border-primary/20">Alpha Cohort (£497)</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Membership (£49/mo)</span>
                     </div>
                   </div>
                 </div>
@@ -771,193 +759,148 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* Email Automation Hub */}
-        <section id="automation" className="py-32 border-b border-white/5 bg-zinc-900/30 snap-start">
+        {/* 6. Automation & Email */}
+        <section id="automation" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Mail className="text-primary w-8 h-8" /> Email Automation Hub
+                <Mail className="text-white w-8 h-8" /> Automation & Email
               </h2>
               <p className="text-zinc-400 max-w-2xl text-lg">
-                The engine room of retention. Automated sequences that run 24/7.
+                The engine that runs while we sleep. High-value touchpoints delivered automatically.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Nurturing Card */}
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-1 duration-300 group">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary">
-                    <Users className="h-6 w-6" />
-                  </div>
-                  <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Acquisition</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">The "Mindset Reset"</h3>
-                <p className="text-zinc-400 mb-8 leading-relaxed">
-                  5-day sequence for new leads. Delivers value first, pitches product last.
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-white/10 hover:bg-primary hover:text-black hover:border-primary transition-all py-6"
-                  onClick={() => setSelectedEmail('nurturing')}
+            <div className="grid md:grid-cols-3 gap-6">
+              {Object.entries(emailTemplates).map(([key, template]) => (
+                <div 
+                  key={key}
+                  onClick={() => setSelectedEmail(key)}
+                  className="group cursor-pointer p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/50 transition-all hover:-translate-y-1"
                 >
-                  Preview Email 1
-                </Button>
-              </div>
-
-              {/* Welcome Card */}
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-secondary/50 transition-all hover:-translate-y-1 duration-300 group">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-secondary/10 rounded-xl text-secondary">
-                    <Zap className="h-6 w-6" />
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-colors">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs font-mono text-zinc-500 uppercase">{key} Flow</span>
                   </div>
-                  <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Activation</span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">The "First Win"</h3>
-                <p className="text-zinc-400 mb-8 leading-relaxed">
-                  Onboarding sequence designed to get them to their first profitable trade in 7 days.
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-white/10 hover:bg-secondary hover:text-black hover:border-secondary transition-all py-6"
-                  onClick={() => setSelectedEmail('welcome')}
-                >
-                  Preview Email 1
-                </Button>
-              </div>
-
-              {/* Win-Back Card */}
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-accent/50 transition-all hover:-translate-y-1 duration-300 group">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 bg-accent/10 rounded-xl text-accent">
-                    <Shield className="h-6 w-6" />
+                  <h3 className="text-lg font-bold text-white mb-2 line-clamp-1">{template.subject}</h3>
+                  <p className="text-zinc-500 text-sm line-clamp-3 mb-4">
+                    {template.body}
+                  </p>
+                  <div className="flex items-center gap-2 text-primary text-sm font-medium">
+                    Preview Email <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
-                  <span className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Retention</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">The "Lazarus"</h3>
-                <p className="text-zinc-400 mb-8 leading-relaxed">
-                  Re-engagement sequence for churned users. Acknowledges failure, offers new hope.
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-white/10 hover:bg-accent hover:text-black hover:border-accent transition-all py-6"
-                  onClick={() => setSelectedEmail('winback')}
-                >
-                  Preview Email 1
-                </Button>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* KPI Dashboard & Simulator */}
-        <section id="kpi" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+        {/* 7. KPI Dashboard Simulator */}
+        <section id="kpi" className="py-32 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Calculator className="text-accent w-8 h-8" /> ROAS Simulator
+                <Calculator className="text-primary w-8 h-8" /> KPI Simulator
               </h2>
               <p className="text-zinc-400 max-w-2xl text-lg">
-                Project your profitability based on key metrics.
+                Project your revenue based on ad spend and conversion metrics.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-16">
-              <div className="space-y-10">
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <label className="text-sm font-medium text-zinc-300">Monthly Ad Budget</label>
-                    <span className="text-sm font-bold text-primary">£{simBudget}</span>
-                  </div>
+            <div className="grid lg:grid-cols-12 gap-12">
+              {/* Controls */}
+              <div className="lg:col-span-4 space-y-8 p-8 rounded-3xl bg-zinc-900 border border-white/5">
+                <div>
+                  <label className="block text-sm font-medium text-zinc-400 mb-2">Monthly Ad Budget (£)</label>
                   <input 
                     type="range" 
                     min="1000" 
-                    max="20000" 
-                    step="500" 
-                    value={simBudget} 
+                    max="50000" 
+                    step="1000" 
+                    value={simBudget}
                     onChange={(e) => setSimBudget(parseInt(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-primary"
+                    className="w-full accent-primary mb-2"
                   />
+                  <div className="text-2xl font-bold text-white">£{simBudget.toLocaleString()}</div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <label className="text-sm font-medium text-zinc-300">CPC (Cost Per Click)</label>
-                    <span className="text-sm font-bold text-white">£{simCPC.toFixed(2)}</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0.50" 
-                    max="5.00" 
-                    step="0.10" 
-                    value={simCPC} 
-                    onChange={(e) => setSimCPC(parseFloat(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-white"
-                  />
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <label className="text-sm font-medium text-zinc-300">Conversion Rate</label>
-                    <span className="text-sm font-bold text-secondary">{simCR}%</span>
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-zinc-400 mb-2">Cost Per Click (CPC)</label>
                   <input 
                     type="range" 
                     min="0.5" 
-                    max="10.0" 
+                    max="5" 
                     step="0.1" 
-                    value={simCR} 
-                    onChange={(e) => setSimCR(parseFloat(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-secondary"
+                    value={simCPC}
+                    onChange={(e) => setSimCPC(parseFloat(e.target.value))}
+                    className="w-full accent-primary mb-2"
                   />
+                  <div className="text-2xl font-bold text-white">£{simCPC.toFixed(2)}</div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex justify-between">
-                    <label className="text-sm font-medium text-zinc-300">AOV (Average Order Value)</label>
-                    <span className="text-sm font-bold text-accent">£{simAOV}</span>
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-zinc-400 mb-2">Conversion Rate (%)</label>
+                  <input 
+                    type="range" 
+                    min="0.5" 
+                    max="10" 
+                    step="0.1" 
+                    value={simCR}
+                    onChange={(e) => setSimCR(parseFloat(e.target.value))}
+                    className="w-full accent-primary mb-2"
+                  />
+                  <div className="text-2xl font-bold text-white">{simCR}%</div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-zinc-400 mb-2">Avg Order Value (£)</label>
                   <input 
                     type="range" 
                     min="20" 
                     max="200" 
                     step="5" 
-                    value={simAOV} 
+                    value={simAOV}
                     onChange={(e) => setSimAOV(parseInt(e.target.value))}
-                    className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-accent"
+                    className="w-full accent-primary mb-2"
                   />
+                  <div className="text-2xl font-bold text-white">£{simAOV}</div>
                 </div>
               </div>
 
-              <div className="bg-zinc-900 border border-white/5 rounded-3xl p-10 flex flex-col justify-center shadow-2xl">
-                <div className="grid grid-cols-2 gap-10 mb-10">
-                  <div>
-                    <div className="text-sm text-zinc-500 mb-2 uppercase tracking-wider">Traffic</div>
-                    <div className="text-3xl font-bold text-white">{Math.round(simBudget / simCPC).toLocaleString()} <span className="text-sm font-normal text-zinc-500">Clicks</span></div>
+              {/* Results */}
+              <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
+                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
+                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Traffic</div>
+                  <div className="text-4xl font-bold text-white mb-1">
+                    {Math.floor(simBudget / simCPC).toLocaleString()}
                   </div>
-                  <div>
-                    <div className="text-sm text-zinc-500 mb-2 uppercase tracking-wider">Sales</div>
-                    <div className="text-3xl font-bold text-white">{Math.round((simBudget / simCPC) * (simCR / 100)).toLocaleString()} <span className="text-sm font-normal text-zinc-500">Orders</span></div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500 mb-2 uppercase tracking-wider">Revenue</div>
-                    <div className="text-3xl font-bold text-primary">£{Math.round((simBudget / simCPC) * (simCR / 100) * simAOV).toLocaleString()}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500 mb-2 uppercase tracking-wider">ROAS</div>
-                    <div className={`text-3xl font-bold ${((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 2 ? 'text-green-500' : 'text-red-500'}`}>
-                      {(((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget).toFixed(2)}x
-                    </div>
-                  </div>
+                  <div className="text-zinc-600 text-sm">Clicks / Visitors</div>
                 </div>
-                
-                <div className="pt-10 border-t border-white/5">
-                  <div className="flex justify-between items-center">
-                    <span className="text-xl font-bold text-white">Net Profit</span>
-                    <span className={`text-4xl font-black ${((simBudget / simCPC) * (simCR / 100) * simAOV) - simBudget > 0 ? 'text-primary' : 'text-red-500'}`}>
-                      £{Math.round(((simBudget / simCPC) * (simCR / 100) * simAOV) - simBudget).toLocaleString()}
-                    </span>
+
+                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
+                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Conversions</div>
+                  <div className="text-4xl font-bold text-white mb-1">
+                    {Math.floor((simBudget / simCPC) * (simCR / 100)).toLocaleString()}
                   </div>
+                  <div className="text-zinc-600 text-sm">New Customers</div>
+                </div>
+
+                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
+                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Revenue</div>
+                  <div className="text-4xl font-bold text-primary mb-1">
+                    £{Math.floor((simBudget / simCPC) * (simCR / 100) * simAOV).toLocaleString()}
+                  </div>
+                  <div className="text-zinc-600 text-sm">Gross Revenue</div>
+                </div>
+
+                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
+                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">ROAS</div>
+                  <div className={`text-4xl font-bold mb-1 ${((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 2 ? 'text-emerald-500' : 'text-red-500'}`}>
+                    {(((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget).toFixed(2)}x
+                  </div>
+                  <div className="text-zinc-600 text-sm">Return on Ad Spend</div>
                 </div>
               </div>
             </div>
