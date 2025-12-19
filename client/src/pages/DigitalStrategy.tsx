@@ -115,34 +115,24 @@ export default function DigitalStrategy() {
       title: "Infiltration",
       goal: "Establish Authority & Seed the Market",
       description: "Month 1 is about disrupting the feed. We don't sell; we expose the pain.",
-      weeks: [
+      actions: [
         { 
-          week: 1, 
           title: "The 'Amateur' Campaign",
           task: "Launch 'Stop Acting Like An Amateur' video campaign",
           context: "High-contrast videos attacking common retail habits (revenge trading, FOMO).",
           icon: <Video className="w-4 h-4" />
         },
         { 
-          week: 2, 
           title: "The Lead Magnet",
           task: "Release free 'Psychology Audit' tool",
           context: "Interactive quiz categorizing traders (e.g., 'The Gambler'). Captures email for results.",
           icon: <FileText className="w-4 h-4" />
         },
         { 
-          week: 3, 
           title: "Retargeting Layer",
           task: "Retarget video viewers with 'Deep Dive' content",
           context: "Users who watched >50% get served educational content explaining the 'Science' behind the psychology.",
           icon: <Target className="w-4 h-4" />
-        },
-        {
-          week: 4,
-          title: "Data Review & Optimization",
-          task: "Analyze campaign performance and optimize creatives",
-          context: "Review CTR, CPC, and Lead Quality. Kill underperforming ads and scale winners.",
-          icon: <BarChart3 className="w-4 h-4" />
         }
       ]
     },
@@ -151,34 +141,24 @@ export default function DigitalStrategy() {
       title: "Indoctrination",
       goal: "Deepen Trust & Filter for Quality",
       description: "We shift to education. Proving 'Mindset First' is the only way.",
-      weeks: [
+      actions: [
         { 
-          week: 5, 
           title: "The Nurture Sequence",
           task: "Activate 'The 7-Day Mindset Reset' Email Sequence",
           context: "Automated daily emails. Each fixes ONE psychological leak. Builds massive trust.",
           icon: <Mail className="w-4 h-4" />
         },
         { 
-          week: 6, 
           title: "Authority Event",
           task: "First 'Live Trading Psychology' session",
           context: "Live webinar reviewing RECORDED trades. Proving execution is harder than technicals.",
           icon: <Users className="w-4 h-4" />
         },
         { 
-          week: 7, 
           title: "Scarcity Launch",
           task: "Open applications for 'Alpha Cohort'",
           context: "Application-only access. Reverses the dynamic—they try to impress us.",
           icon: <Lock className="w-4 h-4" />
-        },
-        {
-          week: 8,
-          title: "Mid-Term Review",
-          task: "Evaluate cohort application quality and funnel drop-off",
-          context: "Identify bottlenecks in the application process. Optimize email open rates.",
-          icon: <Search className="w-4 h-4" />
         }
       ]
     },
@@ -187,30 +167,20 @@ export default function DigitalStrategy() {
       title: "Sustainability",
       goal: "Reach Break-Even & Validate LTV",
       description: "Ensure the machine pays for itself before aggressive scaling.",
-      weeks: [
+      actions: [
         { 
-          week: 9, 
-          title: "The Close",
-          task: "Close 'Alpha Cohort' and launch paid membership",
-          context: "High-ticket closes. Downsell remaining leads to £49/mo membership.",
+          title: "The £2,500 Backend",
+          task: "Launch 'Inner Circle' Mentorship (High Ticket)",
+          context: "Premium 1-on-1 access. This is where the real margin is made. 10 sales = £25k.",
           icon: <DollarSign className="w-4 h-4" />
         },
         { 
-          week: 10, 
-          title: "Optimize Ad Spend",
-          task: "Stabilize ad spend on winning creative variants",
-          context: "Maintain budget on best performers. Cut losers to protect margin.",
-          icon: <BarChart3 className="w-4 h-4" />
-        },
-        { 
-          week: 11, 
-          title: "High-Ticket Upsell",
-          task: "Introduce 'Inner Circle' High-Ticket upsell",
-          context: "1-on-1 mentoring backend offer to maximize LTV.",
+          title: "LTR Focus (Long Term Retention)",
+          task: "Implement 'Tribal Lock-In' mechanics",
+          context: "Community challenges and status badges to keep users paying month after month.",
           icon: <TrendingUp className="w-4 h-4" />
         },
-        {
-          week: 12,
+        { 
           title: "Quarterly Review",
           task: "Full quarterly performance review and strategy adjustment",
           context: "Analyze total ROAS, LTV, and Churn. Plan next 90-day cycle.",
@@ -612,33 +582,33 @@ export default function DigitalStrategy() {
                       </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                      {phase.weeks.map((week, i) => (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {phase.actions.map((action, i) => (
                         <div key={i} className="group relative bg-black/40 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
                           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
                             <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(224,255,152,0.8)] animate-pulse"></div>
                           </div>
                           
                           <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-primary group-hover:border-primary/30 transition-colors mb-6">
-                            {week.icon}
+                            {action.icon}
                           </div>
                           
                           <div className="mb-4">
                             <span className="inline-block px-2 py-1 rounded bg-zinc-900 text-zinc-500 text-xs font-mono mb-2 border border-zinc-800">
-                              WEEK {week.week}
+                              STEP {i + 1}
                             </span>
                             <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
-                              {week.title}
+                              {action.title}
                             </h4>
                           </div>
                           
                           <div className="space-y-3">
                             <div className="p-3 rounded bg-zinc-900/50 border border-zinc-800/50">
                               <p className="text-sm font-medium text-zinc-200 mb-1">Action:</p>
-                              <p className="text-sm text-zinc-400">{week.task}</p>
+                              <p className="text-sm text-zinc-400">{action.task}</p>
                             </div>
                             <p className="text-xs text-zinc-500 leading-relaxed pl-1 border-l border-zinc-800">
-                              {week.context}
+                              {action.context}
                             </p>
                           </div>
                         </div>
