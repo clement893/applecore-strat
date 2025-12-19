@@ -91,35 +91,28 @@ export default function DigitalStrategy() {
       month: 1,
       title: "Infiltration",
       goal: "Establish Authority & Seed the Market",
-      description: "The goal of Month 1 is not maximum revenue, but maximum noise. We need to disrupt the feed and make traders question their current approach.",
+      description: "Month 1 is about disrupting the feed. We don't sell; we expose the pain.",
       weeks: [
         { 
           week: 1, 
           title: "The 'Amateur' Campaign",
           task: "Launch 'Stop Acting Like An Amateur' video campaign",
-          context: "A series of high-contrast, fast-paced videos (Reels/TikTok) that attack common retail habits (revenge trading, FOMO). We don't teach strategy yet; we just expose the pain.",
+          context: "High-contrast videos attacking common retail habits (revenge trading, FOMO).",
           icon: <Video className="w-4 h-4" />
         },
         { 
           week: 2, 
-          title: "Community Seeding",
-          task: "Seed 'Horror Stories' content in Reddit/Discord",
-          context: "We narrate real stories of traders losing everything due to lack of discipline. These are posted as 'Warnings' in trading communities to build credibility without looking like an ad.",
-          icon: <MessageCircle className="w-4 h-4" />
-        },
-        { 
-          week: 3, 
           title: "The Lead Magnet",
           task: "Release free 'Psychology Audit' tool",
-          context: "An interactive 10-question quiz that categorizes traders (e.g., 'The Gambler', 'The Hesitator'). It gives them a 'Discipline Score' and captures their email to send the results.",
+          context: "Interactive quiz categorizing traders (e.g., 'The Gambler'). Captures email for results.",
           icon: <FileText className="w-4 h-4" />
         },
         { 
-          week: 4, 
-          title: "Authority Event",
-          task: "First 'Live Trading Psychology' session",
-          context: "A live webinar where we review RECORDED trades. We pause the video at key moments and ask 'What are you feeling now?'. We prove that technicals are easy, but execution is hard.",
-          icon: <Users className="w-4 h-4" />
+          week: 3, 
+          title: "Retargeting Layer",
+          task: "Retarget video viewers with 'Deep Dive' content",
+          context: "Users who watched >50% get served educational content explaining the 'Science' behind the psychology.",
+          icon: <Target className="w-4 h-4" />
         }
       ]
     },
@@ -127,35 +120,28 @@ export default function DigitalStrategy() {
       month: 2,
       title: "Indoctrination",
       goal: "Deepen Trust & Filter for Quality",
-      description: "Now that we have their attention, we shift to education. We prove that our 'Mindset First' approach is the only way to consistency.",
+      description: "We shift to education. Proving 'Mindset First' is the only way.",
       weeks: [
         { 
           week: 5, 
           title: "The Nurture Sequence",
           task: "Activate 'The 7-Day Mindset Reset' Email Sequence",
-          context: "Automated daily emails for new leads. Each email fixes ONE specific psychological leak (e.g., 'Why you exit winners too early'). Builds massive trust before asking for money.",
+          context: "Automated daily emails. Each fixes ONE psychological leak. Builds massive trust.",
           icon: <Mail className="w-4 h-4" />
         },
         { 
           week: 6, 
-          title: "Retargeting Layer",
-          task: "Retarget video viewers with 'Deep Dive' content",
-          context: "Users who watched >50% of Month 1 videos get served longer, educational content (YouTube style) that explains the 'Science' behind the psychology.",
-          icon: <Target className="w-4 h-4" />
+          title: "Authority Event",
+          task: "First 'Live Trading Psychology' session",
+          context: "Live webinar reviewing RECORDED trades. Proving execution is harder than technicals.",
+          icon: <Users className="w-4 h-4" />
         },
         { 
           week: 7, 
           title: "Scarcity Launch",
           task: "Open applications for 'Alpha Cohort'",
-          context: "We don't just let anyone buy. They have to 'Apply'. This reverses the dynamic—they try to impress us. High-ticket positioning.",
+          context: "Application-only access. Reverses the dynamic—they try to impress us.",
           icon: <Lock className="w-4 h-4" />
-        },
-        { 
-          week: 8, 
-          title: "Webinar Series",
-          task: "Launch 'The Institutional Edge' webinar series",
-          context: "Weekly live training showing how institutions hunt retail stop-losses. We position our 'Mindset' training as the shield against these attacks.",
-          icon: <Video className="w-4 h-4" />
         }
       ]
     },
@@ -163,34 +149,27 @@ export default function DigitalStrategy() {
       month: 3,
       title: "Monetization",
       goal: "Scale Revenue & Lock-in Retention",
-      description: "We have trust and authority. Now we scale the offer and focus on keeping members for the long term.",
+      description: "Scale the offer and focus on LTV.",
       weeks: [
         { 
           week: 9, 
           title: "The Close",
           task: "Close 'Alpha Cohort' and launch paid membership",
-          context: "The high-ticket cohort closes. We downsell the remaining leads into the £49/mo 'Applecore Academy' membership.",
+          context: "High-ticket closes. Downsell remaining leads to £49/mo membership.",
           icon: <DollarSign className="w-4 h-4" />
         },
         { 
           week: 10, 
-          title: "Viral Loop",
-          task: "Activate affiliate program for successful students",
-          context: "We identify the top 10% of students who are actually making money. We give them tools to share their results and recruit others.",
-          icon: <Users className="w-4 h-4" />
-        },
-        { 
-          week: 11, 
           title: "Scale Ad Spend",
           task: "Scale ad spend on winning creative variants",
-          context: "We take the best performing ads from Month 1 & 2 and triple the budget. We kill the losers aggressively.",
+          context: "Triple budget on best performers. Kill losers aggressively.",
           icon: <BarChart3 className="w-4 h-4" />
         },
         { 
-          week: 12, 
+          week: 11, 
           title: "High-Ticket Upsell",
           task: "Introduce 'Inner Circle' High-Ticket upsell",
-          context: "For members who want 1-on-1 mentoring. A £2k+ backend offer to maximize LTV from the most dedicated users.",
+          context: "1-on-1 mentoring backend offer to maximize LTV.",
           icon: <TrendingUp className="w-4 h-4" />
         }
       ]
