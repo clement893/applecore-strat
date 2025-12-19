@@ -1251,7 +1251,7 @@ export default function DigitalStrategy() {
                 Media Buying <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Plan</span>
               </h2>
               <p className="text-xl text-gray-400 mt-2 max-w-2xl">
-                Strategic allocation of the £3k-£5k monthly budget for maximum impact.
+                Strategic allocation of the £3k-£5k monthly budget. We focus on high-intent platforms, avoiding the "social noise" of Facebook to target serious traders where they consume educational content.
               </p>
             </div>
           </div>
@@ -1263,16 +1263,22 @@ export default function DigitalStrategy() {
                 <Calculator className="h-6 w-6 text-primary" />
                 Budget Allocation
               </h3>
+              <div className="mb-6 p-4 bg-primary/5 border border-primary/10 rounded-lg">
+                <h4 className="text-primary font-bold text-sm uppercase mb-2">Strategic Intent</h4>
+                <p className="text-sm text-gray-300">
+                  We are bypassing Facebook entirely. The "Applecore" aesthetic and the "No-Nonsense" messaging resonate better on visual-first and fast-paced platforms. Instagram Reels and TikTok allow us to demonstrate the <em>speed</em> of our execution, while YouTube captures the <em>depth</em> of our analysis.
+                </p>
+              </div>
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-white font-bold">Meta (Instagram/Facebook)</span>
+                    <span className="text-white font-bold">Instagram (Reels & Stories Only)</span>
                     <span className="text-primary font-mono">60% (£1,800 - £3,000)</span>
                   </div>
                   <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                     <div className="h-full bg-primary w-[60%]"></div>
                   </div>
-                  <p className="text-xs text-gray-500">Primary acquisition channel. Focus on Reels and Stories.</p>
+                  <p className="text-xs text-gray-500">High-fidelity visual platform. Perfect for showcasing "Chart Porn" and lifestyle aspiration.</p>
                 </div>
                 
                 <div className="space-y-2">
@@ -1283,7 +1289,7 @@ export default function DigitalStrategy() {
                   <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                     <div className="h-full bg-secondary w-[25%]"></div>
                   </div>
-                  <p className="text-xs text-gray-500">Viral awareness and younger demographic targeting.</p>
+                  <p className="text-xs text-gray-500">Volume play. Targeting Gen Z / Young Millennial traders looking for "hacks" and quick wins.</p>
                 </div>
 
                 <div className="space-y-2">
@@ -1294,7 +1300,7 @@ export default function DigitalStrategy() {
                   <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                     <div className="h-full bg-accent w-[15%]"></div>
                   </div>
-                  <p className="text-xs text-gray-500">Retargeting and high-intent search traffic.</p>
+                  <p className="text-xs text-gray-500">Authority play. Retargeting users who need more "proof" before buying.</p>
                 </div>
               </div>
             </div>
@@ -1308,24 +1314,27 @@ export default function DigitalStrategy() {
               <div className="space-y-4">
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-primary font-bold text-sm uppercase tracking-wider">Level 1: Cold Traffic</span>
+                    <span className="text-primary font-bold text-sm uppercase tracking-wider">Level 1: Cold Traffic (The Hook)</span>
                     <span className="text-xs font-mono text-gray-400">70% of Budget</span>
                   </div>
-                  <p className="text-sm text-gray-300">Broad targeting + Interest stacks (Trading, Forex, Crypto). Goal: Drive cheap clicks to Lead Magnet.</p>
+                  <p className="text-sm text-gray-300 mb-2"><strong>Goal:</strong> Stop the scroll and get the click. We are NOT selling the £497 course here. We are selling the <em>curiosity</em>.</p>
+                  <p className="text-xs text-gray-500 italic">"Stop guessing. See what the banks see. Click to watch the breakdown."</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-secondary font-bold text-sm uppercase tracking-wider">Level 2: Retargeting</span>
+                    <span className="text-secondary font-bold text-sm uppercase tracking-wider">Level 2: Retargeting (The Logic)</span>
                     <span className="text-xs font-mono text-gray-400">20% of Budget</span>
                   </div>
-                  <p className="text-sm text-gray-300">Targeting page visitors (30 days) who didn't convert. Offer: Tripwire (£4.99) discount or social proof.</p>
+                  <p className="text-sm text-gray-300 mb-2"><strong>Goal:</strong> Overcome skepticism. Show social proof and results. Target anyone who visited &gt; 10s but didn't buy.</p>
+                  <p className="text-xs text-gray-500 italic">"Still trading blind? Here is yesterday's P&L using the Applecore system. You missed this move."</p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg border border-white/10">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-accent font-bold text-sm uppercase tracking-wider">Level 3: Loyalty</span>
+                    <span className="text-accent font-bold text-sm uppercase tracking-wider">Level 3: Loyalty (The Tribe)</span>
                     <span className="text-xs font-mono text-gray-400">10% of Budget</span>
                   </div>
-                  <p className="text-sm text-gray-300">Upsell to existing customers (High Ticket). Exclusive webinars and "Inner Circle" content.</p>
+                  <p className="text-sm text-gray-300 mb-2"><strong>Goal:</strong> Ascend existing buyers to High Ticket. Create FOMO for the inner circle.</p>
+                  <p className="text-xs text-gray-500 italic">"The Inner Circle is opening 5 spots. Priority access for existing members only."</p>
                 </div>
               </div>
             </div>
