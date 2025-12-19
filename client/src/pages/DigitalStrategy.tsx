@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu, ListChecks } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu, ListChecks, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function DigitalStrategy() {
@@ -824,6 +824,128 @@ export default function DigitalStrategy() {
                       <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Membership (£49/mo)</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Alpha Cohort Deep Dive */}
+        <section id="alpha-cohort" className="py-32 border-b border-white/5 snap-start bg-zinc-950 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid.svg')] opacity-10 pointer-events-none"></div>
+          <div className="container relative z-10">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-16">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono uppercase tracking-wider mb-4">
+                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                  Mid-Ticket Offer
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                  The Alpha Cohort <span className="text-zinc-600">v1.0</span>
+                </h2>
+                <p className="text-zinc-400 max-w-xl text-lg">
+                  The bridge between "Retail Gambler" and "Professional Risk Manager". An intensive 8-week implementation program.
+                </p>
+              </div>
+              <div className="text-right">
+                <div className="text-sm text-zinc-500 uppercase tracking-wider mb-1">Price Point</div>
+                <div className="text-4xl font-bold text-white">£497</div>
+                <div className="text-xs text-primary mt-1">Limited to 50 Seats</div>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Left Column: The Promise */}
+              <div className="lg:col-span-2 space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
+                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                      <Brain className="w-5 h-5 text-primary" /> Psychology First
+                    </h4>
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      We don't teach "patterns". We teach how to rewire the dopamine response to loss and uncertainty.
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
+                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                      <Users className="w-5 h-5 text-primary" /> Tribal Accountability
+                    </h4>
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      You are the average of the 5 traders you speak to. We place you in a pod of serious executors.
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
+                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                      <Target className="w-5 h-5 text-primary" /> Live Execution
+                    </h4>
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      Weekly live trading sessions where we review YOUR trades, not just hindsight chart markups.
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
+                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                      <Shield className="w-5 h-5 text-primary" /> Risk Systems
+                    </h4>
+                    <p className="text-zinc-400 text-sm leading-relaxed">
+                      Copy-paste our proprietary risk management Notion templates and journaling systems.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
+                  <h3 className="text-xl font-bold text-white mb-6">8-Week Curriculum</h3>
+                  <div className="space-y-4">
+                    {[
+                      "Week 1: De-programming the Gambler's Mindset",
+                      "Week 2: Identity Shifting & The Professional Self",
+                      "Week 3: Probability Thinking & Expected Value",
+                      "Week 4: Building Your Personal Edge (Technical)",
+                      "Week 5: Risk Management & Position Sizing Protocols",
+                      "Week 6: Emotional Regulation & Tilt Control",
+                      "Week 7: Data Collection & Journaling Mastery",
+                      "Week 8: The Forever Plan & Scaling Up"
+                    ].map((week, i) => (
+                      <div key={i} className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors border-b border-white/5 last:border-0">
+                        <span className="text-xs font-mono text-zinc-500 w-16">MODULE {i + 1}</span>
+                        <span className="text-zinc-300 font-medium">{week.split(': ')[1]}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: The Stack */}
+              <div className="space-y-6">
+                <div className="p-8 rounded-3xl bg-gradient-to-b from-zinc-900 to-black border border-zinc-800 sticky top-8">
+                  <h3 className="text-xl font-bold text-white mb-6">What's Included</h3>
+                  <ul className="space-y-4 mb-8">
+                    <li className="flex items-start gap-3 text-sm text-zinc-300">
+                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <span>8 Weeks of Live Coaching Calls</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm text-zinc-300">
+                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <span>Private Discord "War Room" Access</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm text-zinc-300">
+                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <span>The "Mindset Vault" Video Library</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm text-zinc-300">
+                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <span>Proprietary Notion Trading Journal</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm text-zinc-300">
+                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <span>Lifetime Updates to Curriculum</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full bg-primary text-black hover:bg-primary/90 font-bold py-6 text-lg">
+                    Join Waitlist
+                  </Button>
+                  <p className="text-center text-xs text-zinc-500 mt-4">
+                    Next cohort starts: <span className="text-zinc-300">November 1st</span>
+                  </p>
                 </div>
               </div>
             </div>
