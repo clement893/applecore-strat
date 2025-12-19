@@ -14,6 +14,25 @@ export default function DigitalStrategy() {
   const [simCR, setSimCR] = useState(3.5);
   const [simAOV, setSimAOV] = useState(65);
 
+  // Helper component for Search icon since it was missing in imports
+  const Search = ({ className }: { className?: string }) => (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="24" 
+      height="24" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      className={className}
+    >
+      <circle cx="11" cy="11" r="8" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  );
+
   const sections = [
     { id: "objectives", label: "Objectives" },
     { id: "media-plan", label: "Media Plan" },
@@ -113,6 +132,13 @@ export default function DigitalStrategy() {
           task: "Retarget video viewers with 'Deep Dive' content",
           context: "Users who watched >50% get served educational content explaining the 'Science' behind the psychology.",
           icon: <Target className="w-4 h-4" />
+        },
+        {
+          week: 4,
+          title: "Data Review & Optimization",
+          task: "Analyze campaign performance and optimize creatives",
+          context: "Review CTR, CPC, and Lead Quality. Kill underperforming ads and scale winners.",
+          icon: <BarChart3 className="w-4 h-4" />
         }
       ]
     },
@@ -142,6 +168,13 @@ export default function DigitalStrategy() {
           task: "Open applications for 'Alpha Cohort'",
           context: "Application-only access. Reverses the dynamic—they try to impress us.",
           icon: <Lock className="w-4 h-4" />
+        },
+        {
+          week: 8,
+          title: "Mid-Term Review",
+          task: "Evaluate cohort application quality and funnel drop-off",
+          context: "Identify bottlenecks in the application process. Optimize email open rates.",
+          icon: <Search className="w-4 h-4" />
         }
       ]
     },
@@ -171,6 +204,13 @@ export default function DigitalStrategy() {
           task: "Introduce 'Inner Circle' High-Ticket upsell",
           context: "1-on-1 mentoring backend offer to maximize LTV.",
           icon: <TrendingUp className="w-4 h-4" />
+        },
+        {
+          week: 12,
+          title: "Quarterly Review",
+          task: "Full quarterly performance review and strategy adjustment",
+          context: "Analyze total ROAS, LTV, and Churn. Plan next 90-day cycle.",
+          icon: <PieChart className="w-4 h-4" />
         }
       ]
     }
@@ -240,265 +280,253 @@ export default function DigitalStrategy() {
 
       {selectedEmail && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 no-print" onClick={() => setSelectedEmail(null)}>
-          <div className="bg-zinc-900 border border-zinc-800 w-full max-w-lg rounded-xl overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
-            <div className="p-6 border-b border-zinc-800 flex justify-between items-center">
-              <h3 className="font-bold text-white">Email Preview</h3>
-              <button onClick={() => setSelectedEmail(null)} className="text-zinc-500 hover:text-white">
-                <X className="w-5 h-5" />
-              </button>
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl max-w-2xl w-full p-8 relative shadow-2xl" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelectedEmail(null)} className="absolute top-4 right-4 text-zinc-500 hover:text-white">
+              <X className="w-6 h-6" />
+            </button>
+            <div className="mb-6 border-b border-zinc-800 pb-6">
+              <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Subject Line</div>
+              <h3 className="text-2xl font-bold text-white">{emailTemplates[selectedEmail as keyof typeof emailTemplates].subject}</h3>
             </div>
-            <div className="p-8 bg-white text-black">
-              <div className="mb-6 pb-6 border-b border-gray-100">
-                <p className="text-xs text-gray-500 uppercase font-bold mb-1">Subject Line</p>
-                <p className="text-lg font-medium">{emailTemplates[selectedEmail as keyof typeof emailTemplates].subject}</p>
-              </div>
-              <div className="whitespace-pre-wrap font-serif text-lg leading-relaxed text-gray-800 mb-8">
+            <div className="prose prose-invert max-w-none mb-8">
+              <p className="whitespace-pre-line text-zinc-300 leading-relaxed text-lg">
                 {emailTemplates[selectedEmail as keyof typeof emailTemplates].body}
-              </div>
-              <div className="text-center">
-                <button className="bg-black text-white px-8 py-3 rounded font-bold text-sm uppercase tracking-wider hover:bg-gray-800 transition-colors">
-                  {emailTemplates[selectedEmail as keyof typeof emailTemplates].cta}
-                </button>
-              </div>
+              </p>
             </div>
+            <Button className="w-full bg-primary text-black hover:bg-primary/90 font-bold py-6 text-lg">
+              {emailTemplates[selectedEmail as keyof typeof emailTemplates].cta}
+            </Button>
           </div>
         </div>
       )}
 
-      <div className={`bg-black min-h-screen text-white selection:bg-primary selection:text-black snap-y snap-mandatory h-screen overflow-y-scroll scroll-smooth ${immersiveMode ? 'cursor-none' : ''}`}>
+      <div className={`bg-black min-h-screen ${immersiveMode ? 'snap-y snap-mandatory h-screen overflow-y-scroll' : ''}`}>
         
-        {/* Navigation */}
-        <nav className={`fixed top-0 left-0 right-0 z-40 border-b border-white/5 bg-black/50 backdrop-blur-md transition-transform duration-500 no-print ${immersiveMode ? '-translate-y-full' : 'translate-y-0'}`}>
-          <div className="container flex items-center justify-between h-16">
-            <div className="flex items-center gap-8">
-              <Link href="/" className="text-xl font-bold tracking-tighter flex items-center gap-2">
-                <div className="w-3 h-3 bg-primary rounded-full"></div>
-                Applecore <span className="font-normal text-zinc-500">| Strategy</span>
-              </Link>
-              <div className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-400">
-                <Link href="/">
-                  <span className="hover:text-white transition-colors cursor-pointer">Brand Guide</span>
-                </Link>
-                <Link href="/mindset-revolution">
-                  <span className="hover:text-white transition-colors cursor-pointer">Ad Concept</span>
-                </Link>
-                <Link href="/digital-strategy">
-                  <span className="text-primary cursor-pointer">Digital Strategy</span>
-                </Link>
-              </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="px-2 py-1 rounded bg-zinc-800 text-zinc-400 text-xs font-mono uppercase tracking-wider border border-zinc-700">
-                Confidential
-              </span>
-            </div>
-          </div>
-        </nav>
-
-        {/* Hero Section */}
-        <section id="hero" className="pt-40 pb-32 border-b border-white/5 relative overflow-hidden snap-start bg-zinc-950">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
-          <div className="container relative z-10">
-            <div className="max-w-4xl">
-              <h4 className="text-primary font-mono mb-6 tracking-widest uppercase text-sm flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                Q1 2026 Strategy
-              </h4>
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 text-white leading-[0.9]">
-                Digital<br/>
-                <span className="text-zinc-700">Dominance.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-zinc-400 leading-relaxed max-w-2xl border-l-2 border-primary/50 pl-6">
-                A comprehensive roadmap to capture, convert, and retain the next generation of traders through psychological mastery and precision targeting.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* 1. Strategic Objectives */}
-        <section id="objectives" className="py-32 border-b border-white/5 bg-zinc-900/30 snap-start">
+        <section id="objectives" className="py-32 border-b border-white/5 snap-start bg-zinc-950 flex items-center min-h-screen">
           <div className="container">
-            <div className="mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Target className="text-primary w-8 h-8" /> Strategic Objectives
-              </h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">
-                Our primary goals for the Q1 launch phase. These metrics define success.
+            <div className="max-w-4xl mx-auto text-center mb-20">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono uppercase tracking-wider mb-6">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Confidential Strategy Document
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
+                Operation <span className="text-primary">Mindset Shift</span>
+              </h1>
+              <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+                A 90-day tactical roadmap to dominate the trading education market by owning the "Psychology" niche.
               </p>
             </div>
+
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-10 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-all hover:-translate-y-1 duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8">
-                  <Users className="h-7 w-7" />
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all hover:-translate-y-1 group">
+                <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
+                  <Target className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Acquisition</h3>
-                <div className="text-5xl font-bold text-white mb-2 tracking-tight">1,000+</div>
-                <p className="text-base text-zinc-500">New Active Users</p>
-                <div className="mt-6 pt-6 border-t border-white/5 text-sm text-zinc-500 font-mono">
-                  Target CPA: &lt; £25
-                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Dominate Niche</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Establish Applecore as the #1 authority in Trading Psychology, making competitors look like "amateur signal sellers".
+                </p>
               </div>
-              <div className="p-10 rounded-3xl bg-zinc-900 border border-white/5 hover:border-secondary/20 transition-all hover:-translate-y-1 duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-8">
-                  <DollarSign className="h-7 w-7" />
+
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all hover:-translate-y-1 group">
+                <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
+                  <Users className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Revenue</h3>
-                <div className="text-5xl font-bold text-white mb-2 tracking-tight">£50k+</div>
-                <p className="text-base text-zinc-500">Monthly Recurring Revenue</p>
-                <div className="mt-6 pt-6 border-t border-white/5 text-sm text-zinc-500 font-mono">
-                  Target ROAS: 3.5x
-                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Build Tribe</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Convert 1,000 "Frustrated Gamblers" into "Disciplined Risk Managers" through our indoctrination funnel.
+                </p>
               </div>
-              <div className="p-10 rounded-3xl bg-zinc-900 border border-white/5 hover:border-accent/20 transition-all hover:-translate-y-1 duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-8">
-                  <Lock className="h-7 w-7" />
+
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all hover:-translate-y-1 group">
+                <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
+                  <BarChart3 className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Retention</h3>
-                <div className="text-5xl font-bold text-white mb-2 tracking-tight">85%</div>
-                <p className="text-base text-zinc-500">Month 1 Retention Rate</p>
-                <div className="mt-6 pt-6 border-t border-white/5 text-sm text-zinc-500 font-mono">
-                  Churn Goal: &lt; 5%
-                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Scale Revenue</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Achieve £50k MRR by Month 3 through a high-ticket backend offer and recurring membership downsell.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 2. Media Buying Plan */}
-        <section id="media-plan" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+        {/* 2. Media Plan */}
+        <section id="media-plan" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <PieChart className="text-secondary w-8 h-8" /> Media Buying Plan
+                <Layers className="text-white w-8 h-8" /> Media Buying Plan
               </h2>
               <p className="text-zinc-400 max-w-2xl text-lg">
-                Allocation of the £5,000 monthly ad budget. We are cutting Facebook to focus purely on high-engagement video platforms.
+                We don't spray and pray. We snipe. High intent platforms only.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-12 gap-16">
-              <div className="md:col-span-4 space-y-8">
-                <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
-                  <h3 className="text-xl font-bold text-white mb-6">Budget Allocation</h3>
-                  <div className="space-y-6">
-                    <div>
-                      <div className="flex justify-between text-sm mb-3">
-                        <span className="text-zinc-300">Instagram Reels</span>
-                        <span className="text-primary font-mono font-bold">50%</span>
-                      </div>
-                      <div className="w-full bg-zinc-800 h-3 rounded-full overflow-hidden">
-                        <div className="bg-primary w-[50%] h-full"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-3">
-                        <span className="text-zinc-300">TikTok Ads</span>
-                        <span className="text-secondary font-mono font-bold">30%</span>
-                      </div>
-                      <div className="w-full bg-zinc-800 h-3 rounded-full overflow-hidden">
-                        <div className="bg-secondary w-[30%] h-full"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-3">
-                        <span className="text-zinc-300">YouTube Shorts</span>
-                        <span className="text-accent font-mono font-bold">20%</span>
-                      </div>
-                      <div className="w-full bg-zinc-800 h-3 rounded-full overflow-hidden">
-                        <div className="bg-accent w-[20%] h-full"></div>
-                      </div>
-                    </div>
-                  </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF0050] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Smartphone className="w-6 h-6" />
                 </div>
-                <div className="p-6 rounded-2xl bg-red-500/5 border border-red-500/10">
-                  <h4 className="text-red-400 font-bold mb-2 flex items-center gap-2 text-sm uppercase tracking-wider">
-                    <X className="w-4 h-4" /> Channel Excluded
-                  </h4>
-                  <p className="text-sm text-zinc-500 leading-relaxed">
-                    <strong>Facebook Feed:</strong> Removed due to high CPM and older demographic mismatch. We need speed and aggression.
-                  </p>
+                <h3 className="text-2xl font-bold text-white mb-2">TikTok Ads</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Top of Funnel</span>
+                  <span className="px-2 py-1 rounded bg-primary/10 text-xs text-primary">Awareness</span>
                 </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  The "Pattern Interrupt". We use raw, UGC-style content to call out bad habits.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Broad Targeting (Let algo work)
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Spark Ads on Viral Organic
+                  </li>
+                </ul>
               </div>
 
-              <div className="md:col-span-8 grid sm:grid-cols-2 gap-8">
-                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:bg-zinc-900 transition-colors">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
-                    <Smartphone className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-3">Instagram Reels</h4>
-                  <p className="text-zinc-400 mb-6 leading-relaxed">
-                    Primary acquisition channel. High quality traffic, good retention. Best for educational content.
-                  </p>
-                  <ul className="space-y-3 text-sm text-zinc-500">
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div>Target: Trading, Finance, Luxury</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div>Format: 9:16 High Contrast Video</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-primary"></div>Goal: Direct Sign-up</li>
-                  </ul>
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-blue-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#0077B5] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6" />
                 </div>
+                <h3 className="text-2xl font-bold text-white mb-2">LinkedIn Ads</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Mid Funnel</span>
+                  <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-400">Authority</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Targeting professionals with disposable income who treat trading as a serious side-business.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    Job Titles: Finance, Tech, Eng
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    Text Ads & Thought Leadership
+                  </li>
+                </ul>
+              </div>
 
-                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:bg-zinc-900 transition-colors">
-                  <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6">
-                    <Zap className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-xl font-bold text-white mb-3">TikTok Ads</h4>
-                  <p className="text-zinc-400 mb-6 leading-relaxed">
-                    Volume play. Cheaper clicks, younger demographic, viral potential. Best for "Shock" content.
-                  </p>
-                  <ul className="space-y-3 text-sm text-zinc-500">
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>Target: Broad, "Make Money Online"</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>Format: UGC Style, Fast Paced</li>
-                    <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-secondary"></div>Goal: Lead Gen (Email Capture)</li>
-                  </ul>
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-red-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF0000] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Video className="w-6 h-6" />
                 </div>
+                <h3 className="text-2xl font-bold text-white mb-2">YouTube Ads</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Bottom Funnel</span>
+                  <span className="px-2 py-1 rounded bg-red-500/10 text-red-400">Conversion</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Long-form VSLs placed on competitor channels. Stealing their traffic with better logic.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    Placement: Competitor Channels
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    Keyword: "Trading Strategy"
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Budget Allocation Table */}
+            <div className="p-8 rounded-3xl bg-zinc-950 border border-white/5">
+              <h3 className="text-xl font-bold text-white mb-6">Monthly Budget Allocation</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Channel</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Role</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Budget %</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Est. Spend</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Target CPA</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm">
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">TikTok Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">Cold Traffic / Viral</td>
+                      <td className="py-4 px-4 text-zinc-400">40%</td>
+                      <td className="py-4 px-4 text-zinc-400">£2,000</td>
+                      <td className="py-4 px-4 text-primary">£1.50 (Lead)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">YouTube Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">Education / VSL</td>
+                      <td className="py-4 px-4 text-zinc-400">30%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,500</td>
+                      <td className="py-4 px-4 text-primary">£3.00 (Lead)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">LinkedIn Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">High Net Worth</td>
+                      <td className="py-4 px-4 text-zinc-400">20%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,000</td>
+                      <td className="py-4 px-4 text-primary">£8.00 (Lead)</td>
+                    </tr>
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">Retargeting</td>
+                      <td className="py-4 px-4 text-zinc-400">Conversion</td>
+                      <td className="py-4 px-4 text-zinc-400">10%</td>
+                      <td className="py-4 px-4 text-zinc-400">£500</td>
+                      <td className="py-4 px-4 text-primary">£45.00 (Sale)</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 90-Day Attack Plan - Interactive Calendar View */}
-        <section id="roadmap" className="snap-start min-h-screen flex items-center py-20 border-b border-zinc-800/50 bg-zinc-950/30">
+        {/* 3. 90-Day Attack Plan (Interactive) */}
+        <section id="roadmap" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
-            <div className="mb-12 max-w-3xl">
-              <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-6">
-                <Crosshair className="h-6 w-6" />
-              </div>
-              <h2 className="text-3xl font-bold mb-4 text-white">90-Day Attack Plan</h2>
-              <p className="text-zinc-400 text-lg">
-                A phased execution roadmap to go from zero to market dominance.
-                We don't guess. We execute.
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Crosshair className="text-primary w-8 h-8" /> 90-Day Attack Plan
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Execution is everything. A week-by-week breakdown of the campaign rollout.
               </p>
             </div>
 
             {/* Month Tabs */}
-            <div className="flex flex-wrap gap-2 mb-8 p-1 bg-zinc-900/50 rounded-xl border border-zinc-800 w-fit no-print">
-              {roadmap.map((phase) => (
+            <div className="flex gap-2 mb-12 border-b border-zinc-800">
+              {[1, 2, 3].map((month) => (
                 <button
-                  key={phase.month}
-                  onClick={() => setActiveMonthTab(phase.month)}
-                  className={`px-6 py-3 rounded-lg text-sm font-bold transition-all duration-300 flex items-center gap-3 ${
-                    activeMonthTab === phase.month
-                      ? 'bg-primary text-black shadow-lg shadow-primary/20'
-                      : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
+                  key={month}
+                  onClick={() => setActiveMonthTab(month)}
+                  className={`px-8 py-4 text-sm font-mono uppercase tracking-wider border-b-2 transition-all ${
+                    activeMonthTab === month 
+                      ? 'border-primary text-primary bg-primary/5' 
+                      : 'border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
                   }`}
                 >
-                  <span className={`font-mono px-2 py-0.5 rounded text-xs ${
-                    activeMonthTab === phase.month ? 'bg-black/20' : 'bg-zinc-800'
-                  }`}>M{phase.month}</span>
-                  {phase.title}
+                  Month {month}
                 </button>
               ))}
             </div>
 
-            {/* Calendar Grid View */}
-            <div className="relative min-h-[500px]">
+            {/* Content Area */}
+            <div className="min-h-[500px]">
               {roadmap.map((phase) => (
                 <div 
-                  key={phase.month}
-                  className={`transition-all duration-500 absolute inset-0 ${
+                  key={phase.month} 
+                  className={`transition-all duration-500 ${
                     activeMonthTab === phase.month 
-                      ? 'opacity-100 translate-y-0 z-10 relative' 
-                      : 'opacity-0 translate-y-8 z-0 absolute pointer-events-none hidden'
-                  } roadmap-details`}
+                      ? 'opacity-100 translate-y-0 relative z-10' 
+                      : 'opacity-0 translate-y-4 absolute top-0 left-0 -z-10 hidden'
+                  }`}
                 >
                   <div className="bg-zinc-900/30 border border-zinc-800 rounded-2xl p-8 backdrop-blur-sm">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/5 pb-8">
@@ -511,7 +539,7 @@ export default function DigitalStrategy() {
                       </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                       {phase.weeks.map((week, i) => (
                         <div key={i} className="group relative bg-black/40 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
                           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -550,7 +578,7 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 3. Blue Ocean Strategy */}
+        {/* 4. Blue Ocean Strategy */}
         <section id="blue-ocean" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
@@ -636,7 +664,7 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 4. Personas */}
+        {/* 5. Personas */}
         <section id="personas" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
             <div className="mb-16">
@@ -700,7 +728,7 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 5. User Journey Funnel */}
+        {/* 6. User Journey Funnel */}
         <section id="funnel" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
@@ -759,7 +787,7 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 6. Automation & Email */}
+        {/* 7. Automation & Email */}
         <section id="automation" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
             <div className="mb-16">
@@ -797,7 +825,7 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 7. KPI Dashboard Simulator */}
+        {/* 8. KPI Dashboard Simulator */}
         <section id="kpi" className="py-32 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
