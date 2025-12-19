@@ -389,6 +389,30 @@ export default function DigitalStrategy() {
                 </ul>
               </div>
 
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-purple-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Instagram</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Full Funnel</span>
+                  <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-400">Visuals</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  High-polish visuals for branding (Feed) and raw BTS for trust (Stories/Reels).
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    Reels for Reach (Cold)
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    Stories for Retargeting (Warm)
+                  </li>
+                </ul>
+              </div>
+
               <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-blue-500/20 transition-colors group">
                 <div className="w-12 h-12 rounded-2xl bg-[#0077B5] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-6 h-6" />
@@ -456,22 +480,29 @@ export default function DigitalStrategy() {
                     <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                       <td className="py-4 px-4 text-white font-medium">TikTok Ads</td>
                       <td className="py-4 px-4 text-zinc-400">Cold Traffic / Viral</td>
-                      <td className="py-4 px-4 text-zinc-400">40%</td>
-                      <td className="py-4 px-4 text-zinc-400">£2,000</td>
+                      <td className="py-4 px-4 text-zinc-400">30%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,500</td>
                       <td className="py-4 px-4 text-primary">£1.50 (Lead)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">Instagram Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">Visuals / Retargeting</td>
+                      <td className="py-4 px-4 text-zinc-400">25%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,250</td>
+                      <td className="py-4 px-4 text-primary">£2.00 (Lead)</td>
                     </tr>
                     <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                       <td className="py-4 px-4 text-white font-medium">YouTube Ads</td>
                       <td className="py-4 px-4 text-zinc-400">Education / VSL</td>
-                      <td className="py-4 px-4 text-zinc-400">30%</td>
-                      <td className="py-4 px-4 text-zinc-400">£1,500</td>
-                      <td className="py-4 px-4 text-primary">£3.00 (Lead)</td>
+                      <td className="py-4 px-4 text-zinc-400">25%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,250</td>
+                      <td className="py-4 px-4 text-zinc-400">£3.00 (Lead)</td>
                     </tr>
                     <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                       <td className="py-4 px-4 text-white font-medium">LinkedIn Ads</td>
                       <td className="py-4 px-4 text-zinc-400">High Net Worth</td>
-                      <td className="py-4 px-4 text-zinc-400">20%</td>
-                      <td className="py-4 px-4 text-zinc-400">£1,000</td>
+                      <td className="py-4 px-4 text-zinc-400">10%</td>
+                      <td className="py-4 px-4 text-zinc-400">£500</td>
                       <td className="py-4 px-4 text-primary">£8.00 (Lead)</td>
                     </tr>
                     <tr className="hover:bg-white/5 transition-colors">
