@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import MindsetRevolution from "./pages/MindsetRevolution";
 import DigitalStrategy from "@/pages/DigitalStrategy";
 import EmailStrategy from "@/pages/EmailStrategy";
+import KnowledgeBaseStrategy from "@/pages/KnowledgeBaseStrategy";
 
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/mindset-revolution"} component={MindsetRevolution} />
       <Route path="/digital-strategy" component={DigitalStrategy} />
+      <Route path="/knowledge-base-strategy" component={KnowledgeBaseStrategy} />
       <Route path="/email-strategy" component={EmailStrategy} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

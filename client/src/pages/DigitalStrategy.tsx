@@ -1968,6 +1968,24 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
+        {/* Knowledge Base Strategy Link */}
+        <section className="py-20 border-t border-white/5 bg-gradient-to-b from-transparent to-primary/5">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Build Your Content Engine?</h2>
+              <p className="text-zinc-400 text-lg mb-8">
+                The Digital Strategy is just the beginning. Discover how to attract, educate, and convert traders through a strategic Knowledge Base.
+              </p>
+              <Link href="/knowledge-base-strategy">
+                <Button size="lg" className="gap-2">
+                  View Knowledge Base Strategy
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
       </div>
     </>
   );
