@@ -82,14 +82,14 @@ export default function PasswordProtection({ children }: { children: React.React
               </div>
 
               {error && (
-                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 text-sm">
                   {error}
                 </div>
               )}
 
               <Button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-black font-semibold py-3 rounded-lg transition-colors"
+                className="w-full bg-[#510F66] hover:bg-[#510F66]/90 text-white font-semibold py-3 rounded-lg transition-colors"
               >
                 Unlock
               </Button>
