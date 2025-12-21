@@ -217,7 +217,7 @@ export default function DigitalStrategy() {
           .text-foreground { color: #000 !important; }
           .text-muted-foreground { color: #555 !important; }
           .border-white\/10 { border-color: #ddd !important; }
-          .bg-card { background-color: #f9f9f9 !important; border: 1px solid #ddd !important; }
+          .bg-card { background-color: #F4EFEC !important; border: 1px solid #ddd !important; }
           .roadmap-details { display: block !important; opacity: 1 !important; position: relative !important; transform: none !important; margin-bottom: 2rem !important; }
         }
       `}</style>
@@ -402,25 +402,25 @@ export default function DigitalStrategy() {
                   </ul>
                 </div>
 
-                <div className="p-8 rounded-xl bg-red-500/5 border border-red-500/20">
+                <div className="p-8 rounded-xl bg-purple-500/5 border border-purple-500/20">
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                    <XCircle className="text-red-500 w-5 h-5" /> What We Don't Do
+                    <XCircle className="text-purple-500 w-5 h-5" /> What We Don't Do
                   </h3>
                   <ul className="space-y-3 text-zinc-300">
                     <li className="flex gap-3">
-                      <span className="text-red-500 font-bold">✗</span>
+                      <span className="text-purple-500 font-bold">✗</span>
                       <span>We don't profit from your losses</span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-red-500 font-bold">✗</span>
+                      <span className="text-purple-500 font-bold">✗</span>
                       <span>We don't have affiliate deals with brokers or prop firms</span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-red-500 font-bold">✗</span>
+                      <span className="text-purple-500 font-bold">✗</span>
                       <span>We don't incentivize over-trading or excessive risk</span>
                     </li>
                     <li className="flex gap-3">
-                      <span className="text-red-500 font-bold">✗</span>
+                      <span className="text-purple-500 font-bold">✗</span>
                       <span>We don't make money when you lose money</span>
                     </li>
                   </ul>
@@ -454,7 +454,7 @@ export default function DigitalStrategy() {
                 <thead>
                   <tr className="border-b border-white/10">
                     <th className="text-left py-4 px-4 text-zinc-400 font-semibold">Feature</th>
-                    <th className="text-left py-4 px-4 text-red-400 font-semibold">Competitors (Red Ocean)</th>
+                    <th className="text-left py-4 px-4 text-purple-400 font-semibold">Competitors (Red Ocean)</th>
                     <th className="text-left py-4 px-4 text-primary font-semibold">Applecore (Blue Ocean)</th>
                   </tr>
                 </thead>
@@ -494,15 +494,15 @@ export default function DigitalStrategy() {
                   <h3 className="text-xl font-bold text-zinc-500 mb-4 line-through decoration-red-500/50">The Red Ocean (Competitors)</h3>
                   <ul className="space-y-4">
                     <li className="flex items-center gap-4 text-zinc-600">
-                      <X className="w-5 h-5 text-red-900" />
+                      <X className="w-5 h-5 text-purple-900" />
                       Selling "Magic Indicators" & Signals
                     </li>
                     <li className="flex items-center gap-4 text-zinc-600">
-                      <X className="w-5 h-5 text-red-900" />
+                      <X className="w-5 h-5 text-purple-900" />
                       Promoting "Get Rich Quick" Lifestyle
                     </li>
                     <li className="flex items-center gap-4 text-zinc-600">
-                      <X className="w-5 h-5 text-red-900" />
+                      <X className="w-5 h-5 text-purple-900" />
                       Focus on Technicals (Support/Resistance)
                     </li>
                   </ul>
@@ -543,9 +543,9 @@ export default function DigitalStrategy() {
                     <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-zinc-500 font-mono">Price Point</div>
 
                     {/* Competitors */}
-                    <div className="absolute bottom-10 left-10 w-4 h-4 rounded-full bg-red-500/50 blur-sm" title="Cheap Signals"></div>
-                    <div className="absolute bottom-20 left-20 w-6 h-6 rounded-full bg-red-500/50 blur-sm" title="Course Sellers"></div>
-                    <div className="absolute top-20 left-10 w-4 h-4 rounded-full bg-red-500/50 blur-sm" title="Expensive Mentorships"></div>
+                    <div className="absolute bottom-10 left-10 w-4 h-4 rounded-full bg-purple-500/50 blur-sm" title="Cheap Signals"></div>
+                    <div className="absolute bottom-20 left-20 w-6 h-6 rounded-full bg-purple-500/50 blur-sm" title="Course Sellers"></div>
+                    <div className="absolute top-20 left-10 w-4 h-4 rounded-full bg-purple-500/50 blur-sm" title="Expensive Mentorships"></div>
 
                     {/* Us */}
                     <div className="absolute top-10 right-10 w-8 h-8 rounded-full bg-primary shadow-[0_0_20px_rgba(224,255,152,0.5)] flex items-center justify-center text-black font-bold text-xs z-20">
@@ -574,21 +574,21 @@ export default function DigitalStrategy() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Pillar 1 */}
-              <div className="p-8 rounded-xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition-colors">
+              <div className="p-8 rounded-xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
                 <div className="flex items-start gap-4 mb-6">
-                  <AlertTriangle className="text-red-500 w-6 h-6 flex-shrink-0 mt-1" />
+                  <AlertTriangle className="text-purple-500 w-6 h-6 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-2xl font-bold text-white mb-2">The Game Is Treacherous</h3>
-                    <p className="text-red-400 text-sm font-semibold">We Show You the Script</p>
+                    <p className="text-purple-400 text-sm font-semibold">We Show You the Script</p>
                   </div>
                 </div>
                 <div className="space-y-4 text-zinc-300">
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-red-400 font-semibold mb-2">The Reality</p>
+                    <p className="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-2">The Reality</p>
                     <p className="text-sm leading-relaxed">74-89% of retail traders lose money. Brokers profit from your losses. Signal groups create false hope. The system is designed to extract money from retail traders.</p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-red-400 font-semibold mb-2">Our Stance</p>
+                    <p className="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-2">Our Stance</p>
                     <p className="text-sm leading-relaxed">We break the fourth wall. We explain how the game really works—without cashing in on your confusion. Transparency about incentives is our competitive advantage.</p>
                   </div>
                 </div>
@@ -673,38 +673,38 @@ export default function DigitalStrategy() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-xl bg-blue-500/5 border border-blue-500/20 hover:border-blue-500/40 transition-colors">
+              <div className="p-8 rounded-xl bg-cyan-500/5 border border-cyan-500/20 hover:border-cyan-500/40 transition-colors">
                 <h3 className="text-2xl font-bold text-white mb-1">Blank Canvas Beginner</h3>
-                <p className="text-blue-400 font-mono text-sm mb-6">18-26 years old</p>
+                <p className="text-cyan-400 font-mono text-sm mb-6">18-26 years old</p>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">Who They Are</h4>
                     <p className="text-zinc-300 text-sm leading-relaxed">Heavy YouTube, Instagram, TikTok users. Curious about markets but haven't adopted a fixed school yet.</p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">Pain Points</h4>
                     <p className="text-zinc-300 text-sm leading-relaxed">Overwhelmed by conflicting advice. Afraid of being scammed. Don't know why most people lose.</p>
                   </div>
-                  <div className="pt-4 border-t border-blue-500/20">
-                    <p className="text-blue-300 font-semibold text-sm">The place you go when you'd rather understand the market than copy calls.</p>
+                  <div className="pt-4 border-t border-cyan-500/20">
+                    <p className="text-cyan-300 font-semibold text-sm">The place you go when you'd rather understand the market than copy calls.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 rounded-xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition-colors">
+              <div className="p-8 rounded-xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
                 <h3 className="text-2xl font-bold text-white mb-1">Rebuilder</h3>
-                <p className="text-red-400 font-mono text-sm mb-6">25-40 years old</p>
+                <p className="text-purple-400 font-mono text-sm mb-6">25-40 years old</p>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Who They Are</h4>
                     <p className="text-zinc-300 text-sm leading-relaxed">Already tried courses, signal groups, or prop challenges. Has scars. Deeply sceptical.</p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Pain Points</h4>
                     <p className="text-zinc-300 text-sm leading-relaxed">Lost money in toxic spaces. Doesn't want to feel duped again.</p>
                   </div>
-                  <div className="pt-4 border-t border-red-500/20">
-                    <p className="text-red-300 font-semibold text-sm">You weren't stupid. The game is set up this way. Here's how you walk back in with your eyes open.</p>
+                  <div className="pt-4 border-t border-purple-500/20">
+                    <p className="text-purple-300 font-semibold text-sm">You weren't stupid. The game is set up this way. Here's how you walk back in with your eyes open.</p>
                   </div>
                 </div>
               </div>
@@ -937,7 +937,7 @@ export default function DigitalStrategy() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
-                <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 mb-6">
+                <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500 mb-6">
                   <Video className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">The Analyst (YouTube)</h3>
@@ -946,7 +946,7 @@ export default function DigitalStrategy() {
               </div>
 
               <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5">
-                <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+                <div className="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-500 mb-6">
                   <MessageCircle className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">The Contrarian (X/Twitter)</h3>
@@ -1122,7 +1122,7 @@ export default function DigitalStrategy() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-[#FF0050] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-2xl bg-[#510F66] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                   <Smartphone className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">TikTok Ads</h3>
@@ -1169,49 +1169,49 @@ export default function DigitalStrategy() {
                 </ul>
               </div>
 
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-blue-500/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-[#0077B5] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-cyan-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#D2F3F6] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                   <Users className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">LinkedIn Ads</h3>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Mid Funnel</span>
-                  <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-400">Authority</span>
+                  <span className="px-2 py-1 rounded bg-cyan-500/10 text-cyan-400">Authority</span>
                 </div>
                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                   Targeting professionals with disposable income who treat trading as a serious side-business.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
                     Job Titles: Finance, Tech, Eng
                   </li>
                   <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
                     Text Ads & Thought Leadership
                   </li>
                 </ul>
               </div>
 
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-red-500/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-[#FF0000] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-purple-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#510F66] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                   <Video className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">YouTube Ads</h3>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Bottom Funnel</span>
-                  <span className="px-2 py-1 rounded bg-red-500/10 text-red-400">Conversion</span>
+                  <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-400">Conversion</span>
                 </div>
                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                   Long-form VSLs placed on competitor channels. Stealing their traffic with better logic.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
                     Placement: Competitor Channels
                   </li>
                   <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
                     Keyword: "Trading Strategy"
                   </li>
                 </ul>
@@ -1376,9 +1376,9 @@ export default function DigitalStrategy() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-red-500/20">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-purple-500/20">
                 <div className="flex items-center gap-4 mb-6">
-                  <AlertTriangle className="text-red-500 w-6 h-6" />
+                  <AlertTriangle className="text-purple-500 w-6 h-6" />
                   <h3 className="text-xl font-bold text-white">Risk: Ad Account Ban</h3>
                 </div>
                 <p className="text-zinc-400 mb-4">Meta hates "Make Money Online" offers.</p>
@@ -1674,7 +1674,7 @@ export default function DigitalStrategy() {
                   {/* Visual Content */}
                   <div className="flex-1 relative bg-black p-6 flex flex-col justify-between overflow-hidden">
                     {/* Background Grid */}
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1E1E1E_1px,transparent_1px),linear-gradient(to_bottom,#1E1E1E_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
                     
                     {/* Top Text */}
                     <div className="relative z-10">
@@ -1730,21 +1730,21 @@ export default function DigitalStrategy() {
                   {/* Visual Content */}
                   <div className="flex-1 relative bg-black flex">
                     {/* Left Side: Them */}
-                    <div className="w-1/2 bg-[#1a0505] relative border-r border-white/10 p-4 flex flex-col items-center justify-center overflow-hidden">
+                    <div className="w-1/2 bg-[#1E1E1E] relative border-r border-white/10 p-4 flex flex-col items-center justify-center overflow-hidden">
                       <div className="absolute inset-0 opacity-20">
                         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                          <path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#ff4444" strokeWidth="1" />
-                          <path d="M0,30 Q25,80 50,30 T100,30" fill="none" stroke="#ff4444" strokeWidth="1" opacity="0.5" />
-                          <path d="M0,70 Q25,10 50,70 T100,70" fill="none" stroke="#ff4444" strokeWidth="1" opacity="0.5" />
+                          <path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#510F66" strokeWidth="1" />
+                          <path d="M0,30 Q25,80 50,30 T100,30" fill="none" stroke="#510F66" strokeWidth="1" opacity="0.5" />
+                          <path d="M0,70 Q25,10 50,70 T100,70" fill="none" stroke="#510F66" strokeWidth="1" opacity="0.5" />
                         </svg>
                       </div>
-                      <h4 className="text-red-500 font-mono text-sm mb-2 uppercase tracking-widest">Them</h4>
+                      <h4 className="text-purple-500 font-mono text-sm mb-2 uppercase tracking-widest">Them</h4>
                       <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">GAMBLING</h3>
-                      <X className="h-8 w-8 text-red-500 mt-4 opacity-50" />
+                      <X className="h-8 w-8 text-purple-500 mt-4 opacity-50" />
                     </div>
 
                     {/* Right Side: Us */}
-                    <div className="w-1/2 bg-[#051a05] relative p-4 flex flex-col items-center justify-center overflow-hidden">
+                    <div className="w-1/2 bg-[#1E1E1E] relative p-4 flex flex-col items-center justify-center overflow-hidden">
                       <div className="absolute inset-0 bg-[linear-gradient(to_right,#E0FF98_1px,transparent_1px),linear-gradient(to_bottom,#E0FF98_1px,transparent_1px)] bg-[size:10px_10px] opacity-10"></div>
                       <h4 className="text-primary font-mono text-sm mb-2 uppercase tracking-widest">Us</h4>
                       <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">PRECISION</h3>
@@ -1782,9 +1782,9 @@ export default function DigitalStrategy() {
                     <div className="w-1/2 h-full flex items-center justify-center relative z-10">
                       <div className="w-full aspect-video bg-black/50 border border-white/10 rounded-lg p-2 relative backdrop-blur-sm">
                         <div className="absolute top-2 right-2 flex gap-1">
-                          <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                          <div className="w-2 h-2 rounded-full bg-purple-500"></div>
                           <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                          <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                          <div className="w-2 h-2 rounded-full bg-lime-500"></div>
                         </div>
                         <div className="mt-4 h-20 flex items-end gap-1">
                           {[40, 60, 45, 70, 55, 80, 65, 90].map((h, i) => (
@@ -1804,7 +1804,7 @@ export default function DigitalStrategy() {
                         90%<br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">WIN RATE?</span>
                       </h3>
-                      <div className="mt-2 inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                      <div className="mt-2 inline-block bg-purple-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                         Live Proof
                       </div>
                     </div>
