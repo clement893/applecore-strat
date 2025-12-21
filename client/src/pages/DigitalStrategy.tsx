@@ -857,7 +857,7 @@ export default function DigitalStrategy() {
                       </div>
                       <div className="p-4 rounded-lg bg-black/30 border border-white/5">
                         <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
-                        <p className="text-secondary font-medium">CTR > 1.5%</p>
+                        <p className="text-secondary font-medium">CTR &gt; 1.5%</p>
                       </div>
                     </div>
                   </div>
@@ -883,7 +883,7 @@ export default function DigitalStrategy() {
                       </div>
                       <div className="p-4 rounded-lg bg-black/30 border border-white/5">
                         <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
-                        <p className="text-secondary font-medium">Opt-in Rate > 25%</p>
+                        <p className="text-secondary font-medium">Opt-in Rate &gt; 25%</p>
                       </div>
                     </div>
                   </div>
@@ -909,7 +909,7 @@ export default function DigitalStrategy() {
                       </div>
                       <div className="p-4 rounded-lg bg-black/30 border border-white/5">
                         <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
-                        <p className="text-secondary font-medium">Purchase Rate > 5%</p>
+                        <p className="text-secondary font-medium">Purchase Rate &gt; 5%</p>
                       </div>
                     </div>
                   </div>
@@ -935,7 +935,7 @@ export default function DigitalStrategy() {
                       </div>
                       <div className="p-4 rounded-lg bg-black/30 border border-white/5">
                         <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
-                        <p className="text-secondary font-medium">LTV > £250</p>
+                        <p className="text-secondary font-medium">LTV &gt; £250</p>
                       </div>
                     </div>
                   </div>
@@ -961,7 +961,7 @@ export default function DigitalStrategy() {
                       </div>
                       <div className="p-4 rounded-lg bg-black/30 border border-white/5">
                         <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
-                        <p className="text-secondary font-medium">Conversion Rate > 10%</p>
+                        <p className="text-secondary font-medium">Conversion Rate &gt; 10%</p>
                       </div>
                     </div>
                   </div>
@@ -1441,7 +1441,7 @@ export default function DigitalStrategy() {
               <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
                 <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Cost Per Lead</div>
                 <div className="text-4xl font-bold text-secondary mb-2">£2.50</div>
-                <div className="text-xs text-zinc-500">Target: < £3/lead</div>
+                <div className="text-xs text-zinc-500">Target: &lt; £3/lead</div>
                 <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <div className="h-full bg-secondary rounded-full" style={{width: '95%'}}></div>
                 </div>
@@ -1450,7 +1450,7 @@ export default function DigitalStrategy() {
               <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
                 <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Opt-in Rate</div>
                 <div className="text-4xl font-bold text-accent mb-2">28%</div>
-                <div className="text-xs text-zinc-500">Target: > 25%</div>
+                <div className="text-xs text-zinc-500">Target: &gt; 25%</div>
                 <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <div className="h-full bg-accent rounded-full" style={{width: '90%'}}></div>
                 </div>
@@ -1510,7 +1510,7 @@ export default function DigitalStrategy() {
               <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
                 <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Monthly Churn Rate</div>
                 <div className="text-4xl font-bold text-primary mb-2">8%</div>
-                <div className="text-xs text-zinc-500">Target: < 10%</div>
+                <div className="text-xs text-zinc-500">Target: &lt; 10%</div>
                 <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
                   <div className="h-full bg-primary rounded-full" style={{width: '92%'}}></div>
                 </div>
@@ -1562,7 +1562,7 @@ export default function DigitalStrategy() {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-zinc-400">Awareness → Lead</span>
+                      <span className="text-zinc-400">Awareness &rarr; Lead</span>
                       <span className="text-secondary font-bold">28%</span>
                     </div>
                     <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
@@ -1571,7 +1571,7 @@ export default function DigitalStrategy() {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-zinc-400">Lead → Buyer</span>
+                      <span className="text-zinc-400">Lead &rarr; Buyer</span>
                       <span className="text-secondary font-bold">6%</span>
                     </div>
                     <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
@@ -1580,7 +1580,7 @@ export default function DigitalStrategy() {
                   </div>
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-zinc-400">Buyer → Member</span>
+                      <span className="text-zinc-400">Buyer &rarr; Member</span>
                       <span className="text-secondary font-bold">22%</span>
                     </div>
                     <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
