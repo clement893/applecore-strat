@@ -37,6 +37,7 @@ export default function DigitalStrategy() {
     { id: "media-plan", label: "Media Plan" },
     { id: "roadmap", label: "90-Day Plan" },
     { id: "transparency", label: "Transparency" },
+    { id: "pillars", label: "Narrative Pillars" },
     { id: "blue-ocean", label: "Blue Ocean" },
     { id: "personas", label: "Personas" },
     { id: "funnel", label: "User Journey" },
@@ -808,6 +809,104 @@ export default function DigitalStrategy() {
                       <div className="text-white font-bold text-sm">Applecore</div>
                       <div className="text-primary text-xs">Premium & Psych-First</div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4.5 Narrative Pillars */}
+        <section id="pillars" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6">Our Core Narrative</h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Four pillars that guide everything we create, teach, and build.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Pillar 1 */}
+              <div className="p-8 rounded-xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition-colors">
+                <div className="flex items-start gap-4 mb-6">
+                  <AlertTriangle className="text-red-500 w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">The Game Is Treacherous</h3>
+                    <p className="text-red-400 text-sm font-semibold">We Show You the Script</p>
+                  </div>
+                </div>
+                <div className="space-y-4 text-zinc-300">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-red-400 font-semibold mb-2">The Reality</p>
+                    <p className="text-sm leading-relaxed">74-89% of retail traders lose money. Brokers profit from your losses. Signal groups create false hope. The system is designed to extract money from retail traders.</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-red-400 font-semibold mb-2">Our Stance</p>
+                    <p className="text-sm leading-relaxed">We break the fourth wall. We explain how the game really works—without cashing in on your confusion. Transparency about incentives is our competitive advantage.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pillar 2 */}
+              <div className="p-8 rounded-xl bg-primary/5 border border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="flex items-start gap-4 mb-6">
+                  <Eye className="text-primary w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">See the Market Clearly</h3>
+                    <p className="text-primary text-sm font-semibold">Bias-Free Foundations</p>
+                  </div>
+                </div>
+                <div className="space-y-4 text-zinc-300">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">The Problem</p>
+                    <p className="text-sm leading-relaxed">Most traders learn from biased sources. They inherit "the usual" methods. Indicator stacks without understanding. Social media noise.</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">Our Approach</p>
+                    <p className="text-sm leading-relaxed">Time → Structure → Behaviour → Tools. We teach you to see clearly first, then use indicators as supporting tools, not magic answers.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pillar 3 */}
+              <div className="p-8 rounded-xl bg-accent/5 border border-accent/20 hover:border-accent/40 transition-colors">
+                <div className="flex items-start gap-4 mb-6">
+                  <Layers className="text-accent w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Build Your Own Edge</h3>
+                    <p className="text-accent text-sm font-semibold">The Verification Lab</p>
+                  </div>
+                </div>
+                <div className="space-y-4 text-zinc-300">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-2">The Trap</p>
+                    <p className="text-sm leading-relaxed">Most traders rent other people's edges. Copy-trading. Signal groups. "This one system fixed everything" promises.</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-accent font-semibold mb-2">Our Lab</p>
+                    <p className="text-sm leading-relaxed">Low-ticket entry to test and build your own framework. Journals, rule-sets, backtesting. Success = knowledge + behaviour change, not a specific P&L outcome.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pillar 4 */}
+              <div className="p-8 rounded-xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
+                <div className="flex items-start gap-4 mb-6">
+                  <Users className="text-purple-400 w-6 h-6 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Workshop, Not Wolf Pack</h3>
+                    <p className="text-purple-400 text-sm font-semibold">The Community That Works</p>
+                  </div>
+                </div>
+                <div className="space-y-4 text-zinc-300">
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-2">The Noise</p>
+                    <p className="text-sm leading-relaxed">Discord signal rooms. Telegram drama. "Ape in" mentality. Blame cycles when trades go wrong.</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-purple-400 font-semibold mb-2">Our Workshop</p>
+                    <p className="text-sm leading-relaxed">Structured spaces. Beginner questions safe. Advanced strategy for tinkerers. Wins & Accountability based on process, not P&L flexing.</p>
                   </div>
                 </div>
               </div>
