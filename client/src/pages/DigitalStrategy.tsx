@@ -254,9 +254,7 @@ export default function DigitalStrategy() {
             <Button variant="ghost" size="icon" className="md:hidden text-white">
               <Menu className="h-5 w-5" />
             </Button>
-            <Button size="sm" className="hidden md:flex gap-2 bg-white text-black hover:bg-zinc-200">
-              Download Assets <Download className="h-4 w-4" />
-            </Button>
+
           </div>
         </div>
       </nav>

@@ -49,9 +49,7 @@ export default function Home() {
             <Button variant="ghost" size="icon" className="md:hidden">
               <Menu className="h-5 w-5" />
             </Button>
-            <Button size="sm" className="hidden md:flex gap-2">
-              Download Assets <Download className="h-4 w-4" />
-            </Button>
+
           </div>
         </div>
       </nav>
@@ -72,9 +70,6 @@ export default function Home() {
                 The definitive guide to our visual language. Precision, energy, and clarity for the next generation of trading tools.
               </p>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" className="gap-2 font-bold">
-                  Download Assets <Download className="h-4 w-4" />
-                </Button>
                 <Button size="lg" variant="outline" className="gap-2">
                   View Components <ArrowRight className="h-4 w-4" />
                 </Button>
