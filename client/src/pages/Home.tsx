@@ -522,19 +522,47 @@ export default function Home() {
                   <CardTitle>Candlestick Patterns</CardTitle>
                   <CardDescription>Stylized financial data representation</CardDescription>
                 </CardHeader>
-                <CardContent className="p-8 flex items-end justify-between gap-2 h-64">
-                  {/* Stylized Candlesticks */}
-                  {[40, 60, 45, 70, 55, 80, 65, 90, 75, 100].map((h, i) => (
-                    <div key={i} className="relative w-full flex flex-col items-center justify-end group">
-                      <div 
-                        className={`w-1.5 rounded-sm transition-all duration-500 group-hover:w-2 ${i % 2 === 0 ? 'bg-primary shadow-[0_0_10px_rgba(204,255,0,0.3)]' : 'bg-secondary shadow-[0_0_10px_rgba(139,92,246,0.3)]'}`}
-                        style={{ height: `${h}%` }}
-                      />
-                      <div className="absolute bottom-0 w-[1px] h-full bg-white/10 -z-10" />
-                    </div>
-                  ))}
+                <CardContent className="p-8">
+                  <div className="flex items-end justify-between gap-3 h-64 px-2">
+                    {/* Candlestick Data: [open, high, low, close] */}
+                    {[
+                      { open: 45, high: 75, low: 35, close: 70 },
+                      { open: 70, high: 85, low: 60, close: 65 },
+                      { open: 65, high: 80, low: 50, close: 55 },
+                      { open: 55, high: 90, low: 50, close: 85 },
+                      { open: 85, high: 95, low: 70, close: 75 },
+                      { open: 75, high: 88, low: 65, close: 80 },
+                      { open: 80, high: 100, low: 75, close: 95 },
+                      { open: 95, high: 105, low: 85, close: 90 },
+                      { open: 90, high: 98, low: 80, close: 88 },
+                      { open: 88, high: 110, low: 85, close: 105 }
+                    ].map((candle, i) => {
+                      const isGreen = candle.close > candle.open;
+                      const bodyTop = Math.max(candle.open, candle.close);
+                      const bodyBottom = Math.min(candle.open, candle.close);
+                      const bodyHeight = bodyTop - bodyBottom;
+                      const wickHeight = candle.high - candle.low;
+                      
+                      return (
+                        <div key={i} className="relative flex flex-col items-center justify-end flex-1 group h-full">
+                          {/* Wick (Thin line) */}
+                          <div className="absolute w-0.5 bg-white/30 group-hover:bg-white/60 transition-colors" style={{ height: `${(wickHeight / 110) * 100}%` }} />
+                          
+                          {/* Body (Rectangle) */}
+                          <div 
+                            className={`absolute w-3 rounded-sm transition-all duration-300 group-hover:w-4 ${isGreen ? 'bg-primary shadow-[0_0_8px_rgba(204,255,0,0.4)]' : 'bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.4)]'}`}
+                            style={{ 
+                              height: `${(bodyHeight / 110) * 100}%`,
+                              bottom: `${(candle.low / 110) * 100}%`
+                            }}
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </CardContent>
               </Card>
+
             </div>
           </TabsContent>
 

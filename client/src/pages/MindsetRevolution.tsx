@@ -198,9 +198,7 @@ export default function MindsetRevolution() {
                 </p>
               </div>
 
-              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
-                <Download className="w-4 h-4" /> Download .PNG
-              </Button>
+
             </div>
 
             {/* Variant B: Professionalism */}
@@ -233,9 +231,7 @@ export default function MindsetRevolution() {
                 </p>
               </div>
 
-              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
-                <Download className="w-4 h-4" /> Download .PNG
-              </Button>
+
             </div>
 
             {/* Variant C: Certainty */}
@@ -268,9 +264,7 @@ export default function MindsetRevolution() {
                 </p>
               </div>
 
-              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
-                <Download className="w-4 h-4" /> Download .PNG
-              </Button>
+
             </div>
 
             {/* Variant D: Predator/Prey */}
@@ -303,9 +297,7 @@ export default function MindsetRevolution() {
                 </p>
               </div>
 
-              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
-                <Download className="w-4 h-4" /> Download .PNG
-              </Button>
+
             </div>
 
             {/* Variant E: FOMO vs Patience */}
@@ -338,9 +330,7 @@ export default function MindsetRevolution() {
                 </p>
               </div>
 
-              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
-                <Download className="w-4 h-4" /> Download .PNG
-              </Button>
+
             </div>
 
             {/* Variant F: Confusion vs Logic */}
@@ -373,9 +363,7 @@ export default function MindsetRevolution() {
                 </p>
               </div>
 
-              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
-                <Download className="w-4 h-4" /> Download .PNG
-              </Button>
+
             </div>
           </div>
         </div>
