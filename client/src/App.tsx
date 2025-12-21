@@ -9,6 +9,7 @@ import MindsetRevolution from "./pages/MindsetRevolution";
 import DigitalStrategy from "@/pages/DigitalStrategy";
 import EmailStrategy from "@/pages/EmailStrategy";
 import KnowledgeBaseStrategy from "@/pages/KnowledgeBaseStrategy";
+import PasswordProtection from "@/components/PasswordProtection";
 
 
 function Router() {
@@ -40,7 +41,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <PasswordProtection>
+            <Router />
+          </PasswordProtection>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
