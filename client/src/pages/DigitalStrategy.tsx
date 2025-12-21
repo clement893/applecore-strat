@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
-import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu, Palette, ListChecks, Check } from "lucide-react";
+import { ArrowRight, Target, Users, BarChart3, Shield, Zap, Brain, Crosshair, TrendingUp, Lock, Eye, X, Maximize2, Minimize2, Layers, Smartphone, Server, AlertTriangle, ChevronDown, ChevronUp, Download, Calculator, Mail, DollarSign, PieChart, FileText, Video, MessageCircle, Menu, Palette, ListChecks, Check, CheckCircle, XCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function DigitalStrategy() {
@@ -36,6 +36,7 @@ export default function DigitalStrategy() {
     { id: "objectives", label: "Objectives" },
     { id: "media-plan", label: "Media Plan" },
     { id: "roadmap", label: "90-Day Plan" },
+    { id: "transparency", label: "Transparency" },
     { id: "blue-ocean", label: "Blue Ocean" },
     { id: "personas", label: "Personas" },
     { id: "funnel", label: "User Journey" },
@@ -45,7 +46,6 @@ export default function DigitalStrategy() {
     { id: "value-ladder", label: "Value Ladder" },
     { id: "risk", label: "Risk Mitigation" },
     { id: "checklist", label: "Launch Checklist" },
-    { id: "kpi", label: "KPI Dashboard" },
     { id: "creative-assets", label: "Creative Assets" }
   ];
 
@@ -325,10 +325,10 @@ export default function DigitalStrategy() {
                 V1 - For internal discussion
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
-                Digital<br /><span className="text-primary">Dominance.</span>
+                Building Traders<br />Who <span className="text-primary">Think for Themselves.</span>
               </h1>
               <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-                A comprehensive roadmap to capture, convert, and retain the next generation of traders through psychological mastery and precision targeting.
+                A structured path from confusion to confidence. Grounded in process, not promises. Designed for traders who want to understand the market, not copy calls.
               </p>
             </div>
 
@@ -337,9 +337,9 @@ export default function DigitalStrategy() {
                 <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
                   <Target className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Dominate Niche</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Honest About the Game</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
-                  Establish Applecore as the #1 authority in Trading Psychology, making competitors look like "amateur signal sellers".
+                  74-89% of retail traders lose money. We explain why—and show you how the system is designed that way. No hype, no shortcuts, just truth.
                 </p>
               </div>
 
@@ -347,9 +347,9 @@ export default function DigitalStrategy() {
                 <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
                   <Users className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Build Tribe</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Bias-Free Foundations</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
-                  Convert 1,000 "Frustrated Gamblers" into "Disciplined Risk Managers" through our indoctrination funnel.
+                  Most traders inherit biased methods. We teach you to see time, structure, and behaviour first—then use tools to support, not replace, your thinking.
                 </p>
               </div>
 
@@ -357,9 +357,9 @@ export default function DigitalStrategy() {
                 <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-white mb-6 group-hover:bg-primary group-hover:text-black transition-colors">
                   <BarChart3 className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Break Even</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Build Your Own Edge</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">
-                  Achieve profitability by Month 3. Focus on self-liquidating offers to cover ad spend immediately.
+                  Stop renting other people's edges. Learn to test, journal, and iterate your own strategy. Success is knowledge + behaviour change, not a specific P&L outcome.
                 </p>
               </div>
             </div>
@@ -619,6 +619,73 @@ export default function DigitalStrategy() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3.5 How AppleCore Makes Money */}
+        <section id="transparency" className="py-32 border-b border-white/5 snap-start bg-zinc-900/50">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Shield className="text-primary w-8 h-8" /> How AppleCore Makes Money
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg mb-12">
+                Transparency about incentives is our competitive advantage. Here's exactly how we earn revenue—and why it matters.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div className="p-8 rounded-xl bg-primary/5 border border-primary/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <CheckCircle className="text-primary w-5 h-5" /> How We Earn Revenue
+                  </h3>
+                  <ul className="space-y-3 text-zinc-300">
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">1.</span>
+                      <span><strong>Monthly Subscription (£49/mo)</strong> – Access to Academy, Discord, indicators, and live sessions</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">2.</span>
+                      <span><strong>Premium Features</strong> – Advanced tools, 1-on-1 mentorship, and Alpha Cohort program</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-primary font-bold">3.</span>
+                      <span><strong>That's it.</strong> No referral links, no broker kickbacks, no incentives based on your trading activity.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="p-8 rounded-xl bg-red-500/5 border border-red-500/20">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <XCircle className="text-red-500 w-5 h-5" /> What We Don't Do
+                  </h3>
+                  <ul className="space-y-3 text-zinc-300">
+                    <li className="flex gap-3">
+                      <span className="text-red-500 font-bold">✗</span>
+                      <span>We don't profit from your losses</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-red-500 font-bold">✗</span>
+                      <span>We don't have affiliate deals with brokers or prop firms</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-red-500 font-bold">✗</span>
+                      <span>We don't incentivize over-trading or excessive risk</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="text-red-500 font-bold">✗</span>
+                      <span>We don't make money when you lose money</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-xl bg-zinc-900 border border-white/10">
+                <h3 className="text-xl font-bold text-white mb-4">Why This Matters</h3>
+                <p className="text-zinc-300 leading-relaxed">
+                  74-89% of retail traders lose money. Most "education" brands profit from this. Signal groups, prop-firm referrals, and broker kickbacks create perverse incentives—the more you trade (and lose), the more they earn. AppleCore is different. Our success is tied to your learning and behaviour change, not your trading activity. When you succeed, we succeed. When you fail, we fail. That alignment is rare in this industry, and it's why we're transparent about how we make money.
+                </p>
+              </div>
             </div>
           </div>
         </section>
