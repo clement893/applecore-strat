@@ -926,63 +926,57 @@ export default function DigitalStrategy() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
-                <div className="flex items-start justify-between mb-8">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="p-8 rounded-xl bg-blue-500/5 border border-blue-500/20 hover:border-blue-500/40 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-1">Blank Canvas Beginner</h3>
+                <p className="text-blue-400 font-mono text-sm mb-6">18-26 years old</p>
+                <div className="space-y-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">The "Execution Master"</h3>
-                    <p className="text-zinc-500 font-mono text-sm">Primary Avatar (70%)</p>
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-2xl">🔄</div>
-                </div>
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Who They Are</h4>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Male, 25-35. Has a strategy but can't stick to it. Blows up accounts after winning streaks. Knows technicals but fails at execution. May have lost money on signals and bots. Feels betrayed but intelligent and frustrated.
-                    </p>
+                    <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <p className="text-zinc-300 text-sm leading-relaxed">Heavy YouTube, Instagram, TikTok users. Curious about markets but haven't adopted a fixed school yet.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Pain Points</h4>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Execution failures despite good strategies. Emotional decision-making. Account blowups after wins. Loss of trust in the industry.
-                    </p>
+                    <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <p className="text-zinc-300 text-sm leading-relaxed">Overwhelmed by conflicting advice. Afraid of being scammed. Don't know why most people lose.</p>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">The Hook</h4>
-                    <p className="text-primary leading-relaxed">
-                      "It's not your strategy. It's your mind. Master your psychology and master the market."
-                    </p>
+                  <div className="pt-4 border-t border-blue-500/20">
+                    <p className="text-blue-300 font-semibold text-sm">The place you go when you'd rather understand the market than copy calls.</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-secondary/20 transition-colors group">
-                <div className="flex items-start justify-between mb-8">
+              <div className="p-8 rounded-xl bg-red-500/5 border border-red-500/20 hover:border-red-500/40 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-1">Rebuilder</h3>
+                <p className="text-red-400 font-mono text-sm mb-6">25-40 years old</p>
+                <div className="space-y-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">The "System Builder"</h3>
-                    <p className="text-zinc-500 font-mono text-sm">Secondary Avatar (30%)</p>
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <p className="text-zinc-300 text-sm leading-relaxed">Already tried courses, signal groups, or prop challenges. Has scars. Deeply sceptical.</p>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-2xl">⚙️</div>
+                  <div>
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <p className="text-zinc-300 text-sm leading-relaxed">Lost money in toxic spaces. Doesn't want to feel duped again.</p>
+                  </div>
+                  <div className="pt-4 border-t border-red-500/20">
+                    <p className="text-red-300 font-semibold text-sm">You weren't stupid. The game is set up this way. Here's how you walk back in with your eyes open.</p>
+                  </div>
                 </div>
-                <div className="space-y-6">
+              </div>
+
+              <div className="p-8 rounded-xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-1">Systems Tinkerer</h3>
+                <p className="text-purple-400 font-mono text-sm mb-6">25-40 years old</p>
+                <div className="space-y-4">
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Who They Are</h4>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Male, 30-45. Engineer or tech background. Loves data, hates emotion. Overwhelmed by information and jumping between strategies. Wants a mechanical edge and clear process.
-                    </p>
+                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <p className="text-zinc-300 text-sm leading-relaxed">Analytical by nature. Comfortable with spreadsheets/backtesting. Built or modified indicators before.</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Pain Points</h4>
-                    <p className="text-zinc-400 leading-relaxed">
-                      Discretionary trading is too emotional. Information overload. Strategy jumping. Needs repeatable, data-backed systems.
-                    </p>
+                    <h4 className="text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Pain Points</h4>
+                    <p className="text-zinc-300 text-sm leading-relaxed">Too many ideas, partial systems. Broker differences unclear. Indicators oversold and under-explained.</p>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">The Hook</h4>
-                    <p className="text-secondary leading-relaxed">
-                      "Chaos is the enemy. We provide the data-driven framework to turn trading into a boring, profitable business."
-                    </p>
+                  <div className="pt-4 border-t border-purple-500/20">
+                    <p className="text-purple-300 font-semibold text-sm">Build and test your own framework with our bias-aware system.</p>
                   </div>
                 </div>
               </div>
