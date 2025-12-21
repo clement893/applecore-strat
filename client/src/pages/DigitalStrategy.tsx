@@ -1824,27 +1824,6 @@ export default function DigitalStrategy() {
               </div>
             </div>
 
-            <div className="mt-12 p-8 rounded-xl bg-white/5 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Production Checklist</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3 text-zinc-300">
-                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
-                  <span>Export all static assets in 1080x1080 and 1080x1920</span>
-                </div>
-                <div className="flex items-center gap-3 text-zinc-300">
-                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
-                  <span>Create 3 variations of hook text for video ads</span>
-                </div>
-                <div className="flex items-center gap-3 text-zinc-300">
-                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
-                  <span>Set up UTM tracking parameters for each creative</span>
-                </div>
-                <div className="flex items-center gap-3 text-zinc-300">
-                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
-                  <span>Ensure all text overlays are within "Safe Zones"</span>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
