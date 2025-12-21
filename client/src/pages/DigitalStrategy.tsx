@@ -42,10 +42,11 @@ export default function DigitalStrategy() {
     { id: "automation", label: "Automation" },
     { id: "organic", label: "Organic Content" },
     { id: "retention", label: "Retention" },
-    { id: "tech-stack", label: "Tech Stack" },
+    { id: "value-ladder", label: "Value Ladder" },
     { id: "risk", label: "Risk Mitigation" },
     { id: "checklist", label: "Launch Checklist" },
-    { id: "kpi", label: "KPI Dashboard" }
+    { id: "kpi", label: "KPI Dashboard" },
+    { id: "creative-assets", label: "Creative Assets" }
   ];
 
   useEffect(() => {
@@ -201,6 +202,7 @@ export default function DigitalStrategy() {
   return (
     <>
       <style>{`
+        #kpi { display: none !important; }
         @media print {
           @page { margin: 0; size: auto; }
           body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background-color: #fff !important; color: black !important; }
@@ -211,7 +213,7 @@ export default function DigitalStrategy() {
           .bg-background { background-color: #fff !important; }
           .text-foreground { color: #000 !important; }
           .text-muted-foreground { color: #555 !important; }
-          .border-white\\/10 { border-color: #ddd !important; }
+          .border-white\/10 { border-color: #ddd !important; }
           .bg-card { background-color: #f9f9f9 !important; border: 1px solid #ddd !important; }
           .roadmap-details { display: block !important; opacity: 1 !important; position: relative !important; transform: none !important; margin-bottom: 2rem !important; }
         }
@@ -320,13 +322,13 @@ export default function DigitalStrategy() {
             <div className="max-w-4xl mx-auto text-center mb-20">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono uppercase tracking-wider mb-6">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                Confidential Strategy Document
+                V1 - For internal discussion
               </div>
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
-                Operation <span className="text-primary">Mindset Shift</span>
+                Digital<br /><span className="text-primary">Dominance.</span>
               </h1>
               <p className="text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-                A 90-day tactical roadmap to dominate the trading education market by owning the "Psychology" niche.
+                A comprehensive roadmap to capture, convert, and retain the next generation of traders through psychological mastery and precision targeting.
               </p>
             </div>
 
@@ -595,7 +597,7 @@ export default function DigitalStrategy() {
                           
                           <div className="mb-4">
                             <span className="inline-block px-2 py-1 rounded bg-zinc-900 text-zinc-500 text-xs font-mono mb-2 border border-zinc-800">
-                              STEP {i + 1}
+                              IDEA {i + 1}
                             </span>
                             <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
                               {action.title}
@@ -631,6 +633,45 @@ export default function DigitalStrategy() {
               <p className="text-zinc-400 max-w-2xl text-lg">
                 Why we win. The market is crowded with "Technical Analysis" noise. We own the "Psychology" lane.
               </p>
+            </div>
+
+            <div className="mb-12 overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="text-left py-4 px-4 text-zinc-400 font-semibold">Feature</th>
+                    <th className="text-left py-4 px-4 text-red-400 font-semibold">Competitors (Red Ocean)</th>
+                    <th className="text-left py-4 px-4 text-primary font-semibold">Applecore (Blue Ocean)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-white/5 hover:bg-white/2 transition-colors">
+                    <td className="py-4 px-4 text-zinc-300 font-medium">Core Promise</td>
+                    <td className="py-4 px-4 text-zinc-500">"Get Rich Quick"</td>
+                    <td className="py-4 px-4 text-primary">"Master Your Mind"</td>
+                  </tr>
+                  <tr className="border-b border-white/5 hover:bg-white/2 transition-colors">
+                    <td className="py-4 px-4 text-zinc-300 font-medium">Visual Style</td>
+                    <td className="py-4 px-4 text-zinc-500">Lamborghinis, Cash, Beaches</td>
+                    <td className="py-4 px-4 text-primary">Dark, Industrial, Data-Driven</td>
+                  </tr>
+                  <tr className="border-b border-white/5 hover:bg-white/2 transition-colors">
+                    <td className="py-4 px-4 text-zinc-300 font-medium">Product Focus</td>
+                    <td className="py-4 px-4 text-zinc-500">Magic Indicators (Black Box)</td>
+                    <td className="py-4 px-4 text-primary">Education & Tools (Glass Box)</td>
+                  </tr>
+                  <tr className="border-b border-white/5 hover:bg-white/2 transition-colors">
+                    <td className="py-4 px-4 text-zinc-300 font-medium">Community</td>
+                    <td className="py-4 px-4 text-zinc-500">Signal Following (Sheep)</td>
+                    <td className="py-4 px-4 text-primary">Skill Building (Wolves)</td>
+                  </tr>
+                  <tr className="border-b border-white/5 hover:bg-white/2 transition-colors">
+                    <td className="py-4 px-4 text-zinc-300 font-medium">Retention</td>
+                    <td className="py-4 px-4 text-zinc-500">Low (Churn after loss)</td>
+                    <td className="py-4 px-4 text-primary">High (Loyalty to process)</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -723,22 +764,28 @@ export default function DigitalStrategy() {
               <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
                 <div className="flex items-start justify-between mb-8">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">The "Cycle Breaker"</h3>
+                    <h3 className="text-2xl font-bold text-white mb-1">The "Execution Master"</h3>
                     <p className="text-zinc-500 font-mono text-sm">Primary Avatar (70%)</p>
                   </div>
                   <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-2xl">🔄</div>
                 </div>
                 <div className="space-y-6">
                   <div>
+                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <p className="text-zinc-400 leading-relaxed">
+                      Male, 25-35. Has a strategy but can't stick to it. Blows up accounts after winning streaks. Knows technicals but fails at execution. May have lost money on signals and bots. Feels betrayed but intelligent and frustrated.
+                    </p>
+                  </div>
+                  <div>
                     <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Pain Points</h4>
                     <p className="text-zinc-400 leading-relaxed">
-                      Has a strategy but can't stick to it. Blows up accounts after a winning streak. Knows technicals but fails at execution.
+                      Execution failures despite good strategies. Emotional decision-making. Account blowups after wins. Loss of trust in the industry.
                     </p>
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">The Hook</h4>
                     <p className="text-primary leading-relaxed">
-                      "It's not your strategy. It's your mind. Stop looking for a new indicator and start fixing your brain."
+                      "It's not your strategy. It's your mind. Master your psychology and master the market."
                     </p>
                   </div>
                 </div>
@@ -747,26 +794,33 @@ export default function DigitalStrategy() {
               <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-secondary/20 transition-colors group">
                 <div className="flex items-start justify-between mb-8">
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-1">The "System Seeker"</h3>
+                    <h3 className="text-2xl font-bold text-white mb-1">The "System Builder"</h3>
                     <p className="text-zinc-500 font-mono text-sm">Secondary Avatar (30%)</p>
                   </div>
                   <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-2xl">⚙️</div>
                 </div>
                 <div className="space-y-6">
                   <div>
+                    <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Who They Are</h4>
+                    <p className="text-zinc-400 leading-relaxed">
+                      Male, 30-45. Engineer or tech background. Loves data, hates emotion. Overwhelmed by information and jumping between strategies. Wants a mechanical edge and clear process.
+                    </p>
+                  </div>
+                  <div>
                     <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">Pain Points</h4>
                     <p className="text-zinc-400 leading-relaxed">
-                      Overwhelmed by information. Jumping from strategy to strategy. Needs structure and a clear, step-by-step process.
+                      Discretionary trading is too emotional. Information overload. Strategy jumping. Needs repeatable, data-backed systems.
                     </p>
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2">The Hook</h4>
                     <p className="text-secondary leading-relaxed">
-                      "Chaos is the enemy. We provide the framework to turn trading into a boring, profitable business."
+                      "Chaos is the enemy. We provide the data-driven framework to turn trading into a boring, profitable business."
                     </p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -783,45 +837,132 @@ export default function DigitalStrategy() {
               </p>
             </div>
 
-            <div className="relative">
-              {/* Connecting Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-secondary/50 to-transparent hidden md:block"></div>
-
-              <div className="space-y-12">
-                <div className="relative pl-0 md:pl-24">
-                  <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-zinc-900 border border-primary/50 items-center justify-center text-primary font-bold z-10">1</div>
-                  <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                    <h3 className="text-xl font-bold text-white mb-2">Awareness (Top of Funnel)</h3>
-                    <p className="text-zinc-400 mb-4">Social Media Content & Ads</p>
-                    <div className="flex gap-3 flex-wrap">
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Reels</span>
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">TikToks</span>
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">YouTube Shorts</span>
+            <div className="space-y-8">
+              {/* Step 1: Discovery */}
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-lg">1</div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-1">Discovery (The Pattern Interrupt)</h3>
+                    <p className="text-zinc-400 mb-4">User sees a "Mindset Revolution" ad. It attacks their insecurity (gambling mentality) rather than promising riches.</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Channel</h4>
+                        <p className="text-white font-medium">Ads / Organic</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Asset</h4>
+                        <p className="text-primary font-medium">"Stop Acting Like An Amateur" Video</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
+                        <p className="text-secondary font-medium">CTR > 1.5%</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="relative pl-0 md:pl-24">
-                  <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-zinc-900 border border-secondary/50 items-center justify-center text-secondary font-bold z-10">2</div>
-                  <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                    <h3 className="text-xl font-bold text-white mb-2">Consideration (Middle of Funnel)</h3>
-                    <p className="text-zinc-400 mb-4">Lead Magnet & Email Nurture</p>
-                    <div className="flex gap-3 flex-wrap">
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Psychology Audit</span>
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">7-Day Reset</span>
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Webinars</span>
+              {/* Step 2: Indoctrination */}
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold text-lg">2</div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-1">Indoctrination (The Value Hook)</h3>
+                    <p className="text-zinc-400 mb-4">User lands on a VSL (Video Sales Letter) that explains the "Psychological Edge". They opt-in for a free "Trader Personality Test".</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Channel</h4>
+                        <p className="text-white font-medium">Landing Page</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Asset</h4>
+                        <p className="text-primary font-medium">Personality Quiz / Lead Magnet</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
+                        <p className="text-secondary font-medium">Opt-in Rate > 25%</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="relative pl-0 md:pl-24">
-                  <div className="hidden md:flex absolute left-0 top-0 w-16 h-16 rounded-full bg-zinc-900 border border-accent/50 items-center justify-center text-accent font-bold z-10">3</div>
-                  <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-                    <h3 className="text-xl font-bold text-white mb-2">Conversion (Bottom of Funnel)</h3>
-                    <p className="text-zinc-400 mb-4">Paid Offers</p>
-                    <div className="flex gap-3 flex-wrap">
-                      <span className="px-3 py-1 rounded-full bg-primary/20 text-xs text-primary border border-primary/20">Alpha Cohort (£497)</span>
-                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Membership (£49/mo)</span>
+              {/* Step 3: Conversion */}
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-lg">3</div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-1">Conversion (The Tripwire)</h3>
+                    <p className="text-zinc-400 mb-4">Immediately after opt-in, user is offered a low-ticket product (£4.99 "Trading Journal Template") to break the wallet barrier.</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Channel</h4>
+                        <p className="text-white font-medium">Checkout</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Offer</h4>
+                        <p className="text-primary font-medium">£4.99 No-Brainer</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
+                        <p className="text-secondary font-medium">Purchase Rate > 5%</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 4: Ascension */}
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-500 font-bold text-lg">4</div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-1">Ascension (The Core Offer)</h3>
+                    <p className="text-zinc-400 mb-4">Buyers are nurtured via email to join the "Applecore Academy" (Monthly Subscription). Non-buyers get the "7-Day Mindset Reset" sequence.</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Channel</h4>
+                        <p className="text-white font-medium">Email Upsell</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Product</h4>
+                        <p className="text-primary font-medium">£49/mo Membership</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
+                        <p className="text-secondary font-medium">LTV > £250</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 5: Upsell */}
+              <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-500 font-bold text-lg">5</div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-bold text-white mb-1">Upsell (High Ticket)</h3>
+                    <p className="text-zinc-400 mb-4">Active members are offered the "Alpha Cohort" - an intensive 8-week implementation program with 1-on-1 mentorship and inner circle access.</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Channel</h4>
+                        <p className="text-white font-medium">In-App Upsell</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">Product</h4>
+                        <p className="text-primary font-medium">£2,500 Alpha Cohort</p>
+                      </div>
+                      <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                        <h4 className="text-xs font-mono text-zinc-500 uppercase mb-2">KPI</h4>
+                        <p className="text-secondary font-medium">Conversion Rate > 10%</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -838,7 +979,7 @@ export default function DigitalStrategy() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono uppercase tracking-wider mb-4">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                  Mid-Ticket Offer
+                  IDEA
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                   The Alpha Cohort <span className="text-zinc-600">v1.0</span>
@@ -1090,44 +1231,99 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 10. Tech Stack */}
-        <section id="tech-stack" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+        {/* 8. The Value Ladder */}
+        <section id="value-ladder" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Server className="text-primary w-8 h-8" /> The Engine Room
+                <TrendingUp className="text-primary w-8 h-8" /> The Value Ladder
               </h2>
               <p className="text-zinc-400 max-w-2xl text-lg">
-                Lean, scalable infrastructure. No bloat.
+                How we maximize LTV by guiding customers from a low-risk entry to a high-ticket commitment.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
-                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Community</div>
-                <div className="text-xl font-bold text-white">Skool / Discord</div>
-                <div className="text-sm text-zinc-600 mt-2">Hosting & Delivery</div>
+            <div className="space-y-8">
+              {/* Backend - High Ticket */}
+              <div className="p-8 rounded-3xl bg-gradient-to-r from-rose-500/10 to-transparent border border-rose-500/20">
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <h3 className="text-xs font-mono text-rose-400 uppercase tracking-wider mb-2">Backend (Profit)</h3>
+                    <h4 className="text-2xl font-bold text-white mb-2">1-on-1 Mentorship</h4>
+                    <p className="text-zinc-400 text-sm mb-4">Direct access to the founder. Custom trading plan. Accountability.</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-rose-400 mb-2">£2,500</div>
+                    <div className="flex flex-col gap-2">
+                      <span className="px-3 py-1 rounded-full bg-rose-500/20 text-xs text-rose-400 border border-rose-500/20">High Margin</span>
+                      <span className="px-3 py-1 rounded-full bg-rose-500/20 text-xs text-rose-400 border border-rose-500/20">Limited Spots</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
-                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Payments</div>
-                <div className="text-xl font-bold text-white">Stripe</div>
-                <div className="text-sm text-zinc-600 mt-2">Billing & Subs</div>
+
+              <div className="p-8 rounded-3xl bg-gradient-to-r from-rose-500/10 to-transparent border border-rose-500/20">
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <h3 className="text-xs font-mono text-rose-400 uppercase tracking-wider mb-2">Backend (Profit)</h3>
+                    <h4 className="text-2xl font-bold text-white mb-2">Alpha Cohort</h4>
+                    <p className="text-zinc-400 text-sm mb-4">8-week intensive implementation program. Live execution, psychology deep-work, and tribal accountability.</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-rose-400 mb-2">£497</div>
+                    <div className="flex flex-col gap-2">
+                      <span className="px-3 py-1 rounded-full bg-rose-500/20 text-xs text-rose-400 border border-rose-500/20">High Margin</span>
+                      <span className="px-3 py-1 rounded-full bg-rose-500/20 text-xs text-rose-400 border border-rose-500/20">Scalable</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
-                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Email / CRM</div>
-                <div className="text-xl font-bold text-white">GoHighLevel</div>
-                <div className="text-sm text-zinc-600 mt-2">Automation</div>
+
+              {/* Core Offer */}
+              <div className="p-8 rounded-3xl bg-gradient-to-r from-primary/10 to-transparent border border-primary/20 shadow-[0_0_50px_rgba(224,255,152,0.05)]">
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <h3 className="text-xs font-mono text-primary uppercase tracking-wider mb-2">Core Offer</h3>
+                    <h4 className="text-2xl font-bold text-white mb-2">Applecore Academy</h4>
+                    <p className="text-zinc-400 text-sm mb-4">The recurring revenue engine. Community, tools, and ongoing education.</p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Daily Market Breakdown</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Discord Access</span>
+                      <span className="px-3 py-1 rounded-full bg-zinc-800 text-xs text-zinc-300 border border-zinc-700">Live Q&A Sessions</span>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-primary mb-2">£49<span className="text-lg">/mo</span></div>
+                    <div className="flex flex-col gap-2">
+                      <span className="px-3 py-1 rounded-full bg-primary/20 text-xs text-primary border border-primary/20">Recurring</span>
+                      <span className="px-3 py-1 rounded-full bg-primary/20 text-xs text-primary border border-primary/20">Sticky</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6 rounded-2xl bg-zinc-900 border border-white/5 text-center">
-                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Analytics</div>
-                <div className="text-xl font-bold text-white">Hyros</div>
-                <div className="text-sm text-zinc-600 mt-2">Attribution</div>
+
+              {/* Frontend - Entry */}
+              <div className="p-8 rounded-3xl bg-gradient-to-r from-secondary/10 to-transparent border border-secondary/20">
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <h3 className="text-xs font-mono text-secondary uppercase tracking-wider mb-2">Frontend (Acquisition)</h3>
+                    <h4 className="text-2xl font-bold text-white mb-2">Mindset Reset</h4>
+                    <p className="text-zinc-400 text-sm mb-4">7-Day Audio Program. Solves the immediate pain of "Tilt".</p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-secondary mb-2">£4.99</div>
+                    <div className="flex flex-col gap-2">
+                      <span className="px-3 py-1 rounded-full bg-secondary/20 text-xs text-secondary border border-secondary/20">Low Barrier</span>
+                      <span className="px-3 py-1 rounded-full bg-secondary/20 text-xs text-secondary border border-secondary/20">High Volume</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 11. Risk Mitigation */}
+        {/* 9. Risk Mitigation */}
         <section id="risk" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
             <div className="mb-16">
@@ -1167,7 +1363,7 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 12. Launch Checklist */}
+        {/* 10. Launch Checklist */}
         <section id="checklist" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
@@ -1219,110 +1415,393 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 13. KPI Dashboard Simulator */}
+        {/* 13. KPI Dashboard */}
         <section id="kpi" className="py-32 snap-start bg-zinc-950">
           <div className="container">
             <div className="mb-16">
               <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Calculator className="text-primary w-8 h-8" /> KPI Simulator
+                <BarChart3 className="text-primary w-8 h-8" /> KPI Dashboard
               </h2>
               <p className="text-zinc-400 max-w-2xl text-lg">
-                Project your revenue based on ad spend and conversion metrics.
+                The numbers that matter. If these are green, we scale. Target: 500 users in 12 months.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-12 gap-12">
-              {/* Controls */}
-              <div className="lg:col-span-4 space-y-8 p-8 rounded-3xl bg-zinc-900 border border-white/5">
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2">Monthly Ad Budget (£)</label>
-                  <input 
-                    type="range" 
-                    min="1000" 
-                    max="50000" 
-                    step="1000" 
-                    value={simBudget}
-                    onChange={(e) => setSimBudget(parseInt(e.target.value))}
-                    className="w-full accent-primary mb-2"
-                  />
-                  <div className="text-2xl font-bold text-white">£{simBudget.toLocaleString()}</div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2">Cost Per Click (CPC)</label>
-                  <input 
-                    type="range" 
-                    min="0.5" 
-                    max="5" 
-                    step="0.1" 
-                    value={simCPC}
-                    onChange={(e) => setSimCPC(parseFloat(e.target.value))}
-                    className="w-full accent-primary mb-2"
-                  />
-                  <div className="text-2xl font-bold text-white">£{simCPC.toFixed(2)}</div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2">Conversion Rate (%)</label>
-                  <input 
-                    type="range" 
-                    min="0.5" 
-                    max="10" 
-                    step="0.1" 
-                    value={simCR}
-                    onChange={(e) => setSimCR(parseFloat(e.target.value))}
-                    className="w-full accent-primary mb-2"
-                  />
-                  <div className="text-2xl font-bold text-white">{simCR}%</div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-zinc-400 mb-2">Avg Order Value (£)</label>
-                  <input 
-                    type="range" 
-                    min="20" 
-                    max="200" 
-                    step="5" 
-                    value={simAOV}
-                    onChange={(e) => setSimAOV(parseInt(e.target.value))}
-                    className="w-full accent-primary mb-2"
-                  />
-                  <div className="text-2xl font-bold text-white">£{simAOV}</div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {/* Acquisition KPIs */}
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Monthly Leads</div>
+                <div className="text-4xl font-bold text-primary mb-2">1,260</div>
+                <div className="text-xs text-zinc-500">Target: 42 leads/day</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-primary rounded-full" style={{width: '85%'}}></div>
                 </div>
               </div>
 
-              {/* Results */}
-              <div className="lg:col-span-8 grid sm:grid-cols-2 gap-6">
-                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
-                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Traffic</div>
-                  <div className="text-4xl font-bold text-white mb-1">
-                    {Math.floor(simBudget / simCPC).toLocaleString()}
-                  </div>
-                  <div className="text-zinc-600 text-sm">Clicks / Visitors</div>
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Cost Per Lead</div>
+                <div className="text-4xl font-bold text-secondary mb-2">£2.50</div>
+                <div className="text-xs text-zinc-500">Target: < £3/lead</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-secondary rounded-full" style={{width: '95%'}}></div>
                 </div>
+              </div>
 
-                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
-                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Conversions</div>
-                  <div className="text-4xl font-bold text-white mb-1">
-                    {Math.floor((simBudget / simCPC) * (simCR / 100)).toLocaleString()}
-                  </div>
-                  <div className="text-zinc-600 text-sm">New Customers</div>
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Opt-in Rate</div>
+                <div className="text-4xl font-bold text-accent mb-2">28%</div>
+                <div className="text-xs text-zinc-500">Target: > 25%</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-accent rounded-full" style={{width: '90%'}}></div>
                 </div>
+              </div>
 
-                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
-                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">Revenue</div>
-                  <div className="text-4xl font-bold text-primary mb-1">
-                    £{Math.floor((simBudget / simCPC) * (simCR / 100) * simAOV).toLocaleString()}
-                  </div>
-                  <div className="text-zinc-600 text-sm">Gross Revenue (Target: Break Even)</div>
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Monthly Ad Spend</div>
+                <div className="text-4xl font-bold text-emerald-500 mb-2">£3,000</div>
+                <div className="text-xs text-zinc-500">Budget: £3k-5k/month</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-emerald-500 rounded-full" style={{width: '75%'}}></div>
                 </div>
+              </div>
+            </div>
 
-                <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 flex flex-col justify-center">
-                  <div className="text-zinc-500 text-sm uppercase tracking-wider mb-2">ROAS</div>
-                  <div className={`text-4xl font-bold mb-1 ${((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget >= 2 ? 'text-emerald-500' : 'text-red-500'}`}>
-                    {(((simBudget / simCPC) * (simCR / 100) * simAOV) / simBudget).toFixed(2)}x
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {/* Conversion KPIs */}
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Tripwire Conversion</div>
+                <div className="text-4xl font-bold text-primary mb-2">6%</div>
+                <div className="text-xs text-zinc-500">£4.99 offer conversion</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-primary rounded-full" style={{width: '80%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Core Offer Conversion</div>
+                <div className="text-4xl font-bold text-secondary mb-2">22%</div>
+                <div className="text-xs text-zinc-500">£49/mo membership</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-secondary rounded-full" style={{width: '88%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">High-Ticket Conversion</div>
+                <div className="text-4xl font-bold text-accent mb-2">8%</div>
+                <div className="text-xs text-zinc-500">£497 Alpha Cohort</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-accent rounded-full" style={{width: '85%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Mentorship Conversion</div>
+                <div className="text-4xl font-bold text-rose-500 mb-2">3%</div>
+                <div className="text-xs text-zinc-500">£2,500 1-on-1</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-rose-500 rounded-full" style={{width: '75%'}}></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {/* Retention & Revenue KPIs */}
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Monthly Churn Rate</div>
+                <div className="text-4xl font-bold text-primary mb-2">8%</div>
+                <div className="text-xs text-zinc-500">Target: < 10%</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-primary rounded-full" style={{width: '92%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Customer LTV</div>
+                <div className="text-4xl font-bold text-secondary mb-2">£380</div>
+                <div className="text-xs text-zinc-500">Lifetime value per user</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-secondary rounded-full" style={{width: '85%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Monthly Recurring Revenue</div>
+                <div className="text-4xl font-bold text-accent mb-2">£5,400</div>
+                <div className="text-xs text-zinc-500">From £49/mo members</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-accent rounded-full" style={{width: '82%'}}></div>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5">
+                <div className="text-xs font-mono text-zinc-500 uppercase mb-2">Annual Recurring Revenue</div>
+                <div className="text-4xl font-bold text-emerald-500 mb-2">£64,800</div>
+                <div className="text-xs text-zinc-500">Projected ARR</div>
+                <div className="mt-3 h-2 bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="h-full bg-emerald-500 rounded-full" style={{width: '88%'}}></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Growth Targets */}
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
+                <div className="text-xs font-mono text-primary uppercase mb-4">12-Month Target</div>
+                <div className="text-5xl font-bold text-white mb-2">500</div>
+                <div className="text-lg text-zinc-400 mb-4">Active Users</div>
+                <div className="space-y-2 text-sm text-zinc-400">
+                  <div>• 42 new users/day</div>
+                  <div>• 1,260 users/month</div>
+                  <div>• £190k annual revenue</div>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-secondary/10 to-transparent border border-secondary/20">
+                <div className="text-xs font-mono text-secondary uppercase mb-4">Funnel Health</div>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-zinc-400">Awareness → Lead</span>
+                      <span className="text-secondary font-bold">28%</span>
+                    </div>
+                    <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-secondary rounded-full" style={{width: '28%'}}></div>
+                    </div>
                   </div>
-                  <div className="text-zinc-600 text-sm">Return on Ad Spend</div>
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-zinc-400">Lead → Buyer</span>
+                      <span className="text-secondary font-bold">6%</span>
+                    </div>
+                    <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-secondary rounded-full" style={{width: '6%'}}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-zinc-400">Buyer → Member</span>
+                      <span className="text-secondary font-bold">22%</span>
+                    </div>
+                    <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-secondary rounded-full" style={{width: '22%'}}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-2xl bg-gradient-to-br from-accent/10 to-transparent border border-accent/20">
+                <div className="text-xs font-mono text-accent uppercase mb-4">Monthly Breakdown</div>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-zinc-400">Ad Spend</span>
+                    <span className="text-accent font-bold">£3,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-zinc-400">New Leads</span>
+                    <span className="text-accent font-bold">1,260</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-zinc-400">New Members</span>
+                    <span className="text-accent font-bold">42</span>
+                  </div>
+                  <div className="flex justify-between border-t border-white/5 pt-3 mt-3">
+                    <span className="text-zinc-400">CAC (Member)</span>
+                    <span className="text-accent font-bold">£71.43</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 14. Creative Assets */}
+        <section id="creative-assets" className="py-32 snap-start bg-zinc-950">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Palette className="text-primary w-8 h-8" /> Creative <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">Assets</span>
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Visual inventory and psychological angles for the initial campaign launch.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Asset 1: Story */}
+              <div className="group relative">
+                <div className="aspect-[9/16] rounded-2xl overflow-hidden border border-white/10 bg-black relative flex flex-col">
+                  {/* Visual Content */}
+                  <div className="flex-1 relative bg-black p-6 flex flex-col justify-between overflow-hidden">
+                    {/* Background Grid */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:20px_20px] opacity-20"></div>
+                    
+                    {/* Top Text */}
+                    <div className="relative z-10">
+                      <h3 className="text-4xl font-black text-white leading-none tracking-tighter uppercase italic drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                        STOP<br/>GUESSING.
+                      </h3>
+                    </div>
+
+                    {/* Center Graphic */}
+                    <div className="relative z-10 flex-1 flex items-center justify-center">
+                      <div className="w-full h-64 bg-black/50 border border-primary/30 rounded-xl relative overflow-hidden backdrop-blur-sm">
+                        {/* Chart Line */}
+                        <svg className="absolute inset-0 w-full h-full p-4" viewBox="0 0 100 100" preserveAspectRatio="none">
+                          <path d="M0,80 L20,75 L30,85 L40,60 L50,65 L60,40 L70,45 L80,20 L100,10" fill="none" stroke="#E0FF98" strokeWidth="2" className="drop-shadow-[0_0_8px_rgba(224,255,152,0.8)]" />
+                          <circle cx="80" cy="20" r="3" fill="#E0FF98" className="animate-pulse" />
+                        </svg>
+                        {/* Profit Badge */}
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black font-bold px-3 py-1 rounded text-sm shadow-[0_0_15px_rgba(224,255,152,0.6)]">
+                          +450%
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Text */}
+                    <div className="relative z-10 text-right">
+                      <h3 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-primary to-white leading-none tracking-tighter uppercase italic">
+                        START<br/>PRINTING.
+                      </h3>
+                      <div className="mt-4 flex justify-end">
+                        <div className="bg-white text-black text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest">
+                          Swipe Up
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Overlay Info */}
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center z-20 backdrop-blur-sm">
+                    <div>
+                      <div className="bg-primary/20 border border-primary/30 text-primary text-xs font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                        STORY FORMAT
+                      </div>
+                      <h4 className="text-white font-bold text-lg">The "Pattern Interrupt"</h4>
+                      <p className="text-zinc-400 text-sm mt-2">Stops the scroll with high-contrast neon visuals. Direct command: "Stop Guessing".</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Asset 2: Feed */}
+              <div className="group relative">
+                <div className="aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black relative flex flex-col">
+                  {/* Visual Content */}
+                  <div className="flex-1 relative bg-black flex">
+                    {/* Left Side: Them */}
+                    <div className="w-1/2 bg-[#1a0505] relative border-r border-white/10 p-4 flex flex-col items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 opacity-20">
+                        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                          <path d="M0,50 Q25,20 50,50 T100,50" fill="none" stroke="#ff4444" strokeWidth="1" />
+                          <path d="M0,30 Q25,80 50,30 T100,30" fill="none" stroke="#ff4444" strokeWidth="1" opacity="0.5" />
+                          <path d="M0,70 Q25,10 50,70 T100,70" fill="none" stroke="#ff4444" strokeWidth="1" opacity="0.5" />
+                        </svg>
+                      </div>
+                      <h4 className="text-red-500 font-mono text-sm mb-2 uppercase tracking-widest">Them</h4>
+                      <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">GAMBLING</h3>
+                      <X className="h-8 w-8 text-red-500 mt-4 opacity-50" />
+                    </div>
+
+                    {/* Right Side: Us */}
+                    <div className="w-1/2 bg-[#051a05] relative p-4 flex flex-col items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 bg-[linear-gradient(to_right,#E0FF98_1px,transparent_1px),linear-gradient(to_bottom,#E0FF98_1px,transparent_1px)] bg-[size:10px_10px] opacity-10"></div>
+                      <h4 className="text-primary font-mono text-sm mb-2 uppercase tracking-widest">Us</h4>
+                      <h3 className="text-2xl font-black text-white uppercase italic tracking-tighter">PRECISION</h3>
+                      <Target className="h-8 w-8 text-primary mt-4 drop-shadow-[0_0_10px_rgba(224,255,152,0.8)]" />
+                    </div>
+
+                    {/* Center VS */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black border border-white/20 rounded-full w-10 h-10 flex items-center justify-center z-10">
+                      <span className="text-xs font-bold text-white">VS</span>
+                    </div>
+                  </div>
+
+                  {/* Overlay Info */}
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center z-20 backdrop-blur-sm">
+                    <div>
+                      <div className="bg-secondary/20 border border-secondary/30 text-secondary text-xs font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                        FEED POST
+                      </div>
+                      <h4 className="text-white font-bold text-lg">The "Us vs Them"</h4>
+                      <p className="text-zinc-400 text-sm mt-2">Classic comparison. Chaos (Gambling) vs Order (Precision). Positions Applecore as the professional choice.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Asset 3: YouTube */}
+              <div className="group relative">
+                <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 bg-black relative flex flex-col">
+                  {/* Visual Content */}
+                  <div className="flex-1 relative bg-black p-6 flex items-center justify-between overflow-hidden">
+                    {/* Background Glow */}
+                    <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+                    
+                    {/* Left: Chart Graphic */}
+                    <div className="w-1/2 h-full flex items-center justify-center relative z-10">
+                      <div className="w-full aspect-video bg-black/50 border border-white/10 rounded-lg p-2 relative backdrop-blur-sm">
+                        <div className="absolute top-2 right-2 flex gap-1">
+                          <div className="w-2 h-2 rounded-full bg-red-500"></div>
+                          <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                          <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                        </div>
+                        <div className="mt-4 h-20 flex items-end gap-1">
+                          {[40, 60, 45, 70, 55, 80, 65, 90].map((h, i) => (
+                            <div key={i} className="flex-1 bg-primary/50 hover:bg-primary transition-colors" style={{ height: `${h}%` }}></div>
+                          ))}
+                        </div>
+                        {/* Buy Signal */}
+                        <div className="absolute bottom-4 right-4 bg-primary text-black text-[10px] font-bold px-2 py-1 rounded animate-pulse shadow-[0_0_10px_rgba(224,255,152,0.8)]">
+                          BUY SIGNAL
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right: Text */}
+                    <div className="w-1/2 pl-6 relative z-10 text-right">
+                      <h3 className="text-5xl font-black text-white leading-[0.9] tracking-tighter uppercase italic">
+                        90%<br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">WIN RATE?</span>
+                      </h3>
+                      <div className="mt-2 inline-block bg-red-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                        Live Proof
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Overlay Info */}
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6 text-center z-20 backdrop-blur-sm">
+                    <div>
+                      <div className="bg-accent/20 border border-accent/30 text-accent text-xs font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                        THUMBNAIL
+                      </div>
+                      <h4 className="text-white font-bold text-lg">The "Bold Claim"</h4>
+                      <p className="text-zinc-400 text-sm mt-2">High CTR design. Focus on the result (90% Win Rate) and the "Buy Signal" mechanism.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 p-8 rounded-xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-bold text-white mb-4">Production Checklist</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3 text-zinc-300">
+                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                  <span>Export all static assets in 1080x1080 and 1080x1920</span>
+                </div>
+                <div className="flex items-center gap-3 text-zinc-300">
+                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                  <span>Create 3 variations of hook text for video ads</span>
+                </div>
+                <div className="flex items-center gap-3 text-zinc-300">
+                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                  <span>Set up UTM tracking parameters for each creative</span>
+                </div>
+                <div className="flex items-center gap-3 text-zinc-300">
+                  <div className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-primary text-xs">✓</div>
+                  <span>Ensure all text overlays are within "Safe Zones"</span>
                 </div>
               </div>
             </div>
