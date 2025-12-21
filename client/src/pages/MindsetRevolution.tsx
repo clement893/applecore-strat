@@ -32,11 +32,7 @@ export default function MindsetRevolution() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-mono uppercase tracking-wider border border-primary/20">
-              Internal Strategy Doc
-            </span>
-          </div>
+
         </div>
       </nav>
 
