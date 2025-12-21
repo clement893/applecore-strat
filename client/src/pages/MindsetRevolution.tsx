@@ -154,6 +154,120 @@ export default function MindsetRevolution() {
         </div>
       </section>
 
+      {/* A/B Testing Strategy - The 6 Hooks */}
+      <section className="py-20 border-b border-white/10 bg-black/30">
+        <div className="container">
+          <div className="mb-16 max-w-3xl">
+            <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
+              <MessageSquare className="h-6 w-6" />
+            </div>
+            <h2 className="text-3xl font-bold mb-4 text-white">The 6 Core Hooks</h2>
+            <p className="text-muted-foreground text-lg">
+              We don't just run one ad. We attack the psychological barriers from 6 different angles.
+              Each hook targets a specific pain point of the struggling trader.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Hook 1: Identity */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
+              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_01: IDENTITY</div>
+              <div className="space-y-2 mb-6">
+                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Acting Like An Amateur
+                </p>
+                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Acting Like A Millionaire
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Targets the imposter syndrome. Challenges them to step up.
+              </p>
+            </div>
+
+            {/* Hook 2: Reality Check */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
+              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_02: REALITY</div>
+              <div className="space-y-2 mb-6">
+                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Being A Gambler
+                </p>
+                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Being A Risk Manager
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Reframes trading from "luck" to "management".
+              </p>
+            </div>
+
+            {/* Hook 3: Precision */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
+              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_03: PRECISION</div>
+              <div className="space-y-2 mb-6">
+                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Guessing
+                </p>
+                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Executing
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Appeals to the desire for certainty and systemization.
+              </p>
+            </div>
+
+            {/* Hook 4: Market Mechanics */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
+              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_04: MECHANICS</div>
+              <div className="space-y-2 mb-6">
+                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Being Liquidity
+                </p>
+                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Being The Market Maker
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Uses insider terminology to signal high-level knowledge.
+              </p>
+            </div>
+
+            {/* Hook 5: FOMO Reversal */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
+              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_05: DISCIPLINE</div>
+              <div className="space-y-2 mb-6">
+                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Chasing Green Candles
+                </p>
+                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Stalking Your Setup
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Attacks the most common beginner mistake (FOMO).
+              </p>
+            </div>
+
+            {/* Hook 6: Clarity */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
+              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_06: CLARITY</div>
+              <div className="space-y-2 mb-6">
+                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Trading Chaos
+                </p>
+                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Trading Structure
+                </p>
+              </div>
+              <p className="text-sm text-gray-400">
+                Promises order and calm in a chaotic market.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Creative Execution Showcase */}
       <section className="py-20 bg-black/50">
         <div className="container">
