@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowLeft, ArrowRight, Target, Lightbulb, Users, Zap, Layout, MessageSquare, Smartphone, Monitor, MousePointer2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Target, Lightbulb, Users, Zap, Layout, MessageSquare, Smartphone, Monitor, MousePointer2, Download } from "lucide-react";
 
 export default function MindsetRevolution() {
   return (
@@ -161,108 +161,221 @@ export default function MindsetRevolution() {
             <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6">
               <MessageSquare className="h-6 w-6" />
             </div>
-            <h2 className="text-3xl font-bold mb-4 text-white">The 6 Core Hooks</h2>
+            <h2 className="text-3xl font-bold mb-4 text-white">A/B Testing Strategy</h2>
             <p className="text-muted-foreground text-lg">
-              We don't just run one ad. We attack the psychological barriers from 6 different angles.
-              Each hook targets a specific pain point of the struggling trader.
+              We will test 6 distinct messaging angles to identify which psychological trigger resonates most with our audience. Each variant targets a specific pain point or aspiration.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Hook 1: Identity */}
-            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
-              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_01: IDENTITY</div>
-              <div className="space-y-2 mb-6">
-                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
-                  Stop Acting Like An Amateur
+            {/* Variant A: Identity Shift */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group flex flex-col h-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">VARIANT A</div>
+                <div className="text-xs font-mono text-muted-foreground">IDENTITY SHIFT</div>
+              </div>
+              
+              <div className="mb-6 space-y-2">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
+                  <span>Focus: 100%</span>
+                  <span>Emotion: 0%</span>
+                </div>
+                <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                  <div className="bg-primary h-full w-full"></div>
+                </div>
+              </div>
+
+              <blockquote className="text-sm text-zinc-400 italic mb-6 border-l-2 border-zinc-700 pl-3">
+                "Master the mindset that separates the pros from the gamblers."
+              </blockquote>
+
+              <div className="space-y-2 mb-8 flex-grow">
+                <p className="text-lg font-bold text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Acting Like An Amateur.
                 </p>
-                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
-                  Start Acting Like A Millionaire
+                <p className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Acting Like A Millionaire.
                 </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Targets the imposter syndrome. Challenges them to step up.
-              </p>
+
+              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
+                <Download className="w-4 h-4" /> Download .PNG
+              </Button>
             </div>
 
-            {/* Hook 2: Reality Check */}
-            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
-              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_02: REALITY</div>
-              <div className="space-y-2 mb-6">
-                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
-                  Stop Being A Gambler
+            {/* Variant B: Professionalism */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group flex flex-col h-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">VARIANT B</div>
+                <div className="text-xs font-mono text-muted-foreground">PROFESSIONALISM</div>
+              </div>
+              
+              <div className="mb-6 space-y-2">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
+                  <span>Risk: Managed</span>
+                  <span>Edge: Defined</span>
+                </div>
+                <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                  <div className="bg-primary h-full w-[80%]"></div>
+                </div>
+              </div>
+
+              <blockquote className="text-sm text-zinc-400 italic mb-6 border-l-2 border-zinc-700 pl-3">
+                "Stop guessing. Start executing with precision."
+              </blockquote>
+
+              <div className="space-y-2 mb-8 flex-grow">
+                <p className="text-lg font-bold text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Trading Like A Gambler.
                 </p>
-                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
-                  Start Being A Risk Manager
+                <p className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Trading Like A Pro.
                 </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Reframes trading from "luck" to "management".
-              </p>
+
+              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
+                <Download className="w-4 h-4" /> Download .PNG
+              </Button>
             </div>
 
-            {/* Hook 3: Precision */}
-            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
-              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_03: PRECISION</div>
-              <div className="space-y-2 mb-6">
-                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
-                  Stop Guessing
+            {/* Variant C: Certainty */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group flex flex-col h-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">VARIANT C</div>
+                <div className="text-xs font-mono text-muted-foreground">CERTAINTY</div>
+              </div>
+              
+              <div className="mb-6 space-y-2">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
+                  <span>Bias: Zero</span>
+                  <span>Clarity: 100%</span>
+                </div>
+                <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                  <div className="bg-primary h-full w-[90%]"></div>
+                </div>
+              </div>
+
+              <blockquote className="text-sm text-zinc-400 italic mb-6 border-l-2 border-zinc-700 pl-3">
+                "See what others miss. Trade what actually happens."
+              </blockquote>
+
+              <div className="space-y-2 mb-8 flex-grow">
+                <p className="text-lg font-bold text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Guessing The Market.
                 </p>
-                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
-                  Start Executing
+                <p className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Knowing The Moves.
                 </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Appeals to the desire for certainty and systemization.
-              </p>
+
+              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
+                <Download className="w-4 h-4" /> Download .PNG
+              </Button>
             </div>
 
-            {/* Hook 4: Market Mechanics */}
-            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
-              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_04: MECHANICS</div>
-              <div className="space-y-2 mb-6">
-                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
-                  Stop Being Liquidity
+            {/* Variant D: Predator/Prey */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group flex flex-col h-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">VARIANT D</div>
+                <div className="text-xs font-mono text-muted-foreground">PREDATOR/PREY</div>
+              </div>
+              
+              <div className="mb-6 space-y-2">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
+                  <span>Role: Hunter</span>
+                  <span>Prey: Retail</span>
+                </div>
+                <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                  <div className="bg-primary h-full w-[70%]"></div>
+                </div>
+              </div>
+
+              <blockquote className="text-sm text-zinc-400 italic mb-6 border-l-2 border-zinc-700 pl-3">
+                "You are either the liquidity or the one taking it."
+              </blockquote>
+
+              <div className="space-y-2 mb-8 flex-grow">
+                <p className="text-lg font-bold text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Being The Liquidity.
                 </p>
-                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
-                  Start Being The Market Maker
+                <p className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Being The Hunter.
                 </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Uses insider terminology to signal high-level knowledge.
-              </p>
+
+              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
+                <Download className="w-4 h-4" /> Download .PNG
+              </Button>
             </div>
 
-            {/* Hook 5: FOMO Reversal */}
-            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
-              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_05: DISCIPLINE</div>
-              <div className="space-y-2 mb-6">
-                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
-                  Stop Chasing Green Candles
+            {/* Variant E: FOMO vs Patience */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group flex flex-col h-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">VARIANT E</div>
+                <div className="text-xs font-mono text-muted-foreground">FOMO VS PATIENCE</div>
+              </div>
+              
+              <div className="mb-6 space-y-2">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
+                  <span>FOMO: None</span>
+                  <span>Patience: Infinite</span>
+                </div>
+                <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                  <div className="bg-primary h-full w-[95%]"></div>
+                </div>
+              </div>
+
+              <blockquote className="text-sm text-zinc-400 italic mb-6 border-l-2 border-zinc-700 pl-3">
+                "The market comes to you. You don't run after it."
+              </blockquote>
+
+              <div className="space-y-2 mb-8 flex-grow">
+                <p className="text-lg font-bold text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Chasing Green Candles.
                 </p>
-                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
-                  Start Stalking Your Setup
+                <p className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Catching The Reversals.
                 </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Attacks the most common beginner mistake (FOMO).
-              </p>
+
+              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
+                <Download className="w-4 h-4" /> Download .PNG
+              </Button>
             </div>
 
-            {/* Hook 6: Clarity */}
-            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group">
-              <div className="text-xs font-mono text-muted-foreground mb-4">HOOK_06: CLARITY</div>
-              <div className="space-y-2 mb-6">
-                <p className="text-xl font-bold text-gray-500 line-through decoration-red-500/50 decoration-2">
-                  Stop Trading Chaos
+            {/* Variant F: Confusion vs Logic */}
+            <div className="p-8 rounded-xl bg-card border border-white/5 hover:border-primary/50 transition-all group flex flex-col h-full">
+              <div className="flex justify-between items-start mb-4">
+                <div className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">VARIANT F</div>
+                <div className="text-xs font-mono text-muted-foreground">CONFUSION VS LOGIC</div>
+              </div>
+              
+              <div className="mb-6 space-y-2">
+                <div className="flex justify-between text-xs text-zinc-500 font-mono">
+                  <span>Noise: Filtered</span>
+                  <span>Logic: Absolute</span>
+                </div>
+                <div className="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
+                  <div className="bg-primary h-full w-[85%]"></div>
+                </div>
+              </div>
+
+              <blockquote className="text-sm text-zinc-400 italic mb-6 border-l-2 border-zinc-700 pl-3">
+                "Find the order in the chaos. Trade the structure."
+              </blockquote>
+
+              <div className="space-y-2 mb-8 flex-grow">
+                <p className="text-lg font-bold text-zinc-500 line-through decoration-red-500/50 decoration-2">
+                  Stop Trading The Chaos.
                 </p>
-                <p className="text-2xl font-black text-white group-hover:text-primary transition-colors">
-                  Start Trading Structure
+                <p className="text-xl font-black text-white group-hover:text-primary transition-colors">
+                  Start Trading The Structure.
                 </p>
               </div>
-              <p className="text-sm text-gray-400">
-                Promises order and calm in a chaotic market.
-              </p>
+
+              <Button variant="outline" className="w-full gap-2 border-zinc-700 hover:bg-zinc-800 hover:text-white group-hover:border-primary/30">
+                <Download className="w-4 h-4" /> Download .PNG
+              </Button>
             </div>
           </div>
         </div>
