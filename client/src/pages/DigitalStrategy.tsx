@@ -34,8 +34,6 @@ export default function DigitalStrategy() {
 
   const sections = [
     { id: "objectives", label: "Objectives" },
-    { id: "media-plan", label: "Media Plan" },
-    { id: "roadmap", label: "90-Day Plan" },
     { id: "transparency", label: "Transparency" },
     { id: "pillars", label: "Narrative Pillars" },
     { id: "blue-ocean", label: "Blue Ocean" },
@@ -46,8 +44,12 @@ export default function DigitalStrategy() {
     { id: "retention", label: "Retention" },
     { id: "value-ladder", label: "Value Ladder" },
     { id: "risk", label: "Risk Mitigation" },
+    { id: "media-plan", label: "Media Plan" },
+    { id: "roadmap", label: "90-Day Plan" },
     { id: "checklist", label: "Launch Checklist" },
-    { id: "creative-assets", label: "Creative Assets" }
+    { id: "kpi", label: "KPI Dashboard" },
+    { id: "creative-assets", label: "Creative Assets" },
+    { id: "alpha-cohort", label: "Alpha Cohort" }
   ];
 
   useEffect(() => {
@@ -367,262 +369,6 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* 2. Media Plan */}
-        <section id="media-plan" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
-          <div className="container">
-            <div className="mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Layers className="text-white w-8 h-8" /> Media Buying Plan
-              </h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">
-                We don't spray and pray. We snipe. High intent platforms only.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-[#FF0050] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                  <Smartphone className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">TikTok Ads</h3>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Top of Funnel</span>
-                  <span className="px-2 py-1 rounded bg-primary/10 text-xs text-primary">Awareness</span>
-                </div>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  The "Pattern Interrupt". We use raw, UGC-style content to call out bad habits.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    Broad Targeting (Let algo work)
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    Spark Ads on Viral Organic
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-purple-500/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                  <Smartphone className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Instagram</h3>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Full Funnel</span>
-                  <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-400">Visuals</span>
-                </div>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  High-polish visuals for branding (Feed) and raw BTS for trust (Stories/Reels).
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
-                    Reels for Reach (Cold)
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
-                    Stories for Retargeting (Warm)
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-blue-500/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-[#0077B5] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">LinkedIn Ads</h3>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Mid Funnel</span>
-                  <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-400">Authority</span>
-                </div>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Targeting professionals with disposable income who treat trading as a serious side-business.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                    Job Titles: Finance, Tech, Eng
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-                    Text Ads & Thought Leadership
-                  </li>
-                </ul>
-              </div>
-
-              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-red-500/20 transition-colors group">
-                <div className="w-12 h-12 rounded-2xl bg-[#FF0000] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                  <Video className="w-6 h-6" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">YouTube Ads</h3>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Bottom Funnel</span>
-                  <span className="px-2 py-1 rounded bg-red-500/10 text-red-400">Conversion</span>
-                </div>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                  Long-form VSLs placed on competitor channels. Stealing their traffic with better logic.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
-                    Placement: Competitor Channels
-                  </li>
-                  <li className="flex items-center gap-2 text-sm text-zinc-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
-                    Keyword: "Trading Strategy"
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Budget Allocation Table */}
-            <div className="p-8 rounded-3xl bg-zinc-950 border border-white/5">
-              <h3 className="text-xl font-bold text-white mb-6">Monthly Budget Allocation</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="border-b border-white/10">
-                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Channel</th>
-                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Role</th>
-                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Budget %</th>
-                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Est. Spend</th>
-                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Target CPA</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-sm">
-                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4 text-white font-medium">TikTok Ads</td>
-                      <td className="py-4 px-4 text-zinc-400">Cold Traffic / Viral</td>
-                      <td className="py-4 px-4 text-zinc-400">30%</td>
-                      <td className="py-4 px-4 text-zinc-400">£1,500</td>
-                      <td className="py-4 px-4 text-primary">£1.50 (Lead)</td>
-                    </tr>
-                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4 text-white font-medium">Instagram Ads</td>
-                      <td className="py-4 px-4 text-zinc-400">Visuals / Retargeting</td>
-                      <td className="py-4 px-4 text-zinc-400">25%</td>
-                      <td className="py-4 px-4 text-zinc-400">£1,250</td>
-                      <td className="py-4 px-4 text-primary">£2.00 (Lead)</td>
-                    </tr>
-                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4 text-white font-medium">YouTube Ads</td>
-                      <td className="py-4 px-4 text-zinc-400">Education / VSL</td>
-                      <td className="py-4 px-4 text-zinc-400">25%</td>
-                      <td className="py-4 px-4 text-zinc-400">£1,250</td>
-                      <td className="py-4 px-4 text-zinc-400">£3.00 (Lead)</td>
-                    </tr>
-                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4 text-white font-medium">LinkedIn Ads</td>
-                      <td className="py-4 px-4 text-zinc-400">High Net Worth</td>
-                      <td className="py-4 px-4 text-zinc-400">10%</td>
-                      <td className="py-4 px-4 text-zinc-400">£500</td>
-                      <td className="py-4 px-4 text-primary">£8.00 (Lead)</td>
-                    </tr>
-                    <tr className="hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-4 text-white font-medium">Retargeting</td>
-                      <td className="py-4 px-4 text-zinc-400">Conversion</td>
-                      <td className="py-4 px-4 text-zinc-400">10%</td>
-                      <td className="py-4 px-4 text-zinc-400">£500</td>
-                      <td className="py-4 px-4 text-primary">£45.00 (Sale)</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 3. 90-Day Attack Plan (Interactive) */}
-        <section id="roadmap" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
-          <div className="container">
-            <div className="mb-16">
-              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
-                <Crosshair className="text-primary w-8 h-8" /> 90-Day Attack Plan
-              </h2>
-              <p className="text-zinc-400 max-w-2xl text-lg">
-                Execution is everything. A week-by-week breakdown of the campaign rollout.
-              </p>
-            </div>
-
-            {/* Month Tabs */}
-            <div className="flex gap-2 mb-12 border-b border-zinc-800">
-              {[1, 2, 3].map((month) => (
-                <button
-                  key={month}
-                  onClick={() => setActiveMonthTab(month)}
-                  className={`px-8 py-4 text-sm font-mono uppercase tracking-wider border-b-2 transition-all ${
-                    activeMonthTab === month 
-                      ? 'border-primary text-primary bg-primary/5' 
-                      : 'border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
-                  }`}
-                >
-                  Month {month}
-                </button>
-              ))}
-            </div>
-
-            {/* Content Area */}
-            <div className="min-h-[500px]">
-              {roadmap.map((phase) => (
-                <div 
-                  key={phase.month} 
-                  className={`transition-all duration-500 ${
-                    activeMonthTab === phase.month 
-                      ? 'opacity-100 translate-y-0 relative z-10' 
-                      : 'opacity-0 translate-y-4 absolute top-0 left-0 -z-10 hidden'
-                  }`}
-                >
-                  <div className="bg-zinc-900/30 border border-zinc-800 rounded-2xl p-8 backdrop-blur-sm">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/5 pb-8">
-                      <div>
-                        <h3 className="text-3xl font-bold text-white mb-2">{phase.title}</h3>
-                        <p className="text-primary font-mono uppercase tracking-wider text-sm">{phase.goal}</p>
-                      </div>
-                      <p className="text-zinc-400 max-w-md text-sm leading-relaxed border-l-2 border-zinc-800 pl-4">
-                        {phase.description}
-                      </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {phase.actions.map((action, i) => (
-                        <div key={i} className="group relative bg-black/40 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
-                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(224,255,152,0.8)] animate-pulse"></div>
-                          </div>
-                          
-                          <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-primary group-hover:border-primary/30 transition-colors mb-6">
-                            {action.icon}
-                          </div>
-                          
-                          <div className="mb-4">
-                            <span className="inline-block px-2 py-1 rounded bg-zinc-900 text-zinc-500 text-xs font-mono mb-2 border border-zinc-800">
-                              IDEA {i + 1}
-                            </span>
-                            <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
-                              {action.title}
-                            </h4>
-                          </div>
-                          
-                          <div className="space-y-3">
-                            <div className="p-3 rounded bg-zinc-900/50 border border-zinc-800/50">
-                              <p className="text-sm font-medium text-zinc-200 mb-1">Action:</p>
-                              <p className="text-sm text-zinc-400">{action.task}</p>
-                            </div>
-                            <p className="text-xs text-zinc-500 leading-relaxed pl-1 border-l border-zinc-800">
-                              {action.context}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* 3.5 How AppleCore Makes Money */}
         <section id="transparency" className="py-32 border-b border-white/5 snap-start bg-zinc-900/50">
@@ -1131,127 +877,6 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
-        {/* Alpha Cohort Deep Dive */}
-        <section id="alpha-cohort" className="py-32 border-b border-white/5 snap-start bg-zinc-950 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/grid.svg')] opacity-10 pointer-events-none"></div>
-          <div className="container relative z-10">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-16">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono uppercase tracking-wider mb-4">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                  IDEA
-                </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  The Alpha Cohort <span className="text-zinc-600">v1.0</span>
-                </h2>
-                <p className="text-zinc-400 max-w-xl text-lg">
-                  The bridge between "Retail Gambler" and "Professional Risk Manager". An intensive 8-week implementation program.
-                </p>
-              </div>
-              <div className="text-right">
-                <div className="text-sm text-zinc-500 uppercase tracking-wider mb-1">Price Point</div>
-                <div className="text-4xl font-bold text-white">£497</div>
-                <div className="text-xs text-primary mt-1">Limited to 50 Seats</div>
-              </div>
-            </div>
-
-            <div className="grid lg:grid-cols-3 gap-8">
-              {/* Left Column: The Promise */}
-              <div className="lg:col-span-2 space-y-8">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
-                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                      <Brain className="w-5 h-5 text-primary" /> Psychology First
-                    </h4>
-                    <p className="text-zinc-400 text-sm leading-relaxed">
-                      We don't teach "patterns". We teach how to rewire the dopamine response to loss and uncertainty.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
-                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                      <Users className="w-5 h-5 text-primary" /> Tribal Accountability
-                    </h4>
-                    <p className="text-zinc-400 text-sm leading-relaxed">
-                      You are the average of the 5 traders you speak to. We place you in a pod of serious executors.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
-                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                      <Target className="w-5 h-5 text-primary" /> Live Execution
-                    </h4>
-                    <p className="text-zinc-400 text-sm leading-relaxed">
-                      Weekly live trading sessions where we review YOUR trades, not just hindsight chart markups.
-                    </p>
-                  </div>
-                  <div className="p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-primary/20 transition-all">
-                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                      <Shield className="w-5 h-5 text-primary" /> Risk Systems
-                    </h4>
-                    <p className="text-zinc-400 text-sm leading-relaxed">
-                      Copy-paste our proprietary risk management Notion templates and journaling systems.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
-                  <h3 className="text-xl font-bold text-white mb-6">8-Week Curriculum</h3>
-                  <div className="space-y-4">
-                    {[
-                      "Week 1: De-programming the Gambler's Mindset",
-                      "Week 2: Identity Shifting & The Professional Self",
-                      "Week 3: Probability Thinking & Expected Value",
-                      "Week 4: Building Your Personal Edge (Technical)",
-                      "Week 5: Risk Management & Position Sizing Protocols",
-                      "Week 6: Emotional Regulation & Tilt Control",
-                      "Week 7: Data Collection & Journaling Mastery",
-                      "Week 8: The Forever Plan & Scaling Up"
-                    ].map((week, i) => (
-                      <div key={i} className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors border-b border-white/5 last:border-0">
-                        <span className="text-xs font-mono text-zinc-500 w-16">MODULE {i + 1}</span>
-                        <span className="text-zinc-300 font-medium">{week.split(': ')[1]}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: The Stack */}
-              <div className="space-y-6">
-                <div className="p-8 rounded-3xl bg-gradient-to-b from-zinc-900 to-black border border-zinc-800 sticky top-8">
-                  <h3 className="text-xl font-bold text-white mb-6">What's Included</h3>
-                  <ul className="space-y-4 mb-8">
-                    <li className="flex items-start gap-3 text-sm text-zinc-300">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span>8 Weeks of Live Coaching Calls</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm text-zinc-300">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span>Private Discord "War Room" Access</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm text-zinc-300">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span>The "Mindset Vault" Video Library</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm text-zinc-300">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span>Proprietary Notion Trading Journal</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm text-zinc-300">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span>Lifetime Updates to Curriculum</span>
-                    </li>
-                  </ul>
-                  <Button className="w-full bg-primary text-black hover:bg-primary/90 font-bold py-6 text-lg">
-                    Join Waitlist
-                  </Button>
-                  <p className="text-center text-xs text-zinc-500 mt-4">
-                    Next cohort starts: <span className="text-zinc-300">November 1st</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* 7. Automation & Email */}
         <section id="automation" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
@@ -1483,6 +1108,261 @@ export default function DigitalStrategy() {
           </div>
         </section>
 
+        {/* 2. Media Plan */}
+        <section id="media-plan" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Layers className="text-white w-8 h-8" /> Media Buying Plan
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                We don't spray and pray. We snipe. High intent platforms only.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-primary/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF0050] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">TikTok Ads</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Top of Funnel</span>
+                  <span className="px-2 py-1 rounded bg-primary/10 text-xs text-primary">Awareness</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  The "Pattern Interrupt". We use raw, UGC-style content to call out bad habits.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Broad Targeting (Let algo work)
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    Spark Ads on Viral Organic
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-purple-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Instagram</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Full Funnel</span>
+                  <span className="px-2 py-1 rounded bg-purple-500/10 text-purple-400">Visuals</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  High-polish visuals for branding (Feed) and raw BTS for trust (Stories/Reels).
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    Reels for Reach (Cold)
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    Stories for Retargeting (Warm)
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-blue-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#0077B5] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">LinkedIn Ads</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Mid Funnel</span>
+                  <span className="px-2 py-1 rounded bg-blue-500/10 text-blue-400">Authority</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Targeting professionals with disposable income who treat trading as a serious side-business.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    Job Titles: Finance, Tech, Eng
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    Text Ads & Thought Leadership
+                  </li>
+                </ul>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-zinc-900 border border-white/5 hover:border-red-500/20 transition-colors group">
+                <div className="w-12 h-12 rounded-2xl bg-[#FF0000] flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <Video className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">YouTube Ads</h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="px-2 py-1 rounded bg-zinc-800 text-xs text-zinc-400">Bottom Funnel</span>
+                  <span className="px-2 py-1 rounded bg-red-500/10 text-red-400">Conversion</span>
+                </div>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                  Long-form VSLs placed on competitor channels. Stealing their traffic with better logic.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    Placement: Competitor Channels
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-zinc-300">
+                    <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
+                    Keyword: "Trading Strategy"
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Budget Allocation Table */}
+            <div className="p-8 rounded-3xl bg-zinc-950 border border-white/5">
+              <h3 className="text-xl font-bold text-white mb-6">Monthly Budget Allocation</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Channel</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Role</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Budget %</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Est. Spend</th>
+                      <th className="py-4 px-4 text-zinc-500 font-mono text-xs uppercase tracking-wider">Target CPA</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm">
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">TikTok Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">Cold Traffic / Viral</td>
+                      <td className="py-4 px-4 text-zinc-400">30%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,500</td>
+                      <td className="py-4 px-4 text-primary">£1.50 (Lead)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">Instagram Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">Visuals / Retargeting</td>
+                      <td className="py-4 px-4 text-zinc-400">25%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,250</td>
+                      <td className="py-4 px-4 text-primary">£2.00 (Lead)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">YouTube Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">Education / VSL</td>
+                      <td className="py-4 px-4 text-zinc-400">25%</td>
+                      <td className="py-4 px-4 text-zinc-400">£1,250</td>
+                      <td className="py-4 px-4 text-zinc-400">£3.00 (Lead)</td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">LinkedIn Ads</td>
+                      <td className="py-4 px-4 text-zinc-400">High Net Worth</td>
+                      <td className="py-4 px-4 text-zinc-400">10%</td>
+                      <td className="py-4 px-4 text-zinc-400">£500</td>
+                      <td className="py-4 px-4 text-primary">£8.00 (Lead)</td>
+                    </tr>
+                    <tr className="hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-4 text-white font-medium">Retargeting</td>
+                      <td className="py-4 px-4 text-zinc-400">Conversion</td>
+                      <td className="py-4 px-4 text-zinc-400">10%</td>
+                      <td className="py-4 px-4 text-zinc-400">£500</td>
+                      <td className="py-4 px-4 text-primary">£45.00 (Sale)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* 3. 90-Day Attack Plan (Interactive) */}
+        <section id="roadmap" className="py-32 border-b border-white/5 snap-start bg-zinc-950">
+          <div className="container">
+            <div className="mb-16">
+              <h2 className="text-4xl font-bold text-white mb-6 flex items-center gap-4">
+                <Crosshair className="text-primary w-8 h-8" /> 90-Day Attack Plan
+              </h2>
+              <p className="text-zinc-400 max-w-2xl text-lg">
+                Execution is everything. A week-by-week breakdown of the campaign rollout.
+              </p>
+            </div>
+
+            {/* Month Tabs */}
+            <div className="flex gap-2 mb-12 border-b border-zinc-800">
+              {[1, 2, 3].map((month) => (
+                <button
+                  key={month}
+                  onClick={() => setActiveMonthTab(month)}
+                  className={`px-8 py-4 text-sm font-mono uppercase tracking-wider border-b-2 transition-all ${
+                    activeMonthTab === month 
+                      ? 'border-primary text-primary bg-primary/5' 
+                      : 'border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
+                  }`}
+                >
+                  Month {month}
+                </button>
+              ))}
+            </div>
+
+            {/* Content Area */}
+            <div className="min-h-[500px]">
+              {roadmap.map((phase) => (
+                <div 
+                  key={phase.month} 
+                  className={`transition-all duration-500 ${
+                    activeMonthTab === phase.month 
+                      ? 'opacity-100 translate-y-0 relative z-10' 
+                      : 'opacity-0 translate-y-4 absolute top-0 left-0 -z-10 hidden'
+                  }`}
+                >
+                  <div className="bg-zinc-900/30 border border-zinc-800 rounded-2xl p-8 backdrop-blur-sm">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/5 pb-8">
+                      <div>
+                        <h3 className="text-3xl font-bold text-white mb-2">{phase.title}</h3>
+                        <p className="text-primary font-mono uppercase tracking-wider text-sm">{phase.goal}</p>
+                      </div>
+                      <p className="text-zinc-400 max-w-md text-sm leading-relaxed border-l-2 border-zinc-800 pl-4">
+                        {phase.description}
+                      </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {phase.actions.map((action, i) => (
+                        <div key={i} className="group relative bg-black/40 border border-zinc-800 hover:border-primary/50 rounded-xl p-6 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
+                          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(224,255,152,0.8)] animate-pulse"></div>
+                          </div>
+                          
+                          <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-primary group-hover:border-primary/30 transition-colors mb-6">
+                            {action.icon}
+                          </div>
+                          
+                          <div className="mb-4">
+                            <span className="inline-block px-2 py-1 rounded bg-zinc-900 text-zinc-500 text-xs font-mono mb-2 border border-zinc-800">
+                              IDEA {i + 1}
+                            </span>
+                            <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+                              {action.title}
+                            </h4>
+                          </div>
+                          
+                          <div className="space-y-3">
+                            <div className="p-3 rounded bg-zinc-900/50 border border-zinc-800/50">
+                              <p className="text-sm font-medium text-zinc-200 mb-1">Action:</p>
+                              <p className="text-sm text-zinc-400">{action.task}</p>
+                            </div>
+                            <p className="text-xs text-zinc-500 leading-relaxed pl-1 border-l border-zinc-800">
+                              {action.context}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
         {/* 9. Risk Mitigation */}
         <section id="risk" className="py-32 border-b border-white/5 snap-start bg-zinc-900/30">
           <div className="container">
